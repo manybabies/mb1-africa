@@ -1,0 +1,29 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3339761,3360235,17786,0,0,17786,0,3342238,3360234,LookCenter,3342448,3360234,17786
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3360236,3379517,0,0,0,0,0,3361518,3379517
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3379519,3399470,0,0,0,0,0,3381473,3399470
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3399471,3419185,0,0,0,0,0,3401185,3419185
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),5,0,MaxStimulusTime,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3419186,3438126,0,0,0,0,0,3420129,3438126
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3438129,3456895,0,0,0,0,0,3438899,3456895
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3456896,3475664,0,0,0,0,0,3457671,3475664
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),8,0,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3475666,3495500,0,0,0,0,0,3477501,3495500
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),9,0,MaxLookAwayTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3495501,3507645,6597,0,0,6597,0,3498849,3507645,LookCenter,3499048,3505645,6597
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),10,0,MaxStimulusTime,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3507647,3527284,16344,0,0,16344,0,3509288,3527284,LookCenter,3509548,3525892,16344
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),11,0,MaxLookAwayTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3527285,3543846,11675,0,0,11675,0,3529613,3543846,LookCenter,3530142,3539833,9691,LookCenter,3539861,3541845,1984
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),12,0,MaxLookAwayTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3543848,3561258,13121,0,0,13121,0,3545690,3561258,LookCenter,3546137,3559258,13121
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),13,0,MaxLookAwayTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3561260,3574816,9139,0,0,9139,0,3563390,3574816,LookCenter,3563677,3572816,9139
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3574817,3595439,17721,0,0,17721,0,3577438,3595439,LookCenter,3577716,3595437,17721
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),15,0,MaxStimulusTime,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3595440,3615064,0,0,0,0,0,3597063,3615064
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),16,0,MaxStimulusTime,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3615065,3634994,0,0,0,0,0,3616998,3634994
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),17,0,MaxStimulusTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3634996,3655125,0,0,0,0,0,3637123,3655125
+Seydina M. DIOP,MBG_IDS,ORDER_1 (none),18,0,MaxStimulusTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3655125,3674305,0,0,0,0,0,3656307,3674305
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,3342448,3360234,17786
+MBG_IDS,9,0,1,TRUE,LookCenter,3499048,3505645,6597
+MBG_IDS,10,0,1,TRUE,LookCenter,3509548,3525892,16344
+MBG_IDS,11,0,1,TRUE,LookCenter,3530142,3539833,9691
+MBG_IDS,11,0,2,TRUE,LookCenter,3539861,3541845,1984
+MBG_IDS,12,0,1,TRUE,LookCenter,3546137,3559258,13121
+MBG_IDS,13,0,1,TRUE,LookCenter,3563677,3572816,9139
+MBG_IDS,14,0,1,TRUE,LookCenter,3577716,3595437,17721

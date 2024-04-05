@@ -1,0 +1,25 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1975807,1999970,17996,0,0,17996,0,1981974,1999970,LookCenter,1981974,1999970,17996
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1999971,2019272,0,0,0,0,0,2001272,2019272
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2019274,2038108,0,0,0,0,0,2020108,2038108
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2038109,2057981,0,0,0,0,0,2039983,2057981
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),5,0,MaxStimulusTime,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2057982,2077889,0,0,0,0,0,2059894,2077889
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2077890,2097309,0,0,0,0,0,2079312,2097309
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2097311,2119700,0,0,0,0,0,2101706,2119700
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),8,0,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2119702,2139948,0,0,0,0,0,2121948,2139948
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),9,0,Abort,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2139949,2159185,0,0,0,0,0,2141743,2159185
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),10,0,MaxStimulusTime,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2159186,2182371,0,0,0,0,0,2164372,2182371
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2182374,2205259,0,0,0,0,0,2187258,2205259
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2205260,2227256,0,0,0,0,0,2209256,2227256
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2227257,2248735,1215,0,0,1215,0,2230736,2248735,LookCenter,2247520,2248735,1215
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2248737,2271278,0,0,0,0,0,2253278,2271278
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),15,0,MaxStimulusTime,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2271279,2293711,0,0,0,0,0,2275713,2293711
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),16,0,Abort,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2293713,2325485,0,0,0,0,0,2307976,2325485
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),17,0,Abort,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2325487,2347463,14769,0,0,14769,0,2332694,2347463,LookCenter,2332694,2347463,14769
+Balla Ndiqye,MBG_IDS,ORDER_1 (none),18,0,Abort,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2347463,2368486,12044,0,0,12044,0,2356442,2368486,LookCenter,2356442,2368486,12044
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,1981974,1999970,17996
+MBG_IDS,13,0,1,TRUE,LookCenter,2247520,2248735,1215
+MBG_IDS,17,0,1,TRUE,LookCenter,2332694,2347463,14769
+MBG_IDS,18,0,1,TRUE,LookCenter,2356442,2368486,12044

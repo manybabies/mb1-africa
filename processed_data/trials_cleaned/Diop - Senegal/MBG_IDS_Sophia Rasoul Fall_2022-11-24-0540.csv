@@ -1,0 +1,26 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,41705,63099,18001,0,0,18001,0,45098,63099,LookCenter,45098,63099,18001
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,63102,83148,0,0,0,0,0,65146,83148
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,83155,102540,0,0,0,0,0,84540,102540
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,102547,122765,0,0,0,0,0,104764,122765
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),5,0,Abort,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,122768,137232,0,0,0,0,0,126818,137232
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,137235,167386,18000,0,0,18000,0,149385,167386,LookCenter,149385,167385,18000
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,167392,188276,0,0,0,0,0,170273,188276
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),8,0,AGAbort,No,0,,,,,,,188279,209847,0,0,0,0,0,0,209847
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),8,1,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,209848,229722,18001,0,0,18001,0,211721,229722,LookCenter,211721,229722,18001
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),9,0,MaxStimulusTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,229727,248605,0,0,0,0,0,230605,248605
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),10,0,MaxStimulusTime,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,248611,268172,0,0,0,0,0,250172,268172
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,268178,287329,0,0,0,0,0,269328,287329
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,287335,306996,0,0,0,0,0,288996,306996
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,307001,326239,0,0,0,0,0,308238,326239
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,326245,346193,0,0,0,0,0,328194,346193
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),15,0,MaxStimulusTime,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,346198,366226,0,0,0,0,0,348225,366226
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),16,0,MaxStimulusTime,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,366231,385661,0,0,0,0,0,367661,385661
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),17,0,MaxStimulusTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,385666,405807,0,0,0,0,0,387806,405807
+Sophia Rasoul Fall,MBG_IDS,ORDER_1 (none),18,0,MaxLookAwayTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,405807,421702,122,0,0,122,0,419578,421702,LookCenter,419578,419700,122
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,45098,63099,18001
+MBG_IDS,6,0,1,TRUE,LookCenter,149385,167385,18000
+MBG_IDS,8,1,1,TRUE,LookCenter,211721,229722,18001
+MBG_IDS,18,0,1,TRUE,LookCenter,419578,419700,122

@@ -1,0 +1,27 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,233137,260247,18001,0,0,18001,0,242246,260247,LookCenter,242246,260247,18001
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,260248,280839,0,0,0,0,0,262841,280839
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,280840,301246,0,0,0,0,0,283246,301246
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,301247,322878,0,0,0,0,0,304882,322878
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),5,0,Abort,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,322884,337242,0,0,0,0,0,328967,337242
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,337243,358781,18001,0,0,18001,0,340779,358781,LookCenter,340780,358781,18001
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,358785,378288,0,0,0,0,0,360288,378288
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),8,0,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,378289,398600,0,0,0,0,0,380604,398600
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),9,0,MaxStimulusTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,398601,424569,17994,0,0,17994,0,406575,424569,LookCenter,406575,424569,17994
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),10,0,MaxStimulusTime,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,424570,445228,0,0,0,0,0,427229,445228
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,445229,465809,0,0,0,0,0,447813,465809
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,465810,493568,17996,0,0,17996,0,475572,493568,LookCenter,475572,493568,17996
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,493570,515520,0,0,0,0,0,497525,515520
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,515521,536014,0,0,0,0,0,518015,536014
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),15,0,Abort,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,536018,547531,0,0,0,0,0,538095,547531
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),16,0,MaxStimulusTime,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,547532,573860,17995,0,0,17995,0,555865,573860,LookCenter,555865,573860,17995
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),17,0,MaxStimulusTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,573862,593918,0,0,0,0,0,575920,593918
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),18,0,MaxStimulusTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,593918,614688,0,0,0,0,0,596689,614688
+Asma Elisabeth Kebe,MBG_IDS,ORDER_1 (none),19,0,AGAbort,No,0,,,,,,,614688,621158,0,0,0,0,0,0,621158
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,242246,260247,18001
+MBG_IDS,6,0,1,TRUE,LookCenter,340780,358781,18001
+MBG_IDS,9,0,1,TRUE,LookCenter,406575,424569,17994
+MBG_IDS,12,0,1,TRUE,LookCenter,475572,493568,17996
+MBG_IDS,16,0,1,TRUE,LookCenter,555865,573860,17995

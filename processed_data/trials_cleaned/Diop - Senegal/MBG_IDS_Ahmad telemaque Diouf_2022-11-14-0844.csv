@@ -1,0 +1,29 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,62326,93371,17998,0,0,17998,0,75373,93371,LookCenter,75373,93371,17998
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,93372,119651,0,0,0,0,0,101651,119651
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,119652,148671,0,0,0,0,0,130671,148671
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,148673,171451,0,0,0,0,0,153451,171451
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),5,0,MaxStimulusTime,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,171453,193294,0,0,0,0,0,175295,193294
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,193296,214120,0,0,0,0,0,196120,214120
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,214122,235091,0,0,0,0,0,217098,235091
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),8,0,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,235093,260761,0,0,0,0,0,242761,260761
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),9,0,MaxStimulusTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,260762,282970,0,0,0,0,0,264976,282970
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),10,0,MaxStimulusTime,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,282971,304481,0,0,0,0,0,286482,304481
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,304483,326771,0,0,0,0,0,308777,326771
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,326772,356270,0,0,0,0,0,338277,356270
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,356272,377993,0,0,0,0,0,359995,377993
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,377995,398820,0,0,0,0,0,380822,398820
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),15,0,MaxStimulusTime,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,398821,418980,0,0,0,0,0,400980,418980
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),16,0,MaxStimulusTime,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,418981,440602,1913,0,0,1913,0,422602,440601,LookCenter,438430,439809,1379,LookCenter,440067,440601,534
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),17,0,MaxLookAwayTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,440603,458827,469,0,0,0,469,445012,458827,LookRight,455974,456827,469
+Ahmad telemaque Diouf,MBG_IDS,ORDER_1 (none),18,0,MaxStimulusTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,458827,480802,13846,0,0,13846,0,462801,480802,LookCenter,465397,470800,5403,LookCenter,471682,476074,4392,LookCenter,476095,476540,445,LookCenter,476553,480159,3606
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,75373,93371,17998
+MBG_IDS,16,0,1,TRUE,LookCenter,438430,439809,1379
+MBG_IDS,16,0,2,TRUE,LookCenter,440067,440601,534
+MBG_IDS,17,0,1,TRUE,LookRight,456358,456827,469
+MBG_IDS,18,0,1,TRUE,LookCenter,465397,470800,5403
+MBG_IDS,18,0,2,TRUE,LookCenter,471682,476074,4392
+MBG_IDS,18,0,3,TRUE,LookCenter,476095,476540,445
+MBG_IDS,18,0,4,TRUE,LookCenter,476553,480159,3606

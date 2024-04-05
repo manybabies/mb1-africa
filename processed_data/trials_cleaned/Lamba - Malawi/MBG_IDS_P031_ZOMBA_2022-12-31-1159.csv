@@ -1,0 +1,20 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+P031_ZOMBA,MBG_IDS,ORDER_4 (none),1,0,MaxStimulusTime,No,22,Train_2,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,10719684,10745671,17462,0,0,17462,0,10727670,10745671,LookCenter,10728209,10745671,17462
+P031_ZOMBA,MBG_IDS,ORDER_4 (none),2,0,MaxLookAwayTime,No,23,Train_1,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,10745675,10766521,12474,0,0,12474,0,10751259,10766520,LookCenter,10752044,10764518,12474
+P031_ZOMBA,MBG_IDS,ORDER_4 (none),3,0,MaxLookAwayTime,No,24,ADS_5,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,10766524,10785758,9644,0,0,9644,0,10772847,10785758,LookCenter,10773239,10781442,8203,LookCenter,10782317,10783758,1441
+P031_ZOMBA,MBG_IDS,ORDER_4 (none),4,0,MaxLookAwayTime,No,25,IDS_5,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,10785764,10812501,7325,0,0,7325,0,10802631,10812501,LookCenter,10803174,10810499,7325
+P031_ZOMBA,MBG_IDS,ORDER_4 (none),5,0,MaxLookAwayTime,No,26,IDS_7,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,10812505,10824228,3090,0,0,3090,0,10818703,10824228,LookCenter,10819137,10822227,3090
+P031_ZOMBA,MBG_IDS,ORDER_4 (none),6,0,MaxLookAwayTime,No,27,ADS_7,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,10824232,10834911,2642,0,0,2642,0,10829084,10834911,LookCenter,10830269,10832911,2642
+P031_ZOMBA,MBG_IDS,ORDER_4 (none),7,0,MaxLookAwayTime,No,28,IDS_1,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,10834913,10849437,3353,0,0,3353,0,10843645,10849437,LookCenter,10844079,10847432,3353
+P031_ZOMBA,MBG_IDS,ORDER_4 (none),8,0,MaxLookAwayTime,No,29,ADS_1,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,10849441,10855503,1119,0,0,1119,0,10850735,10855503,LookCenter,10852384,10853503,1119
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,10728209,10745671,17462
+MBG_IDS,2,0,1,TRUE,LookCenter,10752044,10764518,12474
+MBG_IDS,3,0,1,TRUE,LookCenter,10773239,10781442,8203
+MBG_IDS,3,0,2,TRUE,LookCenter,10782317,10783758,1441
+MBG_IDS,4,0,1,TRUE,LookCenter,10803174,10810499,7325
+MBG_IDS,5,0,1,TRUE,LookCenter,10819137,10822227,3090
+MBG_IDS,6,0,1,TRUE,LookCenter,10830269,10832911,2642
+MBG_IDS,7,0,1,TRUE,LookCenter,10844079,10847432,3353
+MBG_IDS,8,0,1,TRUE,LookCenter,10852384,10853503,1119

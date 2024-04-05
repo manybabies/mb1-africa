@@ -1,0 +1,24 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2705786,2729337,17998,0,0,17998,0,2711339,2729337,LookCenter,2711339,2729337,17998
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2729338,2748404,0,0,0,0,0,2730407,2748404
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2748418,2769246,0,0,0,0,0,2751246,2769245
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2769255,2789255,5580,0,0,5580,0,2771257,2789254,LookCenter,2783674,2789254,5580
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),5,0,MaxStimulusTime,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2789264,2813265,0,0,0,0,0,2795266,2813265
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2813274,2834094,0,0,0,0,0,2816095,2834094
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),7,0,Abort,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2834102,2850522,0,0,0,0,0,2838049,2850522
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),8,0,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2850533,2874027,0,0,0,0,0,2856027,2874027
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),9,0,MaxStimulusTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2874047,2897559,0,0,0,0,0,2879560,2897559
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),10,0,Abort,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2897568,2920964,0,0,0,0,0,2903312,2920964
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2920972,2947614,0,0,0,0,0,2929614,2947614
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2947629,2971056,0,0,0,0,0,2953057,2971056
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2971064,2990386,0,0,0,0,0,2972391,2990386
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2990396,3021703,0,0,0,0,0,3003703,3021703
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),15,0,Abort,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3021718,3038922,0,0,0,0,0,3023463,3038922
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),16,0,Abort,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3038931,3060494,16662,0,0,16662,0,3043832,3060494,LookCenter,3043832,3060494,16662
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),17,0,MaxStimulusTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3060502,3081265,0,0,0,0,0,3063265,3081265
+Mame Astou Noura Diasse,MBG_IDS,ORDER_1 (none),18,0,MaxStimulusTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3081266,3108785,0,0,0,0,0,3090786,3108785
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,2711339,2729337,17998
+MBG_IDS,4,0,1,TRUE,LookCenter,2783674,2789254,5580
+MBG_IDS,16,0,1,TRUE,LookCenter,3043832,3060494,16662

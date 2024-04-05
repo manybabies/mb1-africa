@@ -1,0 +1,41 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+MBKENYK0012,MBG_IDS,ORDER_4 (none),1,0,MaxLookAwayTime,No,22,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12660171,12668887,4903,0,0,4903,0,12661485,12668887,LookCenter,12661983,12666886,4903
+MBKENYK0012,MBG_IDS,ORDER_4 (none),2,0,MaxLookAwayTime,No,23,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12668891,12678113,4443,0,0,4443,0,12671495,12678113,LookCenter,12671670,12676113,4443
+MBKENYK0012,MBG_IDS,ORDER_4 (none),3,0,MaxLookAwayTime,No,24,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12678115,12685333,4036,0,0,4036,0,12679126,12685333,LookCenter,12679297,12683333,4036
+MBKENYK0012,MBG_IDS,ORDER_4 (none),4,0,MaxLookAwayTime,No,25,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12685335,12695950,6125,0,0,6125,0,12686281,12695950,LookCenter,12686654,12689422,2768,LookCenter,12690593,12693950,3357
+MBKENYK0012,MBG_IDS,ORDER_4 (none),5,0,MaxLookAwayTime,No,26,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12695952,12701338,1858,0,0,1858,0,12697156,12701338,LookCenter,12697480,12699338,1858
+MBKENYK0012,MBG_IDS,ORDER_4 (none),6,0,MaxLookAwayTime,No,27,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12701339,12708970,2723,0,0,2723,0,12703805,12708970,LookCenter,12704247,12706970,2723
+MBKENYK0012,MBG_IDS,ORDER_4 (none),7,0,MaxLookAwayTime,No,28,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12708972,12716753,4439,0,0,4439,0,12709853,12716753,LookCenter,12710314,12714753,4439
+MBKENYK0012,MBG_IDS,ORDER_4 (none),8,0,MaxLookAwayTime,No,29,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12716754,12721758,2620,0,0,2620,0,12716839,12721758,LookCenter,12717119,12719149,2030,LookCenter,12719167,12719757,590
+MBKENYK0012,MBG_IDS,ORDER_4 (none),9,0,MaxLookAwayTime,No,30,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12721761,12728806,3364,0,0,3364,0,12723238,12728806,LookCenter,12723442,12726806,3364
+MBKENYK0012,MBG_IDS,ORDER_4 (none),10,0,MaxLookAwayTime,No,31,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12728808,12734072,1257,0,0,1257,0,12730646,12734072,LookCenter,12730814,12732071,1257
+MBKENYK0012,MBG_IDS,ORDER_4 (none),11,0,MaxLookAwayTime,No,32,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12734074,12746305,6924,0,0,6924,0,12737155,12746305,LookCenter,12737380,12744304,6924
+MBKENYK0012,MBG_IDS,ORDER_4 (none),12,0,MaxLookAwayTime,No,33,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12746307,12752284,1804,0,0,1804,0,12748344,12752284,LookCenter,12748479,12750283,1804
+MBKENYK0012,MBG_IDS,ORDER_4 (none),13,0,MaxLookAwayTime,No,34,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12752287,12765179,9180,0,0,9180,0,12753813,12765179,LookCenter,12753998,12763178,9180
+MBKENYK0012,MBG_IDS,ORDER_4 (none),14,0,MaxLookAwayTime,No,35,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12765182,12772954,3045,0,0,3045,0,12767591,12772954,LookCenter,12767908,12770953,3045
+MBKENYK0012,MBG_IDS,ORDER_4 (none),15,0,MaxLookAwayTime,No,36,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12772955,12781648,2557,0,0,2557,0,12776890,12781648,LookCenter,12777091,12779648,2557
+MBKENYK0012,MBG_IDS,ORDER_4 (none),16,0,MaxLookAwayTime,No,37,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12781650,12796001,9251,0,0,9251,0,12784568,12796001,LookCenter,12784749,12794000,9251
+MBKENYK0012,MBG_IDS,ORDER_4 (none),17,0,MaxLookAwayTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12796003,12802854,2075,0,0,2075,0,12798543,12802854,LookCenter,12798778,12800853,2075
+MBKENYK0012,MBG_IDS,ORDER_4 (none),18,0,MaxLookAwayTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,12802854,12813432,1308,0,0,1308,0,12809878,12813432,LookCenter,12810124,12811432,1308
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,12661983,12666886,4903
+MBG_IDS,2,0,1,TRUE,LookCenter,12671670,12676113,4443
+MBG_IDS,3,0,1,TRUE,LookCenter,12679297,12683333,4036
+MBG_IDS,4,0,1,TRUE,LookCenter,12686654,12689422,2768
+MBG_IDS,4,0,2,TRUE,LookCenter,12690593,12693950,3357
+MBG_IDS,5,0,1,TRUE,LookCenter,12697480,12699338,1858
+MBG_IDS,6,0,1,TRUE,LookCenter,12704247,12706970,2723
+MBG_IDS,7,0,1,TRUE,LookCenter,12710314,12714753,4439
+MBG_IDS,8,0,1,TRUE,LookCenter,12717119,12719149,2030
+MBG_IDS,8,0,2,TRUE,LookCenter,12719167,12719757,590
+MBG_IDS,9,0,1,TRUE,LookCenter,12723442,12726806,3364
+MBG_IDS,10,0,1,TRUE,LookCenter,12730814,12732071,1257
+MBG_IDS,11,0,1,TRUE,LookCenter,12737380,12744304,6924
+MBG_IDS,12,0,1,TRUE,LookCenter,12748479,12750283,1804
+MBG_IDS,13,0,1,TRUE,LookCenter,12753998,12763178,9180
+MBG_IDS,14,0,1,TRUE,LookCenter,12767908,12770953,3045
+MBG_IDS,15,0,1,TRUE,LookCenter,12777091,12779648,2557
+MBG_IDS,16,0,1,TRUE,LookCenter,12784749,12794000,9251
+MBG_IDS,17,0,1,TRUE,LookCenter,12798778,12800853,2075
+MBG_IDS,18,0,1,TRUE,LookCenter,12810124,12811432,1308

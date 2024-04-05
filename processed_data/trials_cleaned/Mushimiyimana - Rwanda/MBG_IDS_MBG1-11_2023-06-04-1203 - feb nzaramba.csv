@@ -1,0 +1,22 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+MBG1-10,MBG_IDS,ORDER_3 (none),1,0,AGAbort,No,0,,,,,,,2752909,2907299,0,0,0,0,0,0,2907299
+MBG1-10,MBG_IDS,ORDER_3 (none),1,1,AGAbort,No,0,,,,,,,2907299,2907547,0,0,0,0,0,0,2907547
+MBG1-10,MBG_IDS,ORDER_3 (none),1,2,MaxLookAwayTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2907547,2923409,6144,0,0,6144,0,2908944,2923409,LookCenter,2912685,2914697,2012,LookCenter,2915433,2917132,1699,LookCenter,2917859,2919748,1889,LookCenter,2920864,2921408,544
+MBG1-10,MBG_IDS,ORDER_3 (none),2,0,MaxLookAwayTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2923411,2948080,6918,0,0,6918,0,2930373,2948080,LookCenter,2930935,2932693,1758,LookCenter,2934378,2935116,738,LookCenter,2936746,2938938,2192,LookCenter,2940877,2941653,776,LookCenter,2943224,2943754,530,LookCenter,2945155,2946079,924
+MBG1-10,MBG_IDS,ORDER_3 (none),3,0,MaxLookAwayTime,No,24,IDS_5,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,2948081,2963791,7344,0,0,7344,0,2949890,2963791,LookCenter,2951446,2952292,846,LookCenter,2953386,2955635,2249,LookCenter,2956277,2958985,2708,LookCenter,2960248,2961789,1541
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,2,1,TRUE,LookCenter,2912685,2914697,2012
+MBG_IDS,1,2,2,TRUE,LookCenter,2915433,2917132,1699
+MBG_IDS,1,2,3,TRUE,LookCenter,2917859,2919748,1889
+MBG_IDS,1,2,4,TRUE,LookCenter,2920864,2921408,544
+MBG_IDS,2,0,1,TRUE,LookCenter,2930935,2932693,1758
+MBG_IDS,2,0,2,TRUE,LookCenter,2934378,2935116,738
+MBG_IDS,2,0,3,TRUE,LookCenter,2936746,2938938,2192
+MBG_IDS,2,0,4,TRUE,LookCenter,2940877,2941653,776
+MBG_IDS,2,0,5,TRUE,LookCenter,2943224,2943754,530
+MBG_IDS,2,0,6,TRUE,LookCenter,2945155,2946079,924
+MBG_IDS,3,0,1,TRUE,LookCenter,2951446,2952292,846
+MBG_IDS,3,0,2,TRUE,LookCenter,2953386,2955635,2249
+MBG_IDS,3,0,3,TRUE,LookCenter,2956277,2958985,2708
+MBG_IDS,3,0,4,TRUE,LookCenter,2960248,2961789,1541

@@ -1,0 +1,50 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+P025,MBG_IDS,ORDER_2 (none),1,0,MaxStimulusTime,No,22,Train_2,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6469138,6500986,16927,0,0,16927,0,6482994,6500986,LookCenter,6484059,6500986,16927
+P025,MBG_IDS,ORDER_2 (none),2,0,MaxStimulusTime,No,23,Train_1,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6500988,6531606,15218,0,0,15218,0,6513609,6531606,LookCenter,6514671,6526380,11709,LookCenter,6527242,6530587,3345,LookCenter,6531442,6531606,164
+P025,MBG_IDS,ORDER_2 (none),3,0,MaxStimulusTime,No,24,ADS_1,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6531609,6554845,15721,0,0,15721,0,6536844,6554845,LookCenter,6537902,6547887,9985,LookCenter,6548434,6551206,2772,LookCenter,6551881,6554845,2964
+P025,MBG_IDS,ORDER_2 (none),4,0,MaxLookAwayTime,No,25,IDS_1,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6554846,6565727,1833,0,0,1833,0,6561312,6565727,LookCenter,6561893,6563726,1833
+P025,MBG_IDS,ORDER_2 (none),5,0,MaxLookAwayTime,No,26,ADS_2,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6565729,6579176,4542,0,0,4542,0,6571934,6579176,LookCenter,6572633,6577175,4542
+P025,MBG_IDS,ORDER_2 (none),6,0,MaxLookAwayTime,No,27,IDS_2,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6579178,6596365,6433,0,0,6433,0,6587404,6596365,LookCenter,6587932,6594365,6433
+P025,MBG_IDS,ORDER_2 (none),7,0,MaxStimulusTime,No,28,IDS_3,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6596368,6617031,17193,0,0,17193,0,6599030,6617031,LookCenter,6599838,6617031,17193
+P025,MBG_IDS,ORDER_2 (none),8,0,MaxLookAwayTime,No,29,ADS_3,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6617033,6631337,8077,0,0,8077,0,6620543,6631337,LookCenter,6621260,6629337,8077
+P025,MBG_IDS,ORDER_2 (none),9,0,MaxLookAwayTime,No,30,ADS_4,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6631339,6644442,6136,0,0,6136,0,6635548,6644442,LookCenter,6636306,6642442,6136
+P025,MBG_IDS,ORDER_2 (none),10,0,MaxStimulusTime,No,31,IDS_4,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6644444,6665806,15380,0,0,15380,0,6647805,6665806,LookCenter,6648344,6653119,4775,LookCenter,6653952,6654500,548,LookCenter,6655040,6662692,7652,LookCenter,6663401,6665806,2405
+P025,MBG_IDS,ORDER_2 (none),11,0,MaxLookAwayTime,No,32,IDS_5,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6665808,6684767,10762,0,0,10762,0,6669803,6684767,LookCenter,6670416,6676108,5692,LookCenter,6677283,6681289,4006,LookCenter,6681702,6682766,1064
+P025,MBG_IDS,ORDER_2 (none),12,0,MaxLookAwayTime,No,33,ADS_5,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6684769,6706463,14299,0,0,14299,0,6689275,6706463,LookCenter,6689721,6702720,12999,LookCenter,6703160,6704460,1300
+P025,MBG_IDS,ORDER_2 (none),13,0,MaxLookAwayTime,No,34,IDS_6,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6706467,6724204,8636,0,0,8636,0,6711858,6724204,LookCenter,6712599,6720100,7501,LookCenter,6721068,6722203,1135
+P025,MBG_IDS,ORDER_2 (none),14,0,MaxLookAwayTime,No,35,ADS_6,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6724206,6738808,3841,0,0,3841,0,6732496,6738808,LookCenter,6732966,6736807,3841
+P025,MBG_IDS,ORDER_2 (none),15,0,MaxLookAwayTime,No,36,ADS_7,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6738811,6754193,4932,0,0,4932,0,6746527,6754193,LookCenter,6747261,6752193,4932
+P025,MBG_IDS,ORDER_2 (none),16,0,MaxLookAwayTime,No,37,IDS_7,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6754195,6762400,1991,0,0,1991,0,6757676,6762400,LookCenter,6758408,6760399,1991
+P025,MBG_IDS,ORDER_2 (none),17,0,MaxLookAwayTime,No,38,IDS_8,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6762401,6780435,10789,0,0,10789,0,6767030,6780435,LookCenter,6767646,6778435,10789
+P025,MBG_IDS,ORDER_2 (none),18,0,MaxLookAwayTime,No,39,ADS_8,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,6780435,6795132,6467,0,0,6467,0,6786045,6795132,LookCenter,6786659,6793126,6467
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,6484059,6500986,16927
+MBG_IDS,2,0,1,TRUE,LookCenter,6514671,6526380,11709
+MBG_IDS,2,0,2,TRUE,LookCenter,6527242,6530587,3345
+MBG_IDS,2,0,3,TRUE,LookCenter,6531442,6531606,164
+MBG_IDS,3,0,1,TRUE,LookCenter,6537902,6547887,9985
+MBG_IDS,3,0,2,TRUE,LookCenter,6548434,6551206,2772
+MBG_IDS,3,0,3,TRUE,LookCenter,6551881,6554845,2964
+MBG_IDS,4,0,1,TRUE,LookCenter,6561893,6563726,1833
+MBG_IDS,5,0,1,TRUE,LookCenter,6572633,6577175,4542
+MBG_IDS,6,0,1,TRUE,LookCenter,6587932,6594365,6433
+MBG_IDS,7,0,1,TRUE,LookCenter,6599838,6617031,17193
+MBG_IDS,8,0,1,TRUE,LookCenter,6621260,6629337,8077
+MBG_IDS,9,0,1,TRUE,LookCenter,6636306,6642442,6136
+MBG_IDS,10,0,1,TRUE,LookCenter,6648344,6653119,4775
+MBG_IDS,10,0,2,TRUE,LookCenter,6653952,6654500,548
+MBG_IDS,10,0,3,TRUE,LookCenter,6655040,6662692,7652
+MBG_IDS,10,0,4,TRUE,LookCenter,6663401,6665806,2405
+MBG_IDS,11,0,1,TRUE,LookCenter,6670416,6676108,5692
+MBG_IDS,11,0,2,TRUE,LookCenter,6677283,6681289,4006
+MBG_IDS,11,0,3,TRUE,LookCenter,6681702,6682766,1064
+MBG_IDS,12,0,1,TRUE,LookCenter,6689721,6702720,12999
+MBG_IDS,12,0,2,TRUE,LookCenter,6703160,6704460,1300
+MBG_IDS,13,0,1,TRUE,LookCenter,6712599,6720100,7501
+MBG_IDS,13,0,2,TRUE,LookCenter,6721068,6722203,1135
+MBG_IDS,14,0,1,TRUE,LookCenter,6732966,6736807,3841
+MBG_IDS,15,0,1,TRUE,LookCenter,6747261,6752193,4932
+MBG_IDS,16,0,1,TRUE,LookCenter,6758408,6760399,1991
+MBG_IDS,17,0,1,TRUE,LookCenter,6767646,6778435,10789
+MBG_IDS,18,0,1,TRUE,LookCenter,6786659,6793126,6467

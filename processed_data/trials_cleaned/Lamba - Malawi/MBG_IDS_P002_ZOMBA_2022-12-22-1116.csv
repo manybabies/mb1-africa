@@ -1,0 +1,15 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+P002_ZOMBA,MBG_IDS,ORDER_3 (none),1,0,AGAbort,No,0,,,,,,,1955,11747,0,0,0,0,0,0,11747
+P002_ZOMBA,MBG_IDS,ORDER_3 (none),1,1,MaxStimulusTime,No,22,Train_1,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,11747,32916,0,0,0,0,0,14924,32916
+P002_ZOMBA,MBG_IDS,ORDER_3 (none),2,0,AGAbort,No,0,,,,,,,32919,32983,0,0,0,0,0,0,32983
+P002_ZOMBA,MBG_IDS,ORDER_3 (none),2,1,MaxLookAwayTime,No,23,Train_2,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,32983,51103,11198,0,0,11198,0,36176,51103,LookCenter,37905,49103,11198
+P002_ZOMBA,MBG_IDS,ORDER_3 (none),3,0,MaxLookAwayTime,No,24,IDS_5,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,51106,62456,5423,0,0,5423,0,53264,62456,LookCenter,53928,56521,2593,LookCenter,57626,60456,2830
+P002_ZOMBA,MBG_IDS,ORDER_3 (none),4,0,MaxLookAwayTime,No,25,ADS_5,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,62460,72244,934,0,0,934,0,66519,72244,LookCenter,69309,70243,934
+P002_ZOMBA,MBG_IDS,ORDER_3 (none),5,0,MaxLookAwayTime,No,26,ADS_7,,,C:/Users/Lenovo/Documents/Maganyu/ManyBabies/Experiment materials/Visual stimuli - attention getters etc/checkerboard (target).jpg,,,72262,80652,276,0,0,276,0,74144,80652,LookCenter,78374,78650,276
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,2,1,1,TRUE,LookCenter,37905,49103,11198
+MBG_IDS,3,0,1,TRUE,LookCenter,53928,56521,2593
+MBG_IDS,3,0,2,TRUE,LookCenter,57626,60456,2830
+MBG_IDS,4,0,1,TRUE,LookCenter,69309,70243,934
+MBG_IDS,5,0,1,TRUE,LookCenter,78374,78650,276

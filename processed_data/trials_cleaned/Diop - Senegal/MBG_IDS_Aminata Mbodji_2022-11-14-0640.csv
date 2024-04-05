@@ -1,0 +1,28 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3239891,3266595,18000,0,18000,0,0,3248594,3266595,LookLeft,3248594,3266594,18000
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3266596,3285767,0,0,0,0,0,3267768,3285767
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3285769,3309987,18001,0,0,18001,0,3291986,3309987,LookCenter,3291986,3309987,18001
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3309988,3340685,16988,0,0,16988,0,3322688,3340685,LookCenter,3322688,3339676,16988
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),5,0,Abort,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3340687,3378156,8993,0,0,8993,0,3369162,3378155,LookCenter,3369162,3378155,8993
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3378157,3406186,17999,0,0,17999,0,3388187,3406186,LookCenter,3388187,3406186,17999
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3406187,3428118,0,0,0,0,0,3410121,3428118
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),8,0,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3428119,3449748,0,0,0,0,0,3431748,3449748
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),9,0,MaxStimulusTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3449750,3471168,0,0,0,0,0,3453172,3471168
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),10,0,MaxStimulusTime,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3471170,3507288,17996,0,0,17996,0,3489292,3507288,LookCenter,3489292,3507288,17996
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3507289,3528117,0,0,0,0,0,3510118,3528117
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3528118,3549228,0,0,0,0,0,3531229,3549228
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3549230,3570865,0,0,0,0,0,3552867,3570865
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3570867,3596157,0,0,0,0,0,3578156,3596157
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),15,0,MaxStimulusTime,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3596158,3616797,0,0,0,0,0,3598800,3616797
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),16,0,MaxStimulusTime,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3616798,3654648,18001,0,0,18001,0,3636647,3654648,LookCenter,3636647,3654648,18001
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),17,0,MaxStimulusTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3654651,3676086,0,0,0,0,0,3658093,3676086
+Aminata Mbodji,MBG_IDS,ORDER_1 (none),18,0,MaxStimulusTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,3676086,3709206,0,0,0,0,0,3691206,3709206
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookLeft,3248594,3266594,18000
+MBG_IDS,3,0,1,TRUE,LookCenter,3291986,3309987,18001
+MBG_IDS,4,0,1,TRUE,LookCenter,3322688,3339676,16988
+MBG_IDS,5,0,1,TRUE,LookCenter,3369162,3378155,8993
+MBG_IDS,6,0,1,TRUE,LookCenter,3388187,3406186,17999
+MBG_IDS,10,0,1,TRUE,LookCenter,3489292,3507288,17996
+MBG_IDS,16,0,1,TRUE,LookCenter,3636647,3654648,18001

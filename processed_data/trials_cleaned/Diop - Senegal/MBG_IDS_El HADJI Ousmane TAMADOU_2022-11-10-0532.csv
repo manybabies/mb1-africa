@@ -1,0 +1,33 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),1,0,AGAbort,No,0,,,,,,,4261775,4279885,0,0,0,0,0,0,4279885
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),1,1,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4279885,4299655,17774,0,0,17774,0,4281654,4299655,LookCenter,4281881,4299655,17774
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4299657,4318686,0,0,0,0,0,4300686,4318686
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4318687,4337965,0,0,0,0,0,4319967,4337965
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4337966,4357175,13695,0,0,13695,0,4339175,4357174,LookCenter,4343479,4357174,13695
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),5,0,MaxStimulusTime,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4357178,4376540,0,0,0,0,0,4358543,4376540
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4376543,4396228,0,0,0,0,0,4378232,4396228
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4396230,4415794,0,0,0,0,0,4397795,4415794
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),8,0,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4415796,4435705,15441,0,0,15441,0,4417705,4435705,LookCenter,4420264,4435705,15441
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),9,0,MaxStimulusTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4435708,4455265,0,0,0,0,0,4437268,4455265
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),10,0,MaxStimulusTime,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4455266,4474776,0,0,0,0,0,4456777,4474776
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4474778,4495401,17784,0,0,17784,0,4477400,4495401,LookCenter,4477617,4495401,17784
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4495403,4515285,0,0,0,0,0,4497284,4515284
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4515286,4536414,0,0,0,0,0,4518414,4536414
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4536415,4555724,17743,0,0,17743,0,4537724,4555724,LookCenter,4537981,4555724,17743
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),15,0,MaxLookAwayTime,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4555725,4568335,8793,0,0,8793,0,4557541,4568335,LookCenter,4557541,4566334,8793
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),16,0,MaxStimulusTime,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4568336,4588108,17790,0,0,17790,0,4570107,4588108,LookCenter,4570318,4588108,17790
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),17,0,MaxLookAwayTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4588109,4604891,11504,0,0,11504,0,4591100,4604891,LookCenter,4591386,4602890,11504
+El HADJI Ousmane TAMADOU,MBG_IDS,ORDER_1 (none),18,0,MaxLookAwayTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4604891,4623360,14666,0,0,14666,0,4606302,4623360,LookCenter,4606498,4613163,6665,LookCenter,4613247,4617885,4638,LookCenter,4617995,4621358,3363
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,1,1,TRUE,LookCenter,4281881,4299655,17774
+MBG_IDS,4,0,1,TRUE,LookCenter,4343479,4357174,13695
+MBG_IDS,8,0,1,TRUE,LookCenter,4420264,4435705,15441
+MBG_IDS,11,0,1,TRUE,LookCenter,4477617,4495401,17784
+MBG_IDS,14,0,1,TRUE,LookCenter,4537981,4555724,17743
+MBG_IDS,15,0,1,TRUE,LookCenter,4557541,4566334,8793
+MBG_IDS,16,0,1,TRUE,LookCenter,4570318,4588108,17790
+MBG_IDS,17,0,1,TRUE,LookCenter,4591386,4602890,11504
+MBG_IDS,18,0,1,TRUE,LookCenter,4606498,4613163,6665
+MBG_IDS,18,0,2,TRUE,LookCenter,4613247,4617885,4638
+MBG_IDS,18,0,3,TRUE,LookCenter,4617995,4621358,3363

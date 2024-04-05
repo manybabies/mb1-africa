@@ -1,0 +1,29 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1280742,1305051,17998,0,17998,0,0,1287053,1305051,LookLeft,1287053,1305051,17998
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1305053,1324380,0,0,0,0,0,1306379,1324380
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1324381,1344290,0,0,0,0,0,1326291,1344290
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1344291,1364266,5810,0,0,5810,0,1346266,1364266,LookCenter,1358456,1364266,5810
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),5,0,MaxStimulusTime,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1364268,1383206,0,0,0,0,0,1365207,1383206
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1383209,1402018,0,0,0,0,0,1384017,1402018
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1402020,1422040,0,0,0,0,0,1404038,1422040
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),8,0,Abort,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1422041,1438623,0,0,0,0,0,1424967,1438623
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),9,0,MaxStimulusTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1438626,1462826,18000,0,0,18000,0,1444826,1462826,LookCenter,1444826,1462826,18000
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),10,0,Abort,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1462828,1474925,9285,0,0,9285,0,1463640,1474925,LookCenter,1465640,1474925,9285
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1474926,1499634,18001,0,0,18001,0,1481633,1499634,LookCenter,1481633,1499634,18001
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1499636,1520051,0,0,0,0,0,1502050,1520051
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1520052,1539493,0,0,0,0,0,1521493,1539493
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1539494,1559652,0,0,0,0,0,1541658,1559652
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),15,0,MaxStimulusTime,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1559653,1579952,0,0,0,0,0,1561955,1579952
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),16,0,Abort,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1579953,1589872,0,0,0,0,0,1581622,1589872
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),17,0,AGAbort,No,0,,,,,,,1589874,1612941,0,0,0,0,0,0,1612941
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),17,1,AGAbort,No,0,,,,,,,1612941,1639060,0,0,0,0,0,0,1639060
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),17,2,MaxStimulusTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1639061,1658929,17998,0,0,17998,0,1640931,1658929,LookCenter,1640931,1658929,17998
+Fatoumata Binetou R. Thiaw,MBG_IDS,ORDER_1 (none),18,0,MaxStimulusTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1658929,1677771,0,0,0,0,0,1659776,1677771
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookLeft,1287053,1305051,17998
+MBG_IDS,4,0,1,TRUE,LookCenter,1358456,1364266,5810
+MBG_IDS,9,0,1,TRUE,LookCenter,1444826,1462826,18000
+MBG_IDS,10,0,1,TRUE,LookCenter,1465640,1474925,9285
+MBG_IDS,11,0,1,TRUE,LookCenter,1481633,1499634,18001
+MBG_IDS,17,2,1,TRUE,LookCenter,1640931,1658929,17998

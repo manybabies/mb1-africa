@@ -1,0 +1,536 @@
+StimulusSettings,10,0,0,-1,default,1,1,1,N/A,,,0,0,,,0,0,,,0,0,,,0,50
+StimulusSettings,10,0,1,-1,background,1,1,1,N/A,,,0,0,,,0,0,,,0,0,,,0,50
+StimulusSettings,10,0,2,244,Attention_getter,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov,1,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov,1,50
+StimulusSettings,10,0,3,245,Train_1,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/training trial music.wav,0,50
+StimulusSettings,10,0,4,246,Train_2,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/training trial music.wav,0,50
+StimulusSettings,10,0,5,247,ADS_1,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS1new.wav,0,50
+StimulusSettings,10,0,6,248,ADS_2,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS2new.wav,0,50
+StimulusSettings,10,0,7,249,ADS_3,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS3new.wav,0,50
+StimulusSettings,10,0,8,250,ADS_4,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS4new.wav,0,50
+StimulusSettings,10,0,9,251,ADS_5,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS5new.wav,0,50
+StimulusSettings,10,0,10,252,ADS_6,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS6new.wav,0,50
+StimulusSettings,10,0,11,253,ADS_7,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS7new.wav,0,50
+StimulusSettings,10,0,12,254,ADS_8,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS8new.wav,0,50
+StimulusSettings,10,0,13,255,IDS_1,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS1new.wav,0,50
+StimulusSettings,10,0,14,256,IDS_2,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS2new.wav,0,50
+StimulusSettings,10,0,15,257,IDS_3,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS3new.wav,0,50
+StimulusSettings,10,0,16,258,IDS_4,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS4new.wav,0,50
+StimulusSettings,10,0,17,259,IDS_5,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS5new.wav,0,50
+StimulusSettings,10,0,18,260,IDS_6,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS6new.wav,0,50
+StimulusSettings,10,0,19,261,IDS_7,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS7new.wav,0,50
+StimulusSettings,10,0,20,262,IDS_8,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS8new.wav,0,50
+StimulusSettings,10,0,21,244,Attention_getter,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov,1,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov,1,50
+StimulusSettings,10,0,22,245,Train_1,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/training trial music.wav,0,50
+StimulusSettings,10,0,23,246,Train_2,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/training trial music.wav,0,50
+PhaseStart,30,242951128,MBG_IDS,0
+TrialStart,2,242951128,0,0
+ExperimentStart,17,242951128
+AGRequest,4,242951128
+ScreenStart,24,242951134,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,242951135,21
+AGLookEnabled,22,242951135
+Attention,12,242953106
+LookDisabled,23,242953106
+StimulusSettings,10,242953106,22,245,Train_1,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/training trial music.wav,0,50
+StimRequest,7,242953106,22
+ScreenStart,24,242953116,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,242953117,22
+LookEnabled,21,242953118
+LookTrans,14,242953344,NoneCenter
+LookTrans,14,242958811,CenterNone
+Look,13,242958811,LookCenter,242953344,242958811,5467
+LookTrans,14,242959499,NoneCenter
+LookTrans,14,242960270,CenterNone
+Look,13,242960271,LookCenter,242959499,242960270,771
+LookTrans,14,242960980,NoneCenter
+LookTrans,14,242961985,CenterNone
+Look,13,242961986,LookCenter,242960980,242961985,1005
+LookTrans,14,242962692,NoneCenter
+LookTrans,14,242963935,CenterNone
+Look,13,242963935,LookCenter,242962692,242963935,1243
+LookTrans,14,242964681,NoneCenter
+LookTrans,14,242965777,CenterNone
+Look,13,242965778,LookCenter,242964681,242965777,1096
+LookTrans,14,242966344,NoneCenter
+LookTrans,14,242967182,CenterNone
+Look,13,242967183,LookCenter,242966344,242967182,838
+LookTrans,14,242968428,NoneCenter
+LookTrans,14,242969415,CenterNone
+Look,13,242969416,LookCenter,242968428,242969415,987
+LookTrans,14,242970081,NoneCenter
+Look,13,242971118,LookCenter,242970081,242971118,1037
+LookDisabled,23,242971118
+TrialEnd,3,242971118,MaxStimulusTime
+TrialStart,2,242971119,1,0
+AGRequest,4,242971119
+ScreenStart,24,242971121,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,242971126,21
+AGLookEnabled,22,242971126
+Attention,12,242972594
+LookDisabled,23,242972594
+StimulusSettings,10,242972594,23,246,Train_2,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/training trial music.wav,0,50
+StimRequest,7,242972594,23
+ScreenStart,24,242972596,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,242972602,23
+LookEnabled,21,242972610
+LookTrans,14,242972610,NoneCenter
+LookTrans,14,242973910,CenterNone
+Look,13,242973910,LookCenter,242972610,242973910,1300
+LookTrans,14,242974003,NoneCenter
+LookTrans,14,242974725,CenterNone
+Look,13,242974725,LookCenter,242974003,242974725,722
+LookTrans,14,242975458,NoneCenter
+LookTrans,14,242976824,CenterNone
+Look,13,242976824,LookCenter,242975458,242976824,1366
+LookTrans,14,242977920,NoneCenter
+LookTrans,14,242978989,CenterNone
+Look,13,242978989,LookCenter,242977920,242978989,1069
+LookTrans,14,242979874,NoneCenter
+LookTrans,14,242983446,CenterNone
+Look,13,242983446,LookCenter,242979874,242983446,3572
+LookTrans,14,242984062,NoneCenter
+LookTrans,14,242985815,CenterNone
+Look,13,242985816,LookCenter,242984062,242985815,1753
+LookDisabled,23,242987815
+TrialEnd,3,242987815,MaxLookAwayTime
+TrialStart,2,242987816,2,0
+AGRequest,4,242987816
+ScreenStart,24,242987819,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,242987824,21
+AGLookEnabled,22,242987824
+Attention,12,242989510
+LookDisabled,23,242989510
+StimulusSettings,10,242989510,24,255,IDS_1,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS1new.wav,0,50
+StimRequest,7,242989510,24
+ScreenStart,24,242989513,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,242989519,24
+LookEnabled,21,242989520
+LookTrans,14,242989748,NoneCenter
+LookTrans,14,242992310,CenterNone
+Look,13,242992311,LookCenter,242989748,242992310,2562
+LookTrans,14,242992750,NoneCenter
+LookTrans,14,242994867,CenterNone
+Look,13,242994867,LookCenter,242992750,242994867,2117
+LookTrans,14,242995713,NoneCenter
+LookTrans,14,242996859,CenterNone
+Look,13,242996860,LookCenter,242995713,242996859,1146
+LookTrans,14,242997930,NoneCenter
+LookTrans,14,242998856,CenterNone
+Look,13,242998857,LookCenter,242997930,242998856,926
+LookDisabled,23,243000857
+TrialEnd,3,243000857,MaxLookAwayTime
+TrialStart,2,243000858,3,0
+AGRequest,4,243000859
+ScreenStart,24,243000861,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243000866,21
+AGLookEnabled,22,243000866
+Attention,12,243002543
+LookDisabled,23,243002543
+StimulusSettings,10,243002543,25,247,ADS_1,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS1new.wav,0,50
+StimRequest,7,243002543,25
+ScreenStart,24,243002545,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243002552,25
+LookEnabled,21,243002553
+LookTrans,14,243002553,NoneCenter
+LookTrans,14,243005592,CenterNone
+Look,13,243005593,LookCenter,243002553,243005592,3039
+LookTrans,14,243007001,NoneCenter
+LookTrans,14,243007583,CenterNone
+Look,13,243007584,LookCenter,243007001,243007583,582
+LookTrans,14,243008153,NoneCenter
+LookTrans,14,243008874,CenterNone
+Look,13,243008875,LookCenter,243008153,243008874,721
+LookTrans,14,243009386,NoneCenter
+LookTrans,14,243010028,CenterNone
+Look,13,243010029,LookCenter,243009386,243010028,642
+LookTrans,14,243010510,NoneCenter
+LookTrans,14,243011396,CenterNone
+Look,13,243011397,LookCenter,243010510,243011396,886
+LookTrans,14,243011749,NoneCenter
+LookTrans,14,243012492,CenterNone
+Look,13,243012493,LookCenter,243011749,243012492,743
+LookTrans,14,243012797,NoneCenter
+LookTrans,14,243014083,CenterNone
+Look,13,243014083,LookCenter,243012797,243014083,1286
+LookTrans,14,243014517,NoneCenter
+LookTrans,14,243015950,CenterNone
+Look,13,243015951,LookCenter,243014517,243015950,1433
+LookDisabled,23,243017950
+TrialEnd,3,243017950,MaxLookAwayTime
+TrialStart,2,243017951,4,0
+AGRequest,4,243017952
+ScreenStart,24,243017956,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243017962,21
+AGLookEnabled,22,243017962
+Attention,12,243020486
+LookDisabled,23,243020486
+StimulusSettings,10,243020486,26,256,IDS_2,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS2new.wav,0,50
+StimRequest,7,243020486,26
+ScreenStart,24,243020489,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243020498,26
+LookEnabled,21,243020506
+LookTrans,14,243020690,NoneCenter
+LookTrans,14,243023652,CenterNone
+Look,13,243023652,LookCenter,243020690,243023652,2962
+LookTrans,14,243024205,NoneCenter
+LookTrans,14,243025633,CenterNone
+Look,13,243025634,LookCenter,243024205,243025633,1428
+LookTrans,14,243026434,NoneCenter
+LookTrans,14,243027590,CenterNone
+Look,13,243027591,LookCenter,243026434,243027590,1156
+LookTrans,14,243028029,NoneCenter
+LookTrans,14,243028706,CenterNone
+Look,13,243028707,LookCenter,243028029,243028706,677
+LookTrans,14,243030380,NoneCenter
+LookTrans,14,243032163,CenterNone
+Look,13,243032163,LookCenter,243030380,243032163,1783
+LookTrans,14,243033589,NoneCenter
+LookTrans,14,243034750,CenterNone
+Look,13,243034751,LookCenter,243033589,243034750,1161
+LookTrans,14,243035946,NoneCenter
+LookTrans,14,243038033,CenterNone
+Look,13,243038033,LookCenter,243035946,243038033,2087
+LookTrans,14,243038110,NoneCenter
+LookTrans,14,243038341,CenterNone
+Look,13,243038342,LookCenter,243038110,243038341,231
+LookDisabled,23,243038506
+TrialEnd,3,243038506,MaxStimulusTime
+TrialStart,2,243038508,5,0
+AGRequest,4,243038508
+ScreenStart,24,243038510,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243038515,21
+AGLookEnabled,22,243038515
+Attention,12,243040656
+LookDisabled,23,243040656
+StimulusSettings,10,243040656,27,248,ADS_2,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS2new.wav,0,50
+StimRequest,7,243040656,27
+ScreenStart,24,243040658,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243040664,27
+LookEnabled,21,243040687
+LookTrans,14,243040687,NoneCenter
+LookTrans,14,243046724,CenterNone
+Look,13,243046724,LookCenter,243040687,243046724,6037
+LookTrans,14,243046814,NoneCenter
+LookTrans,14,243047184,CenterNone
+Look,13,243047185,LookCenter,243046814,243047184,370
+LookTrans,14,243048138,NoneCenter
+LookTrans,14,243048793,CenterNone
+Look,13,243048793,LookCenter,243048138,243048793,655
+LookTrans,14,243050129,NoneCenter
+LookTrans,14,243051796,CenterNone
+Look,13,243051796,LookCenter,243050129,243051796,1667
+LookTrans,14,243053396,NoneCenter
+LookTrans,14,243054548,CenterNone
+Look,13,243054549,LookCenter,243053396,243054548,1152
+LookTrans,14,243055078,NoneCenter
+LookTrans,14,243057819,CenterNone
+Look,13,243057819,LookCenter,243055078,243057819,2741
+LookDisabled,23,243058688
+TrialEnd,3,243058688,MaxStimulusTime
+TrialStart,2,243058690,6,0
+AGRequest,4,243058690
+ScreenStart,24,243058692,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243058697,21
+AGLookEnabled,22,243058697
+Attention,12,243060430
+LookDisabled,23,243060430
+StimulusSettings,10,243060430,28,249,ADS_3,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS3new.wav,0,50
+StimRequest,7,243060430,28
+ScreenStart,24,243060440,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243060441,28
+LookEnabled,21,243060454
+LookTrans,14,243060694,NoneCenter
+LookTrans,14,243062831,CenterNone
+Look,13,243062831,LookCenter,243060694,243062831,2137
+LookTrans,14,243064319,NoneCenter
+LookTrans,14,243065484,CenterNone
+Look,13,243065484,LookCenter,243064319,243065484,1165
+LookTrans,14,243066281,NoneCenter
+LookTrans,14,243067183,CenterNone
+Look,13,243067183,LookCenter,243066281,243067183,902
+LookTrans,14,243067949,NoneCenter
+LookTrans,14,243069367,CenterNone
+Look,13,243069368,LookCenter,243067949,243069367,1418
+LookTrans,14,243071207,NoneCenter
+LookTrans,14,243071538,CenterNone
+Look,13,243071539,LookCenter,243071207,243071538,331
+LookTrans,14,243071629,NoneCenter
+LookTrans,14,243071794,CenterNone
+Look,13,243071795,LookCenter,243071629,243071794,165
+LookDisabled,23,243073794
+TrialEnd,3,243073794,MaxLookAwayTime
+TrialStart,2,243073795,7,0
+AGRequest,4,243073795
+ScreenStart,24,243073798,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243073804,21
+AGLookEnabled,22,243073805
+Attention,12,243076099
+LookDisabled,23,243076099
+StimulusSettings,10,243076099,29,257,IDS_3,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS3new.wav,0,50
+StimRequest,7,243076099,29
+ScreenStart,24,243076102,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243076111,29
+LookEnabled,21,243076125
+LookTrans,14,243076273,NoneCenter
+LookTrans,14,243082169,CenterNone
+Look,13,243082169,LookCenter,243076273,243082169,5896
+LookTrans,14,243082766,NoneCenter
+LookTrans,14,243083446,CenterNone
+Look,13,243083447,LookCenter,243082766,243083446,680
+LookTrans,14,243084929,NoneCenter
+LookTrans,14,243086663,CenterNone
+Look,13,243086663,LookCenter,243084929,243086663,1734
+LookTrans,14,243087227,NoneCenter
+LookTrans,14,243088536,CenterNone
+Look,13,243088537,LookCenter,243087227,243088536,1309
+LookTrans,14,243089195,NoneCenter
+LookTrans,14,243090682,CenterNone
+Look,13,243090683,LookCenter,243089195,243090682,1487
+LookTrans,14,243091571,NoneCenter
+LookTrans,14,243092511,CenterNone
+Look,13,243092512,LookCenter,243091571,243092511,940
+LookTrans,14,243093289,NoneCenter
+Look,13,243094125,LookCenter,243093289,243094125,836
+LookDisabled,23,243094125
+TrialEnd,3,243094125,MaxStimulusTime
+TrialStart,2,243094127,8,0
+AGRequest,4,243094127
+ScreenStart,24,243094129,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243094134,21
+AGLookEnabled,22,243094134
+Attention,12,243096315
+LookDisabled,23,243096315
+StimulusSettings,10,243096315,30,258,IDS_4,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS4new.wav,0,50
+StimRequest,7,243096315,30
+ScreenStart,24,243096319,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243096325,30
+LookEnabled,21,243096325
+LookTrans,14,243096565,NoneCenter
+LookTrans,14,243099720,CenterNone
+Look,13,243099721,LookCenter,243096565,243099720,3155
+LookTrans,14,243100139,NoneCenter
+LookTrans,14,243100806,CenterNone
+Look,13,243100806,LookCenter,243100139,243100806,667
+LookDisabled,23,243102805
+TrialEnd,3,243102805,MaxLookAwayTime
+TrialStart,2,243102807,9,0
+AGRequest,4,243102807
+ScreenStart,24,243102809,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243102815,21
+AGLookEnabled,22,243102815
+Attention,12,243104541
+LookDisabled,23,243104541
+StimulusSettings,10,243104541,31,250,ADS_4,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS4new.wav,0,50
+StimRequest,7,243104541,31
+ScreenStart,24,243104542,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243104548,31
+LookEnabled,21,243104555
+LookTrans,14,243104807,NoneCenter
+LookTrans,14,243110419,CenterNone
+Look,13,243110423,LookCenter,243104807,243110419,5612
+LookTrans,14,243111307,NoneCenter
+LookTrans,14,243112248,CenterNone
+Look,13,243112249,LookCenter,243111307,243112248,941
+LookTrans,14,243112769,NoneCenter
+LookTrans,14,243113760,CenterNone
+Look,13,243113761,LookCenter,243112769,243113760,991
+LookTrans,14,243114079,NoneCenter
+LookTrans,14,243115410,CenterNone
+Look,13,243115411,LookCenter,243114079,243115410,1331
+LookTrans,14,243116227,NoneCenter
+LookTrans,14,243120127,CenterNone
+Look,13,243120127,LookCenter,243116227,243120127,3900
+LookDisabled,23,243122127
+TrialEnd,3,243122127,MaxLookAwayTime
+TrialStart,2,243122130,10,0
+AGRequest,4,243122130
+ScreenStart,24,243122133,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243122137,21
+AGLookEnabled,22,243122138
+Attention,12,243124182
+LookDisabled,23,243124182
+StimulusSettings,10,243124182,32,251,ADS_5,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS5new.wav,0,50
+StimRequest,7,243124182,32
+ScreenStart,24,243124185,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243124192,32
+LookEnabled,21,243124195
+LookTrans,14,243124986,NoneCenter
+LookTrans,14,243128857,CenterNone
+Look,13,243128857,LookCenter,243124986,243128857,3871
+LookTrans,14,243129229,NoneCenter
+LookTrans,14,243130499,CenterNone
+Look,13,243130499,LookCenter,243129229,243130499,1270
+LookTrans,14,243131501,NoneCenter
+LookTrans,14,243132290,CenterNone
+Look,13,243132290,LookCenter,243131501,243132290,789
+LookTrans,14,243133327,NoneCenter
+LookTrans,14,243135165,CenterNone
+Look,13,243135166,LookCenter,243133327,243135165,1838
+LookTrans,14,243135719,NoneCenter
+LookTrans,14,243139841,CenterNone
+Look,13,243139841,LookCenter,243135719,243139841,4122
+LookTrans,14,243140441,NoneCenter
+Look,13,243142196,LookCenter,243140441,243142196,1755
+LookDisabled,23,243142196
+TrialEnd,3,243142196,MaxStimulusTime
+TrialStart,2,243142197,11,0
+AGRequest,4,243142197
+ScreenStart,24,243142200,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243142205,21
+AGLookEnabled,22,243142205
+Attention,12,243144817
+LookDisabled,23,243144817
+StimulusSettings,10,243144817,33,259,IDS_5,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS5new.wav,0,50
+StimRequest,7,243144817,33
+ScreenStart,24,243144820,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243144827,33
+LookEnabled,21,243144828
+LookTrans,14,243145112,NoneCenter
+LookTrans,14,243147957,CenterNone
+Look,13,243147958,LookCenter,243145112,243147957,2845
+LookTrans,14,243148656,NoneCenter
+LookTrans,14,243151500,CenterNone
+Look,13,243151500,LookCenter,243148656,243151500,2844
+LookTrans,14,243152194,NoneCenter
+LookTrans,14,243153230,CenterNone
+Look,13,243153230,LookCenter,243152194,243153230,1036
+LookTrans,14,243153868,NoneCenter
+LookTrans,14,243157044,CenterNone
+Look,13,243157044,LookCenter,243153868,243157044,3176
+LookTrans,14,243158325,NoneCenter
+LookTrans,14,243160342,CenterNone
+Look,13,243160343,LookCenter,243158325,243160342,2017
+LookTrans,14,243161481,NoneCenter
+Look,13,243162828,LookCenter,243161481,243162828,1347
+LookDisabled,23,243162828
+TrialEnd,3,243162828,MaxStimulusTime
+TrialStart,2,243162829,12,0
+AGRequest,4,243162829
+ScreenStart,24,243162832,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243162837,21
+AGLookEnabled,22,243162837
+Attention,12,243164507
+LookDisabled,23,243164507
+StimulusSettings,10,243164507,34,252,ADS_6,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS6new.wav,0,50
+StimRequest,7,243164507,34
+ScreenStart,24,243164509,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243164515,34
+LookEnabled,21,243164515
+LookTrans,14,243164740,NoneCenter
+LookTrans,14,243168314,CenterNone
+Look,13,243168317,LookCenter,243164740,243168314,3574
+LookTrans,14,243168985,NoneCenter
+LookTrans,14,243170545,CenterNone
+Look,13,243170545,LookCenter,243168985,243170545,1560
+LookDisabled,23,243172548
+TrialEnd,3,243172548,MaxLookAwayTime
+TrialStart,2,243172550,13,0
+AGRequest,4,243172550
+ScreenStart,24,243172558,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243172565,21
+AGLookEnabled,22,243172565
+Attention,12,243174372
+LookDisabled,23,243174372
+StimulusSettings,10,243174372,35,260,IDS_6,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS6new.wav,0,50
+StimRequest,7,243174372,35
+ScreenStart,24,243174373,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243174379,35
+LookEnabled,21,243174380
+LookTrans,14,243174380,NoneCenter
+LookTrans,14,243176592,CenterNone
+Look,13,243176593,LookCenter,243174380,243176592,2212
+LookTrans,14,243177305,NoneCenter
+LookTrans,14,243180167,CenterNone
+Look,13,243180168,LookCenter,243177305,243180167,2862
+LookTrans,14,243181120,NoneCenter
+LookTrans,14,243183368,CenterNone
+Look,13,243183369,LookCenter,243181120,243183368,2248
+LookTrans,14,243184545,NoneCenter
+LookTrans,14,243185558,CenterNone
+Look,13,243185558,LookCenter,243184545,243185558,1013
+LookTrans,14,243186418,NoneCenter
+LookTrans,14,243190446,CenterNone
+Look,13,243190447,LookCenter,243186418,243190446,4028
+LookTrans,14,243191220,NoneCenter
+LookTrans,14,243192252,CenterNone
+Look,13,243192252,LookCenter,243191220,243192252,1032
+LookDisabled,23,243192380
+TrialEnd,3,243192380,MaxStimulusTime
+TrialStart,2,243192381,14,0
+AGRequest,4,243192381
+ScreenStart,24,243192385,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243192390,21
+AGLookEnabled,22,243192390
+Attention,12,243194377
+LookDisabled,23,243194377
+StimulusSettings,10,243194377,36,261,IDS_7,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalIDS7new.wav,0,50
+StimRequest,7,243194377,36
+ScreenStart,24,243194379,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243194385,36
+LookEnabled,21,243194386
+LookTrans,14,243194386,NoneCenter
+LookTrans,14,243197574,CenterNone
+Look,13,243197574,LookCenter,243194386,243197574,3188
+LookTrans,14,243198000,NoneCenter
+LookTrans,14,243199378,CenterNone
+Look,13,243199379,LookCenter,243198000,243199378,1378
+LookTrans,14,243200317,NoneCenter
+LookTrans,14,243200863,CenterNone
+Look,13,243200863,LookCenter,243200317,243200863,546
+LookTrans,14,243201443,NoneCenter
+LookTrans,14,243202350,CenterNone
+Look,13,243202350,LookCenter,243201443,243202350,907
+LookTrans,14,243203128,NoneCenter
+LookTrans,14,243205139,CenterNone
+Look,13,243205140,LookCenter,243203128,243205139,2011
+LookTrans,14,243205558,NoneCenter
+LookTrans,14,243206260,CenterNone
+Look,13,243206261,LookCenter,243205558,243206260,702
+LookTrans,14,243206925,NoneCenter
+LookTrans,14,243207986,CenterNone
+Look,13,243207988,LookCenter,243206925,243207986,1061
+LookTrans,14,243209539,NoneCenter
+LookTrans,14,243210293,CenterNone
+Look,13,243210293,LookCenter,243209539,243210293,754
+LookTrans,14,243211127,NoneCenter
+Look,13,243212387,LookCenter,243211127,243212387,1260
+LookDisabled,23,243212387
+TrialEnd,3,243212387,MaxStimulusTime
+TrialStart,2,243212391,15,0
+AGRequest,4,243212391
+ScreenStart,24,243212396,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243212410,21
+AGLookEnabled,22,243212411
+Attention,12,243214158
+LookDisabled,23,243214158
+StimulusSettings,10,243214158,37,253,ADS_7,0,0,0,N/A,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,0,50,,,0,50,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Audio Stimuli/finalADS7new.wav,0,50
+StimRequest,7,243214158,37
+ScreenStart,24,243214161,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg
+StimStart,8,243214166,37
+LookEnabled,21,243214167
+LookTrans,14,243214903,CenterNone
+LookTrans,14,243216065,NoneCenter
+LookTrans,14,243223197,CenterNone
+Look,13,243223198,LookCenter,243216065,243223197,7132
+LookTrans,14,243223576,NoneCenter
+LookTrans,14,243224118,CenterNone
+Look,13,243224118,LookCenter,243223576,243224118,542
+LookTrans,14,243224807,NoneCenter
+LookTrans,14,243225554,CenterNone
+Look,13,243225556,LookCenter,243224807,243225554,747
+LookTrans,14,243226587,NoneCenter
+LookTrans,14,243228675,CenterNone
+Look,13,243228676,LookCenter,243226587,243228675,2088
+LookTrans,14,243229362,NoneCenter
+LookTrans,14,243231190,CenterNone
+Look,13,243231190,LookCenter,243229362,243231190,1828
+LookTrans,14,243231797,NoneCenter
+Look,13,243232167,LookCenter,243231797,243232167,370
+LookDisabled,23,243232168
+TrialEnd,3,243232168,MaxStimulusTime
+TrialStart,2,243232172,16,0
+AGRequest,4,243232172
+ScreenStart,24,243232175,2,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov
+AGStart,5,243232180,21
+AGLookEnabled,22,243232180
+ExperimentQuit,27,243236119

@@ -1,0 +1,27 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,847877,868557,17836,0,0,17836,0,850555,868557,LookCenter,850721,868557,17836
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,868561,887566,0,0,0,0,0,869565,887566
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,887573,906875,0,0,0,0,0,888875,906875
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,906879,925916,0,0,0,0,0,907916,925916
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),5,0,MaxStimulusTime,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,925925,944621,0,0,0,0,0,926620,944621
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,944625,965058,0,0,0,0,0,947057,965058
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,965062,985901,17842,0,0,17842,0,967899,985901,LookCenter,968059,985901,17842
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),8,0,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,985907,1006866,0,0,0,0,0,988866,1006866
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),9,0,MaxStimulusTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1006872,1028578,17785,0,0,17785,0,1010581,1028578,LookCenter,1010793,1028578,17785
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),10,0,MaxStimulusTime,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1028586,1048000,0,0,0,0,0,1030001,1048000
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1048005,1067460,0,0,0,0,0,1049460,1067460
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1067465,1086725,0,0,0,0,0,1068719,1086725
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1086734,1109027,17823,0,0,17823,0,1091027,1109027,LookCenter,1091203,1109026,17823
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),14,0,MaxLookAwayTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1109033,1120557,6813,0,0,6813,0,1111743,1120557,LookCenter,1111743,1118556,6813
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),15,0,MaxStimulusTime,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1120561,1140184,17845,0,0,17845,0,1122183,1140184,LookCenter,1122339,1140184,17845
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),16,0,MaxStimulusTime,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1140190,1158867,0,0,0,0,0,1140872,1158867
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),17,0,MaxStimulusTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1158873,1177920,0,0,0,0,0,1159918,1177919
+Mame Diarra GUEYE,MBG_IDS,ORDER_1 (none),18,0,MaxStimulusTime,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1177920,1196954,0,0,0,0,0,1178951,1196954
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,850721,868557,17836
+MBG_IDS,7,0,1,TRUE,LookCenter,968059,985901,17842
+MBG_IDS,9,0,1,TRUE,LookCenter,1010793,1028578,17785
+MBG_IDS,13,0,1,TRUE,LookCenter,1091203,1109026,17823
+MBG_IDS,14,0,1,TRUE,LookCenter,1111743,1118556,6813
+MBG_IDS,15,0,1,TRUE,LookCenter,1122339,1140184,17845

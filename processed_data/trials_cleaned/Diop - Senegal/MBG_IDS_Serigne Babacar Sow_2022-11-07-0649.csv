@@ -1,0 +1,25 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,30182,52261,18002,0,0,18002,0,34259,52261,LookCenter,34259,52261,18002
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,52267,72250,0,0,0,0,0,54250,72250
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),3,0,MaxStimulusTime,No,24,IDS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,72256,91446,0,0,0,0,0,73446,91446
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),4,0,MaxStimulusTime,No,25,ADS_1,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,91449,111204,0,0,0,0,0,93204,111204
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),5,0,MaxStimulusTime,No,26,IDS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,111210,132954,0,0,0,0,0,114953,132954
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),6,0,MaxStimulusTime,No,27,ADS_2,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,132962,153282,0,0,0,0,0,135281,153282
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),7,0,AGAbort,No,0,,,,,,,153286,182066,0,0,0,0,0,0,182065
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),7,1,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,182066,202542,18001,0,0,18001,0,184541,202542,LookCenter,184541,202542,18001
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),8,0,MaxStimulusTime,No,29,IDS_3,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,202550,221709,0,0,0,0,0,203707,221709
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),9,0,MaxStimulusTime,No,30,IDS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,221717,243593,0,0,0,0,0,225593,243593
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),10,0,MaxStimulusTime,No,31,ADS_4,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,243598,264798,0,0,0,0,0,246797,264798
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),11,0,MaxStimulusTime,No,32,ADS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,264801,288333,18000,0,0,18000,0,270333,288333,LookCenter,270333,288333,18000
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),12,0,MaxStimulusTime,No,33,IDS_5,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,288341,308343,0,0,0,0,0,290342,308343
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),13,0,MaxStimulusTime,No,34,ADS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,308347,328791,0,0,0,0,0,310790,328791
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),14,0,MaxStimulusTime,No,35,IDS_6,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,328796,359052,0,0,0,0,0,341052,359052
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),15,0,MaxStimulusTime,No,36,IDS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,359057,379675,0,0,0,0,0,361673,379675
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),16,0,MaxStimulusTime,No,37,ADS_7,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,379681,401546,0,0,0,0,0,383545,401546
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),17,0,MaxStimulusTime,No,38,ADS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,401551,422730,0,0,0,0,0,404729,422730
+Serigne Babacar Sow,MBG_IDS,ORDER_1 (none),18,0,Abort,No,39,IDS_8,,,C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,422730,441449,0,0,0,0,0,424549,441449
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,34259,52261,18002
+MBG_IDS,7,1,1,TRUE,LookCenter,184541,202542,18001
+MBG_IDS,11,0,1,TRUE,LookCenter,270333,288333,18000
