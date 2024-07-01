@@ -1,0 +1,21 @@
+---
+title: "02_trial_merge.Qmd"
+format: html
+---
+
+
+```{r}
+library(tidyverse)
+library(janitor)
+```
+
+Let's read in trial data from the different labs. 
+
+First is the easiest on 
+
+We have first soem
+
+```{r}
+log_labs <- c("Diop - Senegal", "Lamba - Malawi", "Mushimiyimana - Rwanda")
+```
+
