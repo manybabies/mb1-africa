@@ -1,178 +1,133 @@
 column,file
+timestamp,Diop - Senegal.xlsx
+email_address,Diop - Senegal.xlsx
+1._id_du_sujet,Diop - Senegal.xlsx
+2._date_du_test,Diop - Senegal.xlsx
+3._date_de_naissance_de_l'enfant,Diop - Senegal.xlsx
+4._le_sexe_de_l'enfant,Diop - Senegal.xlsx
+5._l'enfant_est-il_né_plus_tôt_que_prévu_(moins_de_37_semaines_de_gestation)_?,Diop - Senegal.xlsx
+"6._si_l'enfant__est_né_plus_tôt_que_prévu,_veuillez_indiquer_combien_de_jours/semaines_d'avance._mettez_na_si_vous_avez_répondu_par_non.",Diop - Senegal.xlsx
+7._avez-vous_des_inquiétudes_concernant_le_langage_ou_le_développement_cognitif_de_l'enfant_?,Diop - Senegal.xlsx
+"8._si_oui,_vous_avez_des_inquiétudes_concernant_le_langage_ou_le_développement_cognitif_de_l'enfant,_veuillez_expliquer._mettez_na_si_vous_avez_répondu_par_non.",Diop - Senegal.xlsx
+9._l'enfant_a-t-il_un_problème_connu_d'audition_ou_de_vision_?,Diop - Senegal.xlsx
+"10._si_oui_l'enfant_a_un_problème_connu_d'audition_ou_de_vision,_veuillez_expliquer._mettez_na_si_vous_avez_répondu_par_non.",Diop - Senegal.xlsx
+11._l'enfant_a-t-il_eu_une_ou_plusieurs_otites_depuis_sa_naissance_?,Diop - Senegal.xlsx
+12._l'enfant_a-t-il_actuellement_une_otite_?,Diop - Senegal.xlsx
+"13._avec_qui_l'enfant_passe-t-il_le_plus_de_temps_?_
+
+nb:_choisissez_une_seule_reponse!",Diop - Senegal.xlsx
+14._sexe_de_l'aidant_principal,Diop - Senegal.xlsx
+15._statut_matrimonial_de_l'aidant_principal,Diop - Senegal.xlsx
+16._langue(s)_maternelle(s)_de_l'aidant_principal,Diop - Senegal.xlsx
+17._niveau_de_scolarité_actuel_de_l'aidant_principal,Diop - Senegal.xlsx
+"18._si_votre_niveau_de_scolarité_actuel_n'est_pas_sur_la_liste_des_réponses,_veuillez_le_préciser._mettez_na_si_cette_question_ne_s'applique_pas_a_vous.",Diop - Senegal.xlsx
+19._combien_d'années_d'études_au_total_(en_commençant_par_l'école_primaire)_cet_aidant_a-t-il_reçu_?,Diop - Senegal.xlsx
+"20._de_combien_d'autres_enfants_(par_exemple,_des_frères_et_sœurs)_cette_personne_(l'aidant_principal)_s'occupe-t-elle_?",Diop - Senegal.xlsx
+21._sexe_de_l'aidant_secondaire,Diop - Senegal.xlsx
+22._statut_matrimonial_de_l'aidant_secondaire,Diop - Senegal.xlsx
+23._langue(s)_maternelle(s)_de_l'aidant_secondaire,Diop - Senegal.xlsx
+24._niveau_de_scolarité_actuel_de_l'aidant_secondaire,Diop - Senegal.xlsx
+"25._si_le_niveau_d'etude_actuel_de_l'aidant_secondaire_n'est_pas_sur_la_liste_des_réponses,_veuillez_le_préciser._mettez_na_si_cette_question_ne_s'applique_pas_a_vous.",Diop - Senegal.xlsx
+26._combien_d'années_d'études_au_total_(en_commençant_par_l'école_primaire)_l'aidant_secondaire_a-t-il/elle_reçu_?,Diop - Senegal.xlsx
+"27._de_combien_d'autres_enfants_(par_exemple,_des_frères_et_sœurs)_cette_personne_(l'aidant_secondaire)_s'occupe-t-elle_?",Diop - Senegal.xlsx
+28._combien_d'autres_enfants_vivent_actuellement_avec_l'enfant_(dans_la_même_maison)_?,Diop - Senegal.xlsx
+29._combien_d'autres_adultes_vivent_actuellement_avec_l'enfant_(dans_la_même_maison)_?,Diop - Senegal.xlsx
+"30._quelle(s)_langue(s)_parlez-vous_à_l'enfant,_vous_et_les_autres_soignants_?_veuillez_spécifier_la_langue_principale,_langue_secondaire_et_toute_autre_langue_que_l'enfant_entend_régulièrement._veuillez_commander_les_langues_du_plus_au_moins_fréquent_dans_l’environnement_de_l’enfant_:
+nb:_l'ordre_est_important!",Diop - Senegal.xlsx
+"31._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_n_°_1.",Diop - Senegal.xlsx
+"32._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_2",Diop - Senegal.xlsx
+"33._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_3",Diop - Senegal.xlsx
+"34._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_4",Diop - Senegal.xlsx
+"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[quand_je_parle_à_mon_enfant,_je_remarque_que_je_parle_plus_lentement_et_clairement]",Diop - Senegal.xlsx
+"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[mon_enfant_apprend_mieux_le_langage_si_je_lui_parle_de_la_même_manière_qu'aux_adultes]",Diop - Senegal.xlsx
+"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[peu_importe_ce_que_je_dis_car_mon_enfant_ne_comprend_pas_encore]",Diop - Senegal.xlsx
+"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[lorsque_je_parle_à_mon_enfant,_je_remarque_que_ma_voix_est_différente_(par_exemple_:_plus_vive)]",Diop - Senegal.xlsx
+"36._l'échelle_1_a_10_échelons_et_représente_la_place_qu’occupent_les_gens_dans_la_société._au_sommet_de_l'échelle_(échelon_1)_se_trouvent_les_personnes_les_mieux_loties,_celles_qui_ont_le_plus_d'argent,_le_plus_d'éducation_et_les_meilleurs_emplois._en_bas_(échelon_10)_se_trouvent_les_personnes_les_plus_mal_loties,_celles_qui_ont_le_moins_d'argent,_le_moins_d’éducation,_sous-employés_ou_chômeurs._veuillez_choisir_le_numero_de_l'échelon_qui_représente_le_mieux_où_vous_pensez_vous_situer_sur_l'échelle_1.",Diop - Senegal.xlsx
+"37._l'échelle_2_a_10_échelons_et_représente_la_position_des_gens_dans_votre_communauté._au_sommet_de_l'échelle_(échelon_1)_se_trouvent_les_personnes_les_mieux_loties,_celles_qui_ont_le_plus_d'argent,_le_plus_d'éducation_et_les_meilleurs_emplois._en_bas_(échelon_10)_se_trouvent_les_personnes_les_plus_mal_loties,_celles_qui_ont_le_moins_d'argent,_le_moins_d'éducation,_les_pires_emplois_ou_pas_d'emploi._veuillez_choisir_le_numero_de_l'échelon_qui_représente_le_mieux_où_vous_pensez_vous_situer_sur_l'échelle_2__par_rapport_à_votre_communauté_:_les_personnes_que_vous_habitez_à_proximité_et_que_vous_voyez_régulièrement.",Diop - Senegal.xlsx
+id,Kizito - Uganda.xlsx
+dob,Kizito - Uganda.xlsx
+testdate,Kizito - Uganda.xlsx
+a1,Kizito - Uganda.xlsx
+a2,Kizito - Uganda.xlsx
+a3a,Kizito - Uganda.xlsx
+a3b,Kizito - Uganda.xlsx
+a4a,Kizito - Uganda.xlsx
+a4b,Kizito - Uganda.xlsx
+a5a,Kizito - Uganda.xlsx
+a5b,Kizito - Uganda.xlsx
+a6,Kizito - Uganda.xlsx
+a7,Kizito - Uganda.xlsx
+a8,Kizito - Uganda.xlsx
+a9,Kizito - Uganda.xlsx
+a10,Kizito - Uganda.xlsx
+a11,Kizito - Uganda.xlsx
+a12,Kizito - Uganda.xlsx
+a13,Kizito - Uganda.xlsx
+a14,Kizito - Uganda.xlsx
+a15,Kizito - Uganda.xlsx
+a16,Kizito - Uganda.xlsx
+a17,Kizito - Uganda.xlsx
+a18,Kizito - Uganda.xlsx
+a19,Kizito - Uganda.xlsx
+a20,Kizito - Uganda.xlsx
+a21,Kizito - Uganda.xlsx
+a22a,Kizito - Uganda.xlsx
+a22b,Kizito - Uganda.xlsx
+a23a,Kizito - Uganda.xlsx
+a23b,Kizito - Uganda.xlsx
+a23c,Kizito - Uganda.xlsx
+a23d,Kizito - Uganda.xlsx
+a24,Kizito - Uganda.xlsx
+a25a,Kizito - Uganda.xlsx
+a25b,Kizito - Uganda.xlsx
+a25c,Kizito - Uganda.xlsx
+a25d,Kizito - Uganda.xlsx
+a26a,Kizito - Uganda.xlsx
+a26b,Kizito - Uganda.xlsx
+a26c,Kizito - Uganda.xlsx
+a26d,Kizito - Uganda.xlsx
+a27a,Kizito - Uganda.xlsx
+a27b,Kizito - Uganda.xlsx
 lab,many
 subid,many
-method,many
 ra,many
 age_days,many
 trial_order,many
-session_error,many
+session_issue,many
 session_error_type,many
 notes,many
-second_session,many
-lang_group,many
-lang1,many
-lang1_exposure,many
-lang2,many
-lang2_exposure,many
-lang3,many
-lang3_exposure,many
-caregiver_seat,many
-macarthur_ladder,many
 participant_gender,many
-race_ethinicty,many
-parenta_gender,many
-parenta_education,many
-parenta_education_info,babylab_nijmegen_participants.csv
-parentb_gender,many
-parentb_education,many
-parentb_education_info,babylab_nijmegen_participants.csv
+primary_caregiver_gender,many
+primary_caregiver_education,many
+secondary_caregiver_gender,many
+secondary_caregiver_education,many
 preterm,many
 days_preterm,many
-prev_earinfection,many
 curr_earinfection,many
 hearing_vision,many
 hearing_vision_info,many
-cognitive_developmental,many
-cognitive_developmental_info,many
-sib1_age,many
-sib1_gender,many
-sib2_age,many
-sib2_gender,many
-sib3_age,many
-sib3_gender,many
-sib4_age,many
-sib4_gender,many
-tod,many
-"season,,,",babylab_nijmegen_participants.csv
-ra/only_offline_coding,Babylab_parisdescartes2_participants_6-9.csv
+cognitive_language_delay,many
+cognitive_language_delay_info,many
+number_of_siblings,many
+hours_per_day_infant_awake,many
+lang1,many
+hours_lang1,many
+lang2,many
+hours_lang2,many
+lang3,many
+hours_lang3,many
 lang4,many
-lang4_exposure,many
-bilingual_nae,many
-bilingual_parenta_nae,many
-bilingual_parentb_nae,many
-bilingual_interview_lang,many
-beard,many
-ratype,many
-childcare,many
-visits,many
-household_size,many
-last_feed_min,many
-last_sleep_min,many
-season,many
-termtime,many
-popnum,many
-popkm2,many
-race_ethnicity,many
-parent_a_gender,many
-parent_a_education,many
-parent_a_education_id,babylab_plymouth Participants.xlsx
-parent_b_gender,many
-parent_b_education,many
-parent_b_education_id,babylab_plymouth Participants.xlsx
-days_early,babylab_plymouth Participants.xlsx
-prev_ear_infection,many
-current_ear_infection,many
-sibling1_age,many
-sibling1_gender,many
-sibling2_age,babylab_plymouth Participants.xlsx
-sibling2_gender,many
-sibling3_age,babylab_plymouth Participants.xlsx
-sibling3_gender,many
-sibling4_age,babylab_plymouth Participants.xlsx
-sibling4_gender,many
-x46,babylab-leiden Participants.csv
-x48,many
-x49,many
-x50,many
-x51,many
-x52,many
-x53,many
-x54,many
-x55,many
-x56,many
-experiment_headphone,many
-macarthur,many
-x60,many
-x61,babylab-utrecht_participantsInfo.csv
-...60,babylab-vuw_6-9months_ParticipantData.xlsx
-x57,many
-x58,babylablang-essex_Individual Lab Participants Data.csv
-gender,many
-sibling_1_gender,ethos-rennes_ParticipantsData.xlsx
-sibling_2_age,many
-sibling_2_gender,ethos-rennes_ParticipantsData.xlsx
-sibling_3_age,many
-sibling_3_gender,ethos-rennes_ParticipantsData.xlsx
-sibling_4_age,many
-sibling_4_gender,ethos-rennes_ParticipantsData.xlsx
-last_feed,ethos-rennes_ParticipantsData.xlsx
-last_sleep,ethos-rennes_ParticipantsData.xlsx
-temp,ICCL-BC_Participant Data.xlsx
-monolingual_nae,many
-monolingual_parenta_nae,many
-monolingual_parentb_nae,many
-monolingual_interview_lang,many
-parenta_education_exact,many
-parentb_education_exact,many
-lang_1,many
-lang_1_exposure,many
-lang_2,many
-birth_order,many
-sibling_1_age,many
-family_age,many
-caregiver,many
-longer_time_caregiver,many
-start_of_attendance_at_the_childcare,many
-hours,many
-race/ethnicity,many
-gestation_week,many
-birth_problems,many
-hearing/vision,many
-hearing/vision_info,many
-cognitive/developmental,many
-cognitive/developmental_info,many
-parent_a_age,many
-parent_a_master's_degree,many
-parent_a_doctorate,many
-parent_a_relationship,many
-parent_a_native_lang,many
-parent_a_race/ethnicity,many
-parent_b_age,many
-parent_b_second_degree,many
-parent_b_master's_degree,many
-parent_b_doctorate,many
-parent_b_relationship,many
-parent_b_native_lang,many
-parent_b_race/ethnicity,many
-total_cdi,many
-understand,many
-understand_and_say,many
-lang_parenta,langlab-ucla -  ManyBabies 1 Individual Lab Participants Data.xlsx
-lang_parentb,langlab-ucla -  ManyBabies 1 Individual Lab Participants Data.xlsx
-lang_interview,langlab-ucla -  ManyBabies 1 Individual Lab Participants Data.xlsx
-zipcode,langlab-ucla -  ManyBabies 1 Individual Lab Participants Data.xlsx
-median_income_zipcode,langlab-ucla -  ManyBabies 1 Individual Lab Participants Data.xlsx
-partcipant_gender,LLL_Liv_Participants.csv
-cognitive_development,many
-cogntitive_developmental_info,LLL_Liv_Participants.csv
-time,lscp-psl_manybabies_Participants.csv
-childcare_french,lscp-psl_manybabies_Participants.csv
-orderrun(of_experiments),Manchester_MB_info.xlsx
-subdid,MB1.participant.babylab-reading.csv
-conitive_developmental,MB1.participant.babylab-reading.csv
-cognitive-developmental_info,MB1.participant.babylab-reading.csv
-bilingual_interview_lag,MB1.participant.babylab-reading.csv
-http://sedac.ciesin.columbia.edu/mapping/popest/gpw-v4/,midevlab-bicocca_ParticipantData.xlsx
-x1,many
-prev_earinfections,many
-current_earinfections,many
-hearing_screen_hospital,many
-hearing_screen_appt,many
-bilingual_interiew_lang,many
-parebta_gender,uds-saarland_participants.csv
-hear_vision,uds-saarland_participants.csv
-hear_vision_info,uds-saarland_participants.csv
-cognitive_development_info,uds-saarland_participants.csv
-sib5_age,utk-infantlangaugelab_12-15mos_participants.csv
-sib5_gender,utk-infantlangaugelab_12-15mos_participants.csv
-participant,weescience-edinburgh_ParticipantInfo.xlsx
+hours_lang4,many
+subid_habit,Zeidler - Kenya.xlsx
+internal_id,Zeidler - Kenya.xlsx
+previous_ear_infections,Zeidler - Kenya.xlsx
+primary_caregiver,Zeidler - Kenya.xlsx
+primary_caregiver_native_language,Zeidler - Kenya.xlsx
+primary_caregiver_number_of_other_children,Zeidler - Kenya.xlsx
+secondary_caregiver,Zeidler - Kenya.xlsx
+secondary_caregiver_native_language,Zeidler - Kenya.xlsx
+secondary_caregiver_number_of_other_children,Zeidler - Kenya.xlsx
+number_of_other_children_living_with_child,Zeidler - Kenya.xlsx
+baby_talk_primary_caregiver,Zeidler - Kenya.xlsx
+baby_talk_secondary_caregiver,Zeidler - Kenya.xlsx
+baby_talk_others,Zeidler - Kenya.xlsx
