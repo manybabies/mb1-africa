@@ -7,15 +7,132 @@ format: html
 ```{r}
 library(tidyverse)
 library(janitor)
+library(here)
 ```
 
 Let's read in trial data from the different labs. 
 
-First is the easiest on 
+Labs right now are: Senegal, Uganda, Malawi, Rwanda, Ghana, and Kenya. 
 
-We have first soem
+# Ghana
+
+Ghana is in long form. First is the easiest one I think. 
 
 ```{r}
-log_labs <- c("Diop - Senegal", "Lamba - Malawi", "Mushimiyimana - Rwanda")
+ghana <- readxl::read_xlsx(here("processed_data", "trials_cleaned", "Omane - Ghana.xlsx")) |>
+  clean_names() |>
+  mutate(looking_time_s = as.numeric(lookin_time_s)) |>
+  rename(order = test_order) |>
+  select(lab, subid, order, trial_type, stimulus, trial_num, looking_time_s, 
+         trial_error, trial_error_type) 
+```
+
+Just for fun. 
+
+```{r}
+ggplot(ghana, 
+       aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  geom_smooth()
+```
+
+```{r}
+ggplot(ghana, aes(x = looking_time_s, fill = trial_type)) + geom_histogram(binwidth = 1)
+```
+
+
+# Senegal, Malawi, Rwanda, Kenya
+
+Next is a set in event format. 
+
+```{r}
+log_labs <- c("Diop - Senegal", "Lamba - Malawi", "Mushimiyimana - Rwanda", "Ziedler - Kenya")
+
+files <- lapply(log_labs, function (x) dir(path = here("processed_data", "trials_cleaned", x)))
+
+log_labs_data_raw <- map_df(1:4, function(x) {
+  read_csv(here("processed_data", "trials_cleaned", log_labs[x], files[x])) |>
+    mutate(lab = log_labs[x])
+  }) |>
+  filter(!(SubjectID %in% c("Phase", "MBG_IDS"))) |>
+  janitor::clean_names()
+```
+Goal is; select(lab, subid, order, trial_type, stimulus, trial_num, looking_time_s, 
+         trial_error, trial_error_type) 
+
+```{r}
+log_labs_data <- log_labs_data_raw |>
+  filter(end_type != "AGAbort") |>
+  mutate(subid = subject_id, 
+         order = as.numeric(str_sub(order_randomization, 7, 7)), 
+         stimulus = str_replace(str_to_lower(stim_name), "\\_", ""), 
+         trial_type = case_when(str_detect(stim_name, "IDS") ~ "IDS", 
+                                str_detect(stim_name, "ADS") ~ "ADS", 
+                                TRUE ~ "training"), 
+         trial = as.numeric(trial), 
+         trial_num = ifelse(trial < 3, trial - 3, trial - 2), 
+         looking_time_s = total_look / 1000, 
+         looking_time_diff = (trial_end - trial_start) / 1000, 
+         total_center = total_center / 1000, 
+         enabled_diff = (look_disabled - look_enabled) / 1000,
+         trial_error = NA, 
+         trial_error_type = NA) |>
+  select(lab, subid, order, trial_type, stimulus, trial_num, looking_time_s, looking_time_diff, total_center, enabled_diff,
+         trial_error, trial_error_type) 
+```
+
+
+```{r}
+d <- bind_rows(ghana, log_labs_data)
+```
+
+We investigate what the different columns mean. Our hypothesis:
+- total look = looking time, not including lookaways
+- look_disabled - look_enabled = looking time, including lookaways but not attn getters
+- trial_end - trial_start = including lookaways AND attention getters
+
+The basic issue is that senegal has a lot of zero looking times. It appears that this is due plausibly to two intersecting issues:
+1. a bug in habit such that if you hold down the key forever, you get LT = 0.
+2. probable misuse of the software by holding down the key a lot. 
+
+```{r}
+ggplot(d, 
+       aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  geom_smooth() + 
+  facet_wrap(~lab)
+
+ggplot(d, 
+       aes(x = trial_num, y = enabled_diff, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  geom_smooth() + 
+  facet_wrap(~lab)
+
+```
+```{r}
+ggplot(d, 
+       aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  geom_smooth() + 
+  facet_wrap(~lab)
+```
+
+```{r}
+filter(d, lab != "Diop - Senegal", 
+       looking_time_s > 2) |>
+ggplot(aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  scale_y_log10() + 
+  geom_smooth(method = "lm")
+```
+
+```{r}
+mod <- lmer(log(looking_time_s) ~ trial_num * trial_type  + 
+              (1 | subid) + 
+              (trial_type | lab), 
+     data = filter(d, lab != "Diop - Senegal", 
+                   looking_time_s > 2, 
+                   trial_type != "training"))
+summary(mod)
 ```
 
