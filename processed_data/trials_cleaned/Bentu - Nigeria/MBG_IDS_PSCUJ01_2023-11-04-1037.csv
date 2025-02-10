@@ -1,0 +1,13 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+PSCUJ01,MBG_IDS,default (none),1,0,MaxStimulusTime,No,22,Train_1,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1040497,1070920,0,0,0,0,0,1052920,1070920,
+PSCUJ01,MBG_IDS,default (none),2,0,MaxStimulusTime,No,23,Train_2,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1070930,1095789,0,0,0,0,0,1077789,1095789,
+PSCUJ01,MBG_IDS,default (none),3,0,MaxStimulusTime,No,24,ADS_1,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1095800,1113937,0,0,0,0,0,1095937,1113937,
+PSCUJ01,MBG_IDS,default (none),4,0,MaxStimulusTime,No,25,ADS_2,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1113948,1133350,0,0,0,0,0,1115350,1133350,
+PSCUJ01,MBG_IDS,default (none),5,0,MaxStimulusTime,No,26,ADS_3,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1133368,1152498,0,0,0,0,0,1134499,1152498,
+PSCUJ01,MBG_IDS,default (none),6,0,MaxStimulusTime,No,27,ADS_4,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1152514,1176062,0,0,0,0,0,1158062,1176062,
+PSCUJ01,MBG_IDS,default (none),7,0,MaxStimulusTime,No,28,ADS_5,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1176072,1198006,0,0,0,0,0,1180005,1198006,
+PSCUJ01,MBG_IDS,default (none),8,0,MaxStimulusTime,No,29,ADS_6,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1198018,1222991,0,0,0,0,0,1204991,1222991,
+PSCUJ01,MBG_IDS,default (none),9,0,MaxStimulusTime,No,30,ADS_7,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1223000,1247702,0,0,0,0,0,1229701,1247702,
+PSCUJ01,MBG_IDS,default (none),10,0,MaxStimulusTime,No,31,ADS_8,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,1247719,1271058,0,0,0,0,0,1253058,1271058,
+,,,,,,,,,,,,,,,,,,,,,,,
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff,,,,,,,,,,,,,,,

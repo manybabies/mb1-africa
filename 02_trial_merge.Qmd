@@ -8,6 +8,8 @@ format: html
 library(tidyverse)
 library(janitor)
 library(here)
+library(lme4)
+library(lmerTest)
 ```
 
 Let's read in trial data from the different labs. 
@@ -101,7 +103,9 @@ ggplot(d,
   geom_jitter(width = .2, height = 0, alpha = .5) + 
   geom_smooth() + 
   facet_wrap(~lab)
+```
 
+```{r}
 ggplot(d, 
        aes(x = trial_num, y = enabled_diff, col = trial_type)) + 
   geom_jitter(width = .2, height = 0, alpha = .5) + 
@@ -109,6 +113,8 @@ ggplot(d,
   facet_wrap(~lab)
 
 ```
+
+
 ```{r}
 ggplot(d, 
        aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
@@ -119,7 +125,7 @@ ggplot(d,
 
 ```{r}
 filter(d, lab != "Diop - Senegal", 
-       looking_time_s > 2) |>
+       looking_time_s > 0) |>
 ggplot(aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
   geom_jitter(width = .2, height = 0, alpha = .5) + 
   scale_y_log10() + 
@@ -130,8 +136,8 @@ ggplot(aes(x = trial_num, y = looking_time_s, col = trial_type)) +
 mod <- lmer(log(looking_time_s) ~ trial_num * trial_type  + 
               (1 | subid) + 
               (trial_type | lab), 
-     data = filter(d, lab != "Diop - Senegal", 
-                   looking_time_s > 2, 
+     data = filter(d, (lab != "Diop - Senegal"),
+                   looking_time_s > 0,
                    trial_type != "training"))
 summary(mod)
 ```

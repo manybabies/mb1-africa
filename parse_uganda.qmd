@@ -1,0 +1,24 @@
+---
+title: "Parse Kizito Uganda trial data"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+```{r}
+files <- dir(here("processed_data", "trials_cleaned", "Kizito - Uganda"))
+```
+
+
+```{r}
+d <- read_csv("processed_data/trials_cleaned/Kizito - Uganda/MBG_IDS_001Hairam_2022-11-01-1356_eventlog.csv", skip = 24, 
+         col_names = c("phase", "unknown", "timestamp", "unknown2", "file", "unknown3","trial")) |>
+  filter(phase %in% c("StimulusSettings","ScreenStart","LookEnabled","Look","LookTrans","LookDisabled")) 
+
+# |>
+#   mutate(stimulus = str_replace_all(file, "C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov"
+```
+
