@@ -18,12 +18,13 @@ Labs right now are: Senegal, Uganda, Malawi, Rwanda, Ghana, and Kenya.
 
 # Ghana
 
-Ghana is in long form. First is the easiest one I think. 
+Ghana is in long form. 
 
 ```{r}
 ghana <- readxl::read_xlsx(here("processed_data", "trials_cleaned", "Omane - Ghana.xlsx")) |>
   clean_names() |>
-  mutate(looking_time_s = as.numeric(lookin_time_s)) |>
+  mutate(looking_time_s = as.numeric(lookin_time_s), 
+         lab = "Omane - Ghana") |>
   rename(order = test_order) |>
   select(lab, subid, order, trial_type, stimulus, trial_num, looking_time_s, 
          trial_error, trial_error_type) 
@@ -42,17 +43,36 @@ ggplot(ghana,
 ggplot(ghana, aes(x = looking_time_s, fill = trial_type)) + geom_histogram(binwidth = 1)
 ```
 
+# Uganda
 
-# Senegal, Malawi, Rwanda, Kenya
+Uganda is parsed in `parse_uganda.Qmd`. 
+
+```{r}
+uganda <- read_csv(here("processed_data","trials_cleaned","Kizito - Uganda parsed.csv"))
+```
+
+```{r}
+ggplot(uganda, 
+       aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  geom_smooth()
+```
+
+```{r}
+ggplot(uganda, aes(x = looking_time_s, fill = trial_type)) + geom_histogram(binwidth = 1)
+```
+
+# Senegal, Malawi, Rwanda, Kenya, Nigeria
 
 Next is a set in event format. 
 
 ```{r}
-log_labs <- c("Diop - Senegal", "Lamba - Malawi", "Mushimiyimana - Rwanda", "Ziedler - Kenya")
+log_labs <- c("Diop - Senegal", "Lamba - Malawi", 
+              "Mushimiyimana - Rwanda", "Ziedler - Kenya", "Bentu - Nigeria")
 
 files <- lapply(log_labs, function (x) dir(path = here("processed_data", "trials_cleaned", x)))
 
-log_labs_data_raw <- map_df(1:4, function(x) {
+log_labs_data_raw <- map_df(1:5, \(x) {
   read_csv(here("processed_data", "trials_cleaned", log_labs[x], files[x])) |>
     mutate(lab = log_labs[x])
   }) |>
@@ -82,63 +102,85 @@ log_labs_data <- log_labs_data_raw |>
   select(lab, subid, order, trial_type, stimulus, trial_num, looking_time_s, looking_time_diff, total_center, enabled_diff,
          trial_error, trial_error_type) 
 ```
-
+# Joint analysis
 
 ```{r}
-d <- bind_rows(ghana, log_labs_data)
+d <- bind_rows(ghana, uganda, log_labs_data)
 ```
 
 We investigate what the different columns mean. Our hypothesis:
-- total look = looking time, not including lookaways
-- look_disabled - look_enabled = looking time, including lookaways but not attn getters
-- trial_end - trial_start = including lookaways AND attention getters
+- `looking_time_s`: total look = looking time, not including lookaways
+- `enabled_diff`: look_disabled - look_enabled = looking time, including lookaways but not attn getters
+- `looking_time_diff`: trial_end - trial_start = including lookaways AND attention getters
 
-The basic issue is that senegal has a lot of zero looking times. It appears that this is due plausibly to two intersecting issues:
+
+```{r}
+ggplot(d, 
+       aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  geom_smooth(method = "lm") + 
+  facet_wrap(~lab)
+```
+
+
+We have issues with two labs. 
+
+(1) Senegal has a lot of zero looking times. It appears that this is due plausibly to two intersecting issues:
 1. a bug in habit such that if you hold down the key forever, you get LT = 0.
 2. probable misuse of the software by holding down the key a lot. 
 
-```{r}
-ggplot(d, 
-       aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
-  geom_jitter(width = .2, height = 0, alpha = .5) + 
-  geom_smooth() + 
-  facet_wrap(~lab)
-```
+(2) Nigeria has no looking times and their `enabled_diff` is always 18s. I worry that they basically didn't press any keys and just let the experiment run. I also think that they maybe did not use the orders that were assigned. (This is a separate problem). 
+
+## Senegal
+
+Can we rescue Senegal data? Let's look at their data. They have a few looking times that are not 0 or 18. 
 
 ```{r}
-ggplot(d, 
+ggplot(filter(d, lab == "Diop - Senegal"),
+       aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  geom_smooth(method = "lm") + 
+  facet_wrap(~lab)
+```
+Let's look at the trial lengths (`enabled_diff`). 
+
+```{r}
+ggplot(filter(d, lab == "Diop - Senegal"),
        aes(x = trial_num, y = enabled_diff, col = trial_type)) + 
   geom_jitter(width = .2, height = 0, alpha = .5) + 
-  geom_smooth() + 
+  geom_smooth(method = "lm") + 
   facet_wrap(~lab)
 
 ```
+Reluctantly, I think we can't include these data. 
 
+# Data passing minimal quality checks
 
 ```{r}
-ggplot(d, 
+d_clean <- d |>
+  filter(!(lab %in% c("Diop - Senegal", "Bentu - Nigeria")),
+         looking_time_s > 0,
+                   trial_type != "training")
+  
+```
+
+```{r}
+ggplot(d_clean, 
        aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
   geom_jitter(width = .2, height = 0, alpha = .5) + 
-  geom_smooth() + 
-  facet_wrap(~lab)
-```
-
-```{r}
-filter(d, lab != "Diop - Senegal", 
-       looking_time_s > 0) |>
-ggplot(aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
-  geom_jitter(width = .2, height = 0, alpha = .5) + 
   scale_y_log10() + 
+  facet_wrap(~lab) + 
   geom_smooth(method = "lm")
 ```
+# Models
 
 ```{r}
-mod <- lmer(log(looking_time_s) ~ trial_num * trial_type  + 
+d_clean$trial_num_centered <- d_clean$trial_num - 8.5
+
+mod <- lmer(log(looking_time_s) ~ trial_num_centered * trial_type  + 
               (1 | subid) + 
               (trial_type | lab), 
-     data = filter(d, (lab != "Diop - Senegal"),
-                   looking_time_s > 0,
-                   trial_type != "training"))
+     data = filter(d_clean))
 summary(mod)
 ```
 

@@ -8,17 +8,130 @@ library(tidyverse)
 library(here)
 ```
 
+
+# Test case 1
+
+Extract the information we need from the events files. 
+
 ```{r}
-files <- dir(here("processed_data", "trials_cleaned", "Kizito - Uganda"))
+
+events <- read_csv("processed_data/trials_cleaned/Kizito - Uganda/MBG_IDS_001Hairam_2022-11-01-1356_eventlog.csv", skip = 24, 
+         col_names = c("phase", "unknown", "timestamp", 
+                       "location", "extra")) |>
+  filter(phase %in% c("StimulusSettings","ScreenStart","LookEnabled",
+                      "Look","LookTrans","LookDisabled")) |>
+  mutate(trial_type = str_extract(extra, "([I/A]DS_[0-9])|(N/A)"), 
+         event_num = 1:n()) |>
+  mutate(trial_type = ifelse(trial_type == "N/A", "training", trial_type)) |>
+  tidyr::fill(trial_type, .direction = "down") |>
+  filter(!is.na(trial_type)) |>
+  mutate(trial_change = trial_type != lag(trial_type, n = 1), 
+         trial_num = cumsum(ifelse(!is.na(trial_change), trial_change, 1)) - 1) |>
+  mutate(trial_num = case_when(trial_type == "training" & 
+                                  cumsum(phase == "StimulusSettings") == 1 ~
+                                  -2,
+                               trial_type == "training" ~ -1,
+                               TRUE ~ trial_num)) |>
+  select(event_num, phase, trial_type, location, trial_num, timestamp)
+```
+
+Now parse events into LTs. 
+
+Key assumption here is that we will remove all looking that isn't a "look from center to none" or a "look at center". We believe habit marks `LookTrans` looks and we can use `dt` on a transition from Center to None to get the total length of looking at Center. 
+
+```{r}
+lts <- events |>
+  group_by(trial_num, trial_type) |>
+  mutate(t_trial = timestamp - timestamp[phase == "LookEnabled"], 
+         dt = c(0,diff(t_trial))) |>
+  filter(location %in% c("LookCenter","CenterNone")) |>
+  summarise(looking_time_s = sum(dt))
+```
+
+# Test case 2
+
+Extract the information we need from the events files. 
+
+```{r}
+
+events2 <- read_csv("processed_data/trials_cleaned/Kizito - Uganda/MBG_IDS_002Saliha_2022-11-01-1410_eventlog.csv", skip = 24, 
+         col_names = c("phase", "unknown", "timestamp", 
+                       "location", "extra")) |>
+  filter(phase %in% c("StimulusSettings","ScreenStart","LookEnabled",
+                      "Look","LookTrans","LookDisabled")) |>
+  mutate(trial_type = str_extract(extra, "([I/A]DS_[0-9])|(N/A)"), 
+         event_num = 1:n()) |>
+  mutate(trial_type = ifelse(trial_type == "N/A", "training", trial_type)) |>
+  tidyr::fill(trial_type, .direction = "down") |>
+  filter(!is.na(trial_type)) |>
+  mutate(trial_change = trial_type != lag(trial_type, n = 1), 
+         trial_num = cumsum(ifelse(!is.na(trial_change), trial_change, 1)) - 1) |>
+  mutate(trial_num = case_when(trial_type == "training" & 
+                                  cumsum(phase == "StimulusSettings") == 1 ~
+                                  -2,
+                               trial_type == "training" ~ -1,
+                               TRUE ~ trial_num)) |>
+  select(event_num, phase, trial_type, location, trial_num, timestamp)
+```
+
+Now parse events into LTs. 
+
+Key assumption here is that we will remove all looking that isn't a "look from center to none" or a "look at center". We believe habit marks `LookTrans` looks and we can use `dt` on a transition from Center to None to get the total length of looking at Center. 
+
+```{r}
+lts2 <- events2 |>
+  group_by(trial_num, trial_type) |>
+  mutate(t_trial = timestamp - timestamp[phase == "LookEnabled"], 
+         dt = c(0,diff(t_trial))) |>
+  filter(location %in% c("LookCenter","CenterNone")) |>
+  summarise(looking_time_s = sum(dt))
+```
+
+# Functionalize and output
+
+```{r}
+parse_eventlog <- function (f) {
+ events <- read_csv(f, skip = 24, 
+         col_names = c("phase", "unknown", "timestamp", 
+                       "location", "extra")) |>
+  filter(phase %in% c("StimulusSettings","ScreenStart","LookEnabled",
+                      "Look","LookTrans","LookDisabled")) |>
+  mutate(trial_type = str_extract(extra, "([I/A]DS_[0-9])|(N/A)"), 
+         event_num = 1:n()) |>
+  mutate(trial_type = ifelse(trial_type == "N/A", "training", trial_type)) |>
+  tidyr::fill(trial_type, .direction = "down") |>
+  filter(!is.na(trial_type)) |>
+  mutate(trial_change = trial_type != lag(trial_type, n = 1), 
+         trial_num = cumsum(ifelse(!is.na(trial_change), trial_change, 1)) - 1) |>
+  mutate(trial_num = case_when(trial_type == "training" & 
+                                  cumsum(phase == "StimulusSettings") == 1 ~
+                                  -2,
+                               trial_type == "training" ~ -1,
+                               TRUE ~ trial_num), 
+         trial_type = str_replace_all(trial_type, "_[0-9]+", "")) |>
+  select(event_num, phase, trial_type, location, trial_num, timestamp) 
+ 
+ lts <- events |>
+  group_by(trial_num, trial_type) |>
+  mutate(t_trial = timestamp - timestamp[phase == "LookEnabled"], 
+         dt = c(0,diff(t_trial))) |>
+  filter(location %in% c("LookCenter","CenterNone")) |>
+  summarise(looking_time_s = sum(dt)/1000)
+ 
+ return(lts)
+}
 ```
 
 
 ```{r}
-d <- read_csv("processed_data/trials_cleaned/Kizito - Uganda/MBG_IDS_001Hairam_2022-11-01-1356_eventlog.csv", skip = 24, 
-         col_names = c("phase", "unknown", "timestamp", "unknown2", "file", "unknown3","trial")) |>
-  filter(phase %in% c("StimulusSettings","ScreenStart","LookEnabled","Look","LookTrans","LookDisabled")) 
+files <- dir(here("processed_data", "trials_cleaned", "Kizito - Uganda"))
 
-# |>
-#   mutate(stimulus = str_replace_all(file, "C:/Users/ManyBabies Africa/Documents/habit/stim/MB1 stimuli/Visual Stimuli/attention getter (hoehle circles and chimes).mov"
+uganda <- map_df(files, \(f) {
+  parse_eventlog(here("processed_data","trials_cleaned","Kizito - Uganda",f)) |>
+    mutate(lab = "Kizito - Uganda",
+           subid = str_extract(f, "IDS_[0-9]+"))
+  })
+
+write_csv(uganda, here("processed_data","trials_cleaned","Kizito - Uganda parsed.csv"))
 ```
 
