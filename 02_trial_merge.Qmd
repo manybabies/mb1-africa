@@ -170,7 +170,12 @@ ggplot(d_clean,
   geom_jitter(width = .2, height = 0, alpha = .5) + 
   scale_y_log10() + 
   facet_wrap(~lab) + 
-  geom_smooth(method = "lm")
+  geom_smooth(method = "lm") + 
+  ylab("Looking Time (log s)") +
+  xlab("Trial Number") + 
+  ggthemes::theme_few() + 
+  ggthemes::scale_color_solarized() +
+  theme(legend.position = "bottom")
 ```
 # Models
 
@@ -178,9 +183,21 @@ ggplot(d_clean,
 d_clean$trial_num_centered <- d_clean$trial_num - 8.5
 
 mod <- lmer(log(looking_time_s) ~ trial_num_centered * trial_type  + 
-              (1 | subid) + 
+              (1  | subid) + 
               (trial_type | lab), 
      data = filter(d_clean))
 summary(mod)
+```
+
+# Data amounts
+
+```{r}
+n_trials <- d_clean |>
+  group_by(lab, subid) |>
+  count() 
+
+ggplot(n_trials, aes(x = n, fill = lab)) + 
+  geom_histogram()
+
 ```
 

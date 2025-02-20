@@ -15,7 +15,8 @@ Extract the information we need from the events files.
 
 ```{r}
 
-events <- read_csv("processed_data/trials_cleaned/Kizito - Uganda/MBG_IDS_001Hairam_2022-11-01-1356_eventlog.csv", skip = 24, 
+events <- read_csv("processed_data/trials_cleaned/Kizito - Uganda/MBG_IDS_001Hairam_2022-11-01-1356_eventlog.csv", 
+                   skip = 24, 
          col_names = c("phase", "unknown", "timestamp", 
                        "location", "extra")) |>
   filter(phase %in% c("StimulusSettings","ScreenStart","LookEnabled",
