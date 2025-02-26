@@ -1,0 +1,7 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+RSAMBOO7,MBG_IDS,ORDER_4 (Simple),1,0,AGAbort,No,0,,,,,,,14500,25079,0,0,0,0,0,0,25079
+RSAMBOO7,MBG_IDS,ORDER_4 (Simple),1,1,AGAbort,No,0,,,,,,,25079,27390,0,0,0,0,0,0,27390
+RSAMBOO7,MBG_IDS,ORDER_4 (Simple),1,2,Abort,No,22,ADS_6,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,27390,44222,0,0,0,0,0,29808,44222
+RSAMBOO7,MBG_IDS,ORDER_4 (Simple),2,0,AGAbort,No,0,,,,,,,44224,44447,0,0,0,0,0,0,44447
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff

@@ -1,0 +1,4 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+RSAMBOO7,MBG_IDS,ORDER_4 (Simple),1,0,MaxStimulusTime,No,22,ADS_8,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,4383637,4407965,0,0,0,0,0,4389964,4407965
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff

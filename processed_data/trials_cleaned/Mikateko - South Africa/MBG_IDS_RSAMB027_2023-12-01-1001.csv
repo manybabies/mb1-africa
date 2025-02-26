@@ -1,0 +1,15 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+RSAMB027,MBG_IDS,ORDER_1 (Simple),1,0,MaxLookAwayTime,No,22,ADS_5,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,29570,54007,11485,0,0,11485,0,40322,54007,LookCenter,40521,52006,11485
+RSAMB027,MBG_IDS,ORDER_1 (Simple),2,0,MaxStimulusTime,No,23,IDS_1,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,54013,73567,17928,0,0,17928,0,55567,73567,LookCenter,55639,73567,17928
+RSAMB027,MBG_IDS,ORDER_1 (Simple),3,0,MaxLookAwayTime,No,24,IDS_8,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,73568,79684,2242,0,0,2242,0,75283,79684,LookCenter,75441,77683,2242
+RSAMB027,MBG_IDS,ORDER_1 (Simple),4,0,MaxLookAwayTime,No,25,IDS_4,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,79686,92824,4196,0,0,4196,0,86566,92823,LookCenter,86627,90823,4196
+RSAMB027,MBG_IDS,ORDER_1 (Simple),5,0,MaxLookAwayTime,No,26,Train_1,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,92826,113678,14555,0,0,14555,0,97080,113678,LookCenter,97123,111678,14555
+RSAMB027,MBG_IDS,ORDER_1 (Simple),6,0,MaxLookAwayTime,No,27,Train_1,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,113681,122137,2297,0,0,2297,0,117693,122137,LookCenter,117839,120136,2297
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,1,0,1,TRUE,LookCenter,40521,52006,11485
+MBG_IDS,2,0,1,TRUE,LookCenter,55639,73567,17928
+MBG_IDS,3,0,1,TRUE,LookCenter,75441,77683,2242
+MBG_IDS,4,0,1,TRUE,LookCenter,86627,90823,4196
+MBG_IDS,5,0,1,TRUE,LookCenter,97123,111678,14555
+MBG_IDS,6,0,1,TRUE,LookCenter,117839,120136,2297

@@ -14,7 +14,7 @@ library(lmerTest)
 
 Let's read in trial data from the different labs. 
 
-Labs right now are: Senegal, Uganda, Malawi, Rwanda, Ghana, and Kenya. 
+Labs right now are: Senegal, Uganda, Malawi, Rwanda, Ghana, Kenya, and South Africa.
 
 # Ghana
 
@@ -68,11 +68,12 @@ Next is a set in event format.
 
 ```{r}
 log_labs <- c("Diop - Senegal", "Lamba - Malawi", 
-              "Mushimiyimana - Rwanda", "Ziedler - Kenya", "Bentu - Nigeria")
+              "Mushimiyimana - Rwanda", "Ziedler - Kenya", "Bentu - Nigeria",
+              "Mikateko - South Africa")
 
 files <- lapply(log_labs, function (x) dir(path = here("processed_data", "trials_cleaned", x)))
 
-log_labs_data_raw <- map_df(1:5, \(x) {
+log_labs_data_raw <- map_df(1:6, \(x) {
   read_csv(here("processed_data", "trials_cleaned", log_labs[x], files[x])) |>
     mutate(lab = log_labs[x])
   }) |>

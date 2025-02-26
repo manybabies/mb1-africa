@@ -1,0 +1,23 @@
+SubjectID,Phase,Order (randomization),Trial,Repeat,EndType,Habituated,StimID,StimName,StimLabel,Left,Center,Right,ISS,Trial Start,Trial End,TotalLook,TotalLookAway,TotalLeft,TotalCenter,TotalRight,LookEnabled,LookDisabled,Looks
+RSAMB001,MBG_IDS,ORDER_1 (Simple),1,0,MaxStimulusTime,No,22,ADS_5,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,10667,33497,0,0,0,0,0,15497,33497
+RSAMB001,MBG_IDS,ORDER_1 (Simple),2,0,MaxStimulusTime,No,23,ADS_8,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,33499,53484,0,0,0,0,0,35484,53484
+RSAMB001,MBG_IDS,ORDER_1 (Simple),3,0,AGAbort,No,0,,,,,,,53485,65932,0,0,0,0,0,0,65932
+RSAMB001,MBG_IDS,ORDER_1 (Simple),3,1,AGAbort,No,0,,,,,,,65932,79688,0,0,0,0,0,0,79688
+RSAMB001,MBG_IDS,ORDER_1 (Simple),3,2,MaxLookAwayTime,No,24,ADS_3,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,79688,96847,1385,0,0,1385,0,93462,96847,LookCenter,93462,94847,1385
+RSAMB001,MBG_IDS,ORDER_1 (Simple),4,0,MaxLookAwayTime,No,25,IDS_8,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,96848,105809,1481,0,0,1481,0,102327,105809,LookCenter,102327,103808,1481
+RSAMB001,MBG_IDS,ORDER_1 (Simple),5,0,MaxStimulusTime,No,26,IDS_3,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,105810,124584,18000,0,0,18000,0,106583,124584,LookCenter,106583,124583,18000
+RSAMB001,MBG_IDS,ORDER_1 (Simple),6,0,AGAbort,No,0,,,,,,,124585,132341,0,0,0,0,0,0,132341
+RSAMB001,MBG_IDS,ORDER_1 (Simple),6,1,AGAbort,No,0,,,,,,,132341,135397,0,0,0,0,0,0,135397
+RSAMB001,MBG_IDS,ORDER_1 (Simple),6,2,MaxLookAwayTime,No,27,ADS_8,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,135397,150872,5516,0,0,5516,0,140326,150872,LookCenter,143352,148868,5516
+RSAMB001,MBG_IDS,ORDER_1 (Simple),7,0,MaxStimulusTime,No,28,ADS_3,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,150873,169072,15038,0,0,15038,0,151071,169072,LookCenter,154034,169072,15038
+RSAMB001,MBG_IDS,ORDER_1 (Simple),8,0,Abort,No,29,ADS_2,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,169074,189549,0,0,0,0,0,185222,189549
+RSAMB001,MBG_IDS,ORDER_1 (Simple),9,0,MaxStimulusTime,No,30,IDS_1,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,189550,220466,0,0,0,0,0,202466,220466
+RSAMB001,MBG_IDS,ORDER_1 (Simple),10,0,MaxStimulusTime,No,31,IDS_2,,,C:/Users/ManyBabies Africa/Desktop/MB1 stimuli/Visual Stimuli/checkerboard (target).jpg,,,220467,257563,0,0,0,0,0,239562,257563
+RSAMB001,MBG_IDS,ORDER_1 (Simple),11,0,AGAbort,No,0,,,,,,,257564,262817,0,0,0,0,0,0,262817
+
+Phase,Trial,Repeat,Num,Complete,Direction,Start,End,Diff
+MBG_IDS,3,2,1,TRUE,LookCenter,93462,94847,1385
+MBG_IDS,4,0,1,TRUE,LookCenter,102327,103808,1481
+MBG_IDS,5,0,1,TRUE,LookCenter,106583,124583,18000
+MBG_IDS,6,2,1,TRUE,LookCenter,143352,148868,5516
+MBG_IDS,7,0,1,TRUE,LookCenter,154034,169072,15038
