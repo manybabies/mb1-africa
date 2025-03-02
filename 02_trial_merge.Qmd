@@ -69,7 +69,7 @@ Next is a set in event format.
 ```{r}
 log_labs <- c("Diop - Senegal", "Lamba - Malawi", 
               "Mushimiyimana - Rwanda", "Ziedler - Kenya", "Bentu - Nigeria",
-              "Mikateko - South Africa")
+              "Ndhambi - South Africa")
 
 files <- lapply(log_labs, function (x) dir(path = here("processed_data", "trials_cleaned", x)))
 

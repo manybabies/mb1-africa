@@ -1,6 +1,5 @@
 column,status,substitution,type,file
 timestamp,exclude,,,Diop - Senegal.xlsx
-email_address,exclude,,,Diop - Senegal.xlsx
 1._id_du_sujet,sub,subid,,Diop - Senegal.xlsx
 2._date_du_test,exclude,date_of_test,,Diop - Senegal.xlsx
 3._date_de_naissance_de_l'enfant,exclude,birthday,,Diop - Senegal.xlsx
@@ -34,18 +33,18 @@ nb:_choisissez_une_seule_reponse!",sub,primary_caregiver,,Diop - Senegal.xlsx
 29._combien_d'autres_adultes_vivent_actuellement_avec_l'enfant_(dans_la_même_maison)_?,sub,other_adults_living_with_child,numeric,Diop - Senegal.xlsx
 "30._quelle(s)_langue(s)_parlez-vous_à_l'enfant,_vous_et_les_autres_soignants_?_veuillez_spécifier_la_langue_principale,_langue_secondaire_et_toute_autre_langue_que_l'enfant_entend_régulièrement._veuillez_commander_les_langues_du_plus_au_moins_fréquent_dans_l’environnement_de_l’enfant_:
 nb:_l'ordre_est_important!",sub,languages_spoken_to_child,,Diop - Senegal.xlsx
-"31._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_n_°_1.",,lang1_exposure,numeric,Diop - Senegal.xlsx
-"32._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_2",,lang2_exposure,numeric,Diop - Senegal.xlsx
-"33._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_3",,lang3_exposure,numeric,Diop - Senegal.xlsx
-"34._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_4",,lang4_exposure,numeric,Diop - Senegal.xlsx
-"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[quand_je_parle_à_mon_enfant,_je_remarque_que_je_parle_plus_lentement_et_clairement]",,speak_slowly_to_child,,Diop - Senegal.xlsx
-"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[mon_enfant_apprend_mieux_le_langage_si_je_lui_parle_de_la_même_manière_qu'aux_adultes]",,adult_speech_to_child,,Diop - Senegal.xlsx
-"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[peu_importe_ce_que_je_dis_car_mon_enfant_ne_comprend_pas_encore]",,child-directed_speech_irrelevant,,Diop - Senegal.xlsx
-"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[lorsque_je_parle_à_mon_enfant,_je_remarque_que_ma_voix_est_différente_(par_exemple_:_plus_vive)]",,uses_child-directed_voice,,Diop - Senegal.xlsx
-"36._l'échelle_1_a_10_échelons_et_représente_la_place_qu’occupent_les_gens_dans_la_société._au_sommet_de_l'échelle_(échelon_1)_se_trouvent_les_personnes_les_mieux_loties,_celles_qui_ont_le_plus_d'argent,_le_plus_d'éducation_et_les_meilleurs_emplois._en_bas_(échelon_10)_se_trouvent_les_personnes_les_plus_mal_loties,_celles_qui_ont_le_moins_d'argent,_le_moins_d’éducation,_sous-employés_ou_chômeurs._veuillez_choisir_le_numero_de_l'échelon_qui_représente_le_mieux_où_vous_pensez_vous_situer_sur_l'échelle_1.",,society_ladder,,Diop - Senegal.xlsx
-"37._l'échelle_2_a_10_échelons_et_représente_la_position_des_gens_dans_votre_communauté._au_sommet_de_l'échelle_(échelon_1)_se_trouvent_les_personnes_les_mieux_loties,_celles_qui_ont_le_plus_d'argent,_le_plus_d'éducation_et_les_meilleurs_emplois._en_bas_(échelon_10)_se_trouvent_les_personnes_les_plus_mal_loties,_celles_qui_ont_le_moins_d'argent,_le_moins_d'éducation,_les_pires_emplois_ou_pas_d'emploi._veuillez_choisir_le_numero_de_l'échelon_qui_représente_le_mieux_où_vous_pensez_vous_situer_sur_l'échelle_2__par_rapport_à_votre_communauté_:_les_personnes_que_vous_habitez_à_proximité_et_que_vous_voyez_régulièrement.",,community_ladder,,Diop - Senegal.xlsx
+"31._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_n_°_1.",sub,hours_lang1,numeric,Diop - Senegal.xlsx
+"32._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_2",sub,hours_lang2,numeric,Diop - Senegal.xlsx
+"33._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_3",sub,hours_lang3,numeric,Diop - Senegal.xlsx
+"34._compte_tenu_du_nombre_d'heures_pendant_lesquelles_votre_enfant_est_éveillé,_combien_d'heures_votre_enfant_entend-il_la_langue_4",sub,hours_lang4,numeric,Diop - Senegal.xlsx
+"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[quand_je_parle_à_mon_enfant,_je_remarque_que_je_parle_plus_lentement_et_clairement]",sub,speak_slowly_to_child,,Diop - Senegal.xlsx
+"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[mon_enfant_apprend_mieux_le_langage_si_je_lui_parle_de_la_même_manière_qu'aux_adultes]",sub,adult_speech_to_child,,Diop - Senegal.xlsx
+"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[peu_importe_ce_que_je_dis_car_mon_enfant_ne_comprend_pas_encore]",sub,child-directed_speech_irrelevant,,Diop - Senegal.xlsx
+"35._veuillez_indiquer_ce_que_vous_pensez_des_déclarations_suivantes._choisissez_l'une_des_options_suivantes_allant_de_""totatelement_pas_d'accord""_à_""tout_à_fait_d'accord""._[lorsque_je_parle_à_mon_enfant,_je_remarque_que_ma_voix_est_différente_(par_exemple_:_plus_vive)]",sub,uses_child-directed_voice,,Diop - Senegal.xlsx
+"36._l'échelle_1_a_10_échelons_et_représente_la_place_qu’occupent_les_gens_dans_la_société._au_sommet_de_l'échelle_(échelon_1)_se_trouvent_les_personnes_les_mieux_loties,_celles_qui_ont_le_plus_d'argent,_le_plus_d'éducation_et_les_meilleurs_emplois._en_bas_(échelon_10)_se_trouvent_les_personnes_les_plus_mal_loties,_celles_qui_ont_le_moins_d'argent,_le_moins_d’éducation,_sous-employés_ou_chômeurs._veuillez_choisir_le_numero_de_l'échelon_qui_représente_le_mieux_où_vous_pensez_vous_situer_sur_l'échelle_1.",sub,society_ladder,,Diop - Senegal.xlsx
+"37._l'échelle_2_a_10_échelons_et_représente_la_position_des_gens_dans_votre_communauté._au_sommet_de_l'échelle_(échelon_1)_se_trouvent_les_personnes_les_mieux_loties,_celles_qui_ont_le_plus_d'argent,_le_plus_d'éducation_et_les_meilleurs_emplois._en_bas_(échelon_10)_se_trouvent_les_personnes_les_plus_mal_loties,_celles_qui_ont_le_moins_d'argent,_le_moins_d'éducation,_les_pires_emplois_ou_pas_d'emploi._veuillez_choisir_le_numero_de_l'échelon_qui_représente_le_mieux_où_vous_pensez_vous_situer_sur_l'échelle_2__par_rapport_à_votre_communauté_:_les_personnes_que_vous_habitez_à_proximité_et_que_vous_voyez_régulièrement.",sub,community_ladder,,Diop - Senegal.xlsx
 id,sub,subid,,Kizito - Uganda.xlsx
-dob,exclude,birthday,,Kizito - Uganda.xlsx
+dob,exclude,,,Kizito - Uganda.xlsx
 testdate,sub,date_of_test,,Kizito - Uganda.xlsx
 a1,exclude,age_category,,Kizito - Uganda.xlsx
 a2,sub,gender,,Kizito - Uganda.xlsx
@@ -78,10 +77,10 @@ a23b,sub,lang2,,Kizito - Uganda.xlsx
 a23c,sub,lang3,,Kizito - Uganda.xlsx
 a23d,sub,lang4,,Kizito - Uganda.xlsx
 a24,sub,hours_awake,,Kizito - Uganda.xlsx
-a25a,sub,lang1_exposure,,Kizito - Uganda.xlsx
-a25b,sub,lang2_exposure,,Kizito - Uganda.xlsx
-a25c,sub,lang3_exposure,,Kizito - Uganda.xlsx
-a25d,sub,lang4_exposure,,Kizito - Uganda.xlsx
+a25a,sub,hours_lang1,,Kizito - Uganda.xlsx
+a25b,sub,hours_lang2,,Kizito - Uganda.xlsx
+a25c,sub,hours_lang3,,Kizito - Uganda.xlsx
+a25d,sub,hours_lang4,,Kizito - Uganda.xlsx
 a26a,sub,speak_slowly_to_child,,Kizito - Uganda.xlsx
 a26b,sub,adult_speech_to_child,,Kizito - Uganda.xlsx
 a26c,sub,child-directed_speech_irrelevant,,Kizito - Uganda.xlsx
@@ -123,11 +122,31 @@ internal_id,exclude,,,Zeidler - Kenya.xlsx
 previous_ear_infections,sub,prev_earinfection,,Zeidler - Kenya.xlsx
 primary_caregiver,include,,,Zeidler - Kenya.xlsx
 primary_caregiver_native_language,include,,,Zeidler - Kenya.xlsx
-primary_caregiver_number_of_other_children,include,,,Zeidler - Kenya.xlsx
+primary_caregiver_number_of_other_children,sub,number_of_siblings,,Zeidler - Kenya.xlsx
 secondary_caregiver,include,,,Zeidler - Kenya.xlsx
 secondary_caregiver_native_language,include,,,Zeidler - Kenya.xlsx
 secondary_caregiver_number_of_other_children,include,,numeric,Zeidler - Kenya.xlsx
-number_of_other_children_living_with_child,include,,,Zeidler - Kenya.xlsx
-baby_talk_primary_caregiver,include,,,Zeidler - Kenya.xlsx
-baby_talk_secondary_caregiver,include,,,Zeidler - Kenya.xlsx
+number_of_other_children_living_with_child,sub,other_children_living_with_child,,Zeidler - Kenya.xlsx
+baby_talk_primary_caregiver,include,speak_slowly_to_child,,Zeidler - Kenya.xlsx
+baby_talk_secondary_caregiver,include,secondary_caregiver_speak_slowly_to_child,,Zeidler - Kenya.xlsx
 baby_talk_others,include,,,Zeidler - Kenya.xlsx
+age_mos,include,,numeric,Ndhambi - South Africa.csv
+exclude,include,,,Ndhambi - South Africa.csv
+method,exclude,,,Bentu - Nigeria.csv
+session_error,sub,session_issue,,Bentu - Nigeria.csv
+second_session,exclude,,,Bentu - Nigeria.csv
+lang_group,exclude,,,Bentu - Nigeria.csv
+macarthur_ladder,sub,society_ladder,,Bentu - Nigeria.csv
+gender,include,,,Bentu - Nigeria.csv
+race_ethnicity,exclude,,,Bentu - Nigeria.csv
+parenta_gender,sub,primary_caregiver_gender,,Bentu - Nigeria.csv
+parenta_education,sub,primary_caregiver_education,,Bentu - Nigeria.csv
+parentb_gender,sub,secondary_caregiver_gender,,Bentu - Nigeria.csv
+parentb_education,sub,secondary_caregiver_education,,Bentu - Nigeria.csv
+prev_earinfection,include,,,Bentu - Nigeria.csv
+cognitive_developmental,sub,cognitive_language_delay,,Bentu - Nigeria.csv
+cognitive_developmental_info,sub,cognitive_language_delay_info,,Bentu - Nigeria.csv
+sib1_age,exclude,,,Bentu - Nigeria.csv
+sib1_gender,exclude,,,Bentu - Nigeria.csv
+sib2_age,exclude,,,Bentu - Nigeria.csv
+sib2_gender,exclude,,,Bentu - Nigeria.csv

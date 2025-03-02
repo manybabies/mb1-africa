@@ -89,13 +89,13 @@ read_multiformat_file <- function(path, fname) {
     d <- read_xls(full_path)
   } else if (str_detect(fname, ".csv")) {
     # https://stackoverflow.com/questions/33417242/how-to-check-if-csv-file-has-a-comma-or-a-semicolon-as-separator
-    L <- readLines(full_path, n = 1)
-    numfields <- count.fields(textConnection(L), sep = ";")
-    if (numfields == 1) {
+    #L <- readLines(full_path, n = 1)
+    #numfields <- count.fields(textConnection(L), sep = ";")
+    #if (numfields == 1) {
       d <- read_csv(full_path, col_types = cols(parentA_gender = col_character(), ParentA_gender = col_character()))
-    } else {
-      d <- read_csv2(full_path, col_types = cols(parentA_gender = col_character(), ParentA_gender = col_character()))
-    }
+    #} else {
+    #  d <- read_csv2(full_path, col_types = cols(parentA_gender = col_character(), ParentA_gender = col_character()))
+    #}
   } else if (str_detect(fname, ".txt")) {
     d <- read_tsv(full_path, col_types = cols(parentA_gender = col_character(), ParentA_gender = col_character()))
   } 

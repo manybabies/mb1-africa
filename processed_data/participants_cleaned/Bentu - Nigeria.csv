@@ -1,0 +1,33 @@
+Lab,subid,method,RA,age_days,trial_order,session_error,session_error_type,notes,second_session,lang_group,lang1,hours_lang1,lang2,hours_lang2,lang3,hours_lang3,lang4,hours_lang4,MacArthur_Ladder,gender,race_ethnicity,parentA_gender,parentA_education,parentB_gender,parentB_education,preterm,days_preterm,prev_earinfection,curr_earinfection,hearing_vision,hearing_vision_info,cognitive_developmental,cognitive_developmental_info,sib1_age,sib1_gender,sib2_age,sib2_gender
+PSCUJ,PSCUJ01,SingleScreen,Bentu/Jonathan,280,1,noerror,NA,NA,N,monolingual,Hausa,100,English,50,NA,NA,NA,NA,5,Male,Black,F,16,M,16,F,NA,N,N,N,NA,N,NA,5,F,9,M
+PSCUJ,PSCUJ02,SingleScreen,Bentu/Jonathan,191,2,noerror,NA,More interest in attention-getter.,N,monolingual,Hausa,100,English,10,NA,NA,NA,NA,7,Female,Black,F,8,M,8,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ03,SingleScreen,Bentu/Jonathan,417,3,noerror,NA,NA,N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,8,Female,Black,F,12,M,16,F,NA,N,N,N,NA,N,NA,7,M,NA,NA
+PSCUJ,PSCUJ04,SingleScreen,Bentu/Jonathan,299,4,noerror,NA,NA,N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,6,Male,Black,F,12,M,12,F,NA,N,N,N,NA,N,NA,4,M,NA,NA
+PSCUJ,PSCUJ05,SingleScreen,Evans/Jonathan,204,1,noerror,NA,NA,N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,9,Male,Black,F,8,M,8,F,NA,N,N,N,NA,N,NA,5,F,NA,NA
+PSCUJ,PSCUJ06,SingleScreen,Evans/Jonathan,360,2,noerror,NA,"Baby looks unhappy, but responded well during session",N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,8,Male,Black,F,12,M,8,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ07,SingleScreen,Evans/Jonathan,274,3,noerror,NA,NA,N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,7,Female,Black,F,12,M,NA,NA,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ08,SingleScreen,Evans/Jonathan,213,1,error,stopped at trial 5,participant refuse to give attention,N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,7,Male,Black,F,12,M,NA,NA,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ09,SingleScreen,Jonathan/Bentu,272,2,noerror,NA,NA,N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,9,Male,Black,F,12,M,12,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ10,SingleScreen,JonathanBentu,197,4,noerror,NA,NA,N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,7,Male,Black,F,8,M,12,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ11,SingleScreen,Chamkat/Jonathan,201,1,noerror,NA,NA,N,monolingual,Hausa,100,English,15,NA,NA,NA,NA,5,Male,Black,F,12,M,16,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ12,SingleScreen,Chamkat/Jonathan,155,2,noerror,NA,NA,N,monolingual,Hausa,100,English,25,NA,NA,NA,NA,6,Female,Black,F,12,M,8,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ13,SingleScreen,Chamkat/Jonathan,193,3,noerror,NA,More interest in attention-getter.,N,monolingual,Hausa,100,English,20,NA,NA,NA,NA,7,Female,Black,F,12,M,NA,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ14,SingleScreen,Chamkat/Jonathan,311,4,noerror,NA,NA,N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,9,Male,Black,F,12,M,NA,F,NA,Y,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ15,SingleScreen,Chamkat/Jonathan,363,1,noerror,Participant Error,"Stopped at trial 4, Participant was restless and crying",N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,8,Male,Black,F,12,M,12,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ16,SingleScreen,Jonathan/Bentu,199,2,noerror,NA,NA,N,monolingual,Hausa,100,NA,NA,NA,NA,NA,NA,9,Male,Black,F,12,M,12,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ17,SingleScreen,Jonathan/Bentu,347,3,noerror,NA,participant was very happy and gave full attention,N,monolingual,Tarok,100,English,55,NA,NA,NA,NA,5,Female,Black,F,16,M,16,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ18,SingleScreen,Jonathan/Bentu,238,4,noerror,NA,participant was very happy and gave full attention,N,monolingual,Berom,100,English,50,NA,NA,NA,NA,6,Male,Black,F,12,M,16,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ19,SingleScreen,Jonathan/Bentu,299,1,noerror,NA,participant was very happy and gave full attention,N,monolingual,Berom,100,English,65,NA,NA,NA,NA,5,Male,Black,F,12,M,16,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ20,SingleScreen,Jonathan/Bentu,221,2,noerror,NA,participant was very happy and gave full attention,N,monolingual,Mwaghavul,100,Hausa,50,English,50,NA,NA,7,Female,Black,F,6,M,16,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ21,SingleScreen,Jonathan,193,3,noerror,NA,NA,N,monolingual,Berom,100,Anaguta,80,NA,NA,NA,NA,5,Female,Black,F,12,M,NA,NA,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ22,SingleScreen,Jonathan,185,4,noerror,NA,NA,N,monolingual,Mwaghavul,100,English,75,NA,NA,NA,NA,4,Female,Black,F,16,M,16,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ23,SingleScreen,Jonathan,208,1,noerror,NA,"Participant has ear infection, but attention was still gotten through attention getter",N,monolingual,Mwaghavul,100,English,80,Hausa,70,NA,NA,4,Male,Black,F,16,M,12,F,NA,Y,Y,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ24,SingleScreen,Jonathan,202,2,noerror,NA,NA,N,monolingual,Tarok,100,English,50,NA,NA,NA,NA,7,Female,Black,F,12,M,12,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ25,SingleScreen,Jonathan,335,3,noerror,NA,NA,N,monolingual,Berom,100,English,60,NA,NA,NA,NA,5,Male,Black,F,12,M,NA,NA,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ26,SingleScreen,Jonathan,199,4,noerror,NA,NA,N,monolingual,Anaguta,100,English,50,NA,NA,NA,NA,8,Female,Black,F,12,M,12,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ27,SingleScreen,Jonathan,194,1,noerror,NA,NA,N,monolingual,Idoma,100,English,65,NA,NA,NA,NA,6,Male,Black,F,12,M,12,T,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ28,SingleScreen,Jonathan,300,2,noerror,NA,NA,N,monolingual,Berom,100,English,80,NA,NA,NA,NA,4,Male,Black,F,16,M,16,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ29,SingleScreen,Jonathan,306,3,noerror,NA,NA,N,monolingual,Afizere,100,English,50,Hausa,50,NA,NA,5,Female,Black,F,12,M,NA,NA,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ30,SingleScreen,Jonathan,189,4,noerror,NA,NA,N,monolingual,Rong,100,NA,NA,NA,NA,NA,NA,8,Female,Black,F,12,M,12,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ31,SingleScreen,Jonathan,242,4,noerror,NA,NA,N,monolingual,Berom,100,English,65,Hausa,50,NA,NA,7,Female,Black,F,12,M,16,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
+PSCUJ,PSCUJ32,SingleScreen,Jonathan,174,3,noerror,NA,NA,N,monolingual,Tarok,100,English,50,NA,NA,NA,NA,5,Male,Black,F,16,M,16,F,NA,N,N,N,NA,N,NA,NA,NA,NA,NA
