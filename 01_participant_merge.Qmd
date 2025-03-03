@@ -70,6 +70,14 @@ participants_columns <- read_csv("metadata/participants_columns_remapping.csv")
 # see_if(all(col_names$column %in% participants_columns$column))
 
 pd_raw <- map_df(participant_files, clean_participant_file) 
+
+labs <- c("PSCUJ", "UCAD", "Uganda", "unima_zomba", 
+          "CHUK", "SMU", "ghana", "ke-nanyuki")
+
+# South Africa gave only age in months, so we'll impute 
+pd_raw <- pd_raw |> filter(lab %in% labs) |>
+  mutate(age_days = ifelse(!is.na(age_mos), (age_mos+.5)*30.44, age_days)) |>
+  select(-age_mos)
 ```
 
 Visualize dataset. (Transposed so that we can see the variable labels). 
