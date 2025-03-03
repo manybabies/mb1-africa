@@ -52,8 +52,8 @@ a3a,sub,preterm,,Kizito - Uganda.xlsx
 a3b,sub,days_preterm,numeric,Kizito - Uganda.xlsx
 a4a,sub,cognitive_language_delay,,Kizito - Uganda.xlsx
 a4b,sub,cognitive_language_delay_info,,Kizito - Uganda.xlsx
-a5a,sub,cognitive_language_delay,,Kizito - Uganda.xlsx
-a5b,sub,cognitive_language_delay_info,,Kizito - Uganda.xlsx
+a5a,exclude,,,Kizito - Uganda.xlsx
+a5b,exclude,,,Kizito - Uganda.xlsx
 a6,sub,prev_earinfection,,Kizito - Uganda.xlsx
 a7,sub,curr_earinfection,,Kizito - Uganda.xlsx
 a8,sub,primary_caregiver,,Kizito - Uganda.xlsx
@@ -62,7 +62,7 @@ a10,sub,primary_caregiver_marital_status,,Kizito - Uganda.xlsx
 a11,sub,primary_caregiver_native_language,,Kizito - Uganda.xlsx
 a12,sub,primary_caregiver_education,,Kizito - Uganda.xlsx
 a13,sub,primary_caregiver_total_years_education,numeric,Kizito - Uganda.xlsx
-a14,sub,other_children_living_with_child,numeric,Kizito - Uganda.xlsx
+a14,sub,primary_caregiver_other_children_living_with_child,numeric,Kizito - Uganda.xlsx
 a15,sub,secondary_caregiver,,Kizito - Uganda.xlsx
 a16,sub,secondary_caregiver_gender,,Kizito - Uganda.xlsx
 a17,sub,secondary_caregiver_marital_status,,Kizito - Uganda.xlsx
@@ -70,7 +70,7 @@ a18,sub,secondary_caregiver_native_language,,Kizito - Uganda.xlsx
 a19,sub,secondary_caregiver_education,,Kizito - Uganda.xlsx
 a20,sub,secondary_caregiver_total_years_education,numeric,Kizito - Uganda.xlsx
 a21,sub,number_of_siblings,numeric,Kizito - Uganda.xlsx
-a22a,sub,other_children_living_with_child,,Kizito - Uganda.xlsx
+a22a,sub,secondary_caregiver_other_children_living_with_child,,Kizito - Uganda.xlsx
 a22b,sub,other_adults_living_with_child,,Kizito - Uganda.xlsx
 a23a,sub,lang1,,Kizito - Uganda.xlsx
 a23b,sub,lang2,,Kizito - Uganda.xlsx
@@ -122,10 +122,10 @@ internal_id,exclude,,,Zeidler - Kenya.xlsx
 previous_ear_infections,sub,prev_earinfection,,Zeidler - Kenya.xlsx
 primary_caregiver,include,,,Zeidler - Kenya.xlsx
 primary_caregiver_native_language,include,,,Zeidler - Kenya.xlsx
-primary_caregiver_number_of_other_children,sub,number_of_siblings,,Zeidler - Kenya.xlsx
+primary_caregiver_number_of_other_children,sub,primary_caregiver_other_children_living_with_child,,Zeidler - Kenya.xlsx
 secondary_caregiver,include,,,Zeidler - Kenya.xlsx
 secondary_caregiver_native_language,include,,,Zeidler - Kenya.xlsx
-secondary_caregiver_number_of_other_children,include,,numeric,Zeidler - Kenya.xlsx
+secondary_caregiver_number_of_other_children,sub,secondary_caregiver_other_children_living_with_child,numeric,Zeidler - Kenya.xlsx
 number_of_other_children_living_with_child,sub,other_children_living_with_child,,Zeidler - Kenya.xlsx
 baby_talk_primary_caregiver,include,speak_slowly_to_child,,Zeidler - Kenya.xlsx
 baby_talk_secondary_caregiver,include,secondary_caregiver_speak_slowly_to_child,,Zeidler - Kenya.xlsx
