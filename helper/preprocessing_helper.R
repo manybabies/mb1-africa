@@ -59,7 +59,7 @@ read_trial_file <- function(fname) {
     mutate_all(as.character) %>%
     mutate_all(nc_na) %>%
     mutate_at(vars(numeric_vars), as.numeric) %>%
-    select(all_vars) %>%
+    select(all_of(all_vars)) %>%
     mutate(file = fname, 
            lab = lab[1])  # some lab fields have gaps, for some reason
   
@@ -92,12 +92,12 @@ read_multiformat_file <- function(path, fname) {
     #L <- readLines(full_path, n = 1)
     #numfields <- count.fields(textConnection(L), sep = ";")
     #if (numfields == 1) {
-      d <- read_csv(full_path, col_types = cols(parentA_gender = col_character(), ParentA_gender = col_character()))
+      d <- read_csv(full_path)
     #} else {
     #  d <- read_csv2(full_path, col_types = cols(parentA_gender = col_character(), ParentA_gender = col_character()))
     #}
   } else if (str_detect(fname, ".txt")) {
-    d <- read_tsv(full_path, col_types = cols(parentA_gender = col_character(), ParentA_gender = col_character()))
+    d <- read_tsv(full_path)
   } 
   
   return(d)

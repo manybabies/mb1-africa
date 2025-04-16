@@ -1,6 +1,6 @@
 ---
-title: "MB1 Data Reading and Merge"
-author: "The ManyBabies Analysis Team"
+title: "MB1-Africa Data Reading and Merge"
+author: "The ManyBabies-Africa Analysis Team"
 date: '`r format(Sys.time(), "%a %b %d %X %Y")`'
 output: 
   html_document:
@@ -19,16 +19,16 @@ Data analytic decisions:
 
 * Download and clean all data in a local copy - pulling from drive is impossible because there are so many messy aspects of the data that need to be manually corrected. 
 * Try and fix as many things as possible programmatically, e.g. so that we can reproduce it from the raw data.
-* There are some things that are really hard to fix programmatically, examples include duplicate subject IDs, misnumbering, etc. These have been fixed in the raw data, but are documented in the relevant spot (in the issues page of the mb1-analysis repository! Issues & contact to labs are documented, and issues are closed & updated when the copy of the data in `processed_data/participants_cleaned/` or `processed_data/trials_cleaned/` has been modified.)
+* There are some things that are really hard to fix programmatically, examples include duplicate subject IDs, misnumbering, etc. These have been fixed in the raw data, but are documented in the relevant spot (in the issues page of the mb1-africa repository! Issues & contact to labs are documented, and issues are closed & updated when the copy of the data in `processed_data/participants_cleaned/` or `processed_data/trials_cleaned/` has been modified.)
 * Test each variable to ensure that it has the properties we want; correct errors; retest. 
 
 Outline of data analysis:
 
-* `01_read_and_merge` reads and merges the data. The goal of this file is to create a single inclusive file that has all data from all labs. 
-* `02_variable_validation` corrects errors in variables and ensures that formats are correct. 
-* `03_exclusion` reports exclusions and creates diff files. 
-* `04_confirmatory_analysis` is the set of confirmatory analyses that were preregisted (see [here](https://osf.io/grqau/))
-* `05_exploratory_analysis` contains other, non-preregistered analyses for mb1
+* `01_participant_merge` reads and merges participant data. The goal of this file is to create a single inclusive file that has all data from all labs. 
+* `02_trial_merge` reads and merges trial-level data.
+* `03_variable_validation` corrects errors in variables and ensures that formats are correct. 
+* `04_exclusion` reports exclusions and creates diff files. 
+* `05_confirmatory_analysis` is the set of confirmatory analyses that were preregisted (see [here](https://osf.io/grqau/))
 
 ```{r setup, echo=FALSE, message=FALSE}
 source("helper/common.R")
