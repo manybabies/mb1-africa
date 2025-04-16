@@ -1,14 +1,3 @@
-################################ nc_na ################################
-## substitute NA for NC
-# we asked poeople to mark non-recorded variables with "NC", but this was a mistake.
-
-nc_na <- function(x) {
-  if (is.character(x[1])) {
-    x[x == "NC" | x == "nc"] <- NA
-  }
-  return(x) 
-}
-
 ################################ col_char ################################
 ## coerce column to character, if it exists
 col_char <- function(col, d) {
@@ -44,20 +33,18 @@ read_trial_file <- function(fname) {
   names(td) <- str_replace_all(names(td), " ","_")
   
   # vars that should be numeric
-  numeric_vars <- intersect(c("trial_num","total_trial_time","looking_time"), 
+  numeric_vars <- intersect(c("trial","total_look","looking_time_s"),  # total_trial_time
                             names(td))
   
-  all_vars <- intersect(c("lab", "subid", "trial_type", "stimulus", "trial_num", "looking_time",
+  all_vars <- intersect(c("lab", "subject_id", "trial_type", "stimulus", "trial", "looking_time_s",
                           "total_trial_time", "trial_error", "trial_error_type"), 
                         names(td))
 
   
   # get rid of missing columns
-  # NC was used for non-recorded data, but in practice this destroys numeric columns
   td_clean <- td %>%
     select(-starts_with("x")) %>%
     mutate_all(as.character) %>%
-    mutate_all(nc_na) %>%
     mutate_at(vars(numeric_vars), as.numeric) %>%
     select(all_of(all_vars)) %>%
     mutate(file = fname, 
@@ -121,8 +108,7 @@ clean_participant_file <- function(fname) {
   # NC was used for non-recorded data, but in practice this destroys numeric columns
   pd <- pd %>% 
     select(-starts_with("x")) %>%
-    mutate_all(as.character) %>%
-    mutate_all(nc_na) 
+    mutate_all(as.character)
   
   # remove duplicated columns (yes, this is a thing)
   pd <- pd[!duplicated(names(pd), fromLast = TRUE)]
