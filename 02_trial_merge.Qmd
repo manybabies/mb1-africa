@@ -74,6 +74,7 @@ log_labs <- c("Diop - Senegal", "Lamba - Malawi",
 files <- lapply(log_labs, function (x) dir(path = here("processed_data", "trials_cleaned", x)))
 
 log_labs_data_raw <- map_df(1:6, \(x) {
+  print(files[x])
   read_csv(here("processed_data", "trials_cleaned", log_labs[x], files[x])) |>
     mutate(lab = log_labs[x])
   }) |>
@@ -85,6 +86,7 @@ Goal is; select(lab, subid, order, trial_type, stimulus, trial_num, looking_time
 
 ```{r}
 log_labs_data <- log_labs_data_raw |>
+  filter(lab != "Ndhambi - South Africa") |>
   filter(end_type != "AGAbort") |>
   mutate(subid = subject_id, 
          order = as.numeric(str_sub(order_randomization, 7, 7)), 
@@ -103,6 +105,36 @@ log_labs_data <- log_labs_data_raw |>
   select(lab, subid, order, trial_type, stimulus, trial_num, looking_time_s, looking_time_diff, total_center, enabled_diff,
          trial_error, trial_error_type) 
 ```
+
+Now add the trial-order corrected SA data. 
+
+```{r}
+log_labs_data_sa <- log_labs_data_raw |>
+  filter(lab == "Ndhambi - South Africa") |>
+  filter(end_type != "AGAbort") |>
+  mutate(subid = subject_id, 
+         order = as.numeric(str_sub(order_randomization, 7, 7)), 
+         stimulus = str_replace(str_to_lower(stim_name), "\\_", ""), 
+         trial_type = case_when(str_detect(stim_name, "IDS") ~ "IDS", 
+                                str_detect(stim_name, "ADS") ~ "ADS", 
+                                TRUE ~ "training"), 
+         trial_num = as.numeric(trial), 
+         looking_time_s = total_look / 1000, 
+         looking_time_diff = (trial_end - trial_start) / 1000, 
+         total_center = total_center / 1000, 
+         enabled_diff = (look_disabled - look_enabled) / 1000,
+         trial_error = NA, 
+         trial_error_type = NA) |>
+  select(lab, subid, order, trial_type, stimulus, trial_num, looking_time_s, looking_time_diff, total_center, enabled_diff,
+         trial_error, trial_error_type) |>
+  group_by(subid)
+
+log_labs_data <- log_labs_data |>
+  bind_rows(log_labs_data_sa)
+  
+
+```
+
 # Joint analysis
 
 ```{r}
@@ -121,16 +153,20 @@ ggplot(d,
   geom_jitter(width = .2, height = 0, alpha = .5) + 
   geom_smooth(method = "lm") + 
   facet_wrap(~lab)
+
 ```
 
 
-We have issues with two labs. 
+We have issues with three labs. 
 
 (1) Senegal has a lot of zero looking times. It appears that this is due plausibly to two intersecting issues:
 1. a bug in habit such that if you hold down the key forever, you get LT = 0.
 2. probable misuse of the software by holding down the key a lot. 
 
 (2) Nigeria has no looking times and their `enabled_diff` is always 18s. I worry that they basically didn't press any keys and just let the experiment run. I also think that they maybe did not use the orders that were assigned. (This is a separate problem). 
+
+(3) South Africa somehow scrambled the trial order so that there are training trials everywhere... I think we can salvage these by just removing the training trials. 
+
 
 ## Senegal
 
@@ -155,6 +191,17 @@ ggplot(filter(d, lab == "Diop - Senegal"),
 ```
 Reluctantly, I think we can't include these data. 
 
+## South Africa
+
+```{r}
+ggplot(filter(d, lab == "Ndhambi - South Africa"),
+       aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  geom_smooth(method = "lm") + 
+  facet_wrap(~lab)
+```
+This just looks like an order issue. I think we are fine including these if we remove the training trials and report the error. 
+
 # Data passing minimal quality checks
 
 ```{r}
@@ -178,6 +225,11 @@ ggplot(d_clean,
   ggthemes::scale_color_solarized() +
   theme(legend.position = "bottom")
 ```
+```{r}
+write_csv(d_clean, here("processed_data", "trials_cleaned.csv"))
+```
+
+
 # Models
 
 ```{r}
@@ -190,6 +242,7 @@ mod <- lmer(log(looking_time_s) ~ trial_num_centered * trial_type  +
 summary(mod)
 ```
 
+
 # Data amounts
 
 ```{r}
@@ -199,6 +252,36 @@ n_trials <- d_clean |>
 
 ggplot(n_trials, aes(x = n, fill = lab)) + 
   geom_histogram()
-
 ```
+```{r}
+extra_trials <- filter(n_trials, n > 20) |>
+  pull(subid)
+
+d_clean |>
+  filter(subid %in% extra_trials) 
+```
+
+```{r}
+d_clean |>
+  group_by(lab, subid, trial_num) |>
+  count() |>
+  filter(n > 1)
+```
+
+
+These come up empty. 
+
+Here's documentation of these changes. 
+
+* Malawi P026 changed to P027 in name and file
+* Rwanda deleted MBG1-1 as a duplicate
+* Rwanda changed MBG1-9 to MBG1-10 in the file as the name indicated 
+* Rwanda changed MBG1-11 to MBG1-11 (from 10) in the file as the name indicated 
+* Rwanda changed MBG1-12, 13, and 14 to the correct numbers (was incorrect in file)
+* Kenya first instance of MBKENYK009 changed to 008 in both name and file
+* Kenya second instance of MBKENYK033 changed to 033B in both name and file
+* South africa changed second instance of RSAMB001 to RSAMB001B in name and file
+* South africa changed second instance of RSAMB032 to RSAMB0032B in name and file
+* South africa changed third instance of RSAMB032 to RSAMB033 in name and file
+* South africa changed second instance of RSAMB027 to RSAMB028 in name and file
 
