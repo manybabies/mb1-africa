@@ -22,7 +22,7 @@ Ghana is in long form.
 
 ```{r}
 ghana <- readxl::read_xlsx(here("processed_data", "trials_cleaned", "Omane - Ghana.xlsx")) |>
-  clean_names() |>
+  janitor::clean_names() |>
   mutate(looking_time_s = as.numeric(lookin_time_s), 
          lab = "Omane - Ghana") |>
   rename(order = test_order) |>
@@ -62,7 +62,7 @@ ggplot(uganda,
 ggplot(uganda, aes(x = looking_time_s, fill = trial_type)) + geom_histogram(binwidth = 1)
 ```
 
-# Senegal, Malawi, Rwanda, Kenya, Nigeria
+# Senegal, Malawi, Rwanda, Kenya, Nigeria, South Africa
 
 Next is a set in event format. 
 
