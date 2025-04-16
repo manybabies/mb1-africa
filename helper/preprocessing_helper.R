@@ -91,7 +91,6 @@ read_multiformat_file <- function(path, fname) {
 }
 
 ################################ clean_participant_file ################################
-# cleans up files - this one was painful
 clean_participant_file <- function(fname) {
   print(paste0("reading ", fname))
   pd <- read_multiformat_file(path = "processed_data/participants_cleaned/", 
