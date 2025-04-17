@@ -106,8 +106,9 @@ print(unique_participants_by_lab, n=1e4)
 Do the reading. 
 
 ```{r}
-trial_files <- dir("processed_data/trials_cleaned/", pattern = "*")
-td_raw <- map_df(trial_files, read_trial_file) 
+#trial_files <- dir("processed_data/trials_cleaned/", pattern = "*")
+#td_raw <- map_df(trial_files, read_trial_file) 
+td_raw <- read_csv("processed_data/trials_cleaned.csv")
 ```
 
 Visualization of data. 
