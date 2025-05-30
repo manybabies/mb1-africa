@@ -104,7 +104,6 @@ clean_participant_file <- function(fname) {
   names(pd) <- clean_names(names(pd))
   
   # get rid of missing columns
-  # NC was used for non-recorded data, but in practice this destroys numeric columns
   pd <- pd %>% 
     select(-starts_with("x")) %>%
     mutate_all(as.character)

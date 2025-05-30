@@ -11,9 +11,9 @@ output:
 
 # Intro
 
-This Rmd is the first preprocessing file for the primary ManyBabies 1 (IDS Preference) dataset. The goal is to get everything into a single datafile that can be used for subsequent analyses. 
+This Rmd is the first preprocessing file for the ManyBabies1-Africa (IDS Preference) dataset. The goal is to get everything into a single datafile that can be used for subsequent analyses. 
 
-These data are **extremely messy**. Every single variable has a variety of deviations from format in unpredictable ways. Thus, no property of the dataset can be taken for granted; everything must be carefully tested.
+These data are **messy**. Every single variable has a variety of deviations from format in unpredictable ways. Thus, no property of the dataset can be taken for granted; everything must be carefully tested.
 
 Data analytic decisions:
 
@@ -28,10 +28,11 @@ Outline of data analysis:
 * `02_trial_merge` reads and merges trial-level data.
 * `03_variable_validation` corrects errors in variables and ensures that formats are correct. 
 * `04_exclusion` reports exclusions and creates diff files. 
-* `05_confirmatory_analysis` is the set of confirmatory analyses that were preregisted (see [here](https://osf.io/grqau/))
+* `05_confirmatory_analysis` is the set of confirmatory analyses that were preregistered (see [here](https://osf.io/grqau/))
 
 ```{r setup, echo=FALSE, message=FALSE}
 source("helper/common.R")
+require(readr)
 ```
 
 Data import functions are factored into a helper functions file. 
@@ -48,14 +49,15 @@ Note that so many columns were misnamed or renamed that we output a set of colum
 
 ```{r}
 participant_files <- dir("processed_data/participants_cleaned/",pattern = "*")
+
 col_names <- map_df(participant_files, function(fname) {
   pd <- read_multiformat_file(path = "processed_data/participants_cleaned/",
                               fname = fname)
   return(data_frame(column = names(pd), file = fname))
-  }) %>%
-  mutate(column = clean_names(column)) %>%
-  group_by(column) %>%
-  mutate(file = ifelse(n() > 1, "many", file)) %>%
+  }) |>
+  mutate(column = clean_names(column)) |>
+  group_by(column) |>
+  mutate(file = ifelse(n() > 1, "many", file)) |>
   distinct()
 
 write_csv(col_names, "metadata/participants_columns_used.csv")
@@ -67,7 +69,11 @@ Now we create the hand-mapped column key, read it in, and re-read the files usin
 participants_columns <- read_csv("metadata/participants_columns_remapping.csv")
 
 #validate that all columns used by participants are in the remapping file
-# see_if(all(col_names$column %in% participants_columns$column))
+#see_if(all(col_names$column %in% participants_columns$column))
+
+required_cols <- c(setdiff(unique(participants_columns$substitution), NA),
+                   "trial_order")
+# could be incomplete
 
 pd_raw <- map_df(participant_files, clean_participant_file) 
 
@@ -78,20 +84,42 @@ labs <- c("PSCUJ", "UCAD", "Uganda", "unima_zomba",
 pd_raw <- pd_raw |> filter(lab %in% labs) |>
   mutate(age_days = ifelse(!is.na(age_mos), (age_mos+.5)*30.44, age_days)) |>
   select(-age_mos)
+
+
+read_participant_file <- function(fname) {
+  pd <- read_multiformat_file(path = "processed_data/participants_cleaned/", 
+                              fname = fname)
+  pd <- type_convert(pd)
+  missing_cols <- setdiff(required_cols, names(pd))
+  for (col in missing_cols) {
+    pd[[col]] <- NA
+  }
+  
+  pd |> 
+    mutate(hours_lang2 = as.character(hours_lang2),
+           hours_lang3 = as.character(hours_lang3),
+           hours_lang4 = as.character(hours_lang4),
+           preterm = as.character(preterm),
+           subid = as.character(subid),
+           trial_order = as.character(trial_order))
+}
+
+pd_raw2 <- map_df(participant_files, read_participant_file)
+# this is dirtier than pd_raw
 ```
 
 Visualize dataset. (Transposed so that we can see the variable labels). 
 
 ```{r}
-pd_raw %>%
+pd_raw |>
   vis_dat() + 
   coord_flip()
 ```
 
 ```{r}
 n_participant_rows = nrow(pd_raw)
-unique_participants_by_lab = pd_raw %>%
-  group_by(lab) %>%
+unique_participants_by_lab = pd_raw |>
+  group_by(lab) |>
   summarize(participants = n_distinct(subid))
 ```
 
@@ -100,6 +128,7 @@ Right after trial import, there are `r n_participant_rows` rows in the pd_raw da
 ```{r}
 print(unique_participants_by_lab, n=1e4)
 ```
+
 
 # Trial Import
 
@@ -132,11 +161,19 @@ There are many merge problems due to inconsistencies in lab/subid across the two
 td <- td_raw 
 pd <- pd_raw
 
-td$lab <- tolower(td$lab) # "pscuj" "kizito - uganda" "ghana"
-pd$lab <- tolower(pd$lab) # "pscuj" "ucad" "uganda" "unima_zomba" "chuk" "smu" "ghana" "ke-nanyuki" 
-#td$subid <- tolower(td$subid)
-#pd$subid <- tolower(pd$subid)
+td$lab <- tolower(td$lab) 
+# "omane - ghana"    "kizito - uganda". "lamba - malawi"  "mushimiyimana - rwanda"  
+# "ziedler - kenya"  "ndhambi - south africa"
+pd$lab <- tolower(pd$lab) 
+# "pscuj" "ucad" "uganda" "unima_zomba" "chuk" "smu" "ghana" "ke-nanyuki" 
 
+intersect(unique(td$subid), unique(pd$subid))
+td$subid <- tolower(td$subid)
+pd$subid <- tolower(pd$subid)
+
+setdiff(unique(td$subid), unique(pd$subid))
+setdiff(unique(pd$subid), unique(td$subid))
+# a lot of inconsistencies in participant naming, but mostly looks resolvable...
 
 #pd$subid[pd$lab == "babylab-konstanz"] <- str_replace(pd$subid[pd$lab == "babylab-konstanz"], "_", "")
 #pd$subid[pd$lab == "pocd-northwestern"] <- 
@@ -144,20 +181,30 @@ pd$lab <- tolower(pd$lab) # "pscuj" "ucad" "uganda" "unima_zomba" "chuk" "smu" "
 
 td$lab[td$lab == "kizito - uganda"] <- "uganda"
 
+
+pd <- pd |> mutate(lab = case_when(lab=="pscuj" ~ "bentu - nigeria", # Bentu and Evans
+                             lab=="unima_zomba" ~ "lamba - malawi",
+                             lab=="ucad" ~ "barry - senegal", 
+                             lab=="uganda" ~ "kizito - uganda",
+                             lab=="chuk" ~ "mushimiyimana - rwanda",
+                             lab=="smu" ~ "ndhambi - south africa",
+                             lab=="ke-nanyuki" ~ "ziedler - kenya",
+                             lab=="ghana" ~ "omane - ghana",
+                             TRUE ~ NA))
 ```
 
 
-General sanitization of lab and subid variables:
+General sanitization of `lab` and `subid` variables:
 
 ```{r}
 pd_len = nrow(pd)
 td_len = nrow(td)
-pd <- pd %>%
-  mutate(lab = str_replace_all(lab, '[^[:alnum:]]',''))%>%
+pd <- pd |>
+  mutate(lab = str_replace_all(lab, '[^[:alnum:]]',''))|>
   mutate(subid = str_replace_all(subid, '[^[:alnum:]]',''))
 
-td <- td %>%
-  mutate(lab = str_replace_all(lab, '[^[:alnum:]]',''))%>%
+td <- td |>
+  mutate(lab = str_replace_all(lab, '[^[:alnum:]]',''))|>
   mutate(subid = str_replace_all(subid, '[^[:alnum:]]',''))
 
 assert_that(pd_len == nrow(pd), td_len == nrow(td))
@@ -173,28 +220,28 @@ are missing from one or another of the data files.  Each of these should either 
 removed from this list (via better data cleaning above), or documented after the merge (saved to metadata in some form).
 
 ```{r}
-participants_premerge_td <- td %>%
-  group_by(lab, subid) %>%
+participants_premerge_td <- td |>
+  group_by(lab, subid) |>
   summarize(trialcount = n_distinct(trial_num), 
             rowcount = length(trial_num), trial_error = last(trial_error_type),present_td=TRUE)
 
-participants_premerge_pd <- pd %>%
-  group_by(lab, subid) %>%
+participants_premerge_pd <- pd |>
+  group_by(lab, subid) |>
   summarize(lines_in_pd = n(), age_days = first(age_days), notes = first(notes), session_error_type = first(session_error_type), present_pd=TRUE)
 
-all_participants_premerge <- merge(participants_premerge_td, participants_premerge_pd, all.x=TRUE, all.y=TRUE) %>%
+all_participants_premerge <- merge(participants_premerge_td, participants_premerge_pd, all.x=TRUE, all.y=TRUE) |>
   replace_na(list(present_pd = FALSE, present_td=FALSE))
 
 unmatched_participants_premerge = filter(all_participants_premerge, !(present_td & present_pd))
 
 #Check if any of these are in the metadata that records resolved-unmatched records (pilot, no-trial real kids, subIDs not actually used...)
 
-conf <- read_csv('metadata/true_unmatched_participants.csv') %>%
-  filter(Confirmed == 'X')%>%
+conf <- read_csv('metadata/true_unmatched_participants.csv') |>
+  filter(Confirmed == 'X')|>
   select(subid, lab, Confirmed)
 
-unmatched_participants_premerge <- merge(unmatched_participants_premerge, conf, all.x=TRUE) %>%
-  replace_na(list(Confirmed = FALSE))%>%
+unmatched_participants_premerge <- merge(unmatched_participants_premerge, conf, all.x=TRUE) |>
+  replace_na(list(Confirmed = FALSE))|>
   filter(Confirmed != 'X')
 
 write_csv(unmatched_participants_premerge, 'metadata/unconfirmed_unmatched_participants.csv')
@@ -206,19 +253,19 @@ Here come some tables for summarizing types of errors that occur (helpful for kn
 
 
 ```{r}
-unique_participants_by_lab = pd %>%
-  group_by(lab) %>%
+unique_participants_by_lab = pd |>
+  group_by(lab) |>
   summarize(participants = n_distinct(subid))
 
-unique_participants_by_lab_from_trials <- td %>%
-  group_by(lab) %>%
+unique_participants_by_lab_from_trials <- td |>
+  group_by(lab) |>
   summarize(participants = n_distinct(subid))
 
 lab_checker <- merge(unique_participants_by_lab, 
       unique_participants_by_lab_from_trials,
       by="lab", 
       all.x=TRUE, all.y=TRUE, 
-      suffixes = c(".pd",".td")) %>%
+      suffixes = c(".pd",".td")) |>
   mutate(participant_concord = participants.pd == participants.td) 
 ```
 
@@ -257,14 +304,14 @@ validate_that(all(lab_checker$participant_concord))
 Use `inner_join` to get matching participants. Our process is then to use testing to identify where we are missing participants in this join. 
 
 ```{r}
-d <- inner_join(td %>% select(-file), pd %>% select(-file)) 
+d <- inner_join(td |> select(-file), pd |> select(-file)) 
 ```
 
 # Test Merge
 
 ```{r}
-participants_postmerge <- d %>%
-  group_by(lab, subid) %>%
+participants_postmerge <- d |>
+  group_by(lab, subid) |>
   summarize(trialcount = n_distinct(trial_num), 
             rowcount = length(trial_num))
 ```
