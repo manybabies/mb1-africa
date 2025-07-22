@@ -64,12 +64,25 @@ ggplot(uganda, aes(x = looking_time_s, fill = trial_type)) + geom_histogram(binw
 
 # Senegal, Malawi, Rwanda, Kenya, Nigeria, South Africa
 
+
+
+
+
 Next is a set in event format. 
 
 ```{r}
+
+# AC: need to fix one file's subid
+read_csv(here("processed_data", "trials_cleaned",  "Mushimiyimana - Rwanda", "MBG_IDS_MBG-18_2023-06-11-1105 - feb nzaramba.csv")) %>% 
+  mutate(SubjectID = "MBG-18") %>% 
+  write_csv(here("processed_data", "trials_cleaned",  "Mushimiyimana - Rwanda", "MBG_IDS_MBG-18_2023-06-11-1105 - feb nzaramba.csv"))
+
 log_labs <- c("Diop - Senegal", "Lamba - Malawi", 
               "Mushimiyimana - Rwanda", "Ziedler - Kenya", "Bentu - Nigeria",
               "Ndhambi - South Africa")
+
+
+
 
 files <- lapply(log_labs, function (x) dir(path = here("processed_data", "trials_cleaned", x)))
 
@@ -284,4 +297,107 @@ Here's documentation of these changes.
 * South africa changed second instance of RSAMB032 to RSAMB0032B in name and file
 * South africa changed third instance of RSAMB032 to RSAMB033 in name and file
 * South africa changed second instance of RSAMB027 to RSAMB028 in name and file
+
+
+
+# Post participant cleaning
+
+AC fixing issues discovered during the fixing participant merge
+
+
+```{r}
+d_clean %>% 
+  mutate(subid = case_when(
+    subid == "MBG-225" ~ "MBG-25", 
+    subid == "RSAMBO14" ~ "RSAMB014", 
+    subid == "RSAMBO15" ~ "RSAMB015", 
+    subid == "RSAMBO16" ~ "RSAMB016", 
+    subid == "RSAMBO17" ~ "RSAMB017", 
+    subid == "RSAMBO18" ~ "RSAMB018", 
+    subid == "RSAMBO19" ~ "RSAMB019", 
+    subid == "RSAMBO20" ~ "RSAMB020",  
+   subid == "RSAMBO20" ~ "RSAMB020",  
+    subid == "RSAMBO21" ~ "RSAMB021",  
+    subid == "RSAMBO22" ~ "RSAMB022",  
+    subid == "RSAMBO27" ~ "RSAMB027",  
+    subid == "RSAMBOO4" ~ "RSAMB004",  
+    subid == "RSAMBOO6" ~ "RSAMB006",  
+    subid == "RSASMB028" ~ "RSAMB028",  
+    subid == "RSA030" ~ "RSAMB030",
+    subid == "RSAMB0004" ~ "RSAMB004",
+   subid == "RSAMBO005" ~ "RSAMB005",
+    subid == "RSAMB0" ~ "RSAMB008",
+   
+   subid == "MKENYK0021" ~ "MBKENYK0021",
+   
+   subid == "IDS_0040" ~ "IDS_040",
+   
+   subid == "MGB-22" ~ "MBG-22",
+   subid == "MGB1-8" ~ "MBG-8",
+   
+   # make sure naming is consistent from kenya
+   subid == "KENNYK_0001" ~ "MBKENYK0001",
+   subid == "MBK0018" ~ "MBKENYK0018",
+   subid == "MBKENYK_0002" ~ "MBKENYK0002",
+   
+   TRUE ~ subid
+  )) %>% 
+  
+  mutate(subid = case_when(
+      # align the subid in Ghana to be consistent with each other and the ones in the trials data 
+    lab == "Omane - Ghana" ~  sub("^mba_(\\d+)$", "mba_p\\1", subid), 
+    # Align the Rwanda thing 
+    lab == "Mushimiyimana - Rwanda" ~ sub("^MBG1-", "MBG-", subid),
+    # Malawi cleanign: 
+    lab == "Lamba - Malawi" ~ ifelse(is.na(subid),NA,
+    ifelse(
+      grepl("_ZOMBA$", subid),
+      subid,
+      paste0(sub("(_ZOMB)?$", "", subid), "_ZOMBA")
+    )
+  ),
+    
+    
+    TRUE ~ subid
+  )) %>% 
+  
+  # missing participant information 
+  filter(!subid %in% c("RSAMB001B", "RSAMB032B")) %>% 
+  
+  # needs to be excluded, noted in the participant data file
+  filter(!subid %in% c("MBKENYK0001","MBKENYK0018","MBKENYK0002","MBKENYK0003","MBKENYK0004")) %>% 
+  
+  write_csv(here("processed_data", "trials_cleaned.csv"))
+```
+
+
+AC note: in cleaning the participant data, discovered that the formats of many SA is wrong (O14 instead of 014. change it in the merged file): 
+
+- changed MBG-225 to MBG-25 in trial merge
+
+- O to 0 
+"RSAMBO14"  
+"RSAMBO15"
+"RSAMBO16"  
+"RSAMBO17"  
+"RSAMBO18"  
+"RSAMBO19" 
+"RSAMBO20"  
+"RSAMBO21"  
+"RSAMBO22"  
+"RSAMBO27"  
+"RSAMBOO4"  
+"RSAMBOO6" 
+"RSASMB028"
+
+- RSA030 -> RSAMB030
+- RSAMB0004 -> RSAMB004
+- RSAMBO005 -> RSAMB005
+- RSAMB0 -> RSAMB008 (checked the raw file and made sure that the numbers are correct :P)
+
+- dropping RSAMB001B / RSAMB032B because no correspondence in participant data 
+
+
+- "MKENYK0021"  -> "MBKENYK0021"
+
 

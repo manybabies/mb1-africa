@@ -1,0 +1,443 @@
+---
+title: "anjie cleaning"
+format: html
+editor: visual
+---
+
+```{r}
+library(here)
+library(tidyverse)
+library(stringr)
+library(readxl)
+library(lme4)
+
+
+```
+
+# 0. Reading in each of the file
+
+```{r}
+nigeria <- read_csv(here("processed_data/participants_cleaned/Bentu - Nigeria.csv"))
+senegal <- read_csv(here("processed_data/participants_cleaned/Diop - Senegal.csv"))
+uganda <- read_csv(here("processed_data/participants_cleaned/Kizito - Uganda.csv"))
+malawi <- read_xlsx(here("processed_data/participants_cleaned/Lamba - Malawi.xlsx"))
+rwanda <- read_xlsx(here("processed_data/participants_cleaned/Mushimiyimana - Rwanda.xlsx"))
+south_africa <- read_csv(here("processed_data/participants_cleaned/Ndhambi - South Africa.csv"))
+ghana <- read_xlsx(here("processed_data/participants_cleaned/Omane - Ghana.xlsx"))
+kenya <- read_xlsx(here("processed_data/participants_cleaned/Zeidler - Kenya - CLEANED.xlsx"))
+
+trials_data <- read_csv(here("processed_data/trials_cleaned.csv"))
+
+```
+
+Relevant variable for the models in participant data:
+
+-   Age_months: a continuous variable measuring the infant's age in months (centered).
+-   Language_background: this consisted of two dummy coded variables that represented infants from three different language backgrounds: monolinguals ( \>= 90% exposure to one's native language); bilinguals ( \>=25 % to each of their languages); other (any infants who were not categorized as monolinguals or bilinguals).
+-   subid
+-   lab
+
+# 1. Cleaning each dataset
+
+## 1.1 nigeria
+
+```{r}
+nigeria_clean <- nigeria %>% 
+  rename(lab = Lab) %>% 
+  mutate(age_months = age_days / 30.4) %>% 
+  rename(language_backgrond = lang_group) %>% 
+  select(subid, lab, age_months, language_backgrond)
+```
+
+## 1.2 senegal
+
+Outstanding issues: language background is free response; currently cleaned up and extracted number of hours of exposure from the response. If we are calculating the proportion of exposure using the extracted number divided by 24 hours, the kiddos fit neither monolingual nor bilingual criteria, despite that some kids only reported having 1 language (i.e. exposing to 1 language for 16 hours a day still don't qualify for the \> 90% criteria)
+
+Mike: hmm... probably we should make up some reasonable awake hours time like 14 and then round everything down if proportion is above 1? (edited)
+
+-   assumed 14 hours awake time
+
+```{r}
+senegal_clean <- senegal %>% 
+  rename(
+    subid = `1. ID du sujet`,
+    test_date = `2. Date du test`,
+    dob = `3. Date de naissance de l'enfant`,
+    sex = `4. Le sexe de l'enfant`,
+    preterm = `5. L'enfant est-il né plus tôt que prévu (moins de 37 semaines de gestation) ?`,
+    preterm_early = `6. Si l'enfant   est né plus tôt que  prévu, veuillez indiquer  combien de jours/semaines d'avance. Mettez NA si vous avez répondu par Non.`, 
+    concern_about_langcog_dev = `7. Avez-vous des inquiétudes concernant le langage ou le développement cognitif de l'enfant ?`,
+    concern_about_langcog_dev_why = `8. Si oui,  vous avez des inquiétudes concernant le langage ou le développement cognitif de l'enfant,  veuillez expliquer.  Mettez NA si vous avez répondu par Non.`,
+    hearing_or_vision_prob = `9. L'enfant a-t-il un problème connu d'audition ou de vision ?`,
+    hearing_or_vision_prob_why = `10. Si oui l'enfant  a un problème connu d'audition ou de vision,  veuillez expliquer.  Mettez NA si vous avez répondu par Non.`,
+    one_or_more_ear_infections = `11. L'enfant a-t-il eu une ou plusieurs otites depuis sa naissance ?`,
+    current_ear_infection = `12. L'enfant a-t-il actuellement une otite ?`,
+    spend_most_time_with = `13. Avec qui l'enfant passe-t-il le plus de temps ? \n\nNB: Choisissez UNE SEULE reponse!`,
+    primary_caregiver_gender = `14. Sexe de l'aidant principal`,
+    primary_caregiver_marital_status = `15. Statut matrimonial de l'aidant principal`,
+    primary_caregiver_first_lang = `16. Langue(s) maternelle(s) de l'aidant principal`,
+    primary_caregiver_current_edu = `17. Niveau de scolarité actuel de l'aidant principal`,
+    primary_caregiver_current_edu_explain = `18. Si votre niveau de scolarité actuel n'est pas sur la liste des réponses, veuillez le préciser.  Mettez NA si cette question ne s'applique pas a vous.`,
+    primary_caregiver_total_edu = `19. Combien d'années d'études au total (en commençant par l'école primaire) cet aidant a-t-il reçu ?`,
+    primary_caregiver_other_children_n = `20. De combien d'autres enfants (par exemple, des frères et sœurs) cette personne (l'aidant principal) s'occupe-t-elle ?`,
+    second_caregiver_gender = `21. Sexe de l'aidant secondaire`,
+    second_caregiver_marital_status = `22. Statut matrimonial de l'aidant secondaire`,
+    second_caregiver_first_lang = `23. Langue(s) maternelle(s) de l'aidant secondaire`,
+    second_caregiver_current_edu = `24. Niveau de scolarité actuel de l'aidant secondaire`,
+    second_caregiver_current_edu_explain = `25. Si le niveau d'etude actuel de l'aidant secondaire n'est pas sur la liste des réponses, veuillez le préciser.  Mettez NA si cette question ne s'applique pas a vous.`,
+    second_caregiver_total_edu = `26. Combien d'années d'études au total (en commençant par l'école primaire) l'aidant secondaire  a-t-il/elle reçu ?`,
+    second_caregiver_other_children_n = `27. De combien d'autres enfants (par exemple, des frères et sœurs) cette personne (L'aidant secondaire) s'occupe-t-elle ?`,
+    n_other_children = `28. Combien d'autres enfants vivent actuellement avec l'enfant (dans la même maison) ?`,
+    n_other_adults = `29. Combien d'autres adultes vivent actuellement avec l'enfant (dans la même maison) ?`,
+    languages = `30. Quelle(s) langue(s) parlez-vous à l'enfant, vous et les autres soignants ? Veuillez spécifier la langue principale, langue secondaire et toute autre langue que l'enfant entend régulièrement. Veuillez commander les langues du plus au moins fréquent dans l’environnement de l’enfant :\nNB: L'ORDRE EST IMPORTANT!`, 
+    hours_listening_language_1 = `31. Compte tenu du nombre d'heures pendant lesquelles votre enfant est éveillé, combien d'heures votre enfant entend-il la langue n ° 1.`,
+    hours_listening_language_2 = `32. Compte tenu du nombre d'heures pendant lesquelles votre enfant est éveillé, combien d'heures votre enfant entend-il la langue 2`,
+    hours_listening_language_3 = `33. Compte tenu du nombre d'heures pendant lesquelles votre enfant est éveillé, combien d'heures votre enfant entend-il la langue 3`,
+    hours_listening_language_4 = `34. Compte tenu du nombre d'heures pendant lesquelles votre enfant est éveillé, combien d'heures votre enfant entend-il la langue 4`,
+    rating_speak_more_slowly_and_clearly = `35. Veuillez indiquer ce que vous pensez des déclarations suivantes. Choisissez l'une des options suivantes allant de \"Totatelement pas d'accord\"  à \"Tout à fait d'accord\". [Quand je parle à mon enfant, je remarque que je parle plus lentement et clairement]`, 
+    rating_speak_like_adults = `35. Veuillez indiquer ce que vous pensez des déclarations suivantes. Choisissez l'une des options suivantes allant de \"Totatelement pas d'accord\"  à \"Tout à fait d'accord\". [Mon enfant apprend mieux le langage si je lui parle de la même manière qu'aux adultes]`,
+    rating_does_not_matter = `35. Veuillez indiquer ce que vous pensez des déclarations suivantes. Choisissez l'une des options suivantes allant de \"Totatelement pas d'accord\"  à \"Tout à fait d'accord\". [Peu importe ce que je dis car mon enfant ne comprend pas encore]`, 
+    rating_voice_different = `35. Veuillez indiquer ce que vous pensez des déclarations suivantes. Choisissez l'une des options suivantes allant de \"Totatelement pas d'accord\"  à \"Tout à fait d'accord\". [Lorsque je parle à mon enfant, je remarque que ma voix est différente (par exemple : plus vive)]`, 
+    macarthur_ladder_society = `36. L'échelle 1 a 10 échelons et représente la place qu’occupent les gens dans la société. Au sommet de l'échelle (échelon 1) se trouvent les personnes les mieux loties, celles qui ont le plus d'argent, le plus d'éducation et les meilleurs emplois. En bas (échelon 10) se trouvent les personnes les plus mal loties, celles qui ont le moins d'argent, le moins d’éducation, sous-employés ou chômeurs. Veuillez choisir le numero de l'échelon  qui représente le mieux où vous pensez vous situer sur l'échelle 1.`,
+    macarthur_ladder_community = `37. L'échelle 2 a 10 échelons et représente la position des gens dans votre communauté. Au sommet de l'échelle (échelon 1) se trouvent les personnes les mieux loties, celles qui ont le plus d'argent, le plus d'éducation et les meilleurs emplois. En bas (échelon 10) se trouvent les personnes les plus mal loties, celles qui ont le moins d'argent, le moins d'éducation, les pires emplois ou pas d'emploi.  Veuillez choisir le numero de l'échelon  qui représente le mieux où vous pensez vous situer sur l'échelle 2   par rapport à votre communauté : les personnes que vous habitez à proximité et que vous voyez régulièrement.`
+    
+  ) %>% 
+
+  # Extract the hours from the response
+  
+  mutate(hours_listening_language_1_clean = str_extract(hours_listening_language_1, "\\d+\\.?\\d*") %>% as.numeric(), 
+         hours_listening_language_2_clean = str_extract(hours_listening_language_2, "\\d+\\.?\\d*") %>% as.numeric(), 
+         hours_listening_language_3_clean = str_extract(hours_listening_language_3, "\\d+\\.?\\d*") %>% as.numeric(), 
+         hours_listening_language_4_clean = str_extract(hours_listening_language_4, "\\d+\\.?\\d*") %>% as.numeric()
+         ) %>% 
+  
+  mutate(
+     proportion_language_1 = hours_listening_language_1_clean / 14, 
+     proportion_language_2 = hours_listening_language_2_clean / 14,
+     proportion_language_3 = hours_listening_language_3_clean / 14,
+     proportion_language_4 = hours_listening_language_4_clean / 14
+    
+  ) %>% 
+  rowwise() %>% 
+  # check if the language exposure adds up to 1 
+  mutate(
+    normalizing_factor = sum(c_across(starts_with("proportion_language")),na.rm = TRUE), 
+     n_proportion_language_1 = proportion_language_1 / normalizing_factor, 
+     n_proportion_language_2 = proportion_language_2 / normalizing_factor,
+     n_proportion_language_3 = proportion_language_3 / normalizing_factor,
+     n_proportion_language_4 = proportion_language_4 / normalizing_factor
+    
+  ) %>% 
+  
+  rowwise() %>% 
+  mutate(
+    language_backgrond = case_when(
+      # Monolinguals' condition 
+      n_proportion_language_1 >= .9 | n_proportion_language_2 >= .9 | n_proportion_language_3 >= .9 | n_proportion_language_4 >= .9 ~ "monolingual", 
+      
+      # Figuring out Bilinguals' condition
+      
+     sum(c_across(starts_with("n_proportion_language")) >= 0.25, na.rm = TRUE) == 2 &
+      sum(c_across(starts_with("n_proportion_language")) == 0, na.rm = TRUE) +
+        sum(is.na(c_across(starts_with("n_proportion_language")))) == 2 ~ "bilingual",
+      TRUE ~ "other"
+    ) ) %>% 
+  mutate(
+    age_months = age_days / 30.4
+  ) %>% 
+  select(subid, lab, age_months, language_backgrond)
+  
+  
+  
+```
+
+## 1.3 uganda
+
+outstanding issues:
+
+-   ID feels unspecified
+-   no information about what each column means, any code books?
+
+Solution: made inferences using the questionaire here, though 23b, 23c, 23d doe't make quite sense, assuming 24 is for hours awake and 25 is for each language
+
+```{r}
+uganda_clean <- uganda %>% 
+  mutate(age_months = age_days / 30.4) %>% 
+  rename(subid = ID) %>% 
+  mutate(language_backgrond = NA) %>% 
+  mutate(first_lang = A23a, 
+         time_awake_per_day = A24, 
+         lang1_hours = A25a, 
+         lang2_hours = A25b, 
+         lang3_hours = A25c, 
+         lang4_hours = A25d) %>% 
+  mutate(
+    proportion_lang1 = lang1_hours / time_awake_per_day,
+    proportion_lang2 = lang2_hours / time_awake_per_day,
+    proportion_lang3 = lang3_hours / time_awake_per_day,
+    proportion_lang4 = lang4_hours / time_awake_per_day,
+  ) %>% 
+  rowwise() %>% 
+  mutate(
+    language_backgrond = case_when(
+      # Monolinguals' condition 
+      proportion_lang1 >= .9 | proportion_lang2 >= .9 | proportion_lang3 >= .9 | proportion_lang4 >= .9 ~ "monolingual", 
+      
+      # Figuring out Bilinguals' condition
+      
+     sum(c_across(starts_with("proportion_language")) >= 0.25, na.rm = TRUE) == 2 &
+      sum(c_across(starts_with("proportion_language")) == 0, na.rm = TRUE) +
+        sum(is.na(c_across(starts_with("proportion_language")))) == 2 ~ "bilingual",
+      TRUE ~ "other"
+    ) ) %>% 
+  mutate(
+    subid = sprintf("IDS_%03d", subid)
+  ) %>% 
+   select(subid, lab, age_months, language_backgrond)
+  
+```
+
+## 1.4 malawi
+
+so my guess is that the one I changed to P027 is listed as P027 in the participants already and just wasn’t given a correct name. hence it probably is the error file.
+
+
+```{r}
+
+malawi_clean <- malawi %>% 
+  
+  mutate(age_months = age_days / 30.4) %>% 
+  
+  # check language sum correct
+  mutate(hours_lang2 = as.numeric(hours_lang2), 
+         hours_lang3 = as.numeric(hours_lang3),
+         hours_lang4 = as.numeric(hours_lang4),
+         ) %>% 
+  mutate(
+    language_sum = (
+    replace_na(hours_lang1, 0) +
+    replace_na(hours_lang2, 0) +
+    replace_na(hours_lang3, 0) +
+    replace_na(hours_lang4, 0)
+  ) == hours_per_day_infant_awake) %>% 
+  mutate(
+    proportion_lang1 = hours_lang1 / hours_per_day_infant_awake, 
+    proportion_lang2 = hours_lang2 / hours_per_day_infant_awake, 
+    proportion_lang3 = hours_lang3 / hours_per_day_infant_awake, 
+    proportion_lang4 = hours_lang4 / hours_per_day_infant_awake, 
+  ) %>% 
+  # figure out the language backgrond thing 
+  mutate(
+    language_backgrond = case_when(
+      # Monolinguals' condition 
+      proportion_lang1 >= .9 | proportion_lang2 >= .9 | proportion_lang3 >= .9 | proportion_lang4 >= .9 ~ "monolingual", 
+      
+      # Figuring out Bilinguals' condition
+      
+      sum(c_across(starts_with("proportion_lang")) >= 0.5, na.rm = TRUE) == 2 & sum(c_across(starts_with("proportion_lang")) %in% c(0, NA), na.rm = FALSE) == 2 ~ "bilingual", 
+      TRUE ~ "other"
+    ) ) %>% 
+  
+  # where the real data ends in the spreadsheet
+  head(40) 
+  
+```
+
+## 1.5 rwanda
+
+-   unspecified subid
+
+solutions: 
+- changed MBG-225 to MBG-25 in trial merge
+- dropped 3 and 18
+
+
+```{r}
+
+
+rwanda_clean <- rwanda %>% 
+  # first row is empty
+  slice(-1) %>% 
+  mutate(age_months = age_days / 30.4) %>% 
+  
+  # no infant has any thign other than lang1 so we can assume just lang1
+  mutate(proportion_lang1 = hours_lang1 / hours_per_day_infant_awake) %>% 
+  mutate(language_backgrond = case_when(
+    proportion_lang1 > .9 ~ "monolinguals", 
+    TRUE ~ "others"
+  )) %>% 
+  mutate(subid = paste0("MBG-", subid)) %>% 
+   select(subid, lab, age_months, language_backgrond)
+
+  
+```
+
+## 1.6 south africa
+
+-   missing language background
+
+```{r}
+
+south_africa_clean <- south_africa %>% 
+  rename(age_months = age_mos) %>% 
+  mutate(language_backgrond = NA) %>% 
+  #filter(!subid %in% c("RSAMB003", "RSAMB023", "RSAMB007"))
+   select(subid, lab, age_months, language_backgrond)
+
+  
+```
+
+## 1.7 ghana
+
+```{r}
+ghana_clean <- ghana %>% 
+  mutate(age_months = age_days / 30.4) %>% 
+  mutate(
+    proportion_lang1 = hours_lang1 / hours_per_day_infant_awake, 
+    proportion_lang2 = hours_lang2 / hours_per_day_infant_awake, 
+    proportion_lang3 = as.numeric(hours_lang3) / hours_per_day_infant_awake, 
+    proportion_lang4 = as.numeric(hours_lang4) / hours_per_day_infant_awake, 
+  ) %>% 
+  # figure out the language backgrond thing 
+  rowwise() %>% 
+  mutate(
+    language_backgrond = case_when(
+      # Monolinguals' condition 
+      proportion_lang1 >= .9 | proportion_lang2 >= .9 | proportion_lang3 >= .9 | proportion_lang4 >= .9 ~ "monolingual", 
+      
+      # Figuring out Bilinguals' condition
+      
+     sum(c_across(starts_with("proportion_lang")) >= 0.25, na.rm = TRUE) == 2 &
+      sum(c_across(starts_with("proportion_lang")) == 0, na.rm = TRUE) +
+        sum(is.na(c_across(starts_with("proportion_lang")))) == 2 ~ "bilingual",
+      TRUE ~ "other"
+    ) ) %>% 
+   select(subid, lab, age_months, language_backgrond)
+```
+
+## 1.8 kenya
+
+did the following to the raw file 
+* Kenya first instance of MBKENYK009 changed to 008 in both name and file
+* Kenya second instance of MBKENYK033 changed to 033B in both name and file
+
+
+```{r}
+kenya_clean <- kenya %>% 
+  mutate(subid = subid_habit) %>% 
+  mutate(age_months = as.numeric(age_days) / 30.4) %>% 
+  mutate(
+    proportion_lang1 = as.numeric(hours_lang1) / hours_per_day_infant_awake, 
+    proportion_lang2 = as.numeric(hours_lang2) / hours_per_day_infant_awake, 
+    proportion_lang3 = as.numeric(hours_lang3) / hours_per_day_infant_awake, 
+    proportion_lang4 = as.numeric(hours_lang4) / hours_per_day_infant_awake, 
+  ) %>% 
+  # figure out the language backgrond thing 
+  rowwise() %>% 
+  mutate(
+    language_backgrond = case_when(
+      # Monolinguals' condition 
+      proportion_lang1 >= .9 | proportion_lang2 >= .9 | proportion_lang3 >= .9 | proportion_lang4 >= .9 ~ "monolingual", 
+      
+      # Figuring out Bilinguals' condition
+      
+     sum(c_across(starts_with("proportion_lang")) >= 0.25, na.rm = TRUE) == 2 &
+      sum(c_across(starts_with("proportion_lang")) == 0, na.rm = TRUE) +
+        sum(is.na(c_across(starts_with("proportion_lang")))) == 2 ~ "bilingual",
+      TRUE ~ "other"
+    ) ) %>% 
+   select(subid, lab, age_months, language_backgrond)
+
+
+
+```
+
+
+
+# 2. Check predictors column are valid
+
+```{r}
+full_participnat_info <- bind_rows(
+  nigeria_clean, 
+  senegal_clean, 
+  uganda_clean, 
+  malawi_clean, 
+  rwanda_clean, 
+  south_africa_clean, 
+  ghana_clean, 
+  kenya_clean
+)
+```
+
+
+# 3. Merging with Trial Data 
+
+```{r}
+trials_data <- read_csv(here("processed_data/trials_cleaned.csv"))
+
+
+participant_info_id <- full_participnat_info$subid
+trials_id <- trials_data %>% distinct(subid) %>% pull()
+```
+
+
+```{r}
+setdiff(trials_id, participant_info_id)
+```
+
+ 
+```{r}
+setdiff(participant_info_id, trials_id)
+```
+- PSCUS - NIGERIA, just can't use, not in the data
+
+- UCAD - Senegal, also not in the data 
+
+- ZOMBA - Malawi: really just don't have data for 19 and 36
+
+
+- MBG - Rawanda : "MBG-3"      "MBG-18": really don't have raw file for MBG-3 and for MBG-18 the name of the file is MBG18 but inside it says MBG17; changed in the raw file now / code in 02_trial_merge.QMD
+
+- RSAMB - South Africa, just can't find  "RSAMB003"   "RSAMB023"   "RSAMB007"  
+
+
+# 4. Write data
+
+```{r}
+
+joint_data <- trials_data %>% 
+  left_join(full_participnat_info %>% select(-lab), by = c("subid")) %>% 
+  filter(!is.na(subid)) %>% 
+  mutate(age_months_scaled = as.numeric(scale(age_months))) %>% 
+  rename(language_background = language_backgrond) %>% 
+  mutate(language_background = if_else(language_background == "monolinguals", "monolingual", language_background))
+
+write_csv(joint_data,here("processed_data/joint_data.csv"))
+```
+
+
+```{r}
+lmer(log(looking_time_s) ~ trial_type + trial_num + age_months + trial_type * trial_num + age_months * trial_num + age_months * trial_type + (trial_type * trial_num | subid) + (trial_type | lab), 
+     data = joint_data) %>% 
+  summary()
+```
+
+```{r}
+lmer(log(looking_time_s) ~ trial_type + trial_num + age_months + trial_type * trial_num + age_months * trial_num + age_months * trial_type + (1 | subid) + (trial_type | lab), 
+     data = joint_data)
+```
+
+```{r}
+lmer(log(looking_time_s) ~ trial_type + trial_num + age_months + trial_type * trial_num + age_months * trial_num + age_months * trial_type + (1 | subid) + (1 | lab), 
+     data = joint_data) %>% 
+  summary()
+```
+
+```{r}
+
+
+lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab), 
+     data = joint_data) %>% 
+  summary()
+```
+
