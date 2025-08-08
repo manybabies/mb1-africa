@@ -1,0 +1,19 @@
+lab,subid,order,trial_type,stimulus,trial_num,looking_time_s,trial_error,trial_error_type,looking_time_diff,total_center,enabled_diff
+Lamba - Malawi,P008_ZOMBA,1,ADS,ads2,4,0,NA,NA,34.212,0,17.991
+Lamba - Malawi,P023,4,ADS,ads8,15,0,NA,NA,26.294,0,17.999
+Lamba - Malawi,P024,1,IDS,ids3,6,0,NA,NA,17.399,0,17.104
+Ziedler - Kenya,KENNYK_0001,1,IDS,ids1,1,0,NA,NA,15.716,0,11.154
+Ziedler - Kenya,KENNYK_0001,1,ADS,ads1,2,0,NA,NA,3.739,0,1.586
+Ziedler - Kenya,KENNYK_0001,1,IDS,ids2,3,0,NA,NA,20.065,0,18.001
+Ndhambi - South Africa,RSAMB001B,1,ADS,ads5,1,0,NA,NA,22.83,0,18
+Ndhambi - South Africa,RSAMB001B,1,ADS,ads8,2,0,NA,NA,19.985,0,18
+Ndhambi - South Africa,RSAMB001B,1,ADS,ads2,8,0,NA,NA,20.475,0,4.327
+Ndhambi - South Africa,RSAMB001B,1,IDS,ids1,9,0,NA,NA,30.916,0,18
+Ndhambi - South Africa,RSAMB001B,1,IDS,ids2,10,0,NA,NA,37.096,0,18.001
+Ndhambi - South Africa,RSAMB025,3,ADS,ads3,2,0,NA,NA,1.414,0,0.235
+Ndhambi - South Africa,RSAMBO15,1,ADS,ads2,1,0,NA,NA,2.431,0,0.437
+Ndhambi - South Africa,RSAMBOO7,4,ADS,ads3,1,0,NA,NA,19.349,0,15.335
+Ndhambi - South Africa,RSAMBOO7,4,IDS,ids2,2,0,NA,NA,18.027,0,18.002
+Ndhambi - South Africa,RSAMBOO7,4,ADS,ads4,3,0,NA,NA,18.177,0,15.635
+Ndhambi - South Africa,RSAMBOO7,4,ADS,ads8,1,0,NA,NA,24.328,0,18.001
+Ndhambi - South Africa,RSAMBOO7,4,ADS,ads6,1,0,NA,NA,16.832,0,14.414

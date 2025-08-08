@@ -37,25 +37,51 @@ Relevant variable for the models in participant data:
 -   subid
 -   lab
 
+For demographics reporting:
+
+-   Full-term
+-   No developmental disorders
+-   Hearing Loss
+-   Gender
+
 # 1. Cleaning each dataset
 
-## 1.1 nigeria
+## 1.1 nigeria - NOT USING
 
 ```{r}
 nigeria_clean <- nigeria %>% 
   rename(lab = Lab) %>% 
   mutate(age_months = age_days / 30.4) %>% 
-  rename(language_backgrond = lang_group) %>% 
-  select(subid, lab, age_months, language_backgrond)
+  rename(language_backgrond = lang_group, 
+         hearing_prob = hearing_vision, 
+         dev_disorder = cognitive_developmental) %>% 
+  select(subid, lab, age_months, language_backgrond, gender, 
+         preterm, days_preterm, hearing_prob, dev_disorder) %>% 
+   mutate(hearing_prob = case_when(
+    hearing_prob == "N" ~ "NO", 
+    hearing_prob == "Y" ~ "YES"
+  )) %>% 
+  mutate(dev_disorder = case_when(
+    dev_disorder == "N" ~ "NO", 
+    dev_disorder == "Y" ~ "YES"
+  ))
 ```
 
-## 1.2 senegal
+## 1.2 senegal - NOT USING
 
 Outstanding issues: language background is free response; currently cleaned up and extracted number of hours of exposure from the response. If we are calculating the proportion of exposure using the extracted number divided by 24 hours, the kiddos fit neither monolingual nor bilingual criteria, despite that some kids only reported having 1 language (i.e. exposing to 1 language for 16 hours a day still don't qualify for the \> 90% criteria)
 
 Mike: hmm... probably we should make up some reasonable awake hours time like 14 and then round everything down if proportion is above 1? (edited)
 
 -   assumed 14 hours awake time
+
+-   Full-term
+
+-   No developmental disorders
+
+-   Hearing Loss
+
+-   Gender
 
 ```{r}
 senegal_clean <- senegal %>% 
@@ -102,6 +128,12 @@ senegal_clean <- senegal %>%
     macarthur_ladder_community = `37. L'échelle 2 a 10 échelons et représente la position des gens dans votre communauté. Au sommet de l'échelle (échelon 1) se trouvent les personnes les mieux loties, celles qui ont le plus d'argent, le plus d'éducation et les meilleurs emplois. En bas (échelon 10) se trouvent les personnes les plus mal loties, celles qui ont le moins d'argent, le moins d'éducation, les pires emplois ou pas d'emploi.  Veuillez choisir le numero de l'échelon  qui représente le mieux où vous pensez vous situer sur l'échelle 2   par rapport à votre communauté : les personnes que vous habitez à proximité et que vous voyez régulièrement.`
     
   ) %>% 
+  rename(
+    gender = sex, 
+    days_preterm = preterm_early, 
+    hearing_prob = hearing_or_vision_prob, 
+    dev_disorder = concern_about_langcog_dev
+  ) %>% 
 
   # Extract the hours from the response
   
@@ -145,8 +177,15 @@ senegal_clean <- senegal %>%
   mutate(
     age_months = age_days / 30.4
   ) %>% 
-  select(subid, lab, age_months, language_backgrond)
-  
+  select(subid, lab, age_months, language_backgrond, gender, preterm, days_preterm, hearing_prob, dev_disorder) %>% 
+  mutate(hearing_prob = case_when(
+    hearing_prob == FALSE ~ "NO", 
+    hearing_prob == TRUE ~ "YES"
+  )) %>% 
+  mutate(dev_disorder = case_when(
+    dev_disorder == FALSE ~ "NO", 
+    dev_disorder == TRUE ~ "YES"
+  ))
   
   
 ```
@@ -165,12 +204,20 @@ uganda_clean <- uganda %>%
   mutate(age_months = age_days / 30.4) %>% 
   rename(subid = ID) %>% 
   mutate(language_backgrond = NA) %>% 
+  rename(gender = A2, 
+         preterm = A3a, 
+         days_preterm = A3b, 
+         hearing_prob = A5a, 
+         dev_disorder = A4a) %>% 
   mutate(first_lang = A23a, 
          time_awake_per_day = A24, 
          lang1_hours = A25a, 
          lang2_hours = A25b, 
          lang3_hours = A25c, 
-         lang4_hours = A25d) %>% 
+         lang4_hours = A25d, 
+         primary_caregiver_gender = A9, 
+         primary_caregiver_education = A12, 
+         number_of_siblings = A22a) %>% 
   mutate(
     proportion_lang1 = lang1_hours / time_awake_per_day,
     proportion_lang2 = lang2_hours / time_awake_per_day,
@@ -193,21 +240,42 @@ uganda_clean <- uganda %>%
   mutate(
     subid = sprintf("IDS_%03d", subid)
   ) %>% 
-   select(subid, lab, age_months, language_backgrond)
+   select(subid, lab, age_months, language_backgrond,primary_caregiver_gender, primary_caregiver_education,number_of_siblings, gender, preterm, days_preterm, hearing_prob, dev_disorder) %>% 
+  mutate(
+    # converting the level of education into years
+    primary_caregiver_education = case_when(primary_caregiver_education == 1 ~ 8, 
+    primary_caregiver_education == 2 ~ 10, 
+    primary_caregiver_education == 3 ~ 12,
+    primary_caregiver_education == 4 ~ 14,
+     primary_caregiver_education == 5 ~ 16,
+    TRUE ~ NA
+    )
+  ) %>% 
+   mutate(hearing_prob = case_when(
+    hearing_prob == FALSE ~ "NO", 
+    hearing_prob == TRUE ~ "YES"
+  )) %>% 
+  mutate(dev_disorder = case_when(
+    dev_disorder == FALSE ~ "NO", 
+    dev_disorder == TRUE ~ "YES"
+  ))
   
 ```
 
 ## 1.4 malawi
 
-so my guess is that the one I changed to P027 is listed as P027 in the participants already and just wasn’t given a correct name. hence it probably is the error file.
-
+so my guess is that the one I changed to P027 is listed as P027 in the participants already and just wasn't given a correct name. hence it probably is the error file.
 
 ```{r}
 
 malawi_clean <- malawi %>% 
   
   mutate(age_months = age_days / 30.4) %>% 
-  
+  rename(
+    gender = participant_gender, 
+    hearing_prob = hearing_vision, 
+    dev_disorder = cognitive_language_delay
+  ) %>% 
   # check language sum correct
   mutate(hours_lang2 = as.numeric(hours_lang2), 
          hours_lang3 = as.numeric(hours_lang3),
@@ -228,7 +296,7 @@ malawi_clean <- malawi %>%
   ) %>% 
   # figure out the language backgrond thing 
   mutate(
-    language_backgrond = case_when(
+    language_background = case_when(
       # Monolinguals' condition 
       proportion_lang1 >= .9 | proportion_lang2 >= .9 | proportion_lang3 >= .9 | proportion_lang4 >= .9 ~ "monolingual", 
       
@@ -239,7 +307,18 @@ malawi_clean <- malawi %>%
     ) ) %>% 
   
   # where the real data ends in the spreadsheet
-  head(40) 
+  head(40) %>% 
+   select(subid, lab, age_months, language_background,primary_caregiver_gender, primary_caregiver_education, preterm, days_preterm, hearing_prob, dev_disorder,
+          number_of_siblings) %>% 
+  mutate(primary_caregiver_gender = case_when(
+    primary_caregiver_gender == "Female" ~ "F", 
+    TRUE ~ "M"
+  )) %>% 
+   mutate(preterm = case_when(
+    preterm == "term" ~ FALSE, 
+    preterm == "preterm" ~ TRUE
+  ))
+  
   
 ```
 
@@ -247,10 +326,7 @@ malawi_clean <- malawi %>%
 
 -   unspecified subid
 
-solutions: 
-- changed MBG-225 to MBG-25 in trial merge
-- dropped 3 and 18
-
+solutions: - changed MBG-225 to MBG-25 in trial merge - dropped 3 and 18
 
 ```{r}
 
@@ -259,15 +335,29 @@ rwanda_clean <- rwanda %>%
   # first row is empty
   slice(-1) %>% 
   mutate(age_months = age_days / 30.4) %>% 
+  rename(
+    gender = participant_gender, 
+    hearing_prob = hearing_vision, 
+    dev_disorder = cognitive_language_delay
+  ) %>% 
   
   # no infant has any thign other than lang1 so we can assume just lang1
   mutate(proportion_lang1 = hours_lang1 / hours_per_day_infant_awake) %>% 
-  mutate(language_backgrond = case_when(
+  mutate(language_background = case_when(
     proportion_lang1 > .9 ~ "monolinguals", 
     TRUE ~ "others"
   )) %>% 
   mutate(subid = paste0("MBG-", subid)) %>% 
-   select(subid, lab, age_months, language_backgrond)
+   select(subid, lab, age_months, language_background,primary_caregiver_gender, primary_caregiver_education, 
+          number_of_siblings, gender, hearing_prob, dev_disorder, preterm, days_preterm) %>% 
+  mutate(primary_caregiver_gender = case_when(
+    primary_caregiver_gender == "Female" ~ "F", 
+    TRUE ~ "M"
+  )) %>% 
+  mutate(preterm = case_when(
+    preterm == "term" ~ FALSE, 
+    preterm == "preterm" ~ TRUE
+  ))
 
   
 ```
@@ -280,9 +370,9 @@ rwanda_clean <- rwanda %>%
 
 south_africa_clean <- south_africa %>% 
   rename(age_months = age_mos) %>% 
-  mutate(language_backgrond = NA) %>% 
+  mutate(language_background = NA) %>% 
   #filter(!subid %in% c("RSAMB003", "RSAMB023", "RSAMB007"))
-   select(subid, lab, age_months, language_backgrond)
+   select(subid, lab, age_months, language_background)
 
   
 ```
@@ -301,7 +391,7 @@ ghana_clean <- ghana %>%
   # figure out the language backgrond thing 
   rowwise() %>% 
   mutate(
-    language_backgrond = case_when(
+    language_background = case_when(
       # Monolinguals' condition 
       proportion_lang1 >= .9 | proportion_lang2 >= .9 | proportion_lang3 >= .9 | proportion_lang4 >= .9 ~ "monolingual", 
       
@@ -312,15 +402,32 @@ ghana_clean <- ghana %>%
         sum(is.na(c_across(starts_with("proportion_lang")))) == 2 ~ "bilingual",
       TRUE ~ "other"
     ) ) %>% 
-   select(subid, lab, age_months, language_backgrond)
+
+   mutate(primary_caregiver_gender = case_when(
+    primary_caregiver_gender == "Female" ~ "F", 
+    TRUE ~ "M"
+  )) %>% 
+  mutate(primary_caregiver_education = case_when(
+    primary_caregiver_education == "NA" ~ NA_real_, 
+    TRUE ~ as.numeric(primary_caregiver_education)
+  )) %>% 
+  rename(
+    gender = participant_gender, 
+    hearing_prob = hearing_vision, 
+    dev_disorder = cognitive_language_delay
+  ) %>% 
+  select(subid, lab, age_months, language_background,primary_caregiver_gender, primary_caregiver_education, 
+          number_of_siblings, gender, hearing_prob, dev_disorder,preterm, days_preterm) %>% 
+   mutate(preterm = case_when(
+    preterm == "term" ~ FALSE, 
+    preterm == "preterm" ~ TRUE
+  ))
+
 ```
 
 ## 1.8 kenya
 
-did the following to the raw file 
-* Kenya first instance of MBKENYK009 changed to 008 in both name and file
-* Kenya second instance of MBKENYK033 changed to 033B in both name and file
-
+did the following to the raw file \* Kenya first instance of MBKENYK009 changed to 008 in both name and file \* Kenya second instance of MBKENYK033 changed to 033B in both name and file
 
 ```{r}
 kenya_clean <- kenya %>% 
@@ -335,7 +442,7 @@ kenya_clean <- kenya %>%
   # figure out the language backgrond thing 
   rowwise() %>% 
   mutate(
-    language_backgrond = case_when(
+    language_background = case_when(
       # Monolinguals' condition 
       proportion_lang1 >= .9 | proportion_lang2 >= .9 | proportion_lang3 >= .9 | proportion_lang4 >= .9 ~ "monolingual", 
       
@@ -346,13 +453,31 @@ kenya_clean <- kenya %>%
         sum(is.na(c_across(starts_with("proportion_lang")))) == 2 ~ "bilingual",
       TRUE ~ "other"
     ) ) %>% 
-   select(subid, lab, age_months, language_backgrond)
+  rename(number_of_siblings = number_of_other_children_living_with_child) %>% 
+ 
+  mutate(primary_caregiver_gender = case_when(
+    primary_caregiver_gender == "female" ~ "F", 
+    TRUE ~ "M"
+  )) %>% 
+  mutate(primary_caregiver_education = case_when(
+    primary_caregiver_education == "NA" ~ NA_real_, 
+    TRUE ~ as.numeric(primary_caregiver_education)
+  )) %>% 
+   rename(
+    gender = participant_gender, 
+    hearing_prob = hearing_vision, 
+    dev_disorder = cognitive_language_delay
+  ) %>% 
+  select(subid, lab, age_months, language_background,primary_caregiver_gender, primary_caregiver_education, 
+          number_of_siblings, gender, hearing_prob, dev_disorder,preterm, days_preterm) %>% 
+   mutate(preterm = case_when(
+    preterm == "term" ~ FALSE, 
+    preterm == "preterm" ~ TRUE
+  ))
 
 
 
 ```
-
-
 
 # 2. Check predictors column are valid
 
@@ -369,75 +494,216 @@ full_participnat_info <- bind_rows(
 )
 ```
 
-
-# 3. Merging with Trial Data 
+## 2.1 Generate tested demographics
 
 ```{r}
-trials_data <- read_csv(here("processed_data/trials_cleaned.csv"))
+ppl_per_lab <- full_participnat_info %>% 
+  group_by(lab) %>% 
+  count(name = "tested_participant_n")
+
+age_per_lab <- full_participnat_info %>% 
+  group_by(lab) %>% 
+  summarise(mean_age = mean(age_months), sd_age = sd(age_months))
+
+language_per_lab <- full_participnat_info %>% 
+  group_by(lab, language_background) %>% 
+  count(name = "language_background_n") %>% 
+  mutate(language_background = case_when(
+    language_background == "monolinguals" ~ "monolingual", 
+    is.na(language_background) ~ "lang_unknown", 
+    TRUE ~language_background
+  )) %>% 
+  pivot_wider(names_from = language_background, values_from = language_background_n)
+
+gender_per_lab <- full_participnat_info %>% 
+  group_by(lab, gender) %>% 
+  count(name = "gender_n") %>% 
+  mutate(gender = case_when(
+    gender == "F" ~ "Female", 
+     gender == "M" ~ "Male", 
+    gender == "female" ~ "Female", 
+    gender == "male" ~ "Male",
+    is.na(gender) ~ "gender_unknown", 
+    TRUE ~gender
+  )) %>% 
+  pivot_wider(names_from = gender, values_from = gender_n)
+
+preterm_per_lab <-  full_participnat_info %>% 
+  group_by(lab, preterm) %>% 
+  count(name = "preterm_n") %>% 
+  mutate(preterm = case_when(
+    preterm == TRUE ~ "Preterm", 
+    preterm == FALSE ~ "Term", 
+    is.na(preterm) ~ "preterm_unknown"
+  )) %>% 
+  pivot_wider(names_from = preterm, values_from = preterm_n)
+
+
+hearing_per_lab <- full_participnat_info %>% 
+  group_by(lab, hearing_prob) %>% 
+  count(name = "hearing_prob_n") %>% 
+  mutate(hearing_prob = case_when(
+    is.na(hearing_prob) ~ "hearing_prob_unknown", 
+    hearing_prob == "NO" ~ "no_hearing_prob", 
+    TRUE ~ "hearing_prob" 
+  )) %>% 
+  pivot_wider(names_from = hearing_prob, values_from = hearing_prob_n)
+
+dev_disorder_per_lab <- full_participnat_info %>% 
+  group_by(lab, dev_disorder) %>% 
+  count(name = "dev_disorder_n") %>% 
+  mutate(dev_disorder = case_when(
+    dev_disorder == "NA" ~ "dev_disorder_unknown",
+    is.na(dev_disorder) ~ "dev_disorder_unknown", 
+    TRUE ~ "no_dev_disorder"
+  )) %>% 
+  pivot_wider(names_from = dev_disorder, values_from = dev_disorder_n)
+
+
+
+lab_demog_list <- list(ppl_per_lab, age_per_lab, gender_per_lab, language_per_lab, preterm_per_lab, 
+            hearing_per_lab, dev_disorder_per_lab)
+
+demog_df <- reduce(lab_demog_list, function(x, y) left_join(x, y, by = "lab"))
+
+
+```
+
+```{r}
+demog_df %>% write_csv(here("processed_data/cached_data/tested_demog.csv"))
+```
+
+# 3. Merging with Trial Data
+
+```{r}
+trials_data <- read_csv(here("processed_data/trials_cleaned.csv")) %>% 
+  select(lab, subid, trial_num, trial_type, looking_time_s, 
+         stimulus, order, looking_time_diff, total_center, enabled_diff, trial_error, trial_error_type)
 
 
 participant_info_id <- full_participnat_info$subid
 trials_id <- trials_data %>% distinct(subid) %>% pull()
 ```
 
-
 ```{r}
 setdiff(trials_id, participant_info_id)
 ```
 
- 
 ```{r}
 setdiff(participant_info_id, trials_id)
 ```
-- PSCUS - NIGERIA, just can't use, not in the data
 
-- UCAD - Senegal, also not in the data 
+-   PSCUS - NIGERIA, just can't use, not in the data
 
-- ZOMBA - Malawi: really just don't have data for 19 and 36
+-   UCAD - Senegal, also not in the data
 
+-   ZOMBA - Malawi: really just don't have data for 19 and 36
 
-- MBG - Rawanda : "MBG-3"      "MBG-18": really don't have raw file for MBG-3 and for MBG-18 the name of the file is MBG18 but inside it says MBG17; changed in the raw file now / code in 02_trial_merge.QMD
+-   MBG - Rawanda : "MBG-3" "MBG-18": really don't have raw file for MBG-3 and for MBG-18 the name of the file is MBG18 but inside it says MBG17; changed in the raw file now / code in 02_trial_merge.QMD
 
-- RSAMB - South Africa, just can't find  "RSAMB003"   "RSAMB023"   "RSAMB007"  
-
+-   RSAMB - South Africa, just can't find "RSAMB003" "RSAMB023" "RSAMB007"
 
 # 4. Write data
 
+
+## 4.0 Demographic based exclusion 
+
+```{r}
+cleaned_trials_data <- trials_data %>% 
+  left_join(full_participnat_info %>% select(-lab), by = c("subid")) %>% 
+  filter(!is.na(subid)) %>% 
+  filter(preterm == FALSE | is.na(preterm)) %>% 
+  filter(hearing_prob == "NO" | is.na(hearing_prob)) %>% 
+  filter(dev_disorder == "NO" | dev_disorder == "NA" | is.na(dev_disorder)) %>% select(lab, subid, trial_num, trial_type, looking_time_s, stimulus, order, looking_time_diff, total_center, enabled_diff)
+```
+
+## 4.1 write data 
+
 ```{r}
 
-joint_data <- trials_data %>% 
+joint_data <- cleaned_trials_data %>% 
   left_join(full_participnat_info %>% select(-lab), by = c("subid")) %>% 
   filter(!is.na(subid)) %>% 
   mutate(age_months_scaled = as.numeric(scale(age_months))) %>% 
-  rename(language_background = language_backgrond) %>% 
   mutate(language_background = if_else(language_background == "monolinguals", "monolingual", language_background))
 
 write_csv(joint_data,here("processed_data/joint_data.csv"))
 ```
 
-
-```{r}
-lmer(log(looking_time_s) ~ trial_type + trial_num + age_months + trial_type * trial_num + age_months * trial_num + age_months * trial_type + (trial_type * trial_num | subid) + (trial_type | lab), 
-     data = joint_data) %>% 
-  summary()
-```
-
-```{r}
-lmer(log(looking_time_s) ~ trial_type + trial_num + age_months + trial_type * trial_num + age_months * trial_num + age_months * trial_type + (1 | subid) + (trial_type | lab), 
-     data = joint_data)
-```
-
-```{r}
-lmer(log(looking_time_s) ~ trial_type + trial_num + age_months + trial_type * trial_num + age_months * trial_num + age_months * trial_type + (1 | subid) + (1 | lab), 
-     data = joint_data) %>% 
-  summary()
-```
+## 4.2 final sample
 
 ```{r}
 
+  
 
-lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab), 
-     data = joint_data) %>% 
-  summary()
+
+ppl_per_lab <- final_sample_d %>% 
+  group_by(lab) %>% 
+  count(name = "tested_participant_n")
+
+age_per_lab <- final_sample_d %>% 
+  group_by(lab) %>% 
+  summarise(mean_age = mean(age_months), sd_age = sd(age_months))
+
+language_per_lab <- final_sample_d %>% 
+  group_by(lab, language_background) %>% 
+  count(name = "language_background_n") %>% 
+  mutate(language_background = case_when(
+    language_background == "monolinguals" ~ "monolingual", 
+    is.na(language_background) ~ "lang_unknown", 
+    TRUE ~language_background
+  )) %>% 
+  pivot_wider(names_from = language_background, values_from = language_background_n)
+
+gender_per_lab <- final_sample_d %>% 
+  group_by(lab, gender) %>% 
+  count(name = "gender_n") %>% 
+  mutate(gender = case_when(
+    gender == "F" ~ "Female", 
+     gender == "M" ~ "Male", 
+    gender == "female" ~ "Female", 
+    gender == "male" ~ "Male",
+    is.na(gender) ~ "gender_unknown", 
+    TRUE ~gender
+  )) %>% 
+  pivot_wider(names_from = gender, values_from = gender_n)
+
+preterm_per_lab <-  final_sample_d %>% 
+  group_by(lab, preterm) %>% 
+  count(name = "preterm_n") %>% 
+  mutate(preterm = case_when(
+    preterm == TRUE ~ "Preterm", 
+    preterm == FALSE ~ "Term", 
+    is.na(preterm) ~ "preterm_unknown"
+  )) %>% 
+  pivot_wider(names_from = preterm, values_from = preterm_n)
+
+
+hearing_per_lab <- final_sample_d %>% 
+  group_by(lab, hearing_prob) %>% 
+  count(name = "hearing_prob_n") %>% 
+  mutate(hearing_prob = case_when(
+    is.na(hearing_prob) ~ "hearing_prob_unknown", 
+    hearing_prob == "NO" ~ "no_hearing_prob", 
+    TRUE ~ "hearing_prob" 
+  )) %>% 
+  pivot_wider(names_from = hearing_prob, values_from = hearing_prob_n)
+
+dev_disorder_per_lab <- final_sample_d %>% 
+  group_by(lab, dev_disorder) %>% 
+  count(name = "dev_disorder_n") %>% 
+  mutate(dev_disorder = case_when(
+    dev_disorder == "NA" ~ "dev_disorder_unknown",
+    is.na(dev_disorder) ~ "dev_disorder_unknown", 
+    TRUE ~ "no_dev_disorder"
+  )) %>% 
+  pivot_wider(names_from = dev_disorder, values_from = dev_disorder_n)
+
+
+
+lab_demog_list <- list(ppl_per_lab, age_per_lab, gender_per_lab, language_per_lab, preterm_per_lab, 
+            hearing_per_lab, dev_disorder_per_lab)
+
+demog_df <- reduce(lab_demog_list, function(x, y) left_join(x, y, by = "lab"))
+demog_df %>% write_csv(here("processed_data/cached_data/final_demog.csv"))
 ```
-

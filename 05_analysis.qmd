@@ -4,31 +4,29 @@ format: html
 editor: visual
 ---
 
-
 ```{r}
 library(tidyverse)
 library(here)
 library(lmerTest)
 library(lme4)
+library(shiny)
+library(psych)
 
-d <- read_csv(here("processed_data/joint_data.csv"))
+d <- read_csv(here("processed_data/joint_data.csv")) %>% 
+  filter(looking_time_s >= 2) %>% 
+  mutate(trial_num_centered = scale(trial_num, scale = FALSE))
 
 ```
 
-# 1. Confirmatory 
-
-## 1.1 RQ 1 & 2: 
-
-Research questions 1 and 2: Infants’ IDS preference and age effect. We addressed our first two research questions using only the data collected in the current paper from laboratories in Africa. We specified the following model: 
-
-log_lt ~ trial_type + trial_num + age_months + 
-trial_type * trial_num + 
-age_months * trial_num + 
-age_months * trial_type + 
-(trial_type * trial_num | subid) +
-(trial_type | lab) 
 
 
+# 1. Confirmatory
+
+## 1.1 RQ 1 & 2:
+
+Research questions 1 and 2: Infants' IDS preference and age effect. We addressed our first two research questions using only the data collected in the current paper from laboratories in Africa. We specified the following model:
+
+log_lt \~ trial_type + trial_num + age_months + trial_type \* trial_num + age_months \* trial_num + age_months \* trial_type + (trial_type \* trial_num \| subid) + (trial_type \| lab)
 
 ```{r}
 
@@ -41,30 +39,18 @@ age_months * trial_type +
 #      data = joint_data)
 
 q1_m2 <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab),
-     data = joint_data)
+     data = d)
 
 q1_m2 %>% summary()
 ```
 
-
 ## 1.2 RQ 3
 
-Research question 3: Population comparison. In this analysis, we compare the data collected from the laboratories in Africa to data collected in MB1 and MB1B in COUNTRIES outside North America. We selected the subset of data from MB1 and MB1B that was collected using central fixation procedures (to match methods across studies) and from infants who were not exposed to North American English (non NAE) (to match stimulus un-familiarity due to language background). While we could have controlled the methodological and demographic variables statistically (and hence included all data from MB1 and MB1B in the full model), we believed that the increase in model complexity – and comparable decrease in interpretability – outweighed the benefits of this strategy.
+Research question 3: Population comparison. In this analysis, we compare the data collected from the laboratories in Africa to data collected in MB1 and MB1B in COUNTRIES outside North America. We selected the subset of data from MB1 and MB1B that was collected using central fixation procedures (to match methods across studies) and from infants who were not exposed to North American English (non NAE) (to match stimulus un-familiarity due to language background). While we could have controlled the methodological and demographic variables statistically (and hence included all data from MB1 and MB1B in the full model), we believed that the increase in model complexity -- and comparable decrease in interpretability -- outweighed the benefits of this strategy.
 
+log_lt \~ trial_type + trial_num + age_months + infant_ID + language_background + trial_type \* trial_num + age_months \* trial_num + age_months \* trial_type + trial_type \* infant_ID + trial_num \* infant_ID + trial_type \* language_background + (trial_type \* trial_num \| subid) + (trial_type \| lab)
 
-log_lt ~ trial_type + trial_num + age_months + infant_ID + language_background +
-trial_type * trial_num + 
-age_months * trial_num + 
-age_months * trial_type + 
-trial_type * infant_ID +
-trial_num * infant_ID + 
-trial_type * language_background +
-(trial_type * trial_num | subid) +
-(trial_type | lab) 
-
-
-
-### 1.2.1 Clean Data 
+### 1.2.1 Clean Data
 
 ```{r}
 mb1_data <- read_csv(here("processed_data/mb1_other_data/mb1_validated_output.csv"))
@@ -106,8 +92,7 @@ compare_d <- d %>%
 
 ```
 
-
-### 1.2.2 Run Models 
+### 1.2.2 Run Models
 
 ```{r}
 
@@ -136,58 +121,217 @@ q2_m2 %>% summary()
 
 ```
 
+# 2. Exploratory
 
+Ghana: No UVR, no SES - "participant_gender","primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender", "secondary_caregiver_education", "number_of_siblings"
 
-# 2. Exploratory 
+Uganda: no UVR, yes SES - https://docs.google.com/document/d/1htOH4Ad-fdfZ4REbzWyf2zgVMbYY0X2c-Z73eMvzIdM/edit?tab=t.0 - "participant_gender", primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender", "secondary_caregiver_education", "number_of_siblings", SES measurement
 
-Ghana: No UVR, no SES
-  - "participant_gender","primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender",
-    "secondary_caregiver_education",  "number_of_siblings"  
-    
+Malawi: No UVR, no SES - "participant_gender","primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender", "secondary_caregiver_education", "number_of_siblings"
 
-Uganda: no UVR, yes SES
-  - https://docs.google.com/document/d/1htOH4Ad-fdfZ4REbzWyf2zgVMbYY0X2c-Z73eMvzIdM/edit?tab=t.0
-  - "participant_gender", primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender",
-    "secondary_caregiver_education", "number_of_siblings", SES measurement
+Rwanda: No UVR, no SES - "participant_gender","primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender", "secondary_caregiver_education", "number_of_siblings"
 
-Malawi: No UVR, no SES
-  - "participant_gender","primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender",
-    "secondary_caregiver_education",  "number_of_siblings"  
+Kenya: No UVR, no SES - "participant_gender","primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender", "secondary_caregiver_education", "number_of_siblings"
 
-Rwanda: No UVR, no SES
-  - "participant_gender","primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender",
-    "secondary_caregiver_education",  "number_of_siblings"  
-
-Kenya:  No UVR, no SES
-  - "participant_gender","primary_caregiver_gender", "primary_caregiver_education", "secondary_caregiver_gender",
-    "secondary_caregiver_education",  "number_of_siblings"  
-  
-South Africa: No UVR, no SES
-  - nothing :(
-
+South Africa: No UVR, no SES - nothing :(
 
 ## 2.1 Urban vs rural areas
 
-Prior studies (e.g., Keller, 2012; Vogh et al., 2015) have found that parents in non-WEIRD contexts sometimes speak to their infants differently across urban and rural areas. For example, parents in urban areas of Mozambican communities in Southeastern Africa tend to speak more to their children relative to parents in rural areas of Mozambican communities (Vogh et al., 2015). In turn, this could potentially lead to differences in IDS preference, with infants from urban areas, because of their higher input, showing a larger IDS preference, compared to infants from rural areas. We plan to explore this possibility by examining whether possible demographic differences in language input affect infants’ preference for IDS in our sample.
+Prior studies (e.g., Keller, 2012; Vogh et al., 2015) have found that parents in non-WEIRD contexts sometimes speak to their infants differently across urban and rural areas. For example, parents in urban areas of Mozambican communities in Southeastern Africa tend to speak more to their children relative to parents in rural areas of Mozambican communities (Vogh et al., 2015). In turn, this could potentially lead to differences in IDS preference, with infants from urban areas, because of their higher input, showing a larger IDS preference, compared to infants from rural areas. We plan to explore this possibility by examining whether possible demographic differences in language input affect infants' preference for IDS in our sample.
 
-No information exists for any of the dataset 
-
+No information exists for any of the dataset
 
 ## 2.2 SES
 
-SES will be measured by mothers’ formal education (number of years), and the MacArthur Scale of Subjective Social Status (MacSSS). We will enter both mothers’ formal education and the MacSSS as two separate SES variables in the regression model, after checking the assumption about the collinearity between variables. We note that SES is likely to be positively correlated with whether the family lives in an urban area. However, we propose that our measure of SES most likely can provide more information about the demographic backgrounds of the families in addition to the binary measure of whether the family lives in an urban or rural setting. Thus, this analysis may be more fine-grained, and could allow us to detect differences in infants’ IDS preference across different demographic contexts.
+SES will be measured by mothers' formal education (number of years), and the MacArthur Scale of Subjective Social Status (MacSSS). We will enter both mothers' formal education and the MacSSS as two separate SES variables in the regression model, after checking the assumption about the collinearity between variables. We note that SES is likely to be positively correlated with whether the family lives in an urban area. However, we propose that our measure of SES most likely can provide more information about the demographic backgrounds of the families in addition to the binary measure of whether the family lives in an urban or rural setting. Thus, this analysis may be more fine-grained, and could allow us to detect differences in infants' IDS preference across different demographic contexts.
 
- - mom assumed to be primary + female 
- - dropping MSS
+-   mom assumed to be primary + female
+-   dropping MSS
+-   entering only primary caregiver female kids
 
+```{r}
+ses_d <- d %>% 
+  mutate(scaled_primary_caregiver_ed = scale(primary_caregiver_education), 
+         scaled_num_siblings = scale(number_of_siblings))
+  
+
+exp2_m0 <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + scaled_primary_caregiver_ed +  trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab),
+     data = ses_d)
+
+exp2_m0_check <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + scaled_primary_caregiver_ed +  trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab),
+     data = ses_d %>% filter(primary_caregiver_gender == "F") )
+
+
+
+
+exp2_m0 %>% summary()
+exp2_m0_check %>% summary()
+  
+```
+
+## 2.3 Number of siblings?
+
+nope
+
+```{r}
+# exp3_m0 <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + scaled_num_siblings +  trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab),
+#      data = ses_d)
+
+exp3_m1 <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + scaled_num_siblings + scaled_primary_caregiver_ed +  trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid),
+     data = ses_d)
+
+exp3_m1 %>% summary()
+```
+
+## 2.4 Meta-analysis by testing site
+
+https://github.com/manybabies/mb1-analysis-public/blob/dc3eb5b3578057096d337203635c0759d2fc04b6/paper/mb1-paper.Rmd#L511
+
+https://github.com/manybabies/mb1-analysis-public/blob/dc3eb5b3578057096d337203635c0759d2fc04b6/paper/mb1-paper.Rmd#L568
+
+### 2.4.0 Saving Ndhambi Data
+
+```{r}
+usable_pairs <- d %>% 
+  filter(lab == "Ndhambi - South Africa") %>% 
+  select(lab, subid, stimulus, trial_type) %>% 
+  group_by(subid) %>%
+  distinct(stimulus, .keep_all = TRUE) %>% 
+   mutate(stimulus_id = case_when(
+    grepl("ads", stimulus) ~ sub("ads", "", stimulus), 
+    grepl("ids", stimulus) ~ sub("ids", "", stimulus)
+  )) %>% 
+  group_by(stimulus_id, subid) %>% count() %>% filter(n == 2) 
+
+usable_sa_data <- d %>% 
+  filter(lab == "Ndhambi - South Africa") %>% 
+  group_by(subid) %>%
+  distinct(stimulus, .keep_all = TRUE) %>% 
+  mutate(stimulus_id = case_when(
+    grepl("ads", stimulus) ~ sub("ads", "", stimulus), 
+    grepl("ids", stimulus) ~ sub("ids", "", stimulus)
+  )) %>% 
+  semi_join(usable_pairs, by = c("subid", "stimulus_id"))
+```
+
+### 2.4.1 Calculating MA
 
 ```{r}
 
+# Ndhambi - South Africa: most participants have the same stimuli played twice  
+
+d_var_calc <- function(n, d) {
+  return((2/n) + (d ^ 2 / (4 * n)))
+}
+
+
+diffs <- d %>% 
+  filter(lab != "Ndhambi - South Africa") %>% 
+  bind_rows(usable_sa_data) %>% 
+  mutate(stimulus = toupper(stimulus)) %>% 
+  mutate(stimulus = if_else(stimulus == "ISD1", "IDS1", stimulus), 
+    type = str_extract(stimulus, "IDS|ADS"),
+    number = str_extract(stimulus, "\\d+")
+  ) %>% 
+  select(lab, subid, number, type, looking_time_s) %>%
+  pivot_wider(
+    names_from = type,
+    values_from = looking_time_s
+  ) %>% 
+  mutate(diff = IDS - ADS)
+
+
+
+ds_zt <- diffs %>%
+  group_by(lab, subid) %>%
+  summarise(d = mean(diff, na.rm = TRUE)) %>%
+  summarise(d_z = mean(d, na.rm = TRUE) / sd(d, na.rm = TRUE), 
+            n = length(unique(subid)), 
+            d_z_var = d_var_calc(n, d_z)) %>%
+  filter(n >= 10) %>%
+  filter(!is.na(d_z)) # CHECK THIS 
+
+intercept_mod <- metafor::rma(d_z ~ 1, 
+                              vi = d_z_var, slab = lab, data = ds_zt, 
+                              method = "REML") 
+
+intercept_mod
+                        
+
 ```
 
+### 2.4.2 Plotting
+
+```{r}
+f <- fitted(intercept_mod)
+p <- predict(intercept_mod)
+
+alpha <- .05
+
+forest_data <- data.frame(effects = as.numeric(intercept_mod$yi.f),
+                          variances = intercept_mod$vi.f) %>%
+  mutate(effects.cil = effects -
+           qnorm(alpha / 2, lower.tail = FALSE) * sqrt(variances),
+         effects.cih = effects +
+           qnorm(alpha / 2, lower.tail = FALSE) * sqrt(variances),
+         estimate = as.numeric(f),
+         lab = factor(names(f)),
+         estimate.cil = p$ci.lb,
+         estimate.cih = p$ci.ub,
+         inverse_vars = 1/variances,
+         identity = 1, 
+         index = 1:n()) %>%
+  bind_cols(ungroup(ds_zt)) %>% 
+  rename(lab = `lab...6`) %>% 
+  select(-`lab...12`)
+
+forest_data <- bind_rows(forest_data,
+                         data_frame(lab = "Meta-analytic estimate",
+                                    method = "",
+                                    effects = summary(intercept_mod)$b[1],
+                                    effects.cil = summary(intercept_mod)$ci.lb,
+                                    effects.cih = summary(intercept_mod)$ci.ub)) %>%
+  mutate(method = fct_rev(fct_relevel(method, "")),
+         lab = fct_relevel(lab, "Meta-analytic estimate")) 
 
 
+ggplot(forest_data, aes(x = lab, y = effects)) + 
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey") +
+  geom_pointrange(aes(ymin = effects - sqrt(variances)*1.96,
+                     ymax = effects + sqrt(variances)*1.96, 
+                     group = index),
+                 alpha = .5,
+                 position = position_dodge(width = .5)) +
+  geom_point(data = filter(forest_data, lab != "Meta-analytic estimate"),
+             aes(y = effects, size = inverse_vars, 
+                 group = index), 
+             alpha = .5, 
+             position = position_dodge(width = .5)) +
+  geom_point(data = filter(forest_data, lab == "Meta-analytic estimate"),
+             pch = 5) +
+  geom_linerange(data = filter(forest_data, lab == "Meta-analytic estimate"),
+                 aes(ymin = effects.cil, ymax = effects.cih), 
+                 alpha = .5) +
+  #facet_grid(method ~ ., scales = "free", space = "free") +
+  coord_flip() +
+  scale_size_continuous(guide = FALSE) +
+  #scale_colour_plot(guide = FALSE) +
+  xlab("Lab") +
+  ylab("Effect Size") +
+  theme(axis.text.y = element_text(size = 6)) +
+  ggthemes::theme_few()
+```
 
-## 2.3 
+# 4. Reliabilities of diff
 
-## 2.4 Meta-analysis by testing site 
+```{r}
+diff_wide <- diffs %>%
+  select(subid, number, diff) %>%
+  pivot_wider(names_from = number, values_from = diff)
+
+icc_res <- ICC(diff_wide[,-1])  # r
+saveRDS(icc_res, here("processed_data/cached_data/ICC.rds"))
+
+
+icc_res$results %>% filter(type == "ICC3k")
+```

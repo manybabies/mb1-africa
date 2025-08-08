@@ -60,6 +60,7 @@ events2 <- read_csv("processed_data/trials_cleaned/Kizito - Uganda/MBG_IDS_002Sa
                        "location", "extra")) |>
   filter(phase %in% c("StimulusSettings","ScreenStart","LookEnabled",
                       "Look","LookTrans","LookDisabled")) |>
+ 
   mutate(trial_type = str_extract(extra, "([I/A]DS_[0-9])|(N/A)"), 
          event_num = 1:n()) |>
   mutate(trial_type = ifelse(trial_type == "N/A", "training", trial_type)) |>
@@ -102,14 +103,14 @@ parse_eventlog <- function (f) {
   mutate(trial_type = ifelse(trial_type == "N/A", "training", trial_type)) |>
   tidyr::fill(trial_type, .direction = "down") |>
   filter(!is.na(trial_type)) |>
+
   mutate(trial_change = trial_type != lag(trial_type, n = 1), 
          trial_num = cumsum(ifelse(!is.na(trial_change), trial_change, 1)) - 1) |>
   mutate(trial_num = case_when(trial_type == "training" & 
                                   cumsum(phase == "StimulusSettings") == 1 ~
                                   -2,
                                trial_type == "training" ~ -1,
-                               TRUE ~ trial_num), 
-         trial_type = str_replace_all(trial_type, "_[0-9]+", "")) |>
+                               TRUE ~ trial_num)) |>
   select(event_num, phase, trial_type, location, trial_num, timestamp) 
  
  lts <- events |>
@@ -131,7 +132,11 @@ uganda <- map_df(files, \(f) {
   parse_eventlog(here("processed_data","trials_cleaned","Kizito - Uganda",f)) |>
     mutate(lab = "Kizito - Uganda",
            subid = str_extract(f, "IDS_[0-9]+"))
-  })
+  }) %>% 
+  mutate(stimulus = trial_type, 
+         trial_type = str_replace_all(trial_type, "_[0-9]+", ""))
+
+
 
 write_csv(uganda, here("processed_data","trials_cleaned","Kizito - Uganda parsed.csv"))
 ```

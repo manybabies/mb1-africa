@@ -217,6 +217,54 @@ This just looks like an order issue. I think we are fine including these if we r
 
 # Data passing minimal quality checks
 
+
+## Extracting excluding trials 
+
+```{r}
+
+d %>% write_csv(here("processed_data/cached_data/unfiltered.csv"))
+
+d_trial_excluded <- d |>
+  # this will take out all the ghana trials that marked as having trial error
+  filter(!(lab %in% c("Diop - Senegal", "Bentu - Nigeria")),
+         looking_time_s <= 0  & trial_type != "training")
+
+
+
+d_kids_excluded <- d |>
+  filter(!(lab %in% c("Diop - Senegal", "Bentu - Nigeria")),
+         looking_time_s > 0,
+                   trial_type != "training") %>% 
+   mutate(
+    
+    clean_col = str_replace_all(stimulus, "_", ""),  
+    clean_col  = case_when(
+      stimulus == "ISD1" ~ "IDS1", 
+      TRUE ~ clean_col
+      ),
+    clean_col = str_to_upper(clean_col),
+    stimulus_num = str_extract(clean_col, "\\d+"),
+    stimulus_type = str_extract(clean_col, "^[A-Z]+")
+  ) %>% 
+  distinct(subid, lab, stimulus_num, stimulus_type) %>%
+  group_by(subid, lab, stimulus_num) %>%
+  summarize(n_types = n(), .groups = "drop") %>%
+  # Keep only those stimulus_num where both IDS and ADS are present
+  filter(n_types == 2) %>%
+  # Now count how many such valid pairs each child has
+  count(subid, lab, name = "n_valid_pairs") %>%
+  # Optionally filter for children with at least one valid pair
+  filter(n_valid_pairs < 1)
+  
+
+d_trial_excluded %>% write_csv(here("processed_data/cached_data/excluded_trials.csv"))
+
+d_kids_excluded %>% write_csv(here("processed_data/cached_data/excluded_kids.csv"))
+  
+  
+```
+
+
 ```{r}
 d_clean <- d |>
   filter(!(lab %in% c("Diop - Senegal", "Bentu - Nigeria")),
