@@ -17,3 +17,4 @@ here
 knitr
 kableExtra
 ggpubr
+lmerTest

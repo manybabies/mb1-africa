@@ -163,6 +163,8 @@
 
 \linenumbers
 \usepackage{csquotes}
+\usepackage{tabularx}
+\usepackage{booktabs}
 \usepackage{amsmath}
 \renewcommand{\topfraction}{1}
 \renewcommand{\bottomfraction}{1}
@@ -245,10 +247,30 @@ In sum, there are three primary (confirmatory) goals for the current study. Firs
 \hypertarget{participation-details}{%
 \subsection{Participation Details}\label{participation-details}}
 
+\begin{table}[!t]
+\caption{\textit{Test locations, participant ages, and languages by country}}
+\label{tab:test_locations}
+\centering
+\begin{tabularx}{\textwidth}{lXlX}
+\toprule
+\textbf{Country} & \textbf{Test location} & \textbf{Target age} & \textbf{Test language(s)} \\
+\midrule
+Ghana & University of Ghana, Accra & 3--9 months & Akan, Ga, Ewe \\
+Kenya & Nanyuki & 9--15 months & Kikuyu, Kiswahili, English \\
+Malawi & University of Malawi -- Chancellor College, Zomba & 6--15 months & Chichewa, English, or both \\
+Nigeria & University of Jos, Plateau & 3--15 months & Hausa, English, Birom, Ngas \\
+Rwanda & Kigali & 6--15 months & Kinyarwanda \\
+Senegal & Dakar & 3--15 months & French, Wolof \\
+South Africa & Pretoria & 3--15 months & Setswana, Xitsonga \\
+Uganda & Makerere University, Kampala & 3--15 months & Luganda, English \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \hypertarget{time-frame}{%
 \subsubsection{Time-frame}\label{time-frame}}
 
-On July 23, 2018, we issued an open call for participation by African researchers via listservs and social/professional networks. In total, XYZ laboratories agreed to participate (See Table 1 for target sample characteristics of each site). Our participating laboratories will recruit infants living in eastern (e.g., Kenya), western (e.g., Senegal) and southern (e.g., South Africa) regions of Africa. We also note that many of our participating laboratories are located in East Africa, thus East African participants are disproportionately represented in our sample. Data collection began September 21, 2021. We initially anticipated finishing data collection a year later, but labs encountered a wide variety of unforeseen circumstances due to the COVID-19 pandemic, challenges with receiving IRB approval, and equipment and staffing issues. Thus, data collection was extended through 2023.
+On July 23, 2018, we issued an open call for participation by African researchers via listservs and social/professional networks. In total, 8 laboratories agreed to participate (See Table 1 for target sample characteristics of each site). Our participating laboratories will recruit infants living in eastern (e.g., Kenya), western (e.g., Senegal) and southern (e.g., South Africa) regions of Africa. We also note that many of our participating laboratories are located in East Africa, thus East African participants are disproportionately represented in our sample. Data collection began September 21, 2021. We initially anticipated finishing data collection a year later, but labs encountered a wide variety of unforeseen circumstances due to the COVID-19 pandemic, challenges with receiving IRB approval, and equipment and staffing issues. Thus, data collection was extended through 2023.
 
 \hypertarget{age-distribution}{%
 \subsubsection{Age distribution}\label{age-distribution}}
@@ -291,15 +313,33 @@ We excluded infants with parent-reported developmental disorders (e.g., chromoso
 
 Following MB1 and MB1B, we adopted a relatively liberal inclusion criterion for this study. To be included in the study, a child must have contributed non-zero looking time on at least one pair of test trials (i.e., one trial each of IDS and ADS from a particular stimulus pair). We asked laboratories to identify two different types of errors when uploading their data: trial-level errors and session-level errors. Trial-level exclusions were based on whether we could use infants' data from a particular test trial. For example, if an infant only completed the first six test trials of the experiment, we entered this infant's data from the first six trials and discarded data from all other trials. In this case, laboratories would identify this infant's data from the first to sixth trials as ``no trial errors'' and any trials from the seventh trial onwards would be identified as ``trial errors''. In contrast, session-level errors were errors that occurred when running a particular participant. This type of error is different from the trial-level error exclusions because it indicates that errors occurred which affected an entire session (e.g., failure to save data in the experiment). If a laboratory indicated a session-level error for a particular infant, all data from this infant was excluded from the analysis. In sum, infants who can contribute at least one pair of test trials (i.e., one IDS trial and one ADS trial) would have some data excluded at the trial level whereas infants who cannot contribute one pair of test trials would be excluded at the session level. In general, errors included the following: equipment error (e.g., no sound or visuals on the first pair of trials), experimenter error (e.g., an experimenter was unblinded in setups where infant looking was measured by live button press), or evidence of parent interference or other types of interference (e.g., talking or pointing by parents, construction noise, sibling pounding on door), and infants being uncooperative or fussy (e.g., crying, not willing to do the experiment).
 
-Overall, at the trial level, 18 trials (0.39\% of all trials) were excluded. Due to experimental setup errors, data from two sites were unusable, leading to the exclusion of 60 infants (0.39\% of all tested participants). No additional test sessions were excluded.
+Overall, at the trial level, 18 trials (0.39\% of all trials) were excluded. Due to experimental setup errors, data from two sites were unusable, leading to the exclusion of 60 infants (21.58\% of all tested participants). No additional test sessions were excluded.
 
 \hypertarget{participants}{%
 \subsection{Participants}\label{participants}}
 
+\begin{table}[!t]
+\caption{\textit{Final sample's demographics and language background by country. Mean age in month.}}
+\label{tab:country_demographics}
+\centering
+\begin{tabularx}{\textwidth}{lcllX}
+\toprule
+\textbf{Country} & \textbf{N} & \textbf{Mean Age (SD)} & \textbf{Sex} & \textbf{Language background} \\
+\midrule
+Ghana & 32 & 8.66 (3.72) & F: 17; M: 15 & Monolingual: 3; Bilingual: 8; Other: 21 \\
+Kenya & 27 & 11.14 (2.88) & F: 15; M: 12 & Monolingual: 17; Bilingual: 5; Other: 5 \\
+Malawi & 38 & 8.82 (4.10) & Unknown & Monolingual: 36; Other: 2 \\
+Rwanda & 31 & 9.83 (4.23) & F: 16; M: 15 & Monolingual: 31\\
+South Africa & 31 & 9.00 (3.71) & Unknown & Unknown \\
+Uganda & 41 & 12.27 (2.17) & F: 21; M: 20 & Unknown \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \hypertarget{final-sample}{%
 \subsubsection{Final sample}\label{final-sample}}
 
-Our final sample included 200 infants (see Table XYZ for more specific sample demographic information) from 6 laboratories (mean sample size per laboratory: \texttt{n\ mean\_sample\_size}, SD: 5.16, range: 27 -- 41). The mean age of infants included in the study was 296.49 days (range: 71 -- 606). An additional 60 infants were tested but excluded (see the full details on exclusions above).
+Our final sample included 200 infants (see Table 2 for more specific sample demographic information) from 6 laboratories (mean sample size per laboratory: 33.33, SD: 5.16, range: 27 -- 41). The mean age of infants included in the study was 296.49 days (range: 71 -- 606). Similar to MB1, each laboratory was asked to collect data spanning the two target age ranges (3;0 -- 9;0 and 9;1 -- 15;0 months); however, in practice, many laboratories recruited participants outside the intended windows (younger than 3-month-old: \emph{N} = 4; older than 15-month-old: \emph{N} = 16). We did not exclude these infants from our analyses. An additional 60 infants were tested but excluded (see the full details on exclusions above).
 
 As mentioned in the Introduction, multilingualism is common in Africa. Thus, many infants in the final sample are likely to have been exposed to more than one language. To assess infants' language backgrounds, each laboratory completed a family questionnaire with the participating parents (see materials in linked repository: \url{https://osf.io/jgr79/?view_only=5ee43f58762742daaa2caa21b85e3780}). Our family language background questionnaire was created based on the family language background questionnaire in the MB1 and MB1B studies, and included questions asking parents to estimate the number of hours that their infants heard different languages. We calculated the percentage of time that infants were exposed to a given language as the number of hours they hear that language (per day) divided by the total number of hours the infant hears any language each day. This method is simpler than the traditional interview method used in assessing bilingual infants' language exposure (Byers-Heinlein et al., 2019), but in order to minimize the burden on participating laboratories and families, we decided to use a short questionnaire method to assess infants' language backgrounds.
 
@@ -314,7 +354,7 @@ Visual stimuli. All visual stimuli were the same as those used in the MB1 study.
 
 Auditory stimuli. All auditory stimuli were identical to those used in the MB1 study. The stimuli were recordings of North-American English mothers either speaking with experimenters (ADS) or with their infants whose ages ranged from 122 to 250 days in a laboratory setting. Mothers were provided with a set of objects and were asked to talk about the objects with the experimenters and their infants in separate recording sessions. In total, two sets of auditory stimuli were created: one set consisted of 8 IDS stimuli and the other set consisted of 8 ADS stimuli. Each stimulus lasted for 18 seconds. The details of stimulus creation can be found in the report of MB1 (ManyBabies Consortium, 2020).
 
-Volume. Each laboratory measured stimulus volume level using a smartphone app (e.g., the Android app ``Sound Meter''). Labs kept the stimulus volume close to 63 -- 65 dB SPL. According to the protocol, labs would measure and report the background noise level and the stimulus level. XYZ labs provided these data. The average background level was XYZ dB SPL (SD: XYZ, range: XYZ -- XYZ) and the average stimulus level was XYZ dB SPL (SD: XYZ, range: XYZ -- XYZ).
+Volume. Each laboratory measured stimulus volume level using a smartphone app (e.g., the Android app ``Sound Meter''). Labs kept the stimulus volume close to 63 -- 65 dB SPL. According to the protocol, labs would measure and report the background noise level and the stimulus level. However, these information was not collected.
 
 \hypertarget{procedure}{%
 \subsection{Procedure}\label{procedure}}
@@ -325,7 +365,7 @@ Experimental procedure. The procedure was identical to the single-screen central
 
 The experimenter explained the study to the parent and obtained consent from the parent before running the experiment. After completing the consent form, the experimenter led the participant to the testing room. To minimize distraction, the experimenter was separated from the infant and parent by curtains or a room divider. During the experiment, the infant sat on the parent's lap. To minimize any bias introduced by the experimenter or parent hearing the stimuli, each of them wore headphones and heard masking music during the experiment.
 
-Parents were instructed not to speak to the infant during the experiment and not to point to the screen. Infants' performance was recorded by a webcam that was placed in front of and below the computer monitor. Infants' looking time to each trial was measured online by the experimenter, who observed the infant's behavior via the webcam. At the beginning of each trial, a short video of a colorful circle was presented to orient the infant's attention to the screen. Once the infant fixated on the screen, the experimenter started the trial. The first two trials of the session were warm-up trials that accustomed infants with the procedure of the experiment, so the infant's looking time during warm-up trials was not analyzed. The auditory stimuli for the warm-up trials was piano music that lasted 18 seconds on each trial and the visual stimulus was the same as in the test trials (i.e., a colorful checkerboard). After the first two warm-up trials, the infant was tested with 16 trials presenting the IDS and ADS stimuli. Each infant was randomly assigned to one of four pseudo-random orders to counterbalance the order of presentation of IDS and ADS stimuli. Within each order, there were four blocks and each block presented 2 IDS and 2 ADS trials in alternating order. The presentation of the trials within each block were counterbalanced such that two blocks started with an IDS trial, and the other two blocks started with an ADS trial. On each trial, the auditory stimulus would continue to play until the infant looked away for 2 consecutive seconds or reached the maximum length of the auditory stimulus (18 seconds). Experimenters used the Habit program to record all looking time for every trial. There was no minimum looking time per trial that was required for continuation of the experiment. However, as in the MB1 study, any looking time that was less than 2 seconds was not analyzed. We excluded XYZ (XYZ\%) trials that had less than 2 seconds looking time in total.
+Parents were instructed not to speak to the infant during the experiment and not to point to the screen. Infants' performance was recorded by a webcam that was placed in front of and below the computer monitor. Infants' looking time to each trial was measured online by the experimenter, who observed the infant's behavior via the webcam. At the beginning of each trial, a short video of a colorful circle was presented to orient the infant's attention to the screen. Once the infant fixated on the screen, the experimenter started the trial. The first two trials of the session were warm-up trials that accustomed infants with the procedure of the experiment, so the infant's looking time during warm-up trials was not analyzed. The auditory stimuli for the warm-up trials was piano music that lasted 18 seconds on each trial and the visual stimulus was the same as in the test trials (i.e., a colorful checkerboard). After the first two warm-up trials, the infant was tested with 16 trials presenting the IDS and ADS stimuli. Each infant was randomly assigned to one of four pseudo-random orders to counterbalance the order of presentation of IDS and ADS stimuli. Within each order, there were four blocks and each block presented 2 IDS and 2 ADS trials in alternating order. The presentation of the trials within each block were counterbalanced such that two blocks started with an IDS trial, and the other two blocks started with an ADS trial. On each trial, the auditory stimulus would continue to play until the infant looked away for 2 consecutive seconds or reached the maximum length of the auditory stimulus (18 seconds). Experimenters used the Habit program to record all looking time for every trial. There was no minimum looking time per trial that was required for continuation of the experiment. However, as in the MB1 study, any looking time that was less than 2 seconds was not analyzed. We excluded 335 (11.46\%) trials that had less than 2 seconds looking time in total.
 
 After the main looking-time task, the parents answered questions from the experimenter about participant and family demographic information, such as infant sex, date of birth, language exposure, and preterm/full term status. The questionnaire was translated into the appropriate language(s) for participants from each data collection site. See supplementary materials for the English template and adaptations.
 
@@ -350,9 +390,9 @@ Each laboratory was responsible for maintaining good experimenter training pract
 
 Data processing and analytic framework. Our primary dependent variable of interest was infants' looking time (LT). Infants' looking time was defined as time spent fixating on the computer screen during test trials. We did not count LT when infants looked away from the screen, though the trial was discontinued if an infant looked away and did not look back to the screen within 2 seconds. Following MB1 and MB1B, we log-transformed looking times prior to statistical analysis (Csibra, Hernik, Mascaro, Tatone, \& Lengyel, 2016). We made this decision because we wanted to compare the data of the current study with those in MB1 and MB1B.
 
-We tested our research questions via general linear mixed effects models. We fit all models using a maximal random effects structure (Barr, Levy, Scheepers, \& Tily, 2013). Under this approach, we first specified all random effects that are appropriate for the experimental design (e.g., IDS/ADS trial type varied within subjects in our experimental design, thus it can be specified as a random effect by subject; see below for the full list of effects considered). If any of these mixed-effects models failed to converge, we used an iterative pruning strategy: first removing random slopes nested within subjects, next removing random slopes nested within labs, and finally removing random intercepts from groupings in the same order, retaining effects of trial type as these were of greatest theoretical interest. Following MB1 and MB1B, we fit all models using the lme4 package with the bobyqa optimizer, version XYZ (Bates, Maechler, Bolker, \& Walker, 2015) and computed confidence intervals and p values using the lmerTest package (Kuznetsova, Brockhoff, \& Christensen, 2017).
+We tested our research questions via general linear mixed effects models. We fit all models using a maximal random effects structure (Barr, Levy, Scheepers, \& Tily, 2013). Under this approach, we first specified all random effects that are appropriate for the experimental design (e.g., IDS/ADS trial type varied within subjects in our experimental design, thus it can be specified as a random effect by subject; see below for the full list of effects considered). If any of these mixed-effects models failed to converge, we used an iterative pruning strategy: first removing random slopes nested within subjects, next removing random slopes nested within labs, and finally removing random intercepts from groupings in the same order, retaining effects of trial type as these were of greatest theoretical interest. Following MB1 and MB1B, we fit all models using the lme4 package with the bobyqa optimizer, version 1.1-35.3 (Bates, Maechler, Bolker, \& Walker, 2015) and computed confidence intervals and p values using the lmerTest package (Kuznetsova, Brockhoff, \& Christensen, 2017).
 
-In addition to the mixed-effect models, we assessed the reliability of measurement in our study by reporting the reliability of the infants' looking time difference to the IDS vs ADS stimuli across different trials. Following Byers-Heinelin et al.~(under review), we reported the intraclass correlation coefficient (ICC) as our reliability measure. The ICC was computed using the psych package in R (Reville, 2018). We reported an ICC3k measure, on the basis of a two-way random effects model, a mean-rating of 8 (i.e., we had 8 pairs of IDS and ADS trials) and consistency agreement (Koo \& Mae, 2016, Parson et al., 2019). The estimated ICC was \_\_\_\_\_, 95\% CI {[}\_\_\_\_, \_\_\_\_{]}. We will compare the estimated ICC in our study with the ICC in MB1(B); we expect that the ICC between our study and that in MB1(B) to be similar in magnitude.
+In addition to the mixed-effect models, we assessed the reliability of measurement in our study by reporting the reliability of the infants' looking time difference to the IDS vs ADS stimuli across different trials. Following Byers-Heinelin et al.~(under review), we reported the intraclass correlation coefficient (ICC) as our reliability measure. The ICC was computed using the psych package in R (Reville, 2018). We reported an ICC3k measure, on the basis of a two-way random effects model, a mean-rating of 8 (i.e., we had 8 pairs of IDS and ADS trials) and consistency agreement (Koo \& Mae, 2016, Parson et al., 2019). The estimated ICC was 0.18, 95\% CI {[}0.00, 0.34{]}.
 
 Below is a description of variables in our mixed-effect models:
 
@@ -375,50 +415,37 @@ Below is a description of variables in our mixed-effect models:
 As a reminder, we examined the following research questions in our paper: (1) IDS preference: whether infants in our multi-site African sample showed a preference for IDS and what is the corresponding effect size of this preference; (2) Age effect: whether there were changes in the infants' IDS preference across different ages; (3) Population comparison: examine whether the magnitude of infants' IDS preference in our study differed from infants in MB1 and in MB1B (comparing only infants in these three samples who were not exposed to North American English).
 
 Research questions 1 and 2: Infants' IDS preference and age effect. We addressed our first two research questions using only the data collected in the current paper from laboratories in Africa. We specified the following model:
-log\_lt \textasciitilde{} trial\_type + trial\_num + age\_months +
-trial\_type * trial\_num +
-age\_months * trial\_num +
-age\_months * trial\_type +
-(trial\_type * trial\_num \textbar{} subid) +
-(trial\_type \textbar{} lab)
+\texttt{log\_lt\ \textasciitilde{}\ trial\_type\ +\ trial\_num\ +\ age\_months\ +\ trial\_type\ *\ trial\_num\ +\ age\_months\ *\ trial\_num\ +\ age\_months\ *\ trial\_type\ +\ (trial\_type\ *\ trial\_num\ \textbar{}\ subid)\ +\ (trial\_type\ \textbar{}\ lab)}.
 
 The fixed-effects structure of this model included main effects of trial type (IDS vs ADS), age, and trial number. This structure controls for the effects of each independent variable on infants' looking time (e.g., longer looking times for IDS, shorter looking times on later trials). In addition, we included several two-way interaction terms: trial type interacting with trial number to model the possibility of infants' faster habituation to ADS, age interacting with the trial type to model the developmental trajectory of infants' IDS preference, and age interacting with trial number to model faster habituation for older children. The random effects structure of the model controlled for subject-level and lab-level grouping. For subject-level grouping, we added random intercepts and random effects of trial type, trial number, and their interaction to model the possibility that each infant may have different rates of habituation for IDS and ADS trials. For lab-level grouping, we added a random effect trial type to model differences in IDS preferences across labs.
 
-After pruning for non-convergence, our final model specification was: To be filled in after data analysis.
+After pruning for non-convergence, our final model specification was: \texttt{log\_lt\ \textasciitilde{}\ trial\_type\ +\ trial\_num\ +\ age\_months\ +\ trial\_type\ *\ trial\_num\ +\ \ age\_months\ *\ trial\_num\ +\ age\_months\ *\ trial\_type\ +\ (1\ \textbar{}\ subid)\ +\ (1\ \textbar{}\ lab)}.
 
 As in MB1 and MB1B, the fixed effect estimate for trial type corresponds to the predicted infant-directed speech preference effect in units of log looking time (research question 1). The fixed effect estimate for the interaction of trial type and age indicates the estimated age-related change in infant-directed speech preference in log seconds per month (research question 2).
 
-We will report metrics that directly describe the heterogeneous distribution of effects across labs (Mathur \& VanderWeele, in press; Mathur \& VanderWeele, 2019). Specifically, we will use the R package MetaUtility to estimate (Mathur \& VanderWeele, 2020): (1) the percentage of true population effects (i.e, infants' preference for IDS over ADS) across labs that are greater than 0; (2) the percentage that are greater than an effect size of by Cohen's d = 0.2; and (3) the percentage of effects in the unexpected direction that are less than d = -0.2 (i.e., representing infants preferring ADS over IDS). We will present these metrics only if the random slopes of trial type by lab are included in the final pruned mixed model, if these random slopes appear heterogeneous across labs (i.e., their estimated variance is greater than 0), and if, as anticipated, at least 10 labs contribute data (i.e., to achieve valid statistical inference).
+The model revealed a significant main effect of trial type, such that infants looked longer at IDS trials than ADS trials (\emph{\(\beta\)} = 0.06; \emph{SE} = 0.02; \emph{t} = 2.76; \emph{p} = 0.01). There was also a significant negative effect of trial number, indicating that looking times decreased over the course of the session (\emph{\(\beta\)} = -0.03; \emph{SE} = 0; \emph{t} = -9.72; \emph{p} \textless{} 0.01). Age in months was also a significant predictor, with older infants showing shorter looking times overall (\emph{\(\beta\)} = -0.09; \emph{SE} = 0.03; \emph{t} = -3.40; \emph{p} \textless{} 0.01). None of the interaction terms reached statistical significance, including the interaction between trial type and age, suggesting that the magnitude of IDS preference did not change reliably with age.
 
-Research question 3: Population comparison. In this analysis, we compare the data collected from the laboratories in Africa to data collected in MB1 and MB1B in COUNTRIES outside North America. We selected the subset of data from MB1 and MB1B that was collected using central fixation procedures (to match methods across studies) and from infants who were not exposed to North American English (non NAE) (to match stimulus un-familiarity due to language background). While we could have controlled the methodological and demographic variables statistically (and hence included all data from MB1 and MB1B in the full model), we believed that the increase in model complexity -- and comparable decrease in interpretability -- outweighed the benefits of this strategy.
+Research question 3: Population comparison. In this analysis, we compare the data collected from the laboratories in Africa to data collected in MB1 and MB1B in Germany, Italy, New Zealand, Turkey, United Kingdom. We selected the subset of data from MB1 and MB1B that was collected using central fixation procedures (to match methods across studies) and from infants who were not exposed to North American English (non NAE) (to match stimulus un-familiarity due to language background). While we could have controlled the methodological and demographic variables statistically (and hence included all data from MB1 and MB1B in the full model), we believed that the increase in model complexity -- and comparable decrease in interpretability -- outweighed the benefits of this strategy.
 
 We examine whether our sample of infants' IDS preference is different from those in MB1 and MB1B with the following model:
-log\_lt \textasciitilde{} trial\_type + trial\_num + age\_months + infant\_ID + language\_background +
-trial\_type * trial\_num +
-age\_months * trial\_num +
-age\_months * trial\_type +
-trial\_type * infant\_ID +
-trial\_num * infant\_ID +
-trial\_type * language\_background +
-(trial\_type * trial\_num \textbar{} subid) +
-(trial\_type \textbar{} lab)
+\texttt{log\_lt\ \textasciitilde{}\ trial\_type\ +\ trial\_num\ +\ age\_months\ +\ infant\_ID\ +\ language\_background\ +\ trial\_type\ *\ trial\_num\ +\ age\_months\ *\ trial\_num\ +\ age\_months\ *\ trial\_type\ +\ trial\_type\ *\ infant\_ID\ +\ trial\_num\ *\ infant\_ID\ +\ trial\_type\ *\ language\_background\ +\ (trial\_type\ *\ trial\_num\ \textbar{}\ subid)\ +\ (trial\_type\ \textbar{}\ lab)}
 
 In this mixed-effects model, the fixed-effects included main effects of trial type, language background, age, trial number, infants in our study/non NAE infants in MB1(B) and language background. In addition, we included several two-way interaction terms in the fixed effects structure: (i) trial type interacted with trial number, modeling the possibility of infants' faster habituation to ADS, (ii) age interacted with trial number, modeling faster habituation for older children, (iii) age interacted with trial type, modeling the developmental trajectory of infants' IDS preference, (iv) trial type interacted with infants in our sample, modeling the possible difference in IDS preference between infants in Africa and infants tested in MB1 and MB1B, (v) trial num interacted with infants in our sample, modeling the possible difference in habituation between our sample of infants and infants tested in MB1 and MB1B, and (vi) trial type interacted with language background, modeling the possible difference in IDS preference from infants with different language backgrounds. We adopted the same baseline random effects as in the previous model.
 
-After pruning for non-convergence, our final model specification was: To be filled in after data analysis. The fixed effect estimate corresponding to our research question is the trial\_type * infant\_ID, which captures differences in measured IDS preference between the current data and data from MB1/MB1B in units of log seconds of looking time.
-\#\# Exploratory Analyses
+After pruning for non-convergence, our final model specification was: \texttt{log\_lt\ \textasciitilde{}\ trial\_type\ +\ trial\_num\ +\ age\_months\ +\ infant\_ID\ +\ language\_background\ +\ trial\_type\ *\ trial\_num\ +\ age\_months\ *\ trial\_num\ +\ age\_months\ *\ trial\_type\ +\ trial\_type\ *\ infant\_ID\ +\ trial\_num\ *\ infant\_ID\ +\ trial\_type\ *\ language\_background\ +\ (1\ \textbar{}\ subid)\ +\ (1\ \textbar{}\ lab)}. The fixed effect estimate corresponding to our research question is the \texttt{trial\_type\ *\ infant\_ID}, which captures differences in measured IDS preference between the current data and data from MB1/MB1B in units of log seconds of looking time.
 
-TO BE WRITTEN AFTER THE STUDY IS COMPLETED
+The model revealed no significant difference in IDS preference between infants tested in our sample and those tested in MB1/MB1B, as indicated by the non-significant interaction between trial type and infant group (\emph{\(\beta\)} = -0.01; \emph{SE} = 0.03; \emph{t} = -0.26; \emph{p} = 0.80). Across all infants, there was also no significant main effect of trial type (\emph{\(\beta\)} = 0.02; \emph{SE} = 0.03; \emph{t} = 0.66; \emph{p} = 0.51), suggesting that IDS preference was not reliably greater than ADS preference in this subset of data.
 
-\hypertarget{urban-vs-rural-areas}{%
-\subsubsection{Urban vs rural areas}\label{urban-vs-rural-areas}}
+Consistent with expectations, looking times decreased over the course of the session (\emph{\(\beta\)} = -0.05; \emph{SE} = 0; \emph{t} = -30.82; \emph{p} \textless{} 0.01), and older infants looked for less time overall (\emph{\(\beta\)} = -0.13; \emph{SE} = 0.02; \emph{t} = -8.38; p \textless{} .001). We also found that older infants habituated more quickly, as indicated by a significant negative interaction between age and trial number (\emph{\(\beta\)} = -0.01; \emph{SE} = 0; \emph{t} = -4.39; p \textless{} .001). The interaction between trial number and infant group was also significant (\emph{\(\beta\)} = 0.02; \emph{SE} = 0; \emph{t} = 4.96; p \textless{} .001), indicating that looking times declined more slowly across trials for infants in our sample compared to those in MB1/MB1B. No other interactions reached significance.
 
-Prior studies (e.g., Keller, 2012; Vogh et al., 2015) have found that parents in non-WEIRD contexts sometimes speak to their infants differently across urban and rural areas. For example, parents in urban areas of Mozambican communities in Southeastern Africa tend to speak more to their children relative to parents in rural areas of Mozambican communities (Vogh et al., 2015). In turn, this could potentially lead to differences in IDS preference, with infants from urban areas, because of their higher input, showing a larger IDS preference, compared to infants from rural areas. We plan to explore this possibility by examining whether possible demographic differences in language input affect infants' preference for IDS in our sample.
+\hypertarget{exploratory-analyses}{%
+\subsection{Exploratory Analyses}\label{exploratory-analyses}}
 
-\hypertarget{socio-economics-status-ses}{%
-\subsubsection{Socio-economics status (SES)}\label{socio-economics-status-ses}}
+Previous research in North America (e.g., Hart \& Risley, 1995; Hoff, 2006; Weisleder \& Fernald, 2013) has shown that the quantity and quality of child-directed speech vary across families with different SES backgrounds. These differences in language input may drive differences in infants' preference for IDS. Thus, we explored how SES affects infants' preference for IDS. SES was measured by primary caregiver's formal education (number of years). we entered primary caregiver's formal education (in years) as a predictor in the regression model specified for RQ1 and RQ2, along with its interaction with trial type.
 
-Previous research in North America (e.g., Hart \& Risley, 1995; Hoff, 2006; Weisleder \& Fernald, 2013) has shown that the quantity and quality of child-directed speech vary across families with different SES backgrounds. These differences in language input may drive differences in infants' preference for IDS. Thus, we plan to explore how SES affects infants' preference for IDS. SES will be measured by mothers' formal education (number of years), and the MacArthur Scale of Subjective Social Status (MacSSS). We will enter both mothers' formal education and the MacSSS as two separate SES variables in the regression model, after checking the assumption about the collinearity between variables. We note that SES is likely to be positively correlated with whether the family lives in an urban area. However, we propose that our measure of SES most likely can provide more information about the demographic backgrounds of the families in addition to the binary measure of whether the family lives in an urban or rural setting. Thus, this analysis may be more fine-grained, and could allow us to detect differences in infants' IDS preference across different demographic contexts.
+The interaction between trial type and primary caregiver education was not significant (\emph{\(\beta\)} = -0.01; \emph{SE} = 0.02; \emph{t} = -0.46; \emph{p} = 0.65), indicating no evidence that SES moderated infants' preference for IDS. In other words, the magnitude of IDS preference was similar regardless of caregivers' years of formal education. At the same time, we did observe a significant main effect of trial type, with infants looking longer at IDS than ADS trials overall (\emph{\(\beta\)} = 0.06; \emph{SE} = 0.02; \emph{t} = 2.55; \emph{p} = 0.01). Looking times decreased significantly across trials (\emph{\(\beta\)} = -0.04; \emph{SE} = 0; \emph{t} = -9.92; \emph{p} \textless{} 0.01), and older infants looked for less time overall (\emph{\(\beta\)} = -0.04; \emph{SE} = 0; \emph{t} = -9.92; \emph{p} \textless{} 0.01). No other interactions were significant.
+
+As a robustness check, we re-ran the model on the subset of infants with female primary caregivers (80.52\% infants). The pattern of results was qualitatively unchanged.
 
 \hypertarget{general-discussion}{%
 \section{General Discussion}\label{general-discussion}}
@@ -450,6 +477,27 @@ The general discussion will include caveats around over-interpretation of any de
 \end{CSLReferences}
 
 \endgroup
+
+\newpage
+
+\newpage
+
+\hypertarget{appendix-appendix}{%
+\appendix}
+
+
+\hypertarget{by-lab-meta-analysis}{%
+\section{By-lab Meta-analysis}\label{by-lab-meta-analysis}}
+
+We computed a single effect size per lab and fit an intercept-only mixed-effect meta-regression to estimate the overall IDS preference across sites.This approach provides a comparable summary of results across sites. Even with a standardized protocol, sites differ in their cultures, recruitment pools, equipment, and experimenter behavior. A random-effects meta-analysis treats those differences as legitimate heterogeneity rather than noise, yielding a conservative estimate of the cross-lab mean and its uncertainty.
+
+To do so, we calculated each infant's mean IDS--ADS difference score \footnote{ Due to an experimental procedure error, infants at the South Africa site were not always presented with complete IDS--ADS stimulus pairs; in some cases, the same stimulus was played multiple times. While this issue did not affect the random-effects model in the main analysis, it does impact the present meta-analysis. We therefore trimmed the data by (1) retaining only the first presentation of each trial and (2) including only trials in which both the IDS and ADS versions were presented. The trimmed data includes 176 trials from 28 infants.}, standardized these within lab to obtain, and estimated their sampling variances. These lab-level estimates were then entered into a REML random-effects model to produce the pooled effect size and 95\% confidence interval (Figure 1). The meta-analytic effect size is 0.17{[}-0.03, 0.37{]}, which is smaller than the 0.35 {[}0.29, 0.42{]} reported in MB1 (Manybabies Consortium, 2020).
+
+\begin{figure}
+\centering
+\includegraphics{mb1a-paper_files/figure-latex/unnamed-chunk-28-1.pdf}
+\caption{\label{fig:unnamed-chunk-28}Forest plot of lab-level standardized effect sizes (for the IDS--ADS preference. Points represent individual country estimates, with size proportional to the inverse of their sampling variance; horizontal bars show 95\% confidence intervals. The meta-analytic aggregate (top, red) is from an intercept-only random-effects model.}
+\end{figure}
 
 
 \end{document}

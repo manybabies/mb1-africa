@@ -1,0 +1,27 @@
+---
+title: "Display items"
+format: html
+editor: visual
+---
+
+
+```{r}
+library(tidyverse)
+library(here)
+```
+
+# 1. Demographic data
+
+```{r}
+final_demog <- read_csv(here("processed_data/cached_data/final_demog.csv"))
+final_demog %>% 
+  mutate_if(is.numeric, round, 2) %>% 
+  mutate(
+    N = tested_participant_n, 
+    Age = paste0(mean_age, " (", sd_age, ")"),
+    Sex = paste0("Female: ", Female, ";", "Male: ", Male, ";Unknown: ", gender_unknown),
+    `Language Background` = paste0("Monolingual: ", monolingual, ";", "Bilingual: ", bilingual, ";Other: ", other, ";Unknown: ", lang_unknown)
+  ) %>% 
+  select(lab, N, Age, Sex, `Language Background`) %>% write_csv("temp.csv")
+```
+

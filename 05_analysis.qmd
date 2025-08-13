@@ -40,6 +40,8 @@ log_lt \~ trial_type + trial_num + age_months + trial_type \* trial_num + age_mo
 
 q1_m2 <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab),
      data = d)
+q1_m2 %>% saveRDS(here("processed_data/cached_data/q1_model.Rds"))
+
 
 q1_m2 %>% summary()
 ```
@@ -52,43 +54,84 @@ log_lt \~ trial_type + trial_num + age_months + infant_ID + language_background 
 
 ### 1.2.1 Clean Data
 
+
+```{r}
+
+```
+
 ```{r}
 mb1_data <- read_csv(here("processed_data/mb1_other_data/mb1_validated_output.csv"))
 mb1b_data <-  read_csv(here("processed_data/mb1_other_data/mb1b_validated_output.csv"))
+mb1_author <- read_csv(here("processed_data/mb1_other_data/mb1_authors_info.csv")) %>% mutate(lab = tolower(LabID)) %>% 
+  select(`🌍 Country`, lab)
+
+
+mb1_data_country_filtering <- mb1_data %>% 
+  filter(method == "singlescreen") %>% distinct(lab) %>% 
+  mutate(lab = tolower(lab)) %>% 
+  left_join(mb1_author, by = "lab") %>% 
+  rename(country = `🌍 Country`)
+
+
+mb1b_data_country_filtering <- mb1b_data %>% 
+  filter(method == "singlescreen") %>% distinct(lab) %>% 
+  mutate(lab = tolower(lab)) %>% 
+  left_join(mb1_author, by = "lab") %>% 
+  rename(country = `🌍 Country`)
+
 
 mb1_data_filtered <- mb1_data %>% 
   filter(method == "singlescreen") %>% 
+  left_join(mb1_data_country_filtering, by = "lab") %>% 
+  
+  filter(!country %in% c("United States", "Canada")) %>% 
   # excluding any subject that has exposed to English 
   # some subjects are unspecified on whether it is British English or US so excluding English in general 
-  filter(!(grepl("English", lang1) | grepl("English", lang2) | grepl("English", lang3))) %>% 
-  select(subid, lab, trial_type, trial_num, age_mo,lang_group, looking_time)
+  select(subid, lab, country, trial_type, trial_num, age_mo,lang_group, looking_time, lang1_exposure, lang2_exposure, lang3_exposure, lang4_exposure)
+
 
 mb1b_data_filtered <- mb1b_data %>% 
    filter(method == "singlescreen") %>% 
-   filter(!(grepl("english", lang1) | grepl("english", lang2) | grepl("english", lang3))) %>% 
-  select(subid, lab, trial_type, trial_num, age_mo,lang_group, looking_time)
+  left_join(mb1b_data_country_filtering, by = "lab") %>% 
+  filter(!country %in% c("United States", "Canada")) %>% 
+  select(subid, lab, country, trial_type, trial_num, age_mo,lang_group, looking_time, lang1_exposure, lang2_exposure, lang3_exposure, lang4_exposure)
 
 compare_data <- bind_rows(mb1_data_filtered, mb1b_data_filtered) %>% 
   filter(looking_time > 0) %>% 
   filter(trial_type != "TRAIN") %>% 
   rename(looking_time_s = looking_time, 
          age_months = age_mo) %>% 
+  
+  # fixing the bilingual exporeu in the dataset using 
+  # the code from: https://github.com/manybabies/mb1b-analysis-public/blob/f218d146128366f0e60d5a93ad728f1509a8e959/02_variable_validation.Rmd#L336
+  mutate(bilingual_exposure = case_when(
+     lang1_exposure >= 25 & lang1_exposure <= 75 & lang2_exposure >= 25 & lang2_exposure <= 75 ~ TRUE,
+     lang2_exposure >= 25 & lang2_exposure <= 75 & lang3_exposure >= 25 & lang3_exposure <= 75 ~ TRUE,
+     lang3_exposure >= 25 & lang3_exposure <= 75 & lang4_exposure >= 25 & lang4_exposure <= 75 ~ TRUE,
+     lang1_exposure >= 25 & lang1_exposure <= 75 & lang3_exposure >= 25 & lang3_exposure <= 75 ~ TRUE,
+     lang1_exposure >= 25 & lang1_exposure <= 75 & lang4_exposure >= 25 & lang4_exposure <= 75 ~ TRUE,
+     lang2_exposure >= 25 & lang2_exposure <= 75 & lang4_exposure >= 25 & lang4_exposure <= 75 ~ TRUE,
+     TRUE ~ FALSE)) %>% 
   mutate(
     language_background = case_when(
-      lang_group == "multilingual" ~ "other", # mb1a doesn't have the multilingual category
+      bilingual_exposure == TRUE & lang_group != "bilingual" ~ "bilingual", 
+      bilingual_exposure == FALSE & lang_group == "bilingual" ~ "other", 
+      lang_group == "multilingual" ~ "other", 
       TRUE ~ lang_group
     )
   )
-
 
 compare_d <- d %>% 
   mutate(infant_ID = "mb1_africa") %>% 
  bind_rows(compare_data %>% mutate(infant_ID = "mb1_others")) %>% 
   mutate(
     trial_num_centered = trial_num - 8.5,
-    age_months_scaled = scale(age_months)
-  ) 
-
+    age_months_scaled = scale(age_months) 
+  ) %>% 
+  mutate(infant_ID = case_when(
+    infant_ID == "mb1_others" ~ 0, 
+    TRUE ~ 1
+  ))
 
 ```
 
@@ -110,13 +153,13 @@ compare_d <- d %>%
 #        (1 | subid) +(trial_type | lab), 
 #      data = compare_d)
 
-q2_m2 <- lmer(log(looking_time_s) ~ 
+q3_m2 <- lmer(log(looking_time_s) ~ 
        trial_type + trial_num_centered + age_months_scaled + infant_ID + language_background + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + 
        age_months_scaled * trial_type + trial_type * infant_ID + trial_num_centered * infant_ID +  trial_type * language_background + 
        (1 | subid) +(1 | lab), 
      data = compare_d)
 
-q2_m2 %>% summary()
+q2_m2 %>% write_rds(here("processed_data/cached_data/q3_model.Rds"))
 
 
 ```
@@ -155,7 +198,7 @@ ses_d <- d %>%
          scaled_num_siblings = scale(number_of_siblings))
   
 
-exp2_m0 <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + scaled_primary_caregiver_ed +  trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab),
+exp2_m0 <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + scaled_primary_caregiver_ed * trial_type +  trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab),
      data = ses_d)
 
 exp2_m0_check <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + age_months_scaled + scaled_primary_caregiver_ed +  trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + (1 | subid) + (1 | lab),
@@ -164,7 +207,7 @@ exp2_m0_check <- lmer(log(looking_time_s) ~ trial_type + trial_num_centered + ag
 
 
 
-exp2_m0 %>% summary()
+exp2_m0 %>% saveRDS(here("processed_data/cached_data/e1_model.Rds"))
 exp2_m0_check %>% summary()
   
 ```
@@ -189,7 +232,7 @@ https://github.com/manybabies/mb1-analysis-public/blob/dc3eb5b3578057096d3372036
 
 https://github.com/manybabies/mb1-analysis-public/blob/dc3eb5b3578057096d337203635c0759d2fc04b6/paper/mb1-paper.Rmd#L568
 
-### 2.4.0 Saving Ndhambi Data
+### 2.4.0 Saving South Africa Data
 
 ```{r}
 usable_pairs <- d %>% 
@@ -292,32 +335,38 @@ forest_data <- bind_rows(forest_data,
                                     effects.cil = summary(intercept_mod)$ci.lb,
                                     effects.cih = summary(intercept_mod)$ci.ub)) %>%
   mutate(method = fct_rev(fct_relevel(method, "")),
-         lab = fct_relevel(lab, "Meta-analytic estimate")) 
+         lab = fct_relevel(lab, "Meta-analytic estimate")) %>% 
+  mutate(
+    country = case_when(
+      lab == "Meta-analytic estimate" ~ lab, 
+      TRUE ~ str_trim(str_extract(lab, "(?<=-\\s).*"))
+    ),
+    order_key = if_else(country == "Meta-analytic estimate", -Inf, effects),
+    country   = fct_reorder(country, order_key, .desc = TRUE),
+    country   = fct_relevel(country, "Meta-analytic estimate", after = Inf),
+    method    = fct_rev(fct_relevel(method, ""))
+  )
 
+forest_data %>% saveRDS(here("processed_data/cached_data/forest_data.Rds"))
 
-ggplot(forest_data, aes(x = lab, y = effects)) + 
+ggplot(forest_data, aes(x = country, y = effects,
+                        color = country == "Meta-analytic estimate")) +
   geom_hline(yintercept = 0, linetype = "dashed", color = "grey") +
-  geom_pointrange(aes(ymin = effects - sqrt(variances)*1.96,
-                     ymax = effects + sqrt(variances)*1.96, 
-                     group = index),
-                 alpha = .5,
-                 position = position_dodge(width = .5)) +
-  geom_point(data = filter(forest_data, lab != "Meta-analytic estimate"),
-             aes(y = effects, size = inverse_vars, 
-                 group = index), 
-             alpha = .5, 
-             position = position_dodge(width = .5)) +
-  geom_point(data = filter(forest_data, lab == "Meta-analytic estimate"),
+  geom_pointrange(aes(ymin = effects - sqrt(variances) * 1.96,
+                      ymax = effects + sqrt(variances) * 1.96,
+                      group = index),
+                  alpha = .5, position = position_dodge(width = .5)) +
+  geom_point(data = dplyr::filter(forest_data, lab != "Meta-analytic estimate"),
+             aes(size = inverse_vars, group = index),
+             alpha = .5, position = position_dodge(width = .5)) +
+  geom_point(data = dplyr::filter(forest_data, lab == "Meta-analytic estimate"),
              pch = 5) +
-  geom_linerange(data = filter(forest_data, lab == "Meta-analytic estimate"),
-                 aes(ymin = effects.cil, ymax = effects.cih), 
-                 alpha = .5) +
-  #facet_grid(method ~ ., scales = "free", space = "free") +
+  geom_linerange(data = dplyr::filter(forest_data, lab == "Meta-analytic estimate"),
+                 aes(ymin = effects.cil, ymax = effects.cih), alpha = .5) +
   coord_flip() +
   scale_size_continuous(guide = FALSE) +
-  #scale_colour_plot(guide = FALSE) +
-  xlab("Lab") +
-  ylab("Effect Size") +
+  scale_color_manual(values = c(`TRUE` = "red", `FALSE` = "black"), guide = FALSE)+
+  xlab("Country") + ylab("Effect size") +
   theme(axis.text.y = element_text(size = 6)) +
   ggthemes::theme_few()
 ```
