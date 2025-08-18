@@ -142,13 +142,13 @@ author_note: |
  
 
 abstract: |
-  Infants show a preference for infant-directed speech (IDS) over adult-directed speech (ADS). This preference has been linked to infants’ language processing and word learning in experimental settings, and also correlates with later language outcomes. Recently, the cross-cultural consistency of infants’ IDS preference has been confirmed by large-scale, multisite replication studies, but conclusions from these studies were primarily based on participants from North America and Europe. The current study addressed this sampling bias via a large-scale, multisite study of infants (3-15 months) across XYZ communities in Africa. We investigated whether participants showed a preference for IDS over ADS, and if so, whether the magnitude of their preference differs from effects documented in other populations of infants. DESCRIBE RESULTS HERE
+  Infants show a preference for infant-directed speech (IDS) over adult-directed speech (ADS). This preference has been linked to infants’ language processing and word learning in experimental settings, and also correlates with later language outcomes. Recently, the cross-cultural consistency of infants’ IDS preference has been confirmed by large-scale, multisite replication studies, but conclusions from these studies were primarily based on participants from North America and Europe. The current study addressed this sampling bias via a large-scale, multisite study of infants (3-15 months) across communities in Africa. We investigated whether participants showed a preference for IDS over ADS, and if so, whether the magnitude of their preference differs from effects documented in other populations of infants. Across six sites (total N=200), we observed a preference for IDS over ADS, with no signficant difference between African infants in this study and a method-matched subsample of infants from prior studies of IDS preference. This study provides new evidence on the generalizability of IDS preference and looking-time methods more broadly, while also highlighting some of the challenges of global big team science. 
 
 
 keywords          : "infant-directed speech; reproducibility; Africa; infants; generalizability"
 wordcount         : "XYZ"
 
-bibliography      : ["r-references.bib"]
+bibliography      : ["references.bib"]
 
 figsintext        : yes
 figurelist        : no
