@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.13)  13 AUG 2025 11:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.13)  18 AUG 2025 16:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -703,19 +703,22 @@ Underfull \vbox (badness 7649) has occurred while \output is active []
 [9]
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 267--267
+Underfull \hbox (badness 10000) in paragraph at lines 269--269
 []|\T1/lmr/m/n/12 University of Malawi --
  []
 
 
 
 [11]
-
-Package hyperref Warning: Suppressing link with empty target on input line 285.
+Underfull \vbox (badness 8000) has occurred while \output is active []
 
 
 
 [12]
+
+Package hyperref Warning: Suppressing link with empty target on input line 287.
+
+
 
 [13]
 
@@ -725,9 +728,12 @@ Underfull \vbox (badness 2189) has occurred while \output is active []
 
 
 [15]
-Underfull \hbox (badness 1533) in paragraph at lines 336--336
+Underfull \hbox (badness 1533) in paragraph at lines 338--338
 []|\T1/lmr/m/n/12 Monolingual: 3; Bilin-gual: 8;
  []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -736,93 +742,103 @@ Underfull \hbox (badness 1533) in paragraph at lines 336--336
 [17]
 
 [18]
-Underfull \vbox (badness 3977) has occurred while \output is active []
-
-
 
 [19]
+Underfull \vbox (badness 7649) has occurred while \output is active []
+
+
 
 [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [21]
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 402.
+
+[22]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 404.
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[22{/Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 418.
+[23{/Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 420.
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 
-[23]
+[24]
 
-[24{/Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-Underfull \vbox (badness 3977) has occurred while \output is active []
-
-
-
-[25]
+[25{/Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
 Underfull \vbox (badness 3977) has occurred while \output is active []
 
 
 
 [26]
-Underfull \vbox (badness 6608) has occurred while \output is active []
-
-
 
 [27]
-Overfull \hbox (1191.3208pt too wide) in paragraph at lines 464--464
+
+[28]
+Overfull \hbox (1191.3208pt too wide) in paragraph at lines 466--466
 []\T1/lmtt/m/n/12 The general discussion will include caveats around over-interpretation of any demographic differences in IDS preference given that IDS preference has not been shown to be individually predictive of any later outcomes (see MB1-CDI extension; Soderstrom et al., in prep).[] 
  []
 
 
 
-[28]
-
 [29]
 
+[30]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 490.
+(hyperref)                removing `\\' on input line 492.
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 494.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 494.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 494.
-<mb1a-paper_files/figure-latex/unnamed-chunk-28-1.pdf, id=187, 459.7175pt x 315.1775pt>
-File: mb1a-paper_files/figure-latex/unnamed-chunk-28-1.pdf Graphic file (type pdf)
-<use mb1a-paper_files/figure-latex/unnamed-chunk-28-1.pdf>
-Package pdftex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-28-1.pdf  used on input line 498.
-(pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
-AED endfloat: Processing end Figures and Tables
 
-[30
+
+[31
 
 ]
 
-[31 <./mb1a-paper_files/figure-latex/unnamed-chunk-28-1.pdf>] (./mb1a-paper.aux)
+[32]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 520.
+
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 524.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 524.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 524.
+<mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf, id=209, 459.7175pt x 315.1775pt>
+File: mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (type pdf)
+<use mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf>
+Package pdftex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf  used on input line 528.
+(pdftex.def)             Requested size: 459.74442pt x 315.19595pt.
+AED endfloat: Processing end Figures and Tables
+
+[33
+
+]
+
+[34 <./mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf>] (./mb1a-paper.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 16685 strings out of 469782
- 270163 string characters out of 5481259
+ 16699 strings out of 469782
+ 270408 string characters out of 5481259
  712429 words of memory out of 5000000
- 44690 multiletter control sequences out of 15000+600000
+ 44694 multiletter control sequences out of 15000+600000
  700388 words of font info for 106 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 83i,11n,93p,2249b,604s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 83i,11n,93p,2249b,633s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on mb1a-paper.pdf (31 pages, 272684 bytes).
+Output written on mb1a-paper.pdf (34 pages, 278555 bytes).
 PDF statistics:
- 350 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
- 86 named destinations out of 1000 (max. 500000)
- 190 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 374 PDF objects out of 1000 (max. 8388607)
+ 312 compressed objects within 4 object streams
+ 96 named destinations out of 1000 (max. 500000)
+ 198 words of extra memory for PDF output out of 10000 (max. 10000000)
 
