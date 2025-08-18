@@ -1,38 +1,23 @@
 
-# By-lab Meta-analysis 
+# Discrepancies between pre-registration and final analyses  
 
-```{r}
-forest_data <- readRDS(here("processed_data/cached_data/forest_data.Rds"))
-es_df <- forest_data %>% filter(lab == "Meta-analytic estimate") %>% mutate_if(is.numeric, round, 2)
-```
+1. **ICC comparison**  
+   *Pre-registration:* We planned to compare the estimated ICC in our study with the ICC reported in MB1(B).
+   
+   *Final:* This comparison was not conducted because MB1(B) did not report ICC values.  
 
+2. **Metrics of effect heterogeneity**  
+   *Pre-registration:* We planned to report distributional metrics describing heterogeneity across labs (Mathur & VanderWeele, 2019, in press) using the *MetaUtility* package. Specifically, we proposed to estimate: (1) the percentage of effects greater than 0, (2) the percentage greater than Cohen’s d = 0.2, and (3) the percentage less than d = –0.2. These metrics were to be reported only if random slopes of trial type by lab were included in the final model, their variance was estimated as greater than 0, and at least 10 labs contributed data.  
+   *Final:* Random slopes of trial type by lab were not included in the final model, and only six labs contributed data. As a result, we did not estimate these metrics.
 
-We computed a single effect size per lab and fit an intercept-only mixed-effect meta-regression to estimate the overall IDS preference across sites.This approach provides a comparable summary of results across sites. Even with a standardized protocol, sites differ in their cultures, recruitment pools, equipment, and experimenter behavior. A random-effects meta-analysis treats those differences as legitimate heterogeneity rather than noise, yielding a conservative estimate of the cross-lab mean and its uncertainty.
+3. **Subset of MB1 and MB1(B) data**  
+   *Pre-registration:* We planned to subset MB1 and MB1(B) data to include only infants tested with central fixation procedures and infants not exposed to North American English (NAE), to maximize comparability with the present study.  
+   *Final:* In MB1 and MB1(B) data, information about English exposure often did not distinguish between American and British English. Therefore, we excluded infants based on country of residence (United States/Canada) rather than reported language exposure. 
+   
+4. **Urban–rural exploratory analysis**  
+   *Pre-registration:* We planned an exploratory analysis testing whether infants’ IDS preference differed between urban and rural areas, motivated by prior findings of differences in parental speech input across these contexts (e.g., Keller, 2012; Vogh et al., 2015).  
+   *Final:* We did not collect information on urban versus rural residence, so this analysis was not conducted.  
 
-To do so, we calculated each infant’s mean IDS–ADS difference score ^[ Due to an experimental procedure error, infants at the South Africa site were not always presented with complete IDS–ADS stimulus pairs; in some cases, the same stimulus was played multiple times. While this issue did not affect the random-effects model in the main analysis, it does impact the present meta-analysis. We therefore trimmed the data by (1) retaining only the first presentation of each trial and (2) including only trials in which both the IDS and ADS versions were presented. The trimmed data includes 176 trials from 28 infants.], standardized these within lab to obtain, and estimated their sampling variances. These lab-level estimates were then entered into a REML random-effects model to produce the pooled effect size and 95% confidence interval (Figure 1). The meta-analytic effect size is `r es_df$effects`[`r es_df$effects.cil`, `r  es_df$effects.cih`], which is smaller than the 0.35 [0.29, 0.42] reported in MB1 (Manybabies Consortium, 2020).
-
-
-```{r fig.cap = "Forest plot of lab-level standardized effect sizes (for the IDS–ADS preference. Points represent individual country estimates, with size proportional to the inverse of their sampling variance; horizontal bars show 95% confidence intervals. The meta-analytic aggregate (top, red) is from an intercept-only random-effects model."}
-
-ggplot(forest_data, aes(x = country, y = effects,
-                        color = country == "Meta-analytic estimate")) +
-  geom_hline(yintercept = 0, linetype = "dashed", color = "grey") +
-  geom_pointrange(aes(ymin = effects - sqrt(variances) * 1.96,
-                      ymax = effects + sqrt(variances) * 1.96,
-                      group = index),
-                  alpha = .5, position = position_dodge(width = .5)) +
-  geom_point(data = dplyr::filter(forest_data, lab != "Meta-analytic estimate"),
-             aes(size = inverse_vars, group = index),
-             alpha = .5, position = position_dodge(width = .5)) +
-  geom_point(data = dplyr::filter(forest_data, lab == "Meta-analytic estimate"),
-             pch = 5) +
-  geom_linerange(data = dplyr::filter(forest_data, lab == "Meta-analytic estimate"),
-                 aes(ymin = effects.cil, ymax = effects.cih), alpha = .5) +
-  coord_flip() +
-  scale_size_continuous(guide = FALSE) +
-  scale_color_manual(values = c(`TRUE` = "red", `FALSE` = "black"), guide = FALSE)+
-  xlab("Country") + ylab("Effect size") +
-  theme(axis.text.y = element_text(size = 6)) +
-  ggthemes::theme_few()
-```
-
+5. **Socioeconomic status (SES) analyses**  
+   *Pre-registration:* We planned to measure SES using both mothers’ years of formal education and the MacArthur Scale of Subjective Social Status (MacSSS), including both variables in regression models.  
+   *Final:* We did not have MacSSS data for most participants, and information on mothers’ education was incomplete. We therefore used primary caregiver education as the main SES variable and conducted a robustness check using the subset of infant whose primary caregiver's sex is female. 

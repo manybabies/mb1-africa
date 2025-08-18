@@ -153,16 +153,36 @@ compare_d <- d %>%
 #        (1 | subid) +(trial_type | lab), 
 #      data = compare_d)
 
+
+
 q3_m2 <- lmer(log(looking_time_s) ~ 
        trial_type + trial_num_centered + age_months_scaled + infant_ID + language_background + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + 
        age_months_scaled * trial_type + trial_type * infant_ID + trial_num_centered * infant_ID +  trial_type * language_background + 
        (1 | subid) +(1 | lab), 
-     data = compare_d)
+     data = compare_d %>% mutate(language_background = fct_relevel(language_background, "monolingual")))
 
 q2_m2 %>% write_rds(here("processed_data/cached_data/q3_model.Rds"))
 
 
 ```
+
+
+
+
+```{r}
+compare_d %>% 
+  ggplot(aes(x = trial_type, y = log(looking_time_s))) + 
+ # geom_point(position = position_jitter(width = .2), alpha = .1) + 
+  stat_summary(fun.data  = "mean_cl_boot", color = "red") + 
+  facet_wrap(~infant_ID)
+
+compare_d %>% 
+  ggplot(aes(x = trial_type, y = log(looking_time_s), color = language_background)) + 
+ # geom_point(position = position_jitter(width = .2), alpha = .1) + 
+  stat_summary(fun.data  = "mean_cl_boot", position = position_dodge(width = .4)) + 
+  facet_wrap(~infant_ID)
+```
+
 
 # 2. Exploratory
 

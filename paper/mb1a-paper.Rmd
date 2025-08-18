@@ -162,6 +162,7 @@ output            : papaja::apa6_pdf
 
 appendix: 
   - "appendix_a.Rmd"
+  - "appendix_b.Rmd"
 ---
 
 
@@ -301,6 +302,9 @@ In sum, there are three primary (confirmatory) goals for the current study. Firs
 
 # Methods
 
+All deviations from the preregistration in the Stage 1 Registered Report are given in Appendix A.
+
+
 ## Participation Details
 
 
@@ -327,7 +331,7 @@ Uganda & Makerere University, Kampala & 3--15 months & Luganda, English \\
 
 ### Time-frame
 
-On July 23, 2018, we issued an open call for participation by African researchers via listservs and social/professional networks. In total, 8 laboratories agreed to participate (See Table 1 for target sample characteristics of each site). Our participating laboratories will recruit infants living in eastern (e.g., Kenya), western (e.g., Senegal) and southern (e.g., South Africa) regions of Africa. We also note that many of our participating laboratories are located in East Africa, thus East African participants are disproportionately represented in our sample. Data collection began September 21, 2021. We initially anticipated finishing data collection a year later, but labs encountered a wide variety of unforeseen circumstances due to the COVID-19 pandemic, challenges with receiving IRB approval, and equipment and staffing issues. Thus, data collection was extended through 2023.
+On July 23, 2018, we issued an open call for participation by African researchers via listservs and social/professional networks. Prior to submission, 11 labs committed to data collection, but some labs were unable to collect data, in part due to changing professional obligations and delays due to Covid-19 closures. Thus, we report data from 8 labs (See Table 1 for target sample characteristics of each site). Our participating laboratories will recruit infants living in eastern (e.g., Kenya), western (e.g., Senegal) and southern (e.g., South Africa) regions of Africa. We also note that many of our participating laboratories are located in East Africa, thus East African participants are disproportionately represented in our sample. Data collection began September 21, 2021. We initially anticipated finishing data collection a year later, but labs encountered a wide variety of unforeseen circumstances due to the COVID-19 pandemic, challenges with receiving IRB approval, and equipment and staffing issues. Thus, data collection was extended through 2023.
 
 ### Age distribution
 
@@ -383,14 +387,14 @@ proportion_excluded_trials <- round(nrow(excluded_trials_d) / nrow(unfiltered_d)
 proportion_excluded_participants <- round(unusable_participants / nrow(unfiltered_d %>% distinct(subid)),4)
 ```
 
-Overall, at the trial level, `r nrow(excluded_trials_d)` trials (`r proportion_excluded_trials * 100`% of all trials) were excluded. Due to experimental setup errors, data from two sites were unusable, leading to the exclusion of `r unusable_participants` infants (`r proportion_excluded_participants * 100`% of all tested participants). No additional test sessions were excluded.
+Overall, at the trial level, `r nrow(excluded_trials_d)` trials (`r proportion_excluded_trials * 100`% of all trials) were excluded; relatively few trials were marked by labs as having errors. Due to experimental setup errors, data from two sites were unusable, leading to the exclusion of `r unusable_participants` infants (`r proportion_excluded_participants * 100`% of all tested participants). No additional test sessions were excluded.
 
 ## Participants
 
 
 
 \begin{table}[!t]
-\caption{\textit{Final sample's demographics and language background by country. Mean age in month.}}
+\caption{\textit{Final sample's demographics and language background by country. Mean age in months.}}
 \label{tab:country_demographics}
 \centering
 \begin{tabularx}{\textwidth}{lcllX}
@@ -447,7 +451,7 @@ Visual stimuli. All visual stimuli were the same as those used in the MB1 study.
 
 Auditory stimuli. All auditory stimuli were identical to those used in the MB1 study. The stimuli were recordings of North-American English mothers either speaking with experimenters (ADS) or with their infants whose ages ranged from 122 to 250 days in a laboratory setting. Mothers were provided with a set of objects and were asked to talk about the objects with the experimenters and their infants in separate recording sessions. In total, two sets of auditory stimuli were created: one set consisted of 8 IDS stimuli and the other set consisted of 8 ADS stimuli. Each stimulus lasted for 18 seconds. The details of stimulus creation can be found in the report of MB1 (ManyBabies Consortium, 2020). 
 
-Volume. Each laboratory  measured stimulus volume level using a smartphone app (e.g., the Android app “Sound Meter”). Labs kept the stimulus volume close to 63 – 65 dB SPL. According to the protocol, labs would measure and report the background noise level and the stimulus level. However, these information was not collected.  
+Volume. Each laboratory  measured stimulus volume level using a smartphone app (e.g., the Android app “Sound Meter”). Labs kept the stimulus volume close to 63 – 65 dB SPL. According to the protocol, labs would measure and report the background noise level and the stimulus level. However, this information was not collected.  
 
 ## Procedure
 
@@ -489,7 +493,7 @@ icc <- readRDS(here("processed_data/cached_data/ICC.rds"))
 
 ```
 
-In addition to the mixed-effect models, we assessed the reliability of measurement in our study by reporting the reliability of the infants’ looking time difference to the IDS vs ADS stimuli across different trials. Following Byers-Heinelin et al. (under review), we reported the intraclass correlation coefficient (ICC) as our reliability measure. The ICC was computed using the psych package in R (Reville, 2018). We reported an ICC3k measure, on the basis of a two-way random effects model, a mean-rating of 8 (i.e., we had 8 pairs of IDS and ADS trials) and consistency agreement (Koo & Mae, 2016, Parson et al., 2019). The estimated ICC was `r round((icc$results %>% filter(type == "ICC3k"))$ICC, 2)`, 95% CI [`r round((icc$results %>% filter(type == "ICC3k"))$'lower bound', 3)`, `r round((icc$results %>% filter(type == "ICC3k"))$'upper bound', 2)`]. 
+In addition to the mixed-effect models, we assessed the reliability of measurement in our study by reporting the reliability of the infants’ looking time difference to the IDS vs ADS stimuli across different trials.We  reported the intraclass correlation coefficient (ICC) as our reliability measure. The ICC was computed using the psych package in R (Reville, 2018). We reported an ICC3k measure, on the basis of a two-way random effects model, a mean-rating of 8 (i.e., we had 8 pairs of IDS and ADS trials) and consistency agreement (Koo & Mae, 2016, Parson et al., 2019). The estimated ICC was `r round((icc$results %>% filter(type == "ICC3k"))$ICC, 2)`, 95% CI [`r round((icc$results %>% filter(type == "ICC3k"))$'lower bound', 3)`, `r round((icc$results %>% filter(type == "ICC3k"))$'upper bound', 2)`]. This relativley low value is consistent with previous work showing limited test-retest reliability in IDS studies (Schreiner et al., 2024).
 
 Below is a description of variables in our mixed-effect models:
 
@@ -537,7 +541,7 @@ q3_df <- q3_model %>% broom.mixed::tidy(conf.int = TRUE) %>%
   mutate_if(is.numeric, round, 2)
 ```
 
-The model revealed no significant difference in IDS preference between infants tested in our sample and those tested in MB1/MB1B, as indicated by the non-significant interaction between trial type and infant group (*$\beta$* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$estimate`; *SE* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$p.value`). Across all infants, there was also no significant main effect of trial type (*$\beta$* = `r filter(q3_df, term == "trial_typeIDS")$estimate`; *SE* = `r filter(q3_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS")$p.value`), suggesting that IDS preference was not reliably greater than ADS preference in this subset of data.
+The model revealed no significant difference in IDS preference between infants tested in our sample and those tested in MB1/MB1B, as indicated by the non-significant interaction between trial type and infant group (*$\beta$* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$estimate`; *SE* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$p.value`). However, there was also a significant main effect of trial type (*$\beta$* = `r filter(q3_df, term == "trial_typeIDS")$estimate`; *SE* = `r filter(q3_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS")$p.value`), suggesting that infants showed a reliable preference to IDS over ADS.  
 
 Consistent with expectations, looking times decreased over the course of the session (*$\beta$* = `r filter(q3_df, term == "trial_num_centered")$estimate`; *SE* = `r filter(q3_df, term == "trial_num_centered")$std.error`; *t* = `r filter(q3_df, term == "trial_num_centered")$statistic`; *p* < 0.01), and older infants looked for less time overall (*$\beta$* = `r filter(q3_df, term == "age_months_scaled")$estimate`; *SE* = `r filter(q3_df, term == "age_months_scaled")$std.error`; *t* = `r filter(q3_df, term == "age_months_scaled")$statistic`; p < .001). We also found that older infants habituated more quickly, as indicated by a significant negative interaction between age and trial number (*$\beta$* = `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$estimate`; *SE* = `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$std.error`; *t* = `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$statistic`; p < .001). The interaction between trial number and infant group was also significant (*$\beta$* = `r filter(q3_df, term == "trial_num_centered:infant_ID")$estimate`; *SE* = `r filter(q3_df, term == "trial_num_centered:infant_ID")$std.error`; *t* = `r filter(q3_df, term == "trial_num_centered:infant_ID")$statistic`; p < .001), indicating that looking times declined more slowly across trials for infants in our sample compared to those in MB1/MB1B. No other interactions reached significance.
 
@@ -545,7 +549,7 @@ Consistent with expectations, looking times decreased over the course of the ses
 
 ## Exploratory Analyses
 
-Previous research in North America (e.g., Hart & Risley, 1995; Hoff, 2006; Weisleder & Fernald, 2013) has shown that the quantity and quality of child-directed speech vary across families with different SES backgrounds. These differences in language input may drive differences in infants’ preference for IDS. Thus, we explored how SES affects infants’ preference for IDS. SES was measured by primary caregiver's formal education (number of years). we entered primary caregiver’s formal education (in years) as a predictor in the regression model specified for RQ1 and RQ2, along with its interaction with trial type. 
+SES. Previous research in North America (e.g., Hart & Risley, 1995; Hoff, 2006; Weisleder & Fernald, 2013) has shown that the quantity and quality of child-directed speech vary across families with different SES backgrounds. These differences in language input may drive differences in infants’ preference for IDS. Thus, we explored how SES affects infants’ preference for IDS. SES was measured by primary caregiver's formal education (number of years). we entered primary caregiver’s formal education (in years) as a predictor in the regression model specified for RQ1 and RQ2, along with its interaction with trial type. 
 
 ```{r}
 e1_model <- readRDS(here("processed_data/cached_data/e1_model.Rds"))
@@ -553,11 +557,16 @@ e1_df <- e1_model %>% broom.mixed::tidy(conf.int = TRUE) %>%
   mutate_if(is.numeric, round, 2)
 ```
 
-The interaction between trial type and primary caregiver education was not significant (*$\beta$* = `r filter(e1_df, term == "trial_typeIDS:scaled_primary_caregiver_ed")$estimate`; *SE* = `r filter(e1_df, term == "trial_typeIDS:scaled_primary_caregiver_ed")$std.error`; *t* = `r filter(e1_df, term == "trial_typeIDS:scaled_primary_caregiver_ed")$statistic`; *p* = `r filter(e1_df, term == "trial_typeIDS:scaled_primary_caregiver_ed")$p.value`), indicating no evidence that SES moderated infants’ preference for IDS. In other words, the magnitude of IDS preference was similar regardless of caregivers’ years of formal education. At the same time, we did observe a significant main effect of trial type, with infants looking longer at IDS than ADS trials overall (*$\beta$* = `r filter(e1_df, term == "trial_typeIDS")$estimate`; *SE* = `r filter(e1_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(e1_df, term == "trial_typeIDS")$statistic`; *p* = `r filter(e1_df, term == "trial_typeIDS")$p.value`). Looking times decreased significantly across trials (*$\beta$* = `r filter(e1_df, term == "trial_num_centered")$estimate`; *SE* = `r filter(e1_df, term == "trial_num_centered")$std.error`; *t* = `r filter(e1_df, term == "trial_num_centered")$statistic`; *p* < 0.01), and older infants looked for less time overall (*$\beta$* = `r filter(e1_df, term == "trial_num_centered")$estimate`; *SE* = `r filter(e1_df, term == "trial_num_centered")$std.error`; *t* = `r filter(e1_df, term == "trial_num_centered")$statistic`; *p* < 0.01). No other interactions were significant.
+The interaction between trial type and primary caregiver education was not significant (*$\beta$* = `r filter(e1_df, term == "trial_typeIDS:scaled_primary_caregiver_ed")$estimate`; *SE* = `r filter(e1_df, term == "trial_typeIDS:scaled_primary_caregiver_ed")$std.error`; *t* = `r filter(e1_df, term == "trial_typeIDS:scaled_primary_caregiver_ed")$statistic`; *p* = `r filter(e1_df, term == "trial_typeIDS:scaled_primary_caregiver_ed")$p.value`), not allowing rejection of the null hypothesis that SES does not moderate infants' preference for IDS. In other words, the magnitude of IDS preference was similar regardless of caregivers’ years of formal education. At the same time, we did observe a significant main effect of trial type, with infants looking longer at IDS than ADS trials overall (*$\beta$* = `r filter(e1_df, term == "trial_typeIDS")$estimate`; *SE* = `r filter(e1_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(e1_df, term == "trial_typeIDS")$statistic`; *p* = `r filter(e1_df, term == "trial_typeIDS")$p.value`). Looking times decreased significantly across trials (*$\beta$* = `r filter(e1_df, term == "trial_num_centered")$estimate`; *SE* = `r filter(e1_df, term == "trial_num_centered")$std.error`; *t* = `r filter(e1_df, term == "trial_num_centered")$statistic`; *p* < 0.01), and older infants looked for less time overall (*$\beta$* = `r filter(e1_df, term == "trial_num_centered")$estimate`; *SE* = `r filter(e1_df, term == "trial_num_centered")$std.error`; *t* = `r filter(e1_df, term == "trial_num_centered")$statistic`; *p* < 0.01). No other interactions were significant. As a robustness check, we re-ran the model on the subset of infants with female primary caregivers (80.52% infants). The pattern of results was qualitatively unchanged.
 
-As a robustness check, we re-ran the model on the subset of infants with female primary caregivers (80.52% infants). The pattern of results was qualitatively unchanged.
+```{r}
+forest_data <- readRDS(here("processed_data/cached_data/forest_data.Rds"))
+es_df <- forest_data %>% filter(lab == "Meta-analytic estimate") %>% mutate_if(is.numeric, round, 2)
+```
 
-	
+Meta-analysis. For comparison with ManyBabies 1 and 1B, we computed standardized effect sizes for each lab following the method used in ManyBabies Consortium (2020). The resulting meta-analytic plot is shown in Appendix B: Figure A1. The meta-analytic effect size is `r es_df$effects`[`r es_df$effects.cil`, `r  es_df$effects.cih`], which is numerically smaller than the .35 [0.29, 0.42] reported in MB1 (Manybabies Consortium, 2020) but these estimates are not directly comparable due to the different method and age distribution in the current project (cf. Mathur et al., 2024).
+
+
 # General Discussion
 
 TO BE WRITTEN AFTER THE STUDY IS COMPLETED
@@ -598,5 +607,9 @@ r_refs(file = "r-references.bib")
 # (APPENDIX) Appendix {-}
 
 ```{r child = "appendix_a.Rmd"}
+```
+
+
+```{r child = "appendix_b.Rmd"}
 ```
 
