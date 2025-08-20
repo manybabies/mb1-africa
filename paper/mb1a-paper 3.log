@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.19)  20 AUG 2025 09:37
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.19)  19 AUG 2025 16:44
  restricted system commands enabled.
 **mb1a-paper.tex
 (./mb1a-paper.tex
@@ -1152,35 +1152,35 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [23]
 
 [24]
-<mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf, id=158, 469.755pt x 325.215pt>
-File: mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 432.
-(luatex.def)             Requested size: 469.75386pt x 325.2142pt.
-
 
 [25]
-
-[26<./mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf>]
 Underfull \vbox (badness 3977) has occurred while \output is active []
 
 
 
+[26]
+
 [27]
 
 [28]
+Underfull \vbox (badness 3977) has occurred while \output is active []
+
+
 
 [29]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 3977) has occurred while \output is active []
 
 
 
 [30]
 
 [31]
+Underfull \vbox (badness 1028) has occurred while \output is active []
+
+
 
 [32]
-Underfull \vbox (badness 1028) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1205,63 +1205,53 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [38]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 662.
 
 
 
-[39]
+[39
+
+]
 
 [40]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 701.
+(hyperref)                removing `\\' on input line 690.
 
-
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 694.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 694.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 694.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 694.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 694.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 694.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 10.0pt on input line 694.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 694.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 694.
+<mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf, id=325, 469.755pt x 325.215pt>
+File: mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf Graphic file (type pdf)
+<use mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf>
+Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf  used on input line 698.
+(luatex.def)             Requested size: 469.75386pt x 325.2142pt.
+AED endfloat: Processing end Figures and Tables
 
 [41
 
 ]
 
-[42]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 729.
-
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 733.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 733.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 733.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 733.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 733.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 733.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 733.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 733.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 733.
-<mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf, id=363, 469.755pt x 325.215pt>
-File: mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (type pdf)
-<use mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf>
-Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf  used on input line 737.
-(luatex.def)             Requested size: 469.75386pt x 325.2142pt.
-AED endfloat: Processing end Figures and Tables
-
-[43
-
-]
-
-[44<./mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf>] (./mb1a-paper.aux)
+[42<./mb1a-paper_files/figure-latex/unnamed-chunk-33-1.pdf>] (./mb1a-paper.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1269,19 +1259,19 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 23262 strings out of 470117
+ 23237 strings out of 470117
  125546,1144653 words of node,token memory allocated
- 3699 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 1152 attribute, 80 glue_spec, 387 attribute_list, 2 write, 1 user_defined nodes
-   avail lists: 1:2,2:16760,3:253,4:141,5:443,6:60,7:7052,8:64,9:682,10:28,11:552
- 51049 multiletter control sequences out of 65536+600000
- 87 fonts using 20726767 bytes
+ 3499 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 1077 attribute, 80 glue_spec, 362 attribute_list, 2 write, 1 user_defined nodes
+   avail lists: 1:2,2:16860,3:257,4:141,5:443,6:60,7:7052,8:64,9:682,10:28,11:552
+ 51041 multiletter control sequences out of 65536+600000
+ 87 fonts using 20726691 bytes
  90i,11n,114p,2248b,525s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmsans8-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on mb1a-paper.pdf (44 pages, 334673 bytes).
+Output written on mb1a-paper.pdf (42 pages, 158591 bytes).
 
-PDF statistics: 525 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 173 named destinations out of 1000 (max. 131072)
+PDF statistics: 488 PDF objects out of 1000 (max. 8388607)
+ 410 compressed objects within 5 object streams
+ 159 named destinations out of 1000 (max. 131072)
  193 words of extra memory for PDF output out of 10000 (max. 100000000)
 

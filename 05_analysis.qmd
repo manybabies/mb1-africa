@@ -18,8 +18,6 @@ d <- read_csv(here("processed_data/joint_data.csv")) %>%
 
 ```
 
-
-
 # 1. Confirmatory
 
 ## 1.1 RQ 1 & 2:
@@ -53,7 +51,6 @@ Research question 3: Population comparison. In this analysis, we compare the dat
 log_lt \~ trial_type + trial_num + age_months + infant_ID + language_background + trial_type \* trial_num + age_months \* trial_num + age_months \* trial_type + trial_type \* infant_ID + trial_num \* infant_ID + trial_type \* language_background + (trial_type \* trial_num \| subid) + (trial_type \| lab)
 
 ### 1.2.1 Clean Data
-
 
 ```{r}
 
@@ -166,9 +163,6 @@ q2_m2 %>% write_rds(here("processed_data/cached_data/q3_model.Rds"))
 
 ```
 
-
-
-
 ```{r}
 compare_d %>% 
   ggplot(aes(x = trial_type, y = log(looking_time_s))) + 
@@ -182,7 +176,6 @@ compare_d %>%
   stat_summary(fun.data  = "mean_cl_boot", position = position_dodge(width = .4)) + 
   facet_wrap(~infant_ID)
 ```
-
 
 # 2. Exploratory
 

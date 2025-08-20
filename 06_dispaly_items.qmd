@@ -4,7 +4,6 @@ format: html
 editor: visual
 ---
 
-
 ```{r}
 library(tidyverse)
 library(here)
@@ -23,5 +22,30 @@ final_demog %>%
     `Language Background` = paste0("Monolingual: ", monolingual, ";", "Bilingual: ", bilingual, ";Other: ", other, ";Unknown: ", lang_unknown)
   ) %>% 
   select(lab, N, Age, Sex, `Language Background`) %>% write_csv("temp.csv")
+```
+
+# 2. Main Figure
+
+```{r}
+
+d <- read_csv(here("processed_data/joint_data.csv")) %>% 
+  filter(looking_time_s >= 2) %>% 
+  mutate(trial_num_centered = scale(trial_num, scale = FALSE)) %>% 
+  mutate(
+    lab_clean = str_extract(lab, "(?<=-\\s).*")
+  )
+
+ggplot(d, 
+       aes(x = trial_num, y = looking_time_s, col = trial_type)) + 
+  geom_jitter(width = .2, height = 0, alpha = .5) + 
+  scale_y_log10() + 
+  facet_wrap(~lab_clean) + 
+  geom_smooth(method = "lm") + 
+  ylab("Looking Time (log s)") +
+  xlab("Trial Number") + 
+  theme(legend.title=element_blank())+
+  ggthemes::theme_few() + 
+  ggthemes::scale_color_solarized() +
+  theme(legend.position = "bottom")
 ```
 

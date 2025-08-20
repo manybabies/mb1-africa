@@ -7,7 +7,7 @@
    *Final:* This comparison was not conducted because MB1(B) did not report ICC values.  
 
 2. **Metrics of effect heterogeneity**  
-   *Pre-registration:* We planned to report distributional metrics describing heterogeneity across labs (Mathur & VanderWeele, 2019, in press) using the *MetaUtility* package. Specifically, we proposed to estimate: (1) the percentage of effects greater than 0, (2) the percentage greater than Cohen’s d = 0.2, and (3) the percentage less than d = –0.2. These metrics were to be reported only if random slopes of trial type by lab were included in the final model, their variance was estimated as greater than 0, and at least 10 labs contributed data.  
+   *Pre-registration:* We planned to report distributional metrics describing heterogeneity across labs [@mathur2020robust] using the *MetaUtility* package. Specifically, we proposed to estimate: (1) the percentage of effects greater than 0, (2) the percentage greater than Cohen’s d = 0.2, and (3) the percentage less than d = –0.2. These metrics were to be reported only if random slopes of trial type by lab were included in the final model, their variance was estimated as greater than 0, and at least 10 labs contributed data.  
    *Final:* Random slopes of trial type by lab were not included in the final model, and only six labs contributed data. As a result, we did not estimate these metrics.
 
 3. **Subset of MB1 and MB1(B) data**  
@@ -15,7 +15,7 @@
    *Final:* In MB1 and MB1(B) data, information about English exposure often did not distinguish between American and British English. Therefore, we excluded infants based on country of residence (United States/Canada) rather than reported language exposure. 
    
 4. **Urban–rural exploratory analysis**  
-   *Pre-registration:* We planned an exploratory analysis testing whether infants’ IDS preference differed between urban and rural areas, motivated by prior findings of differences in parental speech input across these contexts (e.g., Keller, 2012; Vogh et al., 2015).  
+   *Pre-registration:* We planned an exploratory analysis testing whether infants’ IDS preference differed between urban and rural areas, motivated by prior findings of differences in parental speech input across these contexts [e.g., @keller2012;@vogt2015communicative].
    *Final:* We did not collect information on urban versus rural residence, so this analysis was not conducted.  
 
 5. **Socioeconomic status (SES) analyses**  
