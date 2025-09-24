@@ -1,9 +1,9 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.8.19)  20 AUG 2025 09:37
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.9.24)  24 SEP 2025 14:17
  restricted system commands enabled.
 **mb1a-paper.tex
 (./mb1a-paper.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-08-13>
+L3 programming layer <2025-09-02>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended collection.
@@ -312,7 +312,7 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-08-13 L3 programming layer (loader) 
+Package: expl3 2025-09-02 L3 programming layer (loader) 
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
 File: l3backend-luatex.def 2025-06-09 L3 backend support: PDF output (LuaTeX)
 \l__color_backend_stack_int=\count310
@@ -1100,21 +1100,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 271--271
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [11]
-
-[12]
 
 Package hyperref Warning: Suppressing link with empty target on input line 289.
 
 
 
-[13]
+[12]
 
-[14]
+[13]
+Missing character: There is no ： (U+FF1A) in font [lmroman12-regular]:+tlig;!
+Missing character: There is no ： (U+FF1A) in font [lmroman12-regular]:+tlig;!
+
+
+[14
+Missing character: There is no ： (U+FF1A) in font [lmroman12-regular]:+tlig;!
+]
 Underfull \vbox (badness 2189) has occurred while \output is active []
 
 
@@ -1123,9 +1125,6 @@ Underfull \vbox (badness 2189) has occurred while \output is active []
 Underfull \hbox (badness 1533) in paragraph at lines 340--340
 []|\TU/lmr/m/n/12 Mono-lin-gual: 3; Bilin-gual: 8;
  []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
@@ -1141,9 +1140,6 @@ Underfull \vbox (badness 7649) has occurred while \output is active []
 
 
 [20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [21]
 
@@ -1159,33 +1155,33 @@ Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf  us
 (luatex.def)             Requested size: 469.75386pt x 325.2142pt.
 
 
-[25]
+[25<./mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf>]
 
-[26<./mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf>]
-Underfull \vbox (badness 3977) has occurred while \output is active []
+[26]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
 [27]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [28]
 
 [29]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [30]
+Underfull \vbox (badness 3977) has occurred while \output is active []
+
+
 
 [31]
 
 [32]
-Underfull \vbox (badness 1028) has occurred while \output is active []
-
-
 
 [33]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1028) has occurred while \output is active []
 
 
 
@@ -1215,53 +1211,58 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 [39]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 
 [40]
 
+[41]
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 701.
+(hyperref)                removing `\\' on input line 749.
 
 
 
-[41
+[42
 
 ]
 
-[42]
+[43]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 729.
+(hyperref)                removing `\\' on input line 777.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 733.
+(Font)              scaled to size 10.0pt on input line 781.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 733.
+(Font)              scaled to size 7.0pt on input line 781.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 733.
+(Font)              scaled to size 5.0pt on input line 781.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 733.
+(Font)              scaled to size 10.0pt on input line 781.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 733.
+(Font)              scaled to size 7.0pt on input line 781.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 733.
+(Font)              scaled to size 5.0pt on input line 781.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 733.
+(Font)              scaled to size 10.0pt on input line 781.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 733.
+(Font)              scaled to size 7.0pt on input line 781.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 733.
-<mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf, id=363, 469.755pt x 325.215pt>
+(Font)              scaled to size 5.0pt on input line 781.
+<mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf, id=369, 469.755pt x 325.215pt>
 File: mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (type pdf)
 <use mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf>
-Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf  used on input line 737.
+Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf  used on input line 785.
 (luatex.def)             Requested size: 469.75386pt x 325.2142pt.
 AED endfloat: Processing end Figures and Tables
 
-[43
+[44
 
 ]
 
-[44<./mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf>] (./mb1a-paper.aux)
+[45<./mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf>] (./mb1a-paper.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2020/03/25>
@@ -1269,19 +1270,19 @@ L3 programming layer <2020/03/25>
 )
 
 Here is how much of LuaTeX's memory you used:
- 23262 strings out of 470117
+ 23267 strings out of 476291
  125546,1144653 words of node,token memory allocated
- 3699 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 1152 attribute, 80 glue_spec, 387 attribute_list, 2 write, 1 user_defined nodes
-   avail lists: 1:2,2:16760,3:253,4:141,5:443,6:60,7:7052,8:64,9:682,10:28,11:552
- 51049 multiletter control sequences out of 65536+600000
- 87 fonts using 20726767 bytes
+ 3795 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 1188 attribute, 80 glue_spec, 399 attribute_list, 2 write, 1 user_defined nodes
+   avail lists: 1:2,2:18308,3:253,4:141,5:464,6:62,7:7221,8:64,9:676,10:28,11:582
+ 44883 multiletter control sequences out of 65536+600000
+ 87 fonts using 20726539 bytes
  90i,11n,114p,2248b,525s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmsans8-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on mb1a-paper.pdf (44 pages, 334673 bytes).
+Output written on mb1a-paper.pdf (45 pages, 337889 bytes).
 
-PDF statistics: 525 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 173 named destinations out of 1000 (max. 131072)
+PDF statistics: 531 PDF objects out of 1000 (max. 8388607)
+ 448 compressed objects within 5 object streams
+ 176 named destinations out of 1000 (max. 131072)
  193 words of extra memory for PDF output out of 10000 (max. 100000000)
 

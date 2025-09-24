@@ -1,12 +1,14 @@
 ---
 title: "Display items"
-format: html
+format: pdf
 editor: visual
 ---
 
 ```{r}
 library(tidyverse)
 library(here)
+library(papaja)
+library(kableExtra)
 ```
 
 # 1. Demographic data
@@ -47,5 +49,98 @@ ggplot(d,
   ggthemes::theme_few() + 
   ggthemes::scale_color_solarized() +
   theme(legend.position = "bottom")
+```
+
+
+# 3. Table 
+
+```{r}
+q1_model <- readRDS(here("processed_data/cached_data/q1_model.Rds"))
+q1_df <- q1_model %>% broom.mixed::tidy(conf.int = TRUE) %>% 
+  mutate_if(is.numeric, round, 2) %>% 
+  filter(effect == "fixed") %>% 
+  select(term, estimate, std.error, statistic, p.value) %>% 
+  mutate(
+    term = case_when(
+      term == "trial_typeIDS" ~ "Trial Type",
+      term == "trial_num_centered" ~ "Trial Number",
+      term == "age_months_scaled" ~ "Age",
+      term == "trial_typeIDS:trial_num_centered" ~ "Trial Type * Trial Number",
+      term == "trial_num_centered:age_months_scaled" ~ "Trial Number * Age",
+      term == "trial_typeIDS:age_months_scaled" ~ "Trial Type * Age", 
+      TRUE ~ term
+    )
+  ) %>% 
+  mutate(
+    # estimate = case_when(
+    #   estimate == 0.00 ~ "< .01", 
+    #   TRUE ~ as.character(estimate)
+    # ),
+    # std.error = case_when(
+    #   std.error == 0.00 ~ "< .01", 
+    #   TRUE ~ as.character(estimate)
+    # ),
+    p.value = case_when(
+      p.value == 0.00 ~ "< .01", 
+      TRUE ~ as.character(estimate)
+    )
+  ) %>% 
+  rename(
+    Term = term, 
+    Estimate = estimate, 
+    SE = std.error,
+    t = statistic, 
+    p = p.value
+  )
+
+
+cat(q1_df %>% 
+  kable("latex", booktabs = TRUE,
+        caption = "Regression coefficients with 95\\% CI",
+        align = "lcccc")) %>%
+  kable_styling(latex_options = c("hold_position"),
+                font_size = 11)
+
+```
+
+```{r}
+q3_model <- readRDS(here("processed_data/cached_data/q3_model.Rds"))
+q3_table <- q3_model %>% broom.mixed::tidy(conf.int = TRUE) %>%
+  mutate_if(is.numeric, round, 2) %>% 
+  filter(effect == "fixed") %>% 
+  select(term, estimate, std.error, statistic, p.value) %>% 
+  mutate(
+    term = case_when(
+      term == "trial_typeIDS" ~ "Trial Type",
+      term == "trial_num_centered" ~ "Trial Number",
+      term == "age_months_scaled" ~ "Age",
+      term == "infant_ID" ~ "Infant Type",
+      term == "language_backgroundmonolingual" ~ "Language Background (Monolingual)",
+      term == "language_backgroundother" ~ "Language Background (Other)",
+      term == "trial_typeIDS:infant_ID" ~ "Trial Type * Infant Type",
+       term == "trial_num_centered:infant_ID" ~ "Trial Number * Infant Type",
+      term == "trial_typeIDS:language_backgroundmonolingual" ~ "Trial Type * Language Background (Monolingual)",
+       term == "trial_typeIDS:language_backgroundother" ~ "Trial Type * Language Background (Other)",
+      term == "trial_typeIDS:trial_num_centered" ~ "Trial Type * Trial Number",
+      term == "trial_num_centered:age_months_scaled" ~ "Trial Number * Age",
+      term == "trial_typeIDS:age_months_scaled" ~ "Trial Type * Age", 
+      TRUE ~ term
+    )
+  ) %>% 
+  rename(
+    Term = term, 
+    Estimate = estimate, 
+    SE = std.error,
+    t = statistic, 
+    p = p.value
+  )
+
+cat(q3_table %>% 
+  kable("latex", booktabs = TRUE,
+        caption = "Regression coefficients with 95\\% CI",
+        align = "lcccc")) %>%
+  kable_styling(latex_options = c("hold_position"),
+                font_size = 11)
+
 ```
 

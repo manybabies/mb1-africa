@@ -7,75 +7,77 @@ author:
   - name: "Angeline Sin Mei Tsui"
     affiliation: "1"
   - name: "Alexandra Carstensen"
-    affiliation: "1"
+    affiliation: "2"
   - name: "George Kachergis"
+    affiliation: "2"
+  - name: "Anjie Cao"
     affiliation: "1"
   - name: "Amina Abubakar"
-    affiliation: "2"
-  - name: "Mulat Asnake"
     affiliation: "3"
-  - name: "Oumar Barry"
+  - name: "Mulat Asnake"
     affiliation: "4"
-  - name: "Dana M. Basnight-Brown"
+  - name: "Oumar Barry"
     affiliation: "5"
+  - name: "Dana M. Basnight-Brown"
+    affiliation: "6"
   - name: "Dangkat Bentu"
-    affiliation: "6"
-  - name: "Christina Bergmann"
     affiliation: "7"
-  - name: "Evans Binan Dami"
-    affiliation: "6"
-  - name: "Natalie Boll-Avetisyan"
+  - name: "Christina Bergmann"
     affiliation: "8"
-  - name: "Marguerite de Jongh"
+  - name: "Evans Binan Dami"
+    affiliation: "7"
+  - name: "Natalie Boll-Avetisyan"
     affiliation: "9"
-  - name: "Yatma Diop"
+  - name: "Marguerite de Jongh"
     affiliation: "10"
-  - name: "Reginald Akuoko Duah"
+  - name: "Yatma Diop"
     affiliation: "11"
-  - name: "Esther Herrmann"
+  - name: "Reginald Akuoko Duah"
     affiliation: "12"
-  - name: "Chaning Jang"
+  - name: "Esther Herrmann"
     affiliation: "13"
-  - name: "Simon Kizito"
+  - name: "Chaning Jang"
     affiliation: "14"
+  - name: "Simon Kizito"
+    affiliation: "15"
   - name: "Tilinao Lamba"
-    affiliation: "15"
+    affiliation: "16"
   - name: "Limbika Maliwichi-Senganimalunje"
-    affiliation: "15"
+    affiliation: "16"
   - name: "Joyce Marangu"
-    affiliation: "2"
+    affiliation: "3"
   - name: "Maya Mathur"
     affiliation: "1"
   - name: "Catherine V. Mbagaya"
-    affiliation: "16"
-  - name: "Demeke Mekonnen Mengistie"
     affiliation: "17"
+  - name: "Demeke Mekonnen Mengistie"
+    affiliation: "18"
   - name: "Carmen Milton"
-    affiliation: "9"
+    affiliation: "10"
   - name: "Febronie Mushimiyimana"
-    affiliation: "18"
+    affiliation: "19"
   - name: "Mikateko Ndhambi"
-    affiliation: "9"
+    affiliation: "10"
   - name: "Irene Ngina"
-    affiliation: "13"
-  - name: "Eunice Njoroge"
-    affiliation: "2"
-  - name: "Paul Odhiambo Oburu"
-    affiliation: "16"
-  - name: "Asana Okocha"
-    affiliation: "19"
-  - name: "Paul Okyere Omane"
-    affiliation: "8"
-  - name: "Anisha Singh"
-    affiliation: "13"
-  - name: "Andrew S. Ssemata"
     affiliation: "14"
-  - name: "Juliette Unyuzumutima"
-    affiliation: "18"
-  - name: "Henriette Zeidler"
+  - name: "Eunice Njoroge"
+    affiliation: "3"
+  - name: "Paul Odhiambo Oburu"
+    affiliation: "17"
+  - name: "Asana Okocha"
     affiliation: "20"
-  - name: "Casey Lew-Williams"
+  - name: "Paul Okyere Omane"
+    affiliation: "9"
+  - name: "Anisha Singh"
+    affiliation: "14"
+  - name: "Andrew S. Ssemata"
+    affiliation: "15"
+  - name: "Juliette Unyuzumutima"
     affiliation: "19"
+  - name: "Henriette Zeidler"
+    affiliation: "21"
+  - name: "Casey Lew-Williams"
+    affiliation: "20"
   - name: "Michael C. Frank"
     affiliation: "1"
     address: "450 Jane Stanford Way, Stanford, CA 94305-2130, USA"
@@ -86,42 +88,44 @@ affiliation:
   - id: "1"
     institution: "Stanford University"
   - id: "2"
-    institution: "Institute for Human Development, Aga Khan University, Kenya"
+    institution: "Arizona State University"
   - id: "3"
-    institution: "Addis Ababa University, Ethiopia"
+    institution: "Institute for Human Development, Aga Khan University, Kenya"
   - id: "4"
-    institution: "Cheikh Anta Diop University - Dakar, Senegal"
+    institution: "Addis Ababa University, Ethiopia"
   - id: "5"
-    institution: "United States International University-Africa, Kenya"
+    institution: "Cheikh Anta Diop University - Dakar, Senegal"
   - id: "6"
-    institution: "University of Jos, Nigeria"
+    institution: "United States International University-Africa, Kenya"
   - id: "7"
-    institution: "Max Planck Institute for Psycholinguistics, The Netherlands"
+    institution: "University of Jos, Nigeria"
   - id: "8"
-    institution: "University of Potsdam, Germany"
+    institution: "Max Planck Institute for Psycholinguistics, The Netherlands"
   - id: "9"
-    institution: "Sefako Makgatho Health Sciences University, South Africa"
+    institution: "University of Potsdam, Germany"
   - id: "10"
-    institution: "Michigan State University, USA"
+    institution: "Sefako Makgatho Health Sciences University, South Africa"
   - id: "11"
-    institution: "Humboldt-Universität, Berlin and University of Ghana, Legon"
+    institution: "Michigan State University, USA"
   - id: "12"
-    institution: "University of Portsmouth, UK"
+    institution: "Humboldt-Universität, Berlin and University of Ghana, Legon"
   - id: "13"
-    institution: "Busara Center for Behavioral Economics, Kenya"
+    institution: "University of Portsmouth, UK"
   - id: "14"
-    institution: "Makerere University, Uganda"
+    institution: "Busara Center for Behavioral Economics, Kenya"
   - id: "15"
-    institution: "University of Malawi, Chancellor College, Zomba, Malawi"
+    institution: "Makerere University, Uganda"
   - id: "16"
-    institution: "Maseno University, Kenya"
+    institution: "University of Malawi, Chancellor College, Zomba, Malawi"
   - id: "17"
-    institution: "St. Peter Specialized Hospital, Ethiopia"
+    institution: "Maseno University, Kenya"
   - id: "18"
-    institution: "University Teaching Hospital of Kigali, Rwanda"
+    institution: "St. Peter Specialized Hospital, Ethiopia"
   - id: "19"
-    institution: "Princeton University, USA"
+    institution: "University Teaching Hospital of Kigali, Rwanda"
   - id: "20"
+    institution: "Princeton University, USA"
+  - id: "21"
     institution: "Aston University, UK & University of Gothenburg, Sweden"
 
 author_note: |
@@ -129,7 +133,7 @@ author_note: |
  
 
 abstract: |
-  Infants show a preference for infant-directed speech (IDS) over adult-directed speech (ADS). This preference has been linked to infants’ language processing and word learning in experimental settings, and also correlates with later language outcomes. Recently, the cross-cultural consistency of infants’ IDS preference has been confirmed by large-scale, multisite replication studies, but conclusions from these studies were primarily based on participants from North America and Europe. The current study addressed this sampling bias via a large-scale, multisite study of infants (3-15 months) across communities in Africa. We investigated whether participants showed a preference for IDS over ADS, and if so, whether the magnitude of their preference differs from effects documented in other populations of infants. Across six sites (total N = 200), we observed a preference for IDS over ADS, with no signficant difference between African infants in this study and a method-matched subsample of infants from prior studies of IDS preference. This study provides new evidence on the generalizability of IDS preference and looking-time methods more broadly, while also highlighting some of the challenges of global big team science. 
+  Infants show a preference for infant-directed speech (IDS) over adult-directed speech (ADS). This preference has been linked to infants’ language processing and word learning in experimental settings, and also correlates with later language outcomes. Recently, the cross-cultural consistency of infants’ IDS preference has been confirmed by large-scale, multisite replication studies, but conclusions from these studies were primarily based on participants from North America and Europe. The current study addressed this sampling bias via a large-scale, multisite study of infants (3-15 months) across communities in Africa. We investigated whether participants showed a preference for IDS over ADS, and if so, whether the magnitude of their preference differs from effects documented in other populations of infants. Across six sites (total N = 200), we observed a preference for IDS over ADS, with no significant difference between African infants in this study and a method-matched subsample of infants from prior studies of IDS preference. This study provides new evidence on the generalizability of IDS preference and looking-time methods more broadly, while also highlighting some of the challenges of global big team science. 
 
 
 keywords          : "infant-directed speech; reproducibility; Africa; infants; generalizability"
@@ -149,6 +153,7 @@ class             : "man"
 output:
   papaja::apa6_pdf:
     latex_engine: lualatex
+    keep_tex: true
 
 
  
@@ -302,17 +307,17 @@ We investigate whether infants growing up in a variety of African cultures show 
 
 Our study builds on a foundation of prior descriptive work investigating the generality of IDS across cultures. Although this work has investigated a variety of different cultures and languages, it can be (and often is) crudely summarized via the distinction between WEIRD and non-WEIRD cultures discussed above. We follow this convention here without endorsing this distinction as necessarily being meaningful in the context of our study, as IDS in WEIRD and non-WEIRD cultures shares similar prosodic properties. For example, @broesch2015b reported that IDS produced by North-American mothers, as well as by Kenyan and Fijian mothers, is produced with higher pitch, greater pitch variation, and is spoken at a slower rate than ADS. This finding is consistent with past work reporting that IDS shares some common exaggerated prosodic features (e.g., higher pitch, larger pitch variation) across diverse languages, which include French, Italian, German, Japanese, British English, American English [@fernald1989], Mandarin Chinese [@grieser1988maternal], Thai, Australian English [@kitamura2001universality], Arabic [@farran2016cross]. 
 
-IDS can also be recognized as being infant-directed by listeners from non-WEIRD cultures. @bryant2012recognizing reported that Turkanan adults in Kenya can discriminate between NAE IDS and ADS (see similar results in Bryant & Barrett, 2007 for Shuar hunter horticulturists from Amazonian Ecuador). These studies are consistent with findings from the MB1 studies showing that children who are not learning NAE, including children from Singapore and Korea, nonetheless show a preference for NAE IDS over ADS. Taken together, the common acoustic properties of IDS across different languages, and how NAE IDS can be recognized by non-native participants, raise the possibility of infants’ IDS preference over ADS being quite consistent across different cultures and languages. However, it is possible that the strength of this preference will nonetheless be influenced by similarity between the test language (English) and the language(s) that each infant is learning, which could bolster the measured preferences to the extent that test and native language are similar (as in the case of infants learning other Indo-European languages with similar phonetic and acoustic properties). If this is the case, we expect that phylogenetic similarity between Indo-European languages and our stimuli would lead to comparable or stronger observed IDS preferences in samples of infants learning Indo-European languages than those learning languages in other families (e.g., Bantu, the language family we expect to be most prevalent in our sample).  
+IDS can also be recognized as being infant-directed by listeners from non-WEIRD cultures. @bryant2012recognizing reported that Turkanan adults in Kenya can discriminate between NAE IDS and ADS (see similar results in Bryant & Barrett, 2007 for Shuar hunter horticulturists from Amazonian Ecuador). These studies are consistent with findings from the MB1 studies showing that children who are not learning NAE, including children from Singapore and Korea, nonetheless show a preference for NAE IDS over ADS. Taken together, the common acoustic properties of IDS across different languages, and how NAE IDS can be recognized by non-native participants, raise the possibility of infants’ IDS preference over ADS being quite consistent across different cultures and languages. However, it is possible that the strength of this preference would nonetheless be influenced by similarity between the test language (English) and the language(s) that each infant is learning, which could bolster the measured preferences to the extent that test and native language are similar (as in the case of infants learning other Indo-European languages with similar phonetic and acoustic properties). If this is the case, we expect that phylogenetic similarity between Indo-European languages and our stimuli would lead to comparable or stronger observed IDS preferences in samples of infants learning Indo-European languages than those learning languages in other families (e.g., Bantu, the language family we expect to be most prevalent in our sample).  
 
 Despite evidence for general recognition of and preference for IDS across cultures, the strength of IDS preferences is likely modulated by exposure. Exposure to IDS in the home environment varies widely both within and between cultures [@casillas2020;@casillas2021;@cristia2019child;@levine1994;@shneidman2012language;@vogt2015communicative]. Differences in IDS quantity have also been hypothesized to reflect differences in child-rearing practices across cultures. For example, direct verbal interaction between parents and infants can be rare in some societies [@heath1983;@levine1994;@schneidman2012;@weber2017cultural;@levine2016]. Children in these societies – which are typically non-WEIRD, though certainly not all non-WEIRD societies can be characterized this way – are often expected to learn through observation and participation according to their skill levels (see Legare, 2019, for a review). Thus, infants and young children in such societies may hear less IDS directly from their caregivers than those in WEIRD societies in which the norm involves a greater degree of direct address to parents. Of course, variation is also present within as well as across cultures. Within-culture variation has primarily been studied in North American contexts, where children from higher socioeconomic status (SES) families tend to hear more IDS than children from lower SES families [e.g., @hart1995;@hoff2006;@huttenlocher2010sources;@rowe2012longitudinal;@schneidman2012;@weisleder2013talking].  
 
-By virtue of our broad sample of African cultures, we expect that our study will likely capture substantial cultural variation in the average amount of IDS in children’s environments. The African sites we sample vary widely in their degree of urbanization, their culture, their parenting values, and the average resources available in children’s home environments – all of which have been argued to be meaningful dimensions governing children’s early linguistic environment. For example, @keller2012 suggested three prototypical cultural environments for children based on the degree of urbanization of the families in Western and non-Western societies. In this framework, in Western middle-class urban societies, highly educated parents generally aim to help children develop individual psychological autonomy. In contrast, in non-Western rural subsistence-based societies, parents generally aim to help children develop communal action autonomy, so that children have a strong sense of social responsibility and can contribute to the economic functioning of the family (e.g., farming). Importantly, non-Western middle-class urban societies are a hybrid of non-Western, rural and Western, urban societies, where parents generally want their children to develop more individual autonomy but also emphasize the importance of social responsibility in a large family. Broadly speaking, we expect that the African families in our study will be from the non-Western, urban and non-Western, rural groups in this taxonomy (see Table 1). 
+By virtue of our broad sample of African cultures, we expect that our study can capture substantial cultural variation in the average amount of IDS in children’s environments. The African sites we sample vary widely in their degree of urbanization, their culture, their parenting values, and the average resources available in children’s home environments – all of which have been argued to be meaningful dimensions governing children’s early linguistic environment. For example, @keller2012 suggested three prototypical cultural environments for children based on the degree of urbanization of the families in Western and non-Western societies. In this framework, in Western middle-class urban societies, highly educated parents generally aim to help children develop individual psychological autonomy. In contrast, in non-Western rural subsistence-based societies, parents generally aim to help children develop communal action autonomy, so that children have a strong sense of social responsibility and can contribute to the economic functioning of the family (e.g., farming). Importantly, non-Western middle-class urban societies are a hybrid of non-Western, rural and Western, urban societies, where parents generally want their children to develop more individual autonomy but also emphasize the importance of social responsibility in a large family. Broadly speaking, African families are from the non-Western, urban and non-Western, rural groups in this taxonomy (see Table 1). 
 
-The confirmatory analyses of our study are designed to test whether there are differences in the magnitude of IDS preferences measured in this sample and in the prior samples of MB1. Although the average IDS production in the African sites we examine is unknown, consistent differences along this dimension might plausibly lead to variation in the magnitude of IDS preferences between our current study and MB1. In addition, our exploratory analyses will attempt to understand whether variation in IDS preference among infants in our sample of African cultures is explained by demographic proxies related to this taxonomy (e.g., urbanization and/or socioeconomic status). Finally, we will use an exploratory measure of subjective IDS use as a proxy of IDS quantity within families to probe links between parent reported IDS use and infant preference. 
+The confirmatory analyses of our study are designed to test whether there are differences in the magnitude of IDS preferences measured in this sample and in the prior samples of MB1. Although the average IDS production in the African sites we examine is unknown, consistent differences along this dimension might plausibly lead to variation in the magnitude of IDS preferences between our current study and MB1. In addition, our exploratory analyses attempt to understand whether variation in IDS preference among infants in our sample of African cultures is explained by demographic proxies related to this taxonomy (e.g., urbanization and/or socioeconomic status). 
 
-Since multilingualism is common in Africa [e.g., @posel2016;@rosenhouse2004], many African children begin learning two or more different languages during infancy. Will early multilingualism alter infants’ preferences for IDS? The ManyBabies1-Bilingual (MB1B) study provides some evidence that bilingual infants showed a similar preference for NAE IDS when compared to monolingual infants [@byers2021multilab]. MB1B examined bilingual infants’ preference for NAE IDS at 6 to 9 months and 12 to 15 months and found that bilingual and monolingual infants did not differ in terms of the magnitude of their IDS preferences. MB1B also found similar results to MB1, that older bilingual infants and those bilinguals with higher exposure to NAE show stronger IDS preference. However, as in the MB1 study, data collected in MB1B mainly came from laboratories in WEIRD areas, such as North America and Europe, with no laboratories from Africa, so the same caveats of generalizability apply to MB1B as to MB1. Thus, in the current study, we will include both monolingual and multilingual infants, allowing us to assess the generalizability of MB1B’s conclusions to our samples in Africa. 
+Since multilingualism is common in Africa [e.g., @posel2016;@rosenhouse2004], many African children begin learning two or more different languages during infancy. Does early multilingualism alter infants’ preferences for IDS? The ManyBabies1-Bilingual (MB1B) study provides some evidence that bilingual infants showed a similar preference for NAE IDS when compared to monolingual infants [@byers2021multilab]. MB1B examined bilingual infants’ preference for NAE IDS at 6 to 9 months and 12 to 15 months and found that bilingual and monolingual infants did not differ in terms of the magnitude of their IDS preferences. MB1B also found similar results to MB1, that older bilingual infants and those bilinguals with higher exposure to NAE show stronger IDS preference. However, as in the MB1 study, data collected in MB1B mainly came from laboratories in WEIRD areas, such as North America and Europe, with no laboratories from Africa, so the same caveats of generalizability apply to MB1B as to MB1. Thus, in the current study, we included both monolingual and multilingual infants, allowing us to assess the generalizability of MB1B’s conclusions to our samples in Africa. 
 
-In sum, there are three primary (confirmatory) goals for the current study. First, we aim to measure infants’ preference for North-American English IDS across a range of cultural and linguistic contexts in Africa. Second, we seek to measure developmental changes in this preference. As we found that older infants show stronger IDS preferences than younger infants in both MB1 and MB1B, we will evaluate whether participants in our study show the same developmental increases in IDS preference. Finally, we will investigate whether there are differences in IDS preferences between infants in Africa in our study and those in Europe and Asia in MB1 and MB1B. As an exploratory aim, we also will examine relationships between parents’ demographics, their responses to survey items regarding subjective use of IDS, and their child’s IDS preference. 
+In sum, there are three primary (confirmatory) goals for the current study. First, we aim to measure infants’ preference for North-American English IDS across a range of cultural and linguistic contexts in Africa. Second, we seek to measure developmental changes in this preference. As we found that older infants show stronger IDS preferences than younger infants in both MB1 and MB1B, we evaluate whether participants in our study show the same developmental increases in IDS preference. Finally, we investigate whether there are differences in IDS preferences between infants in Africa in our study and those in Europe and Asia in MB1 and MB1B. As an exploratory aim, we also examine relationships between parents’ demographics, their responses to survey items regarding subjective use of IDS, and their child’s IDS preference. 
 
 # Methods
 
@@ -345,7 +350,7 @@ Uganda & Makerere University, Kampala & 3--15 months & Luganda, English \\
 
 ### Time-frame
 
-On July 23, 2018, we issued an open call for participation by African researchers via listservs and social/professional networks. Prior to submission, 11 labs committed to data collection, but some labs were unable to collect data, in part due to changing professional obligations and delays due to Covid-19 closures. Thus, we received data from 8 labs (See Table 1 for target sample characteristics of each site). Our participating laboratories will recruit infants living in eastern (e.g., Kenya), western (e.g., Senegal) and southern (e.g., South Africa) regions of Africa. We also note that many of our participating laboratories are located in East Africa, thus East African participants are disproportionately represented in our sample. Data collection began September 21, 2021. We initially anticipated finishing data collection a year later, but labs encountered a wide variety of unforeseen circumstances due to the COVID-19 pandemic, challenges with receiving IRB approval, and equipment and staffing issues. Thus, data collection was extended through 2023. Unfortunately, due to experimental setup issues, data from two labs was not analyzable, leading to a final sample of 6 datasets. In both excldued datasets, looking times were not recorded: this was due to a software bug in one lab and experimenter error in the other.
+On July 23, 2018, we issued an open call for participation by African researchers via listservs and social/professional networks. Prior to submission, 11 labs committed to data collection, but some labs were unable to collect data, in part due to changing professional obligations and delays due to Covid-19 closures. Thus, we received data from 8 labs (See Table 1 for target sample characteristics of each site). Our participating laboratories would recruit infants living in eastern (e.g., Kenya), western (e.g., Senegal) and southern (e.g., South Africa) regions of Africa. We also note that many of our participating laboratories are located in East Africa, thus East African participants are disproportionately represented in our sample. Data collection began September 21, 2021. We initially anticipated finishing data collection a year later, but labs encountered a wide variety of unforeseen circumstances due to the COVID-19 pandemic, challenges with receiving IRB approval, and equipment and staffing issues. Thus, data collection was extended through 2023. Unfortunately, due to experimental setup issues, data from two labs was not analyzable, leading to a final sample of 6 datasets. In both excluded datasets, looking times were not recorded: this was due to a software bug in one lab and experimenter error in the other.
 
 ### Age distribution
 
@@ -365,9 +370,9 @@ All laboratories collected data under their own independent IRB protocol. Videos
 
 ## Exclusion Criteria
 
-All data collected for the study (i.e., every infant for whom a data file was generated, regardless of how many trials were completed) were uploaded to a central database for data analysis. Every laboratory followed the protocol to report any infants who were tested in this study, including those who were excluded from the analysis. Furthermore, each laboratory followed the protocol to make note of the reasons that infants were excluded from the study. 
+All data collected for the study (i.e., every infant for whom a data file was generated, regardless of how many trials were completed) were uploaded to a central database for data analysis. Every laboratory followed the protocol to report any infants who were tested in this study, including those who were excluded from the analysis. Furthermore, each laboratory followed the protocol to make note of the reasons that infants were excluded from the study. A total number of 274 infants were tested in this study, and 74 infants were excluded from the final analysis. 
 
-Typically, participants were only included in the analysis if they met all of the criteria below. However, we allowed parents to choose not to answer some of the questions (e.g., about full-term gestation and developmental disorders) because disclosures might violate cultural norms in some areas of Africa. Thus, participating laboratories may have included infants who did not fully meet the inclusion criteria defined here:
+Typically, participants were only included in the analysis if they met all of the criteria below. However, we allowed parents to choose not to answer some of the questions (e.g., about full-term gestation and developmental disorders) because disclosures might violate cultural norms in some areas of Africa. Thus, participating laboratories may have included infants who did not fully meet the inclusion criteria defined here：
 
 ### Full-term
 
@@ -389,7 +394,7 @@ proportion_problems <- round(total_problems / total_tested_n, 4)
 ```
 
 
-We excluded infants with parent-reported developmental disorders (e.g., chromosomal abnormalities, etc.) or diagnosed hearing impairments. Developmental disorders and delays are stigmatized in some cultures in Africa (e.g., negative attitudes towards children with disorders or delays), therefore some parents may decline to answer the question about children’s developmental disorders. In this case, we still tested the infants and included the infants’ data in the analysis. This inclusion criterion was chosen to allow us to retain as much data as possible while ensuring our questionnaire accommodates cultural norms. Further, we noted that only 2 participants (i.e. less than 0.1%) in MB1 were excluded based on parents’ report of developmental disorders. Accordingly, we do not expect that including children whose parents decline to answer this question will lead to an inclusion of large numbers of children with developmental disorders that could potentially skew the results in the study. `r total_problems` (`r proportion_problems * 100`%) of the infants tested did not meet this criterion. (We did not plan exclusions based on self-reported ear infections unless parents reported medically-confirmed hearing loss.)
+We excluded infants with parent-reported developmental disorders (e.g., chromosomal abnormalities, etc.) or diagnosed hearing impairments. Developmental disorders and delays are stigmatized in some cultures in Africa (e.g., negative attitudes towards children with disorders or delays), therefore some parents may decline to answer the question about children’s developmental disorders. In this case, we still tested the infants and included the infants’ data in the analysis. This inclusion criterion was chosen to allow us to retain as much data as possible while ensuring our questionnaire accommodates cultural norms. Further, we noted that only 2 participants (i.e. less than 0.1%) in MB1 were excluded based on parents’ report of developmental disorders. Accordingly, we do not expect that including children whose parents decline to answer this question would lead to an inclusion of large numbers of children with developmental disorders that could potentially skew the results in the study. `r total_problems` (`r proportion_problems * 100`%) of the infants tested did not meet this criterion. (We did not plan exclusions based on self-reported ear infections unless parents reported medically-confirmed hearing loss.)
 
 ### Trial-level and session-level errors
 
@@ -564,14 +569,33 @@ q1_model <- readRDS(here("processed_data/cached_data/q1_model.Rds"))
 q1_df <- q1_model %>% broom.mixed::tidy(conf.int = TRUE) %>% 
   mutate_if(is.numeric, round, 2)
 
-
 ```
 
 
+\begin{table}
+
+\caption{Model estimates for Research Questions 1 and 2. The baseline for trial type is adult-directed speech. Trial number is mean-centered. Age is measured in months and standardized.}
+\centering
+\begin{tabular}[t]{lcccc}
+\toprule
+Term & Estimate & std.error & t & p\\
+\midrule
+(Intercept) & 1.89 & 0.09 & 21.34 & < .01\\
+Trial Type & 0.06 & 0.02 & 2.76 & 0.01\\
+Trial Number & -0.03 & 0.00 & -9.72 & < .01\\
+Age & -0.09 & 0.03 & -3.40 & < .01\\
+Trial Type * Trial Number & 0.00 & 0.00 & -0.22 & 0.83\\
+\addlinespace
+Trial Number * Age & 0.00 & 0.00 & 1.60 & 0.11\\
+Trial Type * Age & 0.02 & 0.02 & 0.94 & 0.35\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 
+The model revealed a significant main effect of trial type, such that infants looked longer at IDS trials than ADS trials (Figure 1; Table 3;  *$\beta$* = `r filter(q1_df, term == "trial_typeIDS")$estimate`; *SE* = `r filter(q1_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(q1_df, term == "trial_typeIDS")$statistic`; *p* = `r filter(q1_df, term == "trial_typeIDS")$p.value`). There was also a significant negative effect of trial number, indicating that looking times decreased over the course of the session (*$\beta$* = `r filter(q1_df, term == "trial_num_centered")$estimate`; *SE* = `r filter(q1_df, term == "trial_num_centered")$std.error`; *t* = `r filter(q1_df, term == "trial_num_centered")$statistic`; *p* < 0.01). Age in months was also a significant predictor, with older infants showing shorter looking times overall (*$\beta$* = `r filter(q1_df, term == "age_months_scaled")$estimate`; *SE* = `r filter(q1_df, term == "age_months_scaled")$std.error`; *t* = `r filter(q1_df, term == "age_months_scaled")$statistic`; *p* < 0.01). None of the interaction terms reached statistical significance, including the interaction between trial type and age, suggesting that the magnitude of IDS preference did not change reliably with age.
 
-The model revealed a significant main effect of trial type, such that infants looked longer at IDS trials than ADS trials (Figure 1; *$\beta$* = `r filter(q1_df, term == "trial_typeIDS")$estimate`; *SE* = `r filter(q1_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(q1_df, term == "trial_typeIDS")$statistic`; *p* = `r filter(q1_df, term == "trial_typeIDS")$p.value`). There was also a significant negative effect of trial number, indicating that looking times decreased over the course of the session (*$\beta$* = `r filter(q1_df, term == "trial_num_centered")$estimate`; *SE* = `r filter(q1_df, term == "trial_num_centered")$std.error`; *t* = `r filter(q1_df, term == "trial_num_centered")$statistic`; *p* < 0.01). Age in months was also a significant predictor, with older infants showing shorter looking times overall (*$\beta$* = `r filter(q1_df, term == "age_months_scaled")$estimate`; *SE* = `r filter(q1_df, term == "age_months_scaled")$std.error`; *t* = `r filter(q1_df, term == "age_months_scaled")$statistic`; *p* < 0.01). None of the interaction terms reached statistical significance, including the interaction between trial type and age, suggesting that the magnitude of IDS preference did not change reliably with age.
+
 
 Research question 3: Population comparison. In this analysis, we compare the data collected from the laboratories in Africa to data collected in MB1 and MB1B in Germany, Italy, New Zealand, Turkey, United Kingdom. We selected the subset of data from MB1 and MB1B that was collected using central fixation procedures (to match methods across studies) and from infants who were not exposed to North American English (non NAE) (to match stimulus un-familiarity due to language background). While we could have controlled the methodological and demographic variables statistically (and hence included all data from MB1 and MB1B in the full model), we believed that the increase in model complexity – and comparable decrease in interpretability – outweighed the benefits of this strategy. 
 
@@ -588,7 +612,35 @@ q3_df <- q3_model %>% broom.mixed::tidy(conf.int = TRUE) %>%
   mutate_if(is.numeric, round, 2)
 ```
 
-The model revealed no significant difference in IDS preference between infants tested in our sample and those tested in MB1/MB1B, as indicated by the non-significant interaction between trial type and infant group (*$\beta$* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$estimate`; *SE* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$p.value`). However, there was a significant main effect of trial type (*$\beta$* = `r filter(q3_df, term == "trial_typeIDS")$estimate`; *SE* = `r filter(q3_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS")$p.value`), suggesting that infants showed a reliable preference to IDS over ADS.  
+\begin{table}
+
+\caption{Model estimates for Research Questions 3. The baseline for trial type is adult-directed speech (ADS), trial number is mean-centered, age is measured in months and standardized, the baseline for infant type is infants from MB1/MB1B (non-NAE sample), and the baseline for language background is bilingual infants.}
+\centering
+\begin{tabular}[t]{lcccc}
+\toprule
+Term & Estimate & SE & t & p\\
+\midrule
+(Intercept) & 1.77 & 0.07 & 24.16 & < .01\\
+Trial Type & 0.02 & 0.03 & 0.66 & 0.51\\
+Trial Number & -0.05 & 0.00 & -30.82 & < .01\\
+Age & -0.13 & 0.02 & -8.38 & < .01\\
+Infant Type & 0.15 & 0.12 & 1.32 & 0.21\\
+\addlinespace
+Language Background (Monolingual) & -0.02 & 0.05 & -0.48 & 0.63\\
+Language Background (Other) & 0.02 & 0.07 & 0.24 & 0.81\\
+Trial Type * Trial Number & 0.00 & 0.00 & -0.81 & 0.42\\
+Trial Number * Age & -0.01 & 0.00 & -4.39 & < .01\\
+Trial Type * Age & 0.02 & 0.01 & 1.86 & 0.06\\
+\addlinespace
+Trial Type * Infant Type & -0.01 & 0.03 & -0.26 & 0.80\\
+Trial Number * Infant Type & 0.02 & 0.00 & 4.96 & <.01\\
+Trial Type * Language Background (Monolingual) & 0.04 & 0.03 & 1.42 & 0.16\\
+Trial Type * Language Background (Other) & 0.00 & 0.05 & 0.07 & 0.95\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The model revealed no significant difference in IDS preference between infants tested in our sample and those tested in MB1/MB1B, as indicated by the non-significant interaction between trial type and infant group (Table 4; *$\beta$* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$estimate`; *SE* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$p.value`). However, there was a significant main effect of trial type (*$\beta$* = `r filter(q3_df, term == "trial_typeIDS")$estimate`; *SE* = `r filter(q3_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS")$p.value`), suggesting that infants showed a reliable preference to IDS over ADS.  
 
 Consistent with expectations, looking times decreased over the course of the session (*$\beta$* = `r filter(q3_df, term == "trial_num_centered")$estimate`; *SE* = `r filter(q3_df, term == "trial_num_centered")$std.error`; *t* = `r filter(q3_df, term == "trial_num_centered")$statistic`; *p* < 0.01), and older infants looked for less time overall (*$\beta$* = `r filter(q3_df, term == "age_months_scaled")$estimate`; *SE* = `r filter(q3_df, term == "age_months_scaled")$std.error`; *t* = `r filter(q3_df, term == "age_months_scaled")$statistic`; p < .001). We also found that older infants habituated more quickly, as indicated by a significant negative interaction between age and trial number (*$\beta$* = `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$estimate`; *SE* = `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$std.error`; *t* = `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$statistic`; p < .001). The interaction between trial number and infant group was also significant (*$\beta$* = `r filter(q3_df, term == "trial_num_centered:infant_ID")$estimate`; *SE* = `r filter(q3_df, term == "trial_num_centered:infant_ID")$std.error`; *t* = `r filter(q3_df, term == "trial_num_centered:infant_ID")$statistic`; p < .001), indicating that looking times declined more slowly across trials for infants in our sample compared to those in MB1/MB1B. No other interactions reached significance.
 
@@ -596,7 +648,7 @@ Consistent with expectations, looking times decreased over the course of the ses
 
 ## Exploratory Analyses
 
-SES. Previous research in North America [e.g., @hart1995;@hoff2006social;@weisleder2013talking] has shown that the quantity and quality of child-directed speech vary across families with different SES backgrounds. These differences in language input may drive differences in infants’ preference for IDS. Thus, we explored how SES affects infants’ preference for IDS. SES was measured by primary caregiver's formal education (number of years). we entered primary caregiver’s formal education (in years) as a predictor in the regression model specified for RQ1 and RQ2, along with its interaction with trial type. 
+SES. Previous research in North America [e.g., @hart1995;@hoff2006social;@weisleder2013talking] has shown that the quantity and quality of child-directed speech vary across families with different SES backgrounds. These differences in language input may drive differences in infants’ preference for IDS. Thus, we explored how SES affects infants’ preference for IDS. SES was measured by primary caregiver's formal education (number of years). We entered primary caregiver’s formal education (in years) as a predictor in the regression model specified for RQ1 and RQ2, along with its interaction with trial type. 
 
 ```{r}
 e1_model <- readRDS(here("processed_data/cached_data/e1_model.Rds"))
@@ -618,7 +670,7 @@ Meta-analysis. For comparison with ManyBabies 1 and 1B, we computed standardized
 
 Infants' preference for IDS is both an important phenomenon for understanding language learning and a case study for infant methods more broadly. The MB1 study investigated variation in IDS preference across laboratories and across countries and found a small but reliable effect such that infants preferred IDS over ADS; though there was substantial variation across labs, much of this variation was in fact due to sampling variation. Nevertheless, the effect was moderated by infant age, language background, and experimental method. Though MB1 and its sister project MB1B investigated children from a wide variety of language backgrounds, no sites from Africa were included in this initial group of participating laboratories. The current study was designed to fill this gap.
 
-We summarize our findings with respect to three research questions in the paper. First, consistent with MB1 and MB1B, we found evidence for a significant IDS preference in a sample of 200 African infants. Second, and unlike MB1, we did not find significant age-related variation in IDS preference, but given the relatively small magnitude of the overall effect, we may not have had sufficient power to detect an interaction with age in our primary analytic model. 
+We summarize our findings with respect to three research questions in the paper. First, consistent with MB1 and MB1B, we found evidence for a significant IDS preference in a sample of 200 African infants. Second, and unlike MB1, we did not find significant age-related variation in IDS preference, but given the relatively small magnitude of the overall effect, we may not have had sufficient power to detect an interaction with age in our primary analytic model. In addition, the variability in age across sites was limited, with four of the six labs having mean ages clustered around 8 to 9 months, leaving us little age variation to detect such an effect.
 
 Finally, we were interested in comparing the magnitude of the IDS preference in the current study to the estimates obtained in MB1 and MB1B (with multilingual data providing an important comparison because of the diverse language backgrounds in our current sample). We did not find significant study effects in a model comparing data from the current study to a method- and language-background matched sample of infants from MB1 and MB1B. The magnitude of the IDS preference in African infants in the current study ($d = 0.17$) was numerically smaller than the overall estimate reported by MB1 ($d = 0.35$), but the two estimates are not directly comparable; among other things, the current study was conducted with infants who were not growing up learning North American English and it used the central fixation method, both of which were associated with overall lower effect sizes in MB1 compared with other groups [@zettersten2024evidence]. 
 
