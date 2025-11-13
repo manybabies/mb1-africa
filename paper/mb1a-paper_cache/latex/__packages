@@ -18,3 +18,5 @@ knitr
 kableExtra
 ggpubr
 lmerTest
+maps
+ggrepel

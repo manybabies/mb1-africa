@@ -1,9 +1,9 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.9.24)  24 SEP 2025 14:17
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2025)  (format=lualatex 2025.11.11)  12 NOV 2025 19:41
  restricted system commands enabled.
 **mb1a-paper.tex
 (./mb1a-paper.tex
-LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-09-02>
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-10-24>
 Lua module: luaotfload 2024-12-03 v3.29 Lua based OpenType font support
 Lua module: lualibs 2023-07-13 v2.76 ConTeXt Lua standard libraries.
 Lua module: lualibs-extended 2023-07-13 v2.76 ConTeXt Lua libraries -- extended collection.
@@ -53,7 +53,7 @@ luaotfload | db : Font names database loaded from /Users/caoanjie/Library/TinyTe
 \belowcaptionskip=\skip50
 \bibindent=\dimen147
 ) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count281
 )
 Class apa6 Info: No bibliography package was specified; defaulting to (but not loading) Biblatex on input line 213.
@@ -92,7 +92,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 ) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 LaTeX Font Info:    Trying to load font information for T1+lmr on input line 116.
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -129,7 +129,7 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: luatex.def on input line 106.
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/luatex.def
-File: luatex.def 2024/04/13 v1.2e Graphics/color driver for luatex
+File: luatex.def 2025/09/29 v1.2f Graphics/color driver for luatex
 ))
 \Gin@req@height=\dimen156
 \Gin@req@width=\dimen157
@@ -198,7 +198,7 @@ Package caption Info: threeparttable package is loaded.
 \gr@boxwidth=\skip62
 \gr@boxheight=\skip63
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/tools/bm.sty
-Package: bm 2023/12/19 v1.2f Bold Symbol Support (DPC/FMi)
+Package: bm 2025/10/21 v1.2g Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup4
 \symboldletters=\mathgroup5
 \symboldsymbols=\mathgroup6
@@ -239,7 +239,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks21
 \@floatcapt=\box56
 )) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2025/06/16 v2.17y AMS math features
+Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip78
 For additional information on amsmath, use the `?' option.
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -300,8 +300,8 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \multlinegap=\skip79
 \multlinetaggap=\skip80
 \mathdisplay@stack=\toks26
-LaTeX Info: Redefining \[ on input line 2949.
-LaTeX Info: Redefining \] on input line 2950.
+LaTeX Info: Redefining \[ on input line 2950.
+LaTeX Info: Redefining \] on input line 2951.
 ) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -312,22 +312,22 @@ LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math.sty (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2025-09-02 L3 programming layer (loader) 
+Package: expl3 2025-10-24 L3 programming layer (loader) 
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-luatex.def
-File: l3backend-luatex.def 2025-06-09 L3 backend support: PDF output (LuaTeX)
+File: l3backend-luatex.def 2025-10-09 L3 backend support: PDF output (LuaTeX)
 \l__color_backend_stack_int=\count310
 Inserting `l3color' in `luaotfload.parse_color'.))
 Package: unicode-math 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/unicode-math/unicode-math-luatex.sty
 Package: unicode-math-luatex 2023/08/13 v0.8r Unicode maths in XeLaTeX and LuaLaTeX
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
-Package: xparse 2024-08-16 L3 Experimental document command parser
+Package: xparse 2025-10-09 L3 Experimental document command parser
 ) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
-Package: l3keys2e 2024-08-16 LaTeX2e option processing using LaTeX3 keys
+Package: l3keys2e 2025-10-09 LaTeX2e option processing using LaTeX3 keys
 ) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.sty
-Package: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
-Lua module: fontspec 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
-Package: fontspec-luatex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTeX
+Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+Package: fontspec-luatex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
 \l__fontspec_script_int=\count311
 \l__fontspec_language_int=\count312
 \l__fontspec_strnum_int=\count313
@@ -343,7 +343,7 @@ Package: fontspec-luatex 2024/05/11 v2.9e Font selection for XeLaTeX and LuaLaTe
 \l__fontspec_tmpb_dim=\dimen189
 \l__fontspec_tmpc_dim=\dimen190
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2024/12/21 v2.1c Standard LaTeX package
+Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
 ) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/base/fix-cm.sty
 Package: fix-cm 2020/11/24 v1.1t fixes to LaTeX
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/base/ts1enc.def
@@ -516,7 +516,7 @@ LaTeX Info: Redefining \addtolength on input line 87.
 \calc@Ccount=\count327
 \calc@Cskip=\skip86
 ) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2025/08/03 v25.12 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+Package: babel 2025/11/09 v25.15 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/generic/babel/luababel.def
 \bbl@readstream=\read2
 \l@dumylang=\language2
@@ -526,13 +526,13 @@ Package babel Info: Non-standard hyphenation setup on input line 118.
 \bbl@pattcodes=\catcodetable15
 )
 \babel@savecnt=\count328
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2045.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2047.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2049.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2050.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2051.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2053.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2078.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2050.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2052.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2054.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2055.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2056.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2058.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2083.
 \U@D=\dimen193
 \l@unhyphenated=\language4
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/generic/babel/luababel.def
@@ -557,9 +557,11 @@ Inserting `luaotfload.harf.finalize_hlist' in `hpack_filter'.
 \bbl@attr@dir=\attribute5
 )
 Package babel Info: You haven't specified a language as a class or package
-(babel)             option. I'll load 'nil'. Reported on input line 4309.
+(babel)             option. I'll load 'nil'. Reported on input line 4233.
+Package babel Info: Importing font and identification data for nil
+(babel)             from babel-und-x-nil.ini. Reported on input line 4298.
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2025/08/03 v25.12 Nil language
+Language: nil 2025/11/09 v25.15 Nil language
 \l@nil=\language5
 )) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
 Package babel Info: Importing data for english
@@ -571,7 +573,7 @@ Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
 LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
 (Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
 ) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/tools/longtable.sty
-Package: longtable 2024-12-18 v4.23 Multi-page Table package (DPC)
+Package: longtable 2025-10-13 v4.24 Multi-page Table package (DPC)
 \LTleft=\skip87
 \LTright=\skip88
 \LTpre=\skip89
@@ -599,7 +601,7 @@ Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 ) (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 (/Users/caoanjie/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
-Package: array 2025/06/08 v2.6j Tabular extension package (FMi)
+Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen196
 \ar@mcellbox=\box64
 \extrarowheight=\dimen197
@@ -1054,8 +1056,6 @@ Package hyperref Info: Link coloring OFF on input line 214.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-
-
 Package fancyhdr Warning: \headheight is too small (15.2pt): 
 (fancyhdr)                Make it at least 27.41803pt, for example:
 (fancyhdr)                \setlength{\headheight}{27.41803pt}.
@@ -1064,225 +1064,187 @@ Package fancyhdr Warning: \headheight is too small (15.2pt):
 
 [1{/Users/caoanjie/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-]
-
-[2]
-
-[3]
+] [2] [3]
 Underfull \vbox (badness 1838) has occurred while \output is active []
-
-
 
 [4]
 Underfull \vbox (badness 3977) has occurred while \output is active []
 
-
-
 [5]
 Underfull \vbox (badness 7649) has occurred while \output is active []
 
-
-
-[6]
-
-[7]
+[6] [7]
 Underfull \vbox (badness 7649) has occurred while \output is active []
 
-
-
-[8]
-
-[9]
-
-[10]
+[8] [9] [10]
 Underfull \hbox (badness 10000) in paragraph at lines 271--271
 []|\TU/lmr/m/n/12 Uni-ver-sity of Malawi --
  []
 
+<mb1a-paper_files/figure-latex/unnamed-chunk-1-1.pdf, id=55, 578.16pt x 325.215pt>
+File: mb1a-paper_files/figure-latex/unnamed-chunk-1-1.pdf Graphic file (type pdf)
+<use mb1a-paper_files/figure-latex/unnamed-chunk-1-1.pdf>
+Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-1-1.pdf  used on input line 279.
+(luatex.def)             Requested size: 469.75385pt x 264.23653pt.
+[11] [12<./mb1a-paper_files/figure-latex/unnamed-chunk-1-1.pdf>]
 
-
-[11]
-
-Package hyperref Warning: Suppressing link with empty target on input line 289.
-
-
-
-[12]
+Package hyperref Warning: Suppressing link with empty target on input line 295.
 
 [13]
 Missing character: There is no ： (U+FF1A) in font [lmroman12-regular]:+tlig;!
 Missing character: There is no ： (U+FF1A) in font [lmroman12-regular]:+tlig;!
-
-
-[14
+[14] [15
 Missing character: There is no ： (U+FF1A) in font [lmroman12-regular]:+tlig;!
 ]
-Underfull \vbox (badness 2189) has occurred while \output is active []
-
-
-
-[15]
-Underfull \hbox (badness 1533) in paragraph at lines 340--340
-[]|\TU/lmr/m/n/12 Mono-lin-gual: 3; Bilin-gual: 8;
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+[]|\TU/lmr/bx/n/12 Lan-guage back-
  []
 
 
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+[]|\TU/lmr/m/n/12 Mono-lin-gual: 3;
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+[]|\TU/lmr/m/n/12 Mono-lin-gual: 17;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+[]|\TU/lmr/m/n/12 Mono-lin-gual: 36;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 346--346
+[]|\TU/lmr/m/n/12 Mono-lin-gual: 23;
+ []
+
+<mb1a-paper_files/figure-latex/unnamed-chunk-5-1.pdf, id=104, 469.755pt x 325.215pt>
+File: mb1a-paper_files/figure-latex/unnamed-chunk-5-1.pdf Graphic file (type pdf)
+<use mb1a-paper_files/figure-latex/unnamed-chunk-5-1.pdf>
+Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-5-1.pdf  used on input line 354.
+(luatex.def)             Requested size: 469.75386pt x 325.2142pt.
 [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[18]
-
-[19]
-Underfull \vbox (badness 7649) has occurred while \output is active []
-
-
-
-[20]
-
-[21]
-
-[22]
-
-[23]
-
-[24]
-<mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf, id=158, 469.755pt x 325.215pt>
-File: mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
-<use mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf>
-Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf  used on input line 432.
+[18<./mb1a-paper_files/figure-latex/unnamed-chunk-5-1.pdf>] [19] [20] [21] [22] [23] [24] [25]
+<mb1a-paper_files/figure-latex/unnamed-chunk-10-1.pdf, id=176, 469.755pt x 325.215pt>
+File: mb1a-paper_files/figure-latex/unnamed-chunk-10-1.pdf Graphic file (type pdf)
+<use mb1a-paper_files/figure-latex/unnamed-chunk-10-1.pdf>
+Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-10-1.pdf  used on input line 444.
+(luatex.def)             Requested size: 469.75386pt x 325.2142pt.
+[26]
+<mb1a-paper_files/figure-latex/unnamed-chunk-12-1.pdf, id=182, 469.755pt x 325.215pt>
+File: mb1a-paper_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
+<use mb1a-paper_files/figure-latex/unnamed-chunk-12-1.pdf>
+Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-12-1.pdf  used on input line 472.
 (luatex.def)             Requested size: 469.75386pt x 325.2142pt.
 
+Underfull \vbox (badness 3623) has occurred while \output is active []
 
-[25<./mb1a-paper_files/figure-latex/unnamed-chunk-8-1.pdf>]
-
-[26]
+[27<./mb1a-paper_files/figure-latex/unnamed-chunk-10-1.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
-[27]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[28]
-
-[29]
-
-[30]
+[28<./mb1a-paper_files/figure-latex/unnamed-chunk-12-1.pdf>]
 Underfull \vbox (badness 3977) has occurred while \output is active []
 
+[29]
+Overfull \hbox (23.9853pt too wide) in paragraph at lines 489--511
+ [][] 
+ []
 
+[30]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[31]
+[31] [32]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-[32]
+[33] [34]
+Underfull \vbox (badness 3977) has occurred while \output is active []
 
-[33]
+[35] [36] [37]
 Underfull \vbox (badness 1028) has occurred while \output is active []
-
-
-
-[34]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[35]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[36]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[37]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 
 [38]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
 [39]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-
 [40]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [41]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 749.
-
-
-
-[42
-
-]
+[42]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[44] [45]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 777.
+(hyperref)                removing `\\' on input line 791.
+
+[46
+
+] [47]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\\' on input line 819.
 
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 781.
+(Font)              scaled to size 10.0pt on input line 823.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 781.
+(Font)              scaled to size 7.0pt on input line 823.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 781.
+(Font)              scaled to size 5.0pt on input line 823.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 781.
+(Font)              scaled to size 10.0pt on input line 823.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 781.
+(Font)              scaled to size 7.0pt on input line 823.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 781.
+(Font)              scaled to size 5.0pt on input line 823.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 781.
+(Font)              scaled to size 10.0pt on input line 823.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 781.
+(Font)              scaled to size 7.0pt on input line 823.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 781.
-<mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf, id=369, 469.755pt x 325.215pt>
-File: mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf Graphic file (type pdf)
-<use mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf>
-Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf  used on input line 785.
+(Font)              scaled to size 5.0pt on input line 823.
+<mb1a-paper_files/figure-latex/unnamed-chunk-41-1.pdf, id=411, 469.755pt x 325.215pt>
+File: mb1a-paper_files/figure-latex/unnamed-chunk-41-1.pdf Graphic file (type pdf)
+<use mb1a-paper_files/figure-latex/unnamed-chunk-41-1.pdf>
+Package luatex.def Info: mb1a-paper_files/figure-latex/unnamed-chunk-41-1.pdf  used on input line 827.
 (luatex.def)             Requested size: 469.75386pt x 325.2142pt.
-AED endfloat: Processing end Figures and Tables
+AED endfloat: Processing end Figures and Tables [48
 
-[44
-
-]
-
-[45<./mb1a-paper_files/figure-latex/unnamed-chunk-35-1.pdf>] (./mb1a-paper.aux)
+] [49<./mb1a-paper_files/figure-latex/unnamed-chunk-41-1.pdf>] (./mb1a-paper.aux)
  ***********
-LaTeX2e <2025-06-01> patch level 1
+LaTeX2e <2025-11-01>
 L3 programming layer <2020/03/25>
  ***********
 )
 
 Here is how much of LuaTeX's memory you used:
- 23267 strings out of 476291
+ 23349 strings out of 476081
  125546,1144653 words of node,token memory allocated
- 3795 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 1188 attribute, 80 glue_spec, 399 attribute_list, 2 write, 1 user_defined nodes
-   avail lists: 1:2,2:18308,3:253,4:141,5:464,6:62,7:7221,8:64,9:676,10:28,11:582
- 44883 multiletter control sequences out of 65536+600000
- 87 fonts using 20726539 bytes
- 90i,11n,114p,2248b,525s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmsans8-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
-Output written on mb1a-paper.pdf (45 pages, 337889 bytes).
+ 4083 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 4 glue, 4 kern, 1 glyph, 1296 attribute, 80 glue_spec, 435 attribute_list, 2 write, 1 user_defined nodes
+   avail lists: 1:2,2:18327,3:242,4:141,5:444,6:65,7:7367,8:64,9:676,10:28,11:598
+ 45151 multiletter control sequences out of 65536+600000
+ 88 fonts using 20858367 bytes
+ 90i,11n,114p,2248b,538s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman7-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmmono12-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-italic.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm-math/latinmodern-math.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman8-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmsans8-regular.otf></Users/caoanjie/Library/TinyTeX/texmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf>
+Output written on mb1a-paper.pdf (49 pages, 444986 bytes).
 
-PDF statistics: 531 PDF objects out of 1000 (max. 8388607)
- 448 compressed objects within 5 object streams
- 176 named destinations out of 1000 (max. 131072)
+PDF statistics: 579 PDF objects out of 1000 (max. 8388607)
+ 483 compressed objects within 5 object streams
+ 189 named destinations out of 1000 (max. 131072)
  193 words of extra memory for PDF output out of 10000 (max. 100000000)
 

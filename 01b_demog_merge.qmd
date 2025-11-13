@@ -22,7 +22,7 @@ senegal <- read_csv(here("processed_data/participants_cleaned/Diop - Senegal.csv
 uganda <- read_csv(here("processed_data/participants_cleaned/Kizito - Uganda.csv"))
 malawi <- read_xlsx(here("processed_data/participants_cleaned/Lamba - Malawi.xlsx"))
 rwanda <- read_xlsx(here("processed_data/participants_cleaned/Mushimiyimana - Rwanda.xlsx"))
-south_africa <- read_csv(here("processed_data/participants_cleaned/Ndhambi - South Africa.csv"))
+south_africa <- read_csv(here("processed_data/participants_cleaned/Ndhambi - South Africa - anjie_coded.csv"))
 ghana <- read_xlsx(here("processed_data/participants_cleaned/Omane - Ghana.xlsx"))
 kenya <- read_xlsx(here("processed_data/participants_cleaned/Zeidler - Kenya - CLEANED.xlsx"))
 
@@ -370,9 +370,9 @@ rwanda_clean <- rwanda %>%
 
 south_africa_clean <- south_africa %>% 
   rename(age_months = age_mos) %>% 
-  mutate(language_background = NA) %>% 
   #filter(!subid %in% c("RSAMB003", "RSAMB023", "RSAMB007"))
-   select(subid, lab, age_months, language_background)
+  rename(gender = sex) %>% 
+   select(subid, lab, gender, age_months, language_background, hearing_prob, dev_disorder)
 
   
 ```
@@ -581,6 +581,9 @@ trials_data <- read_csv(here("processed_data/trials_cleaned.csv")) %>%
          stimulus, order, looking_time_diff, total_center, enabled_diff, trial_error, trial_error_type)
 
 
+
+
+
 participant_info_id <- full_participnat_info$subid
 trials_id <- trials_data %>% distinct(subid) %>% pull()
 ```
@@ -605,19 +608,18 @@ setdiff(participant_info_id, trials_id)
 
 # 4. Write data
 
-
-## 4.0 Demographic based exclusion 
+## 4.0 Demographic based exclusion
 
 ```{r}
 cleaned_trials_data <- trials_data %>% 
   left_join(full_participnat_info %>% select(-lab), by = c("subid")) %>% 
   filter(!is.na(subid)) %>% 
   filter(preterm == FALSE | is.na(preterm)) %>% 
-  filter(hearing_prob == "NO" | is.na(hearing_prob)) %>% 
-  filter(dev_disorder == "NO" | dev_disorder == "NA" | is.na(dev_disorder)) %>% select(lab, subid, trial_num, trial_type, looking_time_s, stimulus, order, looking_time_diff, total_center, enabled_diff)
+  filter(hearing_prob == "NO" | is.na(hearing_prob) | hearing_prob == "no") %>% 
+  filter(dev_disorder == "NO" | dev_disorder == "NA" | is.na(dev_disorder) | dev_disorder == "no" ) %>% select(lab, subid, trial_num, trial_type, looking_time_s, stimulus, order, looking_time_diff, total_center, enabled_diff)
 ```
 
-## 4.1 write data 
+## 4.1 write data
 
 ```{r}
 
@@ -634,8 +636,8 @@ write_csv(joint_data,here("processed_data/joint_data.csv"))
 
 ```{r}
 
-  
-
+final_sample_d <- full_participnat_info %>% 
+  filter(subid %in% joint_data$subid)
 
 ppl_per_lab <- final_sample_d %>% 
   group_by(lab) %>% 
@@ -650,6 +652,7 @@ language_per_lab <- final_sample_d %>%
   count(name = "language_background_n") %>% 
   mutate(language_background = case_when(
     language_background == "monolinguals" ~ "monolingual", 
+    language_background == "monolingual" ~ "monolingual", 
     is.na(language_background) ~ "lang_unknown", 
     TRUE ~language_background
   )) %>% 

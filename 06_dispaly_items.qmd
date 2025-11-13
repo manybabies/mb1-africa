@@ -9,6 +9,8 @@ library(tidyverse)
 library(here)
 library(papaja)
 library(kableExtra)
+library(emmeans)
+
 ```
 
 # 1. Demographic data
@@ -142,5 +144,163 @@ cat(q3_table %>%
   kable_styling(latex_options = c("hold_position"),
                 font_size = 11)
 
+```
+
+# 4. Alt-Forest plot 
+
+```{r}
+d <- read_csv(here("processed_data/joint_data.csv")) %>% 
+  filter(looking_time_s >= 2) %>% 
+  mutate(trial_num_centered = scale(trial_num, scale = FALSE)) %>% 
+  mutate(
+    lab_clean = str_extract(lab, "(?<=-\\s).*")
+  )
+
+q1_model <- readRDS(here("processed_data/cached_data/q1_model.Rds"))
+
+
+# fit the same model per lab
+by_lab_estimates <- d %>%
+  group_by(lab) %>%
+  mutate(log_lt = log(looking_time_s)) %>% 
+  mutate(trial_num_centered = scale(trial_num, scale = FALSE)) %>% 
+  mutate(age_months_scaled = scale(age_months)) %>% 
+  do({
+    dat <- .
+    # fit the same fixed-effects structure but only random intercept for subid
+    mod <- lmer(
+      log_lt ~ trial_type + trial_num_centered + age_months_scaled +
+        trial_type * trial_num_centered +
+        age_months_scaled * trial_num_centered +
+        age_months_scaled * trial_type +
+        (1 | subid),
+      data = dat,
+      REML = TRUE
+    )
+    broom.mixed::tidy(mod, effects = "fixed") %>%
+      filter(term == "trial_typeIDS") %>%
+      select(estimate, std.error) %>%
+      rename(beta_hat = estimate, se = std.error)
+  }) %>%
+  ungroup() %>%
+  mutate(
+    conf.low = beta_hat - 1.96 * se,
+    conf.high = beta_hat + 1.96 * se
+  ) %>% 
+  rename(estimate = beta_hat, 
+         std.error = se)
+
+q1_df <- q1_model %>% broom.mixed::tidy(conf.int = TRUE) 
+
+by_lab_estimates %>% 
+  separate(lab, into = c("researcher", "lab"), sep = " - ") %>% 
+  mutate(type = "by_lab") %>% 
+  bind_rows(
+    q1_df %>% filter(term == "trial_typeIDS") %>% mutate(type = "meta") %>% 
+      mutate(lab = "Meta-analytic Estimate")) %>% 
+  
+   mutate(
+    lab = factor(
+      lab,
+      levels = rev(c(
+        "Meta-analytic Estimate",
+        # order remaining labs by descending effect size
+        by_lab_estimates %>%
+          separate(lab, into = c("researcher", "lab"), sep = " - ") %>% 
+          arrange(desc(estimate)) %>%
+          pull(lab)
+      )
+    ))
+  ) %>%
+  mutate(
+    pct = (exp(estimate) - 1) * 100,
+    pct_low = (exp(conf.low) - 1) * 100,
+    pct_high = (exp(conf.high) - 1) * 100,
+    pct_CI = sprintf("%.1f%% [%.1f%%, %.1f%%]", pct, pct_low, pct_high)
+  ) %>% 
+  ggplot(aes(
+    x = lab,
+    y = pct,
+    ymin = pct_low,
+    ymax = pct_high,
+    color = type
+  )) +
+  geom_pointrange() +
+  scale_color_manual(values = c("by_lab" = "black", "meta" = "red")) +
+  coord_flip() +
+  ggthemes::theme_few() + 
+  geom_hline(yintercept = 0, linetype = "dashed", color = "grey")  +
+  theme(legend.position = "none") + 
+  xlab("Country") + 
+  ylab("Percent increase in looking time")
+  
+  
+  
+ 
+
+```
+
+# 5. Map 
+
+```{r fig.width=8, figh.height = 8}
+
+library(maps)
+# your sites
+
+
+sites <- tribble(
+  ~lab,                       ~country,       ~city,       ~lat,      ~lon,
+  "Omane - Ghana",            "Ghana",        "Accra",      5.5587,    -0.2001,
+  "Ziedler - Kenya",          "Kenya",        "Nanyuki",    0.0071,   37.0730,
+  "Lamba - Malawi",           "Malawi",       "Zomba",    -15.3753,   35.3357,
+  "Bentu - Nigeria",          "Nigeria",      "Jos",        9.8969,    8.8582,
+  "Mushimiyimana - Rwanda",   "Rwanda",       "Kigali",    -1.9449,   30.0538,
+  "Diop - Senegal",           "Senegal",      "Dakar",     14.7186,  -17.4675,
+  "Ndhambi - South Africa",   "South Africa", "Pretoria",  -25.7585,   28.1890,
+  "Kizito - Uganda",          "Uganda",       "Kampala",    0.3130,   32.5888
+) %>% 
+  mutate(label = paste0(city, ", ", country))
+
+world <- map_data("world")
+
+# crop roughly to Africa
+africa <- world %>%
+  filter(long >= -20, long <= 55, lat >= -35, lat <= 38)
+
+ggplot() +
+  geom_polygon(data = africa, aes(long, lat, group = group),
+               fill = "grey95", color = "grey60", linewidth = 0.2) +
+  geom_point(data = sites, aes(lon, lat), size = 2.2) +
+  geom_label_repel(data = sites, aes(lon, lat, label = label), size = 3, label.size = 0.2) +
+  coord_quickmap(xlim = c(-20, 55), ylim = c(-35, 38), expand = FALSE) +
+  theme_classic() +
+  labs(x = NULL, y = NULL) + 
+  theme(
+    axis.line = element_blank(),
+    axis.text = element_blank(),
+    axis.ticks = element_blank(),
+    axis.title = element_blank(),
+    panel.grid = element_blank()
+  )
+```
+
+# 6. Age histogram
+
+
+```{r}
+d <- read_csv(here("processed_data/joint_data.csv")) %>% 
+  filter(looking_time_s >= 2) %>% 
+  mutate(trial_num_centered = scale(trial_num, scale = FALSE)) %>% 
+  mutate(
+    lab_clean = str_extract(lab, "(?<=-\\s).*")
+  )
+
+d %>% 
+  ggplot(aes(x = age_months)) + 
+  geom_histogram() + 
+  facet_wrap(~lab) + 
+  theme_classic() + 
+  xlab("Age (months)") + 
+  ylab("Count")
 ```
 

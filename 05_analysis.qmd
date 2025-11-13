@@ -119,7 +119,7 @@ compare_data <- bind_rows(mb1_data_filtered, mb1b_data_filtered) %>%
   )
 
 compare_d <- d %>% 
-  mutate(infant_ID = "mb1_africa") %>% 
+  select(-language_backgrond) %>% 
  bind_rows(compare_data %>% mutate(infant_ID = "mb1_others")) %>% 
   mutate(
     trial_num_centered = trial_num - 8.5,
@@ -156,11 +156,28 @@ q3_m2 <- lmer(log(looking_time_s) ~
        trial_type + trial_num_centered + age_months_scaled + infant_ID + language_background + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + 
        age_months_scaled * trial_type + trial_type * infant_ID + trial_num_centered * infant_ID +  trial_type * language_background + 
        (1 | subid) +(1 | lab), 
+     data = compare_d %>% mutate(language_background = fct_relevel(language_background, "bilingual")))
+
+q3_m2 %>% write_rds(here("processed_data/cached_data/q3_model.Rds"))
+
+
+q3_m2_comparison <- lmer(log(looking_time_s) ~ 
+       trial_type + trial_num_centered + age_months_scaled + infant_ID + language_background + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + age_months_scaled * trial_type + trial_type * infant_ID + trial_num_centered * infant_ID +  trial_type * language_background + 
+       (1 | subid) +(1 | lab), 
+     data = compare_d %>% mutate(language_background = fct_relevel(language_background, "bilingual")) %>% 
+       mutate(infant_ID = if_else(infant_ID == 1, 0, 1)))
+
+q3_m2_language_flip <- lmer(log(looking_time_s) ~ 
+       trial_type + trial_num_centered + age_months_scaled + infant_ID + language_background + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + 
+       age_months_scaled * trial_type + trial_type * infant_ID + trial_num_centered * infant_ID +  trial_type * language_background + 
+       (1 | subid) +(1 | lab), 
      data = compare_d %>% mutate(language_background = fct_relevel(language_background, "monolingual")))
 
-q2_m2 %>% write_rds(here("processed_data/cached_data/q3_model.Rds"))
+compare_d %>% 
+  distinct(subid, language_background) %>% 
+  group_by(language_background) %>% count()
 
-
+q3_m2_language_flip %>% broom.mixed::tidy()
 ```
 
 ```{r}
@@ -314,6 +331,50 @@ intercept_mod <- metafor::rma(d_z ~ 1,
 intercept_mod
                         
 
+```
+
+#### 2.4.1.1 Log diff based:
+
+```{r}
+
+# Ndhambi - South Africa: most participants have the same stimuli played twice  
+
+d_var_calc <- function(n, d) {
+  return((2/n) + (d ^ 2 / (4 * n)))
+}
+
+
+log_diffs <- d %>% 
+  filter(lab != "Ndhambi - South Africa") %>% 
+  bind_rows(usable_sa_data) %>% 
+  mutate(stimulus = toupper(stimulus)) %>% 
+  mutate(stimulus = if_else(stimulus == "ISD1", "IDS1", stimulus), 
+    type = str_extract(stimulus, "IDS|ADS"),
+    number = str_extract(stimulus, "\\d+")
+  ) %>% 
+  select(lab, subid, number, type, looking_time_s) %>%
+  pivot_wider(
+    names_from = type,
+    values_from = looking_time_s
+  ) %>% 
+  mutate(diff = log(IDS) - log(ADS))
+
+
+
+ds_zt <- log_diffs %>%
+  group_by(lab, subid) %>%
+  summarise(d = mean(diff, na.rm = TRUE)) %>%
+  summarise(d_z = mean(d, na.rm = TRUE) / sd(d, na.rm = TRUE), 
+            n = length(unique(subid)), 
+            d_z_var = d_var_calc(n, d_z)) %>%
+  filter(n >= 10) %>%
+  filter(!is.na(d_z)) # CHECK THIS 
+
+intercept_mod <- metafor::rma(d_z ~ 1, 
+                              vi = d_z_var, slab = lab, data = ds_zt, 
+                              method = "REML") 
+
+intercept_mod
 ```
 
 ### 2.4.2 Plotting
