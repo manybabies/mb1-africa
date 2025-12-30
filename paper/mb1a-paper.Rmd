@@ -146,7 +146,7 @@ figurelist        : no
 tablelist         : no
 footnotelist      : no
 lineno            : yes
-mask              : no
+mask              : yes
 
 class             : "man"
 
@@ -171,6 +171,20 @@ header-includes:
   - \setcounter{dbltopnumber}{9}
   - \PassOptionsToPackage{english}{babel}
   - \usepackage{babel}
+  - |
+    \makeatletter
+    \preto{\maketitle}{
+      \thispagestyle{empty}
+      \section*{Research Highlights}
+      \begin{itemize}
+        \item This study demonstrates a reliable infant-directed speech preference among African infants aged 3–15 months using a large-scale, multisite experimental design.
+        \item Our findings showed no significant difference in IDS preference magnitude between African infants and method-matched samples from prior North American and European MB1 studies.
+        \item Our study provides evidence for the cross-cultural generalizability of IDS preference while identifying practical challenges of conducting international multisite developmental research.
+      \end{itemize}
+      \newpage
+      \setcounter{page}{1}
+    }
+    \makeatother
   
 
   

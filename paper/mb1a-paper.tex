@@ -3,7 +3,7 @@
 \PassOptionsToPackage{hyphens}{url}
 %
 \documentclass[
-  ,man,floatsintext]{apa6}
+  ,man,mask,floatsintext]{apa6}
 \usepackage{amsmath,amssymb}
 \usepackage{iftex}
 \ifPDFTeX
@@ -176,6 +176,20 @@
 \setcounter{dbltopnumber}{9}
 \PassOptionsToPackage{english}{babel}
 \usepackage{babel}
+\makeatletter
+\preto{\maketitle}{
+  \thispagestyle{empty}
+  \section*{Research Highlights}
+  \begin{itemize}
+    \item This study demonstrates a reliable infant-directed speech preference among African infants aged 3–15 months using a large-scale, multisite experimental design.
+    \item Our findings showed no significant difference in IDS preference magnitude between African infants and method-matched samples from prior North American and European MB1 studies.
+    \item Our study provides evidence for the cross-cultural generalizability of IDS preference while identifying practical challenges of conducting international multisite developmental research.
+  \end{itemize}
+  \newpage
+  \setcounter{page}{1}
+}
+\makeatother
+
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -184,7 +198,6 @@
 \urlstyle{same}
 \hypersetup{
   pdftitle={Exploring variation in infants' preference for infant-directed speech: Evidence from a multi-site study in Africa},
-  pdfauthor={Angeline Sin Mei Tsui1, Alexandra Carstensen2, George Kachergis2, Anjie Cao1, Amina Abubakar3, Mulat Asnake4, Oumar Barry5, Dana M. Basnight-Brown6, Dangkat Bentu7, Christina Bergmann8, Evans Binan Dami7, Natalie Boll-Avetisyan9, Marguerite de Jongh10, Yatma Diop11, Reginald Akuoko Duah12, Esther Herrmann13, Chaning Jang14, Simon Kizito15, Tilinao Lamba16, Limbika Maliwichi-Senganimalunje16, Joyce Marangu3, Maya Mathur1, Catherine V. Mbagaya17, Demeke Mekonnen Mengistie18, Carmen Milton10, Febronie Mushimiyimana19, Mikateko Ndhambi10, Irene Ngina14, Eunice Njoroge3, Paul Odhiambo Oburu17, Asana Okocha20, Paul Okyere Omane9, Anisha Singh14, Andrew S. Ssemata15, Juliette Unyuzumutima19, Henriette Zeidler21, Casey Lew-Williams20, \& Michael C. Frank1},
   pdflang={en-EN},
   pdfkeywords={infant-directed speech; reproducibility; Africa; infants; generalizability},
   hidelinks,
