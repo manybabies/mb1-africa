@@ -146,7 +146,7 @@ figurelist        : no
 tablelist         : no
 footnotelist      : no
 lineno            : yes
-mask              : yes
+mask              : no
 
 class             : "man"
 
