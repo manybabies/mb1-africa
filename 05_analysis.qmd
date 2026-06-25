@@ -155,8 +155,10 @@ compare_d <- d %>%
 q3_m2 <- lmer(log(looking_time_s) ~ 
        trial_type + trial_num_centered + age_months_scaled + infant_ID + language_background + trial_type * trial_num_centered + age_months_scaled * trial_num_centered + 
        age_months_scaled * trial_type + trial_type * infant_ID + trial_num_centered * infant_ID +  trial_type * language_background + 
-       (1 | subid) +(1 | lab), 
-     data = compare_d %>% mutate(language_background = fct_relevel(language_background, "bilingual")))
+       (1 | subid) +(1 | lab),
+     # monolingual is the baseline so the trial_type main effect reflects the IDS
+     # preference for the (largest, standard) monolingual group rather than the small bilingual subgroup
+     data = compare_d %>% mutate(language_background = fct_relevel(language_background, "monolingual")))
 
 q3_m2 %>% write_rds(here("processed_data/cached_data/q3_model.Rds"))
 
@@ -218,9 +220,9 @@ No information exists for any of the dataset
 
 SES will be measured by mothers' formal education (number of years), and the MacArthur Scale of Subjective Social Status (MacSSS). We will enter both mothers' formal education and the MacSSS as two separate SES variables in the regression model, after checking the assumption about the collinearity between variables. We note that SES is likely to be positively correlated with whether the family lives in an urban area. However, we propose that our measure of SES most likely can provide more information about the demographic backgrounds of the families in addition to the binary measure of whether the family lives in an urban or rural setting. Thus, this analysis may be more fine-grained, and could allow us to detect differences in infants' IDS preference across different demographic contexts.
 
--   mom assumed to be primary + female
--   dropping MSS
--   entering only primary caregiver female kids
+- mom assumed to be primary + female
+- dropping MSS
+- entering only primary caregiver female kids
 
 ```{r}
 ses_d <- d %>% 

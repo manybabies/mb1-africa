@@ -436,7 +436,8 @@ Typically, participants were only included in the analysis if they met all of th
 ### Full-term
 
 ```{r}
-total_tested_n <- sum(tested_demog$tested_participant_n)
+# exclude an unlabeled aggregation-artifact row (no lab) so the total tested = 274
+total_tested_n <- sum(tested_demog$tested_participant_n[!is.na(tested_demog$lab)])
 total_preterm_n <- sum(tested_demog$Preterm, na.rm = TRUE)
 proportion_preterm <- round(total_preterm_n / total_tested_n, 4)
 ```
@@ -462,7 +463,7 @@ Following MB1 and MB1B, we adopted a relatively liberal inclusion criterion for 
 ```{r}
 unusable_participants <- unfiltered_d %>% filter(lab %in% c("Diop - Senegal", "Bentu - Nigeria")) %>% distinct(subid) %>% count() %>% pull()
 proportion_excluded_trials <- round(nrow(excluded_trials_d) / nrow(unfiltered_d),4)
-proportion_excluded_participants <- round(unusable_participants / nrow(unfiltered_d %>% distinct(subid)),4)
+proportion_excluded_participants <- round(unusable_participants / total_tested_n, 4)
 ```
 
 Overall, at the trial level, `r nrow(excluded_trials_d)` trials (`r proportion_excluded_trials * 100`% of all trials) were excluded; relatively few trials were marked by labs as having errors. Due to experimental setup errors, data from two sites were unusable, leading to the exclusion of `r unusable_participants` infants (`r proportion_excluded_participants * 100`% of all tested participants). No additional test sessions were excluded.
@@ -516,16 +517,17 @@ sd_sample_size <- round(joint_data %>% distinct(lab,subid) %>% group_by(lab) %>%
 min_sample_size <- round(joint_data %>% distinct(lab,subid) %>% group_by(lab) %>% count() %>% ungroup() %>%  summarise(min_n = min(n)) %>% pull(),2)
 max_sample_size <- round(joint_data %>% distinct(lab,subid) %>% group_by(lab) %>% count() %>% ungroup() %>%  summarise(max_n = max(n)) %>% pull(),2)
 
-mean_age_days <- round(joint_data %>% summarise(mean_age = mean(age_months * 30.4)) %>% pull(), 2)
-min_age_days <- round(joint_data %>% summarise(min_age = min(age_months * 30.4)) %>% pull(), 2)
-max_age_days <- round(joint_data %>% summarise(max_age = max(age_months * 30.4)) %>% pull(), 2)
+# mean age computed per infant (one row per subject), reported in months to match Table 2
+mean_age_months <- round(joint_data %>% distinct(lab, subid, age_months) %>% summarise(mean_age = mean(age_months)) %>% pull(), 1)
+min_age_months <- round(joint_data %>% summarise(min_age = min(age_months)) %>% pull(), 1)
+max_age_months <- round(joint_data %>% summarise(max_age = max(age_months)) %>% pull(), 1)
 
 younger_than_3 <- nrow(joint_data %>% filter(age_months < 3) %>% distinct(subid))
 older_than_15 <- nrow(joint_data %>% filter(age_months > 15) %>% distinct(subid))
 ```
 
 
-Our final sample included `r nrow(joint_data %>% distinct(lab,subid))` infants (see Table 2 for more specific sample demographic information) from `r nrow(joint_data %>% distinct(lab))` laboratories (mean sample size per laboratory: `r mean_sample_size`, SD: `r sd_sample_size`, range: `r min_sample_size` – `r max_sample_size`). The mean age of infants included in the study was `r mean_age_days` days (range: `r min_age_days` – `r max_age_days`). Similar to MB1, each laboratory was asked to collect data spanning the two target age ranges  (3;0 – 9;0 and 9;1 – 15;0 months); however, in practice, many laboratories recruited participants outside the intended windows (younger than 3-month-old: *N* = `r younger_than_3`; older than 15-month-old: *N* = `r older_than_15`). We did not exclude these infants from our analyses. See Figure 2 for a distribution of the age of the included participants in each site. An additional `r unusable_participants` infants were tested but excluded (see the full details on exclusions above). 
+Our final sample included `r nrow(joint_data %>% distinct(lab,subid))` infants (see Table 2 for more specific sample demographic information) from `r nrow(joint_data %>% distinct(lab))` laboratories (mean sample size per laboratory: `r mean_sample_size`, SD: `r sd_sample_size`, range: `r min_sample_size` – `r max_sample_size`). The mean age of infants included in the study was `r sprintf("%.1f", mean_age_months)` months (range: `r sprintf("%.1f", min_age_months)` – `r sprintf("%.1f", max_age_months)`). Similar to MB1, each laboratory was asked to collect data spanning the two target age ranges  (3;0 – 9;0 and 9;1 – 15;0 months); however, in practice, many laboratories recruited participants outside the intended windows (younger than 3-month-old: *N* = `r younger_than_3`; older than 15-month-old: *N* = `r older_than_15`). We did not exclude these infants from our analyses. See Figure 2 for a distribution of the age of the included participants in each site. An additional `r unusable_participants` infants were tested but excluded (see the full details on exclusions above). 
 	
 As mentioned in the Introduction, multilingualism is common in Africa. Thus, many infants in the final sample are likely to have been exposed to more than one language. To assess infants’ language backgrounds, each laboratory completed a family questionnaire with the participating parents (see materials in linked repository: https://osf.io/jgr79/?view_only=5ee43f58762742daaa2caa21b85e3780). Our family language background questionnaire was created based on the family language background questionnaire in the MB1 and MB1B studies, and included questions asking parents to estimate the number of hours that their infants heard different languages. We calculated the percentage of time that infants were exposed to a given language as the number of hours they hear that language (per day) divided by the total number of hours the infant hears any language each day. This method is simpler than the traditional interview method used in assessing bilingual infants’ language exposure (Byers-Heinlein et al., 2019), but in order to minimize the burden on participating laboratories and families, we decided to use a short questionnaire method to assess infants’ language backgrounds. 
 
@@ -781,33 +783,33 @@ q3_df <- q3_model %>% broom.mixed::tidy(conf.int = TRUE) %>%
 
 \begin{table}
 
-\caption{Model estimates for Research Questions 3. The baseline for trial type is adult-directed speech (ADS), trial number is mean-centered, age is measured in months and standardized, the baseline for infant type is infants from MB1/MB1B (non-NAE sample), and the baseline for language background is bilingual infants.}
+\caption{Model estimates for Research Questions 3. The baseline for trial type is adult-directed speech (ADS), trial number is mean-centered, age is measured in months and standardized, the baseline for infant type is infants from MB1/MB1B (non-NAE sample), and the baseline for language background is monolingual infants.}
 \centering
 \begin{tabular}[t]{lcccc}
 \toprule
 Term & Estimate [95\% CI] & SE & t & p\\
 \midrule
-(Intercept) & 1.76 [1.62, 1.91] & 0.07 & 24.16 & < .01\\
-Trial Type & 0.02 [-0.04, 0.07] & 0.03 & 0.66 & 0.51\\
-Trial Number & -0.05 [-0.05, -0.05] & 0.00 & -30.82 & < .01\\
-Age & -0.12 [-0.15, -0.09] & 0.02 & -8.38 & < .01\\
-Infant Type & 0.13 [-0.09, 0.36] & 0.12 & 1.32 & 0.21\\
+(Intercept) & 1.74 [1.62, 1.87] & 0.06 & 29.57 & < .01\\
+Trial Type & 0.06 [0.04, 0.09] & 0.01 & 5.13 & < .01\\
+Trial Number & -0.05 [-0.05, -0.05] & 0.00 & -31.08 & < .01\\
+Age & -0.12 [-0.15, -0.09] & 0.01 & -8.26 & < .01\\
+Infant Type & 0.13 [-0.09, 0.36] & 0.11 & 1.26 & 0.23\\
 \addlinespace
-Language Background (Monolingual) & -0.02 [-0.12, 0.07] & 0.05 & -0.48 & 0.63\\
-Language Background (Other) & 0.00 [-0.14, 0.14] & 0.07 & 0.24 & 0.81\\
-Trial Type * Trial Number & 0.00 [-0.01, 0] & 0.00 & -0.81 & 0.42\\
-Trial Number * Age & 0.00 [-0.01, 0] & 0.00 & -4.39 & < .01\\
-Trial Type * Age & 0.02 [0, 0.04] & 0.01 & 1.86 & 0.06\\
+Language Background (Bilingual) & 0.02 [-0.07, 0.12] & 0.05 & 0.42 & 0.68\\
+Language Background (Other) & 0.02 [-0.10, 0.14] & 0.06 & 0.35 & 0.73\\
+Trial Type * Trial Number & 0.00 [-0.01, 0.00] & 0.00 & -0.79 & 0.43\\
+Trial Number * Age & 0.00 [-0.01, 0.00] & 0.00 & -3.79 & < .01\\
+Trial Type * Age & 0.02 [0.00, 0.04] & 0.01 & 1.98 & 0.05\\
 \addlinespace
-Trial Type * Infant Type & 0.00 [-0.06, 0.06] & 0.03 & -0.26 & 0.80\\
-Trial Number * Infant Type & 0.02 [0.01, 0.03] & 0.00 & 4.96 & <.01\\
-Trial Type * Language Background (Monolingual) & 0.04 [-0.02, 0.11] & 0.03 & 1.42 & 0.16\\
-Trial Type * Language Background (Other) & 0.01 [-0.08, 0.10] & 0.05 & 0.07 & 0.95\\
+Trial Type * Infant Type & 0.00 [-0.06, 0.06] & 0.03 & 0.03 & 0.97\\
+Trial Number * Infant Type & 0.02 [0.01, 0.03] & 0.00 & 6.64 & < .01\\
+Trial Type * Language Background (Bilingual) & -0.04 [-0.11, 0.02] & 0.03 & -1.46 & 0.14\\
+Trial Type * Language Background (Other) & -0.04 [-0.11, 0.04] & 0.04 & -0.94 & 0.35\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The model revealed no significant difference in IDS preference between infants tested in our sample and those tested in MB1/MB1B, as indicated by the non-significant interaction between trial type and infant type (Table 4; *$\beta$* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$estimate` [`r filter(q3_df, term == "trial_typeIDS:infant_ID")$conf.low`, `r filter(q3_df, term == "trial_typeIDS:infant_ID")$conf.high`]; *SE* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$p.value`). However, there was a significant main effect of trial type (*$\beta$* = `r filter(q3_df, term == "trial_typeIDS")$estimate` [`r filter(q3_df, term == "trial_typeIDS")$conf.low`, `r filter(q3_df, term == "trial_typeIDS")$conf.high`]; *SE* = `r filter(q3_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS")$p.value`), suggesting that infants showed a reliable preference to IDS over ADS.  
+The model revealed no significant difference in IDS preference between infants tested in our sample and those tested in MB1/MB1B, as indicated by the non-significant interaction between trial type and infant type (Table 4; *$\beta$* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$estimate` [`r filter(q3_df, term == "trial_typeIDS:infant_ID")$conf.low`, `r filter(q3_df, term == "trial_typeIDS:infant_ID")$conf.high`]; *SE* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$statistic`; *p* = `r filter(q3_df, term == "trial_typeIDS:infant_ID")$p.value`). However, the simple effect of trial type was significant for the monolingual reference group (*$\beta$* = `r filter(q3_df, term == "trial_typeIDS")$estimate` [`r filter(q3_df, term == "trial_typeIDS")$conf.low`, `r filter(q3_df, term == "trial_typeIDS")$conf.high`]; *SE* = `r filter(q3_df, term == "trial_typeIDS")$std.error`; *t* = `r filter(q3_df, term == "trial_typeIDS")$statistic`; *p* < .001), and the non-significant trial type × infant type interaction indicates a comparable preference in our African sample.  
 
 Consistent with expectations, looking times decreased over the course of the session (*$\beta$* = `r filter(q3_df, term == "trial_num_centered")$estimate` [`r filter(q3_df, term == "trial_num_centered")$conf.low`, `r filter(q3_df, term == "trial_num_centered")$conf.high`]; *SE* = `r filter(q3_df, term == "trial_num_centered")$std.error`; *t* = `r filter(q3_df, term == "trial_num_centered")$statistic`; *p* < 0.01), and older infants looked for less time overall (*$\beta$* = `r filter(q3_df, term == "age_months_scaled")$estimate` [`r filter(q3_df, term == "age_months_scaled")$conf.low`, `r filter(q3_df, term == "age_months_scaled")$conf.high`]; *SE* = `r filter(q3_df, term == "age_months_scaled")$std.error`; *t* = `r filter(q3_df, term == "age_months_scaled")$statistic`; p < .001). We also found that older infants habituated more quickly, as indicated by a significant negative interaction between age and trial number (*$\beta$* = `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$estimate` [`r filter(q3_df, term == "trial_num_centered:age_months_scaled")$conf.low`, `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$conf.high`]; *SE* = `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$std.error`; *t* = `r filter(q3_df, term == "trial_num_centered:age_months_scaled")$statistic`; p < .001). The interaction between trial number and infant type was also significant (*$\beta$* = `r filter(q3_df, term == "trial_num_centered:infant_ID")$estimate` [`r filter(q3_df, term == "trial_num_centered:infant_ID")$conf.low`, `r filter(q3_df, term == "trial_num_centered:infant_ID")$conf.high`]; *SE* = `r filter(q3_df, term == "trial_num_centered:infant_ID")$std.error`; *t* = `r filter(q3_df, term == "trial_num_centered:infant_ID")$statistic`; p < .001), indicating that looking times declined more slowly across trials for infants in our sample compared to those in MB1/MB1B. No other interactions reached significance.
 

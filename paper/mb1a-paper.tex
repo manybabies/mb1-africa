@@ -1,10 +1,12 @@
 % Options for packages loaded elsewhere
 \PassOptionsToPackage{unicode}{hyperref}
 \PassOptionsToPackage{hyphens}{url}
-%
 \documentclass[
+  english,
   ,man,floatsintext]{apa6}
+\usepackage{xcolor}
 \usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -35,65 +37,91 @@
 }{% if KOMA class
   \KOMAoptions{parskip=half}}
 \makeatother
-\usepackage{xcolor}
-\usepackage{graphicx}
-\makeatletter
-\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
-\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
-\makeatother
-% Scale images if necessary, so that they will not overflow the page
-% margins by default, and it is still possible to overwrite the defaults
-% using explicit options in \includegraphics[width, height, ...]{}
-\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-% Set default figure placement to htbp
-\makeatletter
-\def\fps@figure{htbp}
-\makeatother
-\setlength{\emergencystretch}{3em} % prevent overfull lines
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
-\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 % Make \paragraph and \subparagraph free-standing
+\makeatletter
 \ifx\paragraph\undefined\else
   \let\oldparagraph\paragraph
-  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
 \fi
 \ifx\subparagraph\undefined\else
   \let\oldsubparagraph\subparagraph
-  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
 \fi
+\makeatother
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
 \newlength{\cslhangindent}
 \setlength{\cslhangindent}{1.5em}
 \newlength{\csllabelwidth}
 \setlength{\csllabelwidth}{3em}
-\newlength{\cslentryspacingunit} % times entry-spacing
-\setlength{\cslentryspacingunit}{\parskip}
-\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
- {% don't indent paragraphs
-  \setlength{\parindent}{0pt}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
   % turn on hanging indent if param 1 is 1
   \ifodd #1
-  \let\oldpar\par
-  \def\par{\hangindent=\cslhangindent\oldpar}
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
   \fi
   % set entry spacing
-  \setlength{\parskip}{#2\cslentryspacingunit}
- }%
- {}
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
 \usepackage{calc}
-\newcommand{\CSLBlock}[1]{#1\hfill\break}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
 \newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 \ifLuaTeX
 \usepackage[bidi=basic]{babel}
 \else
 \usepackage[bidi=default]{babel}
 \fi
-\babelprovide[main,import]{english}
 % get rid of language-specific shorthands (see #6817):
 \let\LanguageShortHands\languageshorthands
 \def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage[english]{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 % Manuscript styling
 \usepackage{upgreek}
 \captionsetup{font=singlespacing,justification=justified}
@@ -154,10 +182,11 @@
 \makeatletter
 \xapptocmd\appendix
   {\xapptocmd\section
-    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi: #1}}
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
+\makeatother
 \keywords{infant-directed speech; reproducibility; Africa; infants; generalizability\newline\indent Word count: 9412}
 \usepackage{lineno}
 
@@ -190,10 +219,7 @@
 }
 \makeatother
 
-\ifLuaTeX
-  \usepackage{selnolig}  % disable illegal ligatures
-\fi
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\usepackage{bookmark}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
@@ -257,13 +283,11 @@ Since multilingualism is common in Africa (e.g., Posel \& Zeller, 2016; Rosenhou
 
 In sum, there are three primary (confirmatory) goals for the current study. First, we aim to measure infants' preference for North-American English IDS across a range of cultural and linguistic contexts in Africa. Second, we seek to measure developmental changes in this preference. As we found that older infants show stronger IDS preferences than younger infants in both MB1 and MB1B, we evaluate whether participants in our study show the same developmental increases in IDS preference. Finally, we investigate whether there are differences in IDS preferences between infants in Africa in our study and those in Europe and Asia in MB1 and MB1B. As an exploratory aim, we also examine relationships between parents' demographics, their responses to survey items regarding subjective use of IDS, and their child's IDS preference.
 
-\hypertarget{methods}{%
-\section{Methods}\label{methods}}
+\section{Methods}\label{methods}
 
 All deviations from the preregistration in the Stage 1 Registered Report are given in Appendix A.
 
-\hypertarget{participation-details}{%
-\subsection{Participation Details}\label{participation-details}}
+\subsection{Participation Details}\label{participation-details}
 
 \begin{table}[!t]
 \caption{\textit{Test locations, participant ages, and languages by country.}}
@@ -285,24 +309,21 @@ Uganda & Makerere University, Kampala & 3--15 months & Luganda, English \\
 \end{tabularx}
 \end{table}
 
-\hypertarget{time-frame}{%
-\subsubsection{Time-frame}\label{time-frame}}
+\subsubsection{Time-frame}\label{time-frame}
 
 \begin{figure}
 \centering
-\includegraphics{mb1a-paper_files/figure-latex/unnamed-chunk-1-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{mb1a-paper_files/figure-latex/unnamed-chunk-1-1.pdf}}
 \caption{\label{fig:unnamed-chunk-1}Map shows the location of the eight participating labs.}
 \end{figure}
 
 On July 23, 2018, we issued an open call for participation by African researchers via listservs and social/professional networks. Prior to submission, 11 labs committed to data collection, but some labs were unable to collect data, in part due to changing professional obligations and delays due to Covid-19 closures. We received data from 8 labs (See Table 1 for target sample characteristics of each site; Figure 1 for the location of the lab). Our participating laboratories would recruit infants living in eastern (e.g., Kenya), western (e.g., Senegal) and southern (e.g., South Africa) regions of Africa. Because many of our participating laboratories are located in East Africa, thus East African participants are disproportionately represented in our sample. Data collection began September 21, 2021. We initially anticipated finishing data collection a year later, but labs encountered a wide variety of unforeseen circumstances due to the COVID-19 pandemic, challenges with receiving IRB approval, and equipment and staffing issues. Thus, data collection was extended through 2023. Unfortunately, due to experimental setup issues, data from two labs was not analyzable, leading to a final sample of 6 datasets. In both excluded datasets, looking times were not recorded: this was due to a software bug in one lab and experimenter error in the other.
 
-\hypertarget{age-distribution}{%
-\subsubsection{Age distribution}\label{age-distribution}}
+\subsubsection{Age distribution}\label{age-distribution}
 
 Each participating laboratory was asked to recruit participants in two age bins: 3;0 -- 9;0 and 9;1 -- 15;0 months. Similar to MB1, each laboratory was asked to collect data spanning the age bin window, but aiming for the mean of the age bin.
 
-\hypertarget{sample-size-determination}{%
-\subsubsection{Sample size determination}\label{sample-size-determination}}
+\subsubsection{Sample size determination}\label{sample-size-determination}
 
 We estimated the effect size of infants' IDS preference on the basis of the data from MB1. We used data from laboratories in MB1 that used the single-screen central visual-fixation preference procedure (which we also use here: see below) and that tested infants with no exposure to North American English (similar to our population of interest). In a mixed-effects model, we examined the effect of test trial type (IDS vs.~ADS) on infants' looking time (log-transformed seconds), while controlling for normally-distributed random intercepts by infant and laboratory. The intercept, representing infants' average log-looking time across ADS trials, was 1.91; the variances of the random intercepts were 0.074 and 0.022 at the infant and laboratory levels respectively. The fixed-effect coefficient representing infants' preference for IDS over ADS was 0.080 and the residual variance was 0.33.
 
@@ -310,37 +331,31 @@ In the first power analysis, we simulated datasets based on the above coefficien
 
 Given that MB1 reported around 15\% data excluded in the final analysis, we expect the exclusion rate for our project is around 15\% to 20\%. Thus, each laboratory agreed to contribute a minimum of 32 infants (16 infants in each age bin), including infants tested but excluded for reasons not related to the demographic and age inclusion criteria (e.g., fussiness). Further, we encouraged each laboratory to contribute additional data beyond that minimum. We propose that our projected sample size of 352 would have sufficient power, as 80\% of this sample size exceeds our targeted final sample size (n = 240) based on the power analysis described above.
 
-\hypertarget{ethics}{%
-\subsubsection{Ethics}\label{ethics}}
+\subsubsection{Ethics}\label{ethics}
 
 All laboratories collected data under their own independent IRB protocol. Videos of individual infant participants during the experiment were recorded and stored at each laboratory. However, these videos were not shared with the central data analysis team. Laboratories were instead asked to only submit de-identified data for central data analyses.
 
-\hypertarget{exclusion-criteria}{%
-\subsection{Exclusion Criteria}\label{exclusion-criteria}}
+\subsection{Exclusion Criteria}\label{exclusion-criteria}
 
 All data collected for the study (i.e., every infant for whom a data file was generated, regardless of how many trials were completed) were uploaded to a central database for data analysis. Every laboratory followed the protocol to report any infants who were tested in this study, including those who were excluded from the analysis. Furthermore, each laboratory followed the protocol to make note of the reasons that infants were excluded from the study. A total number of 274 infants were tested in this study, and 74 infants were excluded from the final analysis.
 
 Typically, participants were only included in the analysis if they met all of the criteria below. However, we allowed parents to choose not to answer some of the questions (e.g., about full-term gestation and developmental disorders) because disclosures might violate cultural norms in some areas of Africa. Thus, participating laboratories may have included infants who did not fully meet the inclusion criteria defined here：
 
-\hypertarget{full-term}{%
-\subsubsection{Full-term}\label{full-term}}
+\subsubsection{Full-term}\label{full-term}
 
 We defined full term as gestation times greater than or equal to 37 weeks. 11 (4.01\%) of infants tested did not meet this criterion, and were excluded from further analysis. To maximize parents' comfort in participating in the experiment, they were given the option of not responding to questions about gestation.
 
-\hypertarget{no-developmental-disorders-or-hearing-loss}{%
-\subsubsection{No developmental disorders or hearing loss}\label{no-developmental-disorders-or-hearing-loss}}
+\subsubsection{No developmental disorders or hearing loss}\label{no-developmental-disorders-or-hearing-loss}
 
 We excluded infants with parent-reported developmental disorders (e.g., chromosomal abnormalities, etc.) or diagnosed hearing impairments. Developmental disorders and delays are stigmatized in some cultures in Africa (e.g., negative attitudes towards children with disorders or delays), therefore some parents may decline to answer the question about children's developmental disorders. In this case, we still tested the infants and included the infants' data in the analysis. This inclusion criterion was chosen to allow us to retain as much data as possible while ensuring our questionnaire accommodates cultural norms. Further, we noted that only 2 participants (i.e.~less than 0.1\%) in MB1 were excluded based on parents' report of developmental disorders. Accordingly, we do not expect that including children whose parents decline to answer this question would lead to an inclusion of large numbers of children with developmental disorders that could potentially skew the results in the study. 4 (1.46\%) of the infants tested did not meet this criterion. (We did not plan exclusions based on self-reported ear infections unless parents reported medically-confirmed hearing loss.)
 
-\hypertarget{trial-level-and-session-level-errors}{%
-\subsubsection{Trial-level and session-level errors}\label{trial-level-and-session-level-errors}}
+\subsubsection{Trial-level and session-level errors}\label{trial-level-and-session-level-errors}
 
 Following MB1 and MB1B, we adopted a relatively liberal inclusion criterion for this study. To be included in the study, a child must have contributed non-zero looking time on at least one pair of test trials (i.e., one trial each of IDS and ADS from a particular stimulus pair). We asked laboratories to identify two different types of errors when uploading their data: trial-level errors and session-level errors. Trial-level exclusions were based on whether we could use infants' data from a particular test trial. For example, if an infant only completed the first six test trials of the experiment, we entered this infant's data from the first six trials and discarded data from all other trials. In this case, laboratories would identify this infant's data from the first to sixth trials as ``no trial errors'' and any trials from the seventh trial onwards would be identified as ``trial errors''. In contrast, session-level errors were errors that occurred when running a particular participant. This type of error is different from the trial-level error exclusions because it indicates that errors occurred which affected an entire session (e.g., failure to save data in the experiment). If a laboratory indicated a session-level error for a particular infant, all data from this infant was excluded from the analysis. In sum, infants who can contribute at least one pair of test trials (i.e., one IDS trial and one ADS trial) would have some data excluded at the trial level whereas infants who cannot contribute one pair of test trials would be excluded at the session level. In general, errors included the following: equipment error (e.g., no sound or visuals on the first pair of trials), experimenter error (e.g., an experimenter was unblinded in setups where infant looking was measured by live button press), or evidence of parent interference or other types of interference (e.g., talking or pointing by parents, construction noise, sibling pounding on door), and infants being uncooperative or fussy (e.g., crying, not willing to do the experiment).
 
-Overall, at the trial level, 18 trials (0.39\% of all trials) were excluded; relatively few trials were marked by labs as having errors. Due to experimental setup errors, data from two sites were unusable, leading to the exclusion of 60 infants (21.58\% of all tested participants). No additional test sessions were excluded.
+Overall, at the trial level, 18 trials (0.39\% of all trials) were excluded; relatively few trials were marked by labs as having errors. Due to experimental setup errors, data from two sites were unusable, leading to the exclusion of 60 infants (21.90\% of all tested participants). No additional test sessions were excluded.
 
-\hypertarget{participants}{%
-\subsection{Participants}\label{participants}}
+\subsection{Participants}\label{participants}
 
 \begin{table}[!t]
 \caption{\textit{Final sample's demographics and language background by country. Mean age in months.}}
@@ -360,25 +375,23 @@ Uganda & 41 & 12.27 (2.17) & F: 21; M: 20 & Unknown \\
 \end{tabularx}
 \end{table}
 
-\hypertarget{final-sample}{%
-\subsubsection{Final sample}\label{final-sample}}
+\subsubsection{Final sample}\label{final-sample}
 
 \begin{figure}
 \centering
-\includegraphics{mb1a-paper_files/figure-latex/unnamed-chunk-5-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{mb1a-paper_files/figure-latex/unnamed-chunk-5-1.pdf}}
 \caption{\label{fig:unnamed-chunk-5}Histograms of the age distribution in each lab. X-axis represents the age in months.}
 \end{figure}
 
-Our final sample included 200 infants (see Table 2 for more specific sample demographic information) from 6 laboratories (mean sample size per laboratory: 33.33, SD: 5.16, range: 27 -- 41). The mean age of infants included in the study was 296.49 days (range: 71 -- 606). Similar to MB1, each laboratory was asked to collect data spanning the two target age ranges (3;0 -- 9;0 and 9;1 -- 15;0 months); however, in practice, many laboratories recruited participants outside the intended windows (younger than 3-month-old: \emph{N} = 4; older than 15-month-old: \emph{N} = 16). We did not exclude these infants from our analyses. See Figure 2 for a distribution of the age of the included participants in each site. An additional 60 infants were tested but excluded (see the full details on exclusions above).
+Our final sample included 200 infants (see Table 2 for more specific sample demographic information) from 6 laboratories (mean sample size per laboratory: 33.33, SD: 5.16, range: 27 -- 41). The mean age of infants included in the study was 10.0 months (range: 2.3 -- 19.9). Similar to MB1, each laboratory was asked to collect data spanning the two target age ranges (3;0 -- 9;0 and 9;1 -- 15;0 months); however, in practice, many laboratories recruited participants outside the intended windows (younger than 3-month-old: \emph{N} = 4; older than 15-month-old: \emph{N} = 16). We did not exclude these infants from our analyses. See Figure 2 for a distribution of the age of the included participants in each site. An additional 60 infants were tested but excluded (see the full details on exclusions above).
 
 As mentioned in the Introduction, multilingualism is common in Africa. Thus, many infants in the final sample are likely to have been exposed to more than one language. To assess infants' language backgrounds, each laboratory completed a family questionnaire with the participating parents (see materials in linked repository: \url{https://osf.io/jgr79/?view_only=5ee43f58762742daaa2caa21b85e3780}). Our family language background questionnaire was created based on the family language background questionnaire in the MB1 and MB1B studies, and included questions asking parents to estimate the number of hours that their infants heard different languages. We calculated the percentage of time that infants were exposed to a given language as the number of hours they hear that language (per day) divided by the total number of hours the infant hears any language each day. This method is simpler than the traditional interview method used in assessing bilingual infants' language exposure (Byers-Heinlein et al., 2019), but in order to minimize the burden on participating laboratories and families, we decided to use a short questionnaire method to assess infants' language backgrounds.
 
 In this paper, we define bilingualism following the criteria established in MB1B (Byers-Heinlein et al., 2021). Monolingual infants are defined as those who have a minimum of 90\% exposure to one language. Simultaneous bilingual infants are defined using the following criteria: (i) infants are regularly exposed to two or more languages beginning within the first month of life; (ii) they have a minimum of 25\% exposure to each of their languages. In other words, bilingual infants are exposed to two languages between 25\% to 75\% of their time. Based on these criteria, it is possible that bilingual infants in our paper were exposed to multiple languages. For example, an infant with 45\% English, 45\% French, and 10\% Spanish exposure would be regarded as a bilingual infant. Infants who did not meet the bilingual or monolingual criteria were designated as ``other language background.'' All infants were included in the main, confirmatory analyses regardless of language background. Language background groupings were treated as a covariate in the analyses.
 
-Based on the above-mentioned criteria, 87 infants were classified as monolingual infants, 13 infants were classified as bilingual infants, and 28 infants were classified as other. The remaining 72 infants' language background was unknown.
+Based on the above-mentioned criteria, 110 infants were classified as monolingual infants, 13 infants were classified as bilingual infants, and 31 infants were classified as other. The remaining 46 infants' language background was unknown.
 
-\hypertarget{materials}{%
-\subsection{Materials}\label{materials}}
+\subsection{Materials}\label{materials}
 
 Visual stimuli. All visual stimuli were the same as those used in the MB1 study. We used a brightly colored static checkerboard as the fixation stimulus, and an animation with shrinking concentric multi-colored circles to ensure infants were attending to the screen at the start of each trial. All of the stimuli can be found at \url{https://osf.io/wh7md/}.
 
@@ -386,8 +399,7 @@ Auditory stimuli. All auditory stimuli were identical to those used in the MB1 s
 
 Volume. Each laboratory measured stimulus volume level using a smartphone app (e.g., the Android app ``Sound Meter''). Labs kept the stimulus volume close to 63 -- 65 dB SPL. According to the protocol, labs would measure and report the background noise level and the stimulus level. However, this information was not collected.
 
-\hypertarget{procedure}{%
-\subsection{Procedure}\label{procedure}}
+\subsection{Procedure}\label{procedure}
 
 Apparatus. Each laboratory used a laptop computer that had the experiment programmed in Habit 2.26 (Oakes, Sperka, DeBolt \& Cantrell, 2019). Moreover, each laboratory used a computer monitor to present the visual stimuli, a speaker for audio stimuli, a webcam for the experimenter to observe and record infants' performance, curtains/room dividers that separated the experimenter from the infant and parent during the experiment, and two sets of headphones: one for the experimenter and one for the parent.
 
@@ -399,24 +411,19 @@ Parents were instructed not to speak to the infant during the experiment and not
 
 After the main looking-time task, the parents answered questions from the experimenter about participant and family demographic information, such as infant sex, date of birth, language exposure, and preterm/full term status. The questionnaire was translated into the appropriate language(s) for participants from each data collection site. See supplementary materials for the English template and adaptations.
 
-\hypertarget{general-lab-practices}{%
-\subsection{General Lab Practices}\label{general-lab-practices}}
+\subsection{General Lab Practices}\label{general-lab-practices}
 
-\hypertarget{training-of-the-experimenters}{%
-\subsubsection{Training of the experimenters}\label{training-of-the-experimenters}}
+\subsubsection{Training of the experimenters}\label{training-of-the-experimenters}
 
 Three of the authors conducted a 2-day training workshop in Nairobi, Kenya on January 28 -- 29, 2020, which was attended by lead researchers from 8 of the participating laboratories. The training session provided an overview of the experimental procedure, advice on setting up the apparatus at the researcher's institution, and training, instructions and guidelines for running the experiment. Further, the first author sent instructions for experiment set-up and the workshop materials to all participating laboratories, and kept close contact with all lead researchers in the participating laboratories to provide technical support for the experiment.
 
-\hypertarget{training-of-research-assistants}{%
-\subsubsection{Training of research assistants}\label{training-of-research-assistants}}
+\subsubsection{Training of research assistants}\label{training-of-research-assistants}
 
 Each laboratory was responsible for maintaining good experimenter training practices. We extended an invitation for the training workshop to one research assistant in each laboratory, so that the researcher primarily responsible for data collection could receive training directly as well. Following the MB1 study, each laboratory reported on which research assistant ran each infant using pseudonyms or numerical codes. After data collection, each laboratory completed a questionnaire regarding their training practices, the experience and academic status of each experimenter, and their basic participant greeting practices.
 
-\hypertarget{results}{%
-\section{Results}\label{results}}
+\section{Results}\label{results}
 
-\hypertarget{confirmatory-analyses}{%
-\subsection{Confirmatory Analyses}\label{confirmatory-analyses}}
+\subsection{Confirmatory Analyses}\label{confirmatory-analyses}
 
 Data processing and analytic framework. Our primary dependent variable of interest was infants' looking time (LT). Infants' looking time was defined as time spent fixating on the computer screen during test trials. We did not count LT when infants looked away from the screen, though the trial was discontinued if an infant looked away and did not look back to the screen within 2 seconds. Following MB1 and MB1B, we log-transformed looking times prior to statistical analysis (Csibra, Hernik, Mascaro, Tatone, \& Lengyel, 2016). We made this decision because we wanted to compare the data of the current study with those in MB1 and MB1B.
 
@@ -455,7 +462,7 @@ As in MB1 and MB1B, the fixed effect estimate for trial type corresponds to the 
 
 \begin{figure}
 \centering
-\includegraphics{mb1a-paper_files/figure-latex/unnamed-chunk-10-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{mb1a-paper_files/figure-latex/unnamed-chunk-10-1.pdf}}
 \caption{\label{fig:unnamed-chunk-10}By lab results. Each dot represents one trial of looking time. X-axis represents the trial number. Y-axis represents the log looking time in seconds. Red represents IDS trials. Blue represents ADS trials.}
 \end{figure}
 
@@ -483,7 +490,7 @@ The model revealed a significant main effect of trial type, such that infants lo
 
 \begin{figure}
 \centering
-\includegraphics{mb1a-paper_files/figure-latex/unnamed-chunk-12-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{mb1a-paper_files/figure-latex/unnamed-chunk-12-1.pdf}}
 \caption{\label{fig:unnamed-chunk-12}Percent increase in infants' looking time to infant-directed speech (IDS) relative to adult-directed speech (ADS) across six African sites and the meta-analytic estimate. While the meta-analytic estimate (red point) reflects the fixed-effect coefficient from the preregistered model, individual site estimates (black points) were obtained by fitting site-specific mixed-effects models predicting looking time using the same specification without the by-site random effect. Percent changes were computed from the fixed effect estimate, and horizontal lines represent 95\% confidence intervals. Positive values indicate longer looking to IDS.}
 \end{figure}
 
@@ -498,38 +505,37 @@ After pruning for non-convergence, our final model specification was: \texttt{lo
 
 \begin{table}
 
-\caption{Model estimates for Research Questions 3. The baseline for trial type is adult-directed speech (ADS), trial number is mean-centered, age is measured in months and standardized, the baseline for infant type is infants from MB1/MB1B (non-NAE sample), and the baseline for language background is bilingual infants.}
+\caption{Model estimates for Research Questions 3. The baseline for trial type is adult-directed speech (ADS), trial number is mean-centered, age is measured in months and standardized, the baseline for infant type is infants from MB1/MB1B (non-NAE sample), and the baseline for language background is monolingual infants.}
 \centering
 \begin{tabular}[t]{lcccc}
 \toprule
 Term & Estimate [95\% CI] & SE & t & p\\
 \midrule
-(Intercept) & 1.76 [1.62, 1.91] & 0.07 & 24.16 & < .01\\
-Trial Type & 0.02 [-0.04, 0.07] & 0.03 & 0.66 & 0.51\\
-Trial Number & -0.05 [-0.05, -0.05] & 0.00 & -30.82 & < .01\\
-Age & -0.12 [-0.15, -0.09] & 0.02 & -8.38 & < .01\\
-Infant Type & 0.13 [-0.09, 0.36] & 0.12 & 1.32 & 0.21\\
+(Intercept) & 1.74 [1.62, 1.87] & 0.06 & 29.57 & < .01\\
+Trial Type & 0.06 [0.04, 0.09] & 0.01 & 5.13 & < .01\\
+Trial Number & -0.05 [-0.05, -0.05] & 0.00 & -31.08 & < .01\\
+Age & -0.12 [-0.15, -0.09] & 0.01 & -8.26 & < .01\\
+Infant Type & 0.13 [-0.09, 0.36] & 0.11 & 1.26 & 0.23\\
 \addlinespace
-Language Background (Monolingual) & -0.02 [-0.12, 0.07] & 0.05 & -0.48 & 0.63\\
-Language Background (Other) & 0.00 [-0.14, 0.14] & 0.07 & 0.24 & 0.81\\
-Trial Type * Trial Number & 0.00 [-0.01, 0] & 0.00 & -0.81 & 0.42\\
-Trial Number * Age & 0.00 [-0.01, 0] & 0.00 & -4.39 & < .01\\
-Trial Type * Age & 0.02 [0, 0.04] & 0.01 & 1.86 & 0.06\\
+Language Background (Bilingual) & 0.02 [-0.07, 0.12] & 0.05 & 0.42 & 0.68\\
+Language Background (Other) & 0.02 [-0.10, 0.14] & 0.06 & 0.35 & 0.73\\
+Trial Type * Trial Number & 0.00 [-0.01, 0.00] & 0.00 & -0.79 & 0.43\\
+Trial Number * Age & 0.00 [-0.01, 0.00] & 0.00 & -3.79 & < .01\\
+Trial Type * Age & 0.02 [0.00, 0.04] & 0.01 & 1.98 & 0.05\\
 \addlinespace
-Trial Type * Infant Type & 0.00 [-0.06, 0.06] & 0.03 & -0.26 & 0.80\\
-Trial Number * Infant Type & 0.02 [0.01, 0.03] & 0.00 & 4.96 & <.01\\
-Trial Type * Language Background (Monolingual) & 0.04 [-0.02, 0.11] & 0.03 & 1.42 & 0.16\\
-Trial Type * Language Background (Other) & 0.01 [-0.08, 0.10] & 0.05 & 0.07 & 0.95\\
+Trial Type * Infant Type & 0.00 [-0.06, 0.06] & 0.03 & 0.03 & 0.97\\
+Trial Number * Infant Type & 0.02 [0.01, 0.03] & 0.00 & 6.64 & < .01\\
+Trial Type * Language Background (Bilingual) & -0.04 [-0.11, 0.02] & 0.03 & -1.46 & 0.14\\
+Trial Type * Language Background (Other) & -0.04 [-0.11, 0.04] & 0.04 & -0.94 & 0.35\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-The model revealed no significant difference in IDS preference between infants tested in our sample and those tested in MB1/MB1B, as indicated by the non-significant interaction between trial type and infant type (Table 4; \emph{\(\beta\)} = 0 {[}-0.06, 0.06{]}; \emph{SE} = 0.03; \emph{t} = 0.03; \emph{p} = 0.97). However, there was a significant main effect of trial type (\emph{\(\beta\)} = 0.02 {[}-0.04, 0.07{]}; \emph{SE} = 0.03; \emph{t} = 0.62; \emph{p} = 0.53), suggesting that infants showed a reliable preference to IDS over ADS.
+The model revealed no significant difference in IDS preference between infants tested in our sample and those tested in MB1/MB1B, as indicated by the non-significant interaction between trial type and infant type (Table 4; \emph{\(\beta\)} = 0 {[}-0.06, 0.06{]}; \emph{SE} = 0.03; \emph{t} = 0.03; \emph{p} = 0.97). However, the simple effect of trial type was significant for the monolingual reference group (\emph{\(\beta\)} = 0.06 {[}0.04, 0.09{]}; \emph{SE} = 0.01; \emph{t} = 5.13; \emph{p} \textless{} .001), and the non-significant trial type × infant type interaction indicates a comparable preference in our African sample.
 
 Consistent with expectations, looking times decreased over the course of the session (\emph{\(\beta\)} = -0.05 {[}-0.05, -0.05{]}; \emph{SE} = 0; \emph{t} = -31.08; \emph{p} \textless{} 0.01), and older infants looked for less time overall (\emph{\(\beta\)} = -0.12 {[}-0.15, -0.09{]}; \emph{SE} = 0.01; \emph{t} = -8.26; p \textless{} .001). We also found that older infants habituated more quickly, as indicated by a significant negative interaction between age and trial number (\emph{\(\beta\)} = 0 {[}-0.01, 0{]}; \emph{SE} = 0; \emph{t} = -3.79; p \textless{} .001). The interaction between trial number and infant type was also significant (\emph{\(\beta\)} = 0.02 {[}0.01, 0.03{]}; \emph{SE} = 0; \emph{t} = 6.64; p \textless{} .001), indicating that looking times declined more slowly across trials for infants in our sample compared to those in MB1/MB1B. No other interactions reached significance.
 
-\hypertarget{exploratory-analyses}{%
-\subsection{Exploratory Analyses}\label{exploratory-analyses}}
+\subsection{Exploratory Analyses}\label{exploratory-analyses}
 
 SES. Previous research in North America (e.g., Hart \& Risley, 1995; Hoff, 2006b; Weisleder \& Fernald, 2013) has shown that the quantity and quality of child-directed speech vary across families with different SES backgrounds. These differences in language input may drive differences in infants' preference for IDS. Thus, we explored how SES affects infants' preference for IDS. SES was measured by primary caregiver's formal education (number of years). We entered primary caregiver's formal education (in years) as a predictor in the regression model specified for RQ1 and RQ2, along with its interaction with trial type.
 
@@ -537,8 +543,7 @@ The interaction between trial type and primary caregiver education was not signi
 
 Meta-analysis. For comparison with ManyBabies 1 and 1B, we computed standardized effect sizes for each lab using looking time, following the method used in ManyBabies Consortium (2020). We also confirmed that the effect size was similar when computing using log-transformed looking time. The resulting meta-analytic plot is shown in Appendix B: Figure B1. The meta-analytic effect size is 0.17{[}-0.03, 0.37{]} (log transformed: 0.14{[}-0.06, 0.34{]}), which is numerically smaller than the .35 {[}0.29, 0.42{]} reported in MB1 (Manybabies Consortium, 2020) and the .26 {[}0.09, 0.43{]} for bilingual infants reported in MB1B (Byers-Heinlein et al., 2021). But these estimates are not directly comparable due to the different method and age distribution in the current project (cf., Zettersten et al., 2024).
 
-\hypertarget{general-discussion}{%
-\section{General Discussion}\label{general-discussion}}
+\section{General Discussion}\label{general-discussion}
 
 Infants' preference for IDS is both an important phenomenon for understanding language learning and a case study for infant methods more broadly. The MB1 study investigated variation in IDS preference across laboratories and across countries and found a small but reliable effect such that infants preferred IDS over ADS. Although there was substantial variation across labs, our analyses suggest that much of it reflected random sampling error, as the moderators we tested accounted for little of the between-lab variance. Nevertheless, the effect was moderated by infant age, language background, and experimental method. Though MB1 and its sister project MB1B investigated children from a wide variety of language backgrounds, no sites from Africa were included in this initial group of participating laboratories. The current study was designed to fill this gap.
 
@@ -564,229 +569,228 @@ In sum, our study offers a case study of ``big team science'' (Coles, Hamlin, Su
 
 \newpage
 
-\hypertarget{references}{%
-\section{References}\label{references}}
+\section{References}\label{references}
 
 \begingroup
 \setlength{\parindent}{-0.5in}
 \setlength{\leftskip}{0.5in}
 
-\hypertarget{refs}{}
+\phantomsection\label{refs}
 \begin{CSLReferences}{1}{0}
-\leavevmode\vadjust pre{\hypertarget{ref-aravena2024towards}{}}%
+\bibitem[\citeproctext]{ref-aravena2024towards}
 Aravena-Bravo, P., Cristia, A., Garcia, R., Kotera, H., Nicolas, R. K., Laranjo, R., et al.others. (2024). Towards diversifying early language development research: The first truly global international summer/winter school on language acquisition (/l+/) 2021. \emph{Journal of Cognition and Development}, \emph{25}(2), 242--260.
 
-\leavevmode\vadjust pre{\hypertarget{ref-barr2013a}{}}%
+\bibitem[\citeproctext]{ref-barr2013a}
 Barr, D. J., Levy, R., Scheepers, C., \& Tily, H. J. (2013). Random effects structure for confirmatory hypothesis testing: Keep it maximal. \emph{Journal of Memory and Language}, \emph{68}(3), 255--278. \url{https://doi.org/10.1016/j.jml.2012.11.001}
 
-\leavevmode\vadjust pre{\hypertarget{ref-bates2015}{}}%
+\bibitem[\citeproctext]{ref-bates2015}
 Bates, D., Mächler, M., Bolker, B., \& Walker, S. (2015). Fitting linear mixed-effects models using lme4. \emph{Journal of Statistical Software}, \emph{67}(1). \url{https://doi.org/10.18637/jss.v067.i01}
 
-\leavevmode\vadjust pre{\hypertarget{ref-baumgartner2023build}{}}%
+\bibitem[\citeproctext]{ref-baumgartner2023build}
 Baumgartner, H. A., Alessandroni, N., Byers-Heinlein, K., Frank, M. C., Hamlin, J. K., Soderstrom, M., \ldots{} Coles, N. A. (2023). How to build up big team science: A practical guide for large-scale collaborations. \emph{Royal Society Open Science}, \emph{10}(6), 230235.
 
-\leavevmode\vadjust pre{\hypertarget{ref-broesch2015b}{}}%
+\bibitem[\citeproctext]{ref-broesch2015b}
 Broesch, T. L., \& Bryant, G. A. (2015). Prosody in infant-directed speech is similar across western and traditional cultures. \emph{Journal of Cognition and Development}, \emph{16}(1), 31--43. \url{https://doi.org/10.1080/15248372.2013.833923}
 
-\leavevmode\vadjust pre{\hypertarget{ref-bryant2007recognizing}{}}%
+\bibitem[\citeproctext]{ref-bryant2007recognizing}
 Bryant, G. A., \& Barrett, H. C. (2007). Recognizing intentions in infant-directed speech: Evidence for universals. \emph{Psychological Science}, \emph{18}(8), 746--751.
 
-\leavevmode\vadjust pre{\hypertarget{ref-bryant2012recognizing}{}}%
+\bibitem[\citeproctext]{ref-bryant2012recognizing}
 Bryant, G. A., Liénard, P., \& Clark Barrett, H. (2012). Recognizing infant-directed speech across distant cultures: Evidence from africa. \emph{Journal of Evolutionary Psychology}, \emph{10}(2), 47--59.
 
-\leavevmode\vadjust pre{\hypertarget{ref-byers2021multilab}{}}%
+\bibitem[\citeproctext]{ref-byers2021multilab}
 Byers-Heinlein, K., Tsui, A. S. M., Bergmann, C., Black, A. K., Brown, A., Carbajal, M. J., et al.others. (2021). A multilab study of bilingual infants: Exploring the preference for infant-directed speech. \emph{Advances in Methods and Practices in Psychological Science}, \emph{4}(1), 2515245920974622.
 
-\leavevmode\vadjust pre{\hypertarget{ref-casillas2020}{}}%
+\bibitem[\citeproctext]{ref-casillas2020}
 Casillas, M., Brown, P., \& Levinson, S. C. (2020). Early language experience in a tseltal mayan village. \emph{Child Development}, \emph{91}(5), 1819--1835. \url{https://doi.org/10.1111/cdev.13349}
 
-\leavevmode\vadjust pre{\hypertarget{ref-casillas2021}{}}%
+\bibitem[\citeproctext]{ref-casillas2021}
 Casillas, M., Brown, P., \& Levinson, S. C. (2021). Early language experience in a papuan community. \emph{Journal of Child Language}, \emph{48}(4), 792--814. \url{https://doi.org/10.1017/S0305000920000549}
 
-\leavevmode\vadjust pre{\hypertarget{ref-coles2022build}{}}%
+\bibitem[\citeproctext]{ref-coles2022build}
 Coles, N. A., Hamlin, J. K., Sullivan, L. L., Parker, T. H., \& Altschul, D. (2022). Build up big-team science. \emph{Nature}, \emph{601}(7894), 505--507.
 
-\leavevmode\vadjust pre{\hypertarget{ref-manybabies2020quantifying}{}}%
+\bibitem[\citeproctext]{ref-manybabies2020quantifying}
 Consortium, M. (2020). Quantifying sources of variability in infancy research using the infant-directed-speech preference. \emph{Advances in Methods and Practices in Psychological Science}, \emph{3}(1), 24--52.
 
-\leavevmode\vadjust pre{\hypertarget{ref-cooper1997}{}}%
+\bibitem[\citeproctext]{ref-cooper1997}
 Cooper, R. P., Abraham, J., Berman, S., \& Staska, M. (1997). The development of infants' preference for motherese. \emph{Infant Behavior and Development}, \emph{20}(4), 477--488. \url{https://doi.org/10.1016/S0163-6383(97)90037-0}
 
-\leavevmode\vadjust pre{\hypertarget{ref-cooper1990}{}}%
+\bibitem[\citeproctext]{ref-cooper1990}
 Cooper, R. P., \& Aslin, R. N. (1990). Preference for infant-directed speech in the first month after birth. \emph{Child Development}, \emph{61}(5), 1584--1595. \url{https://doi.org/10.2307/1130766}
 
-\leavevmode\vadjust pre{\hypertarget{ref-cooper1994}{}}%
+\bibitem[\citeproctext]{ref-cooper1994}
 Cooper, R. P., \& Aslin, R. N. (1994). Developmental differences in infant attention to the spectral properties of infant-directed speech. \emph{Child Development}, \emph{65}(6), 1663--1677. \url{https://doi.org/10.2307/1131286}
 
-\leavevmode\vadjust pre{\hypertarget{ref-cristia2019child}{}}%
+\bibitem[\citeproctext]{ref-cristia2019child}
 Cristia, A., Dupoux, E., Gurven, M., \& Stieglitz, J. (2019). Child-directed speech is infrequent in a forager-farmer population: A time allocation study. \emph{Child Development}, \emph{90}(3), 759--773.
 
-\leavevmode\vadjust pre{\hypertarget{ref-csibra2016}{}}%
+\bibitem[\citeproctext]{ref-csibra2016}
 Csibra, G., Hernik, M., Mascaro, O., Tatone, D., \& Lengyel, M. (2016). Statistical treatment of looking-time data. \emph{Developmental Psychology}, \emph{52}(4), 521--536. \url{https://doi.org/10.1037/dev0000083}
 
-\leavevmode\vadjust pre{\hypertarget{ref-dunst2012preference}{}}%
+\bibitem[\citeproctext]{ref-dunst2012preference}
 Dunst, C., Gorman, E., \& Hamby, D. (2012). Preference for infant-directed speech in preverbal young children. \emph{Center for Early Literacy Learning}, \emph{5}(1), 1--13.
 
-\leavevmode\vadjust pre{\hypertarget{ref-farran2016cross}{}}%
+\bibitem[\citeproctext]{ref-farran2016cross}
 Farran, L. K., Lee, C.-C., Yoo, H., \& Oller, D. K. (2016). Cross-cultural register differences in infant-directed speech: An initial study. \emph{PloS One}, \emph{11}(3), e0151518.
 
-\leavevmode\vadjust pre{\hypertarget{ref-fernald1985}{}}%
+\bibitem[\citeproctext]{ref-fernald1985}
 Fernald, A. (1985). Four-month-old infants prefer to listen to motherese. \emph{Infant Behavior and Development}, \emph{8}(2), 181--195. \url{https://doi.org/10.1016/S0163-6383(85)80005-9}
 
-\leavevmode\vadjust pre{\hypertarget{ref-fernald1989}{}}%
+\bibitem[\citeproctext]{ref-fernald1989}
 Fernald, A., Taeschner, T., Dunn, J., Papousek, M., Boysson-Bardies, B. de, \& Fukui, I. (1989). A cross-language study of prosodic modifications in mothers' and fathers' speech to preverbal infants. \emph{Journal of Child Language}, \emph{16}(3), 477--501. \url{https://doi.org/10.1017/S0305000900010679}
 
-\leavevmode\vadjust pre{\hypertarget{ref-frank2017}{}}%
+\bibitem[\citeproctext]{ref-frank2017}
 Frank, M. C., Bergelson, E., Bergmann, C., Cristia, A., Floccia, C., Gervain, J., \ldots{} Yurovsky, D. (2017). A collaborative approach to infant research: Promoting reproducibility, best practices, and theory-building. \emph{Infancy}, \emph{22}(4), 421--435. \url{https://doi.org/10.1111/infa.12182}
 
-\leavevmode\vadjust pre{\hypertarget{ref-grafestes2013}{}}%
+\bibitem[\citeproctext]{ref-grafestes2013}
 Graf Estes, K., \& Hurley, K. (2013). Infant-directed prosody helps infants map sounds to meanings. \emph{Infancy}, \emph{18}(5), 797--824. \url{https://doi.org/10.1111/infa.12006}
 
-\leavevmode\vadjust pre{\hypertarget{ref-grieser1988maternal}{}}%
+\bibitem[\citeproctext]{ref-grieser1988maternal}
 Grieser, D. L., \& Kuhl, P. K. (1988). Maternal speech to infants in a tonal language: Support for universal prosodic features in motherese. \emph{Developmental Psychology}, \emph{24}(1), 14.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hart1995}{}}%
+\bibitem[\citeproctext]{ref-hart1995}
 Hart, B., \& Risley, T. R. (1995). \emph{Meaningful differences in the everyday experience of young american children}. P.H. Brookes.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hayashi2001}{}}%
+\bibitem[\citeproctext]{ref-hayashi2001}
 Hayashi, A., Tamekawa, Y., \& Kiritani, S. (2001). Developmental change in auditory preferences for speech stimuli in japanese infants. \emph{Journal of Speech, Language, and Hearing Research}, \emph{44}(6), 1189--1200. \url{https://doi.org/10.1044/1092-4388(2001/092)}
 
-\leavevmode\vadjust pre{\hypertarget{ref-heath1983}{}}%
+\bibitem[\citeproctext]{ref-heath1983}
 Heath, S. B. (1983). \emph{Ways with words: Language, life, and work in communities and classrooms}. Cambridge University Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-henrich2010weirdest}{}}%
+\bibitem[\citeproctext]{ref-henrich2010weirdest}
 Henrich, J., Heine, S. J., \& Norenzayan, A. (2010). The weirdest people in the world? \emph{Behavioral and Brain Sciences}, \emph{33}(2-3), 61--83.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hoff2006social}{}}%
+\bibitem[\citeproctext]{ref-hoff2006social}
 Hoff, E. (2006b). How social contexts support and shape language development. \emph{Developmental Review}, \emph{26}(1), 55--88.
 
-\leavevmode\vadjust pre{\hypertarget{ref-hoff2006}{}}%
+\bibitem[\citeproctext]{ref-hoff2006}
 Hoff, E. (2006a). How social contexts support and shape language development. \emph{Developmental Review}, \emph{26}(1), 55--88. \url{https://doi.org/10.1016/j.dr.2005.11.002}
 
-\leavevmode\vadjust pre{\hypertarget{ref-huttenlocher2010sources}{}}%
+\bibitem[\citeproctext]{ref-huttenlocher2010sources}
 Huttenlocher, J., Waterfall, H., Vasilyeva, M., Vevea, J., \& Hedges, L. V. (2010). Sources of variability in children's language growth. \emph{Cognitive Psychology}, \emph{61}(4), 343--365.
 
-\leavevmode\vadjust pre{\hypertarget{ref-keller2012}{}}%
+\bibitem[\citeproctext]{ref-keller2012}
 Keller, H. (2012). Autonomy and relatedness revisited: Cultural manifestations of universal human needs. \emph{Child Development Perspectives}, \emph{6}(1), 12--18. \url{https://doi.org/10.1111/j.1750-8606.2011.00208.x}
 
-\leavevmode\vadjust pre{\hypertarget{ref-kidd2022diverse}{}}%
+\bibitem[\citeproctext]{ref-kidd2022diverse}
 Kidd, E., \& Garcia, R. (2022). How diverse is child language acquisition research? \emph{First Language}, \emph{42}(6), 703--735.
 
-\leavevmode\vadjust pre{\hypertarget{ref-kitamura2009}{}}%
+\bibitem[\citeproctext]{ref-kitamura2009}
 Kitamura, C., \& Lam, C. (2009). Age-specific preferences for infant-directed affective intent. \emph{Infancy}, \emph{14}(1), 77--100. \url{https://doi.org/10.1080/15250000802569777}
 
-\leavevmode\vadjust pre{\hypertarget{ref-kitamura2001universality}{}}%
+\bibitem[\citeproctext]{ref-kitamura2001universality}
 Kitamura, C., Thanavishuth, C., Burnham, D., \& Luksaneeyanawin, S. (2001). Universality and specificity in infant-directed speech: Pitch modifications as a function of infant age and sex in a tonal and non-tonal language. \emph{Infant Behavior and Development}, \emph{24}(4), 372--392.
 
-\leavevmode\vadjust pre{\hypertarget{ref-koo2016guideline}{}}%
+\bibitem[\citeproctext]{ref-koo2016guideline}
 Koo, T. K., \& Li, M. Y. (2016). A guideline of selecting and reporting intraclass correlation coefficients for reliability research. \emph{Journal of Chiropractic Medicine}, \emph{15}(2), 155--163.
 
-\leavevmode\vadjust pre{\hypertarget{ref-kuznetsova2017}{}}%
+\bibitem[\citeproctext]{ref-kuznetsova2017}
 Kuznetsova, A., Brockhoff, P. B., \& Christensen, R. H. B. (2017). lmerTest package: Tests in linear mixed effects models. \emph{Journal of Statistical Software}, \emph{82}(13). \url{https://doi.org/10.18637/jss.v082.i13}
 
-\leavevmode\vadjust pre{\hypertarget{ref-legare2019development}{}}%
+\bibitem[\citeproctext]{ref-legare2019development}
 Legare, C. H. (2019). The development of cumulative cultural learning. \emph{Annual Review of Developmental Psychology}, \emph{1}(1), 119--147.
 
-\leavevmode\vadjust pre{\hypertarget{ref-levine1994}{}}%
+\bibitem[\citeproctext]{ref-levine1994}
 LeVine, R. A. (Ed.). (1994). \emph{Child care and culture: Lessons from africa} (Reprinted). Cambridge University Press.
 
-\leavevmode\vadjust pre{\hypertarget{ref-levine2016}{}}%
+\bibitem[\citeproctext]{ref-levine2016}
 LeVine, R. A., \& LeVine, S. (2016). \emph{Do parents matter? Why japanese babies sleep well, mexican siblings don't fight, and american parents should just relax} (First). PublicAffairs.
 
-\leavevmode\vadjust pre{\hypertarget{ref-mathur2020robust}{}}%
+\bibitem[\citeproctext]{ref-mathur2020robust}
 Mathur, M. B., \& VanderWeele, T. J. (2020). Robust metrics and sensitivity analyses for meta-analyses of heterogeneous effects. \emph{Epidemiology}, \emph{31}(3), 356--358.
 
-\leavevmode\vadjust pre{\hypertarget{ref-newman2006}{}}%
+\bibitem[\citeproctext]{ref-newman2006}
 Newman, R. S., \& Hussain, I. (2006). Changes in preference for infant-directed speech in low and moderate noise by 4.5- to 13-month-olds. \emph{Infancy}, \emph{10}(1), 61--76. \url{https://doi.org/10.1207/s15327078in1001_4}
 
-\leavevmode\vadjust pre{\hypertarget{ref-nielsen2017}{}}%
+\bibitem[\citeproctext]{ref-nielsen2017}
 Nielsen, M., Haun, D., Kärtner, J., \& Legare, C. H. (2017). The persistent sampling bias in developmental psychology: A call to action. \emph{Journal of Experimental Child Psychology}, \emph{162}, 31--38. \url{https://doi.org/10.1016/j.jecp.2017.04.017}
 
-\leavevmode\vadjust pre{\hypertarget{ref-omane2024vowel}{}}%
+\bibitem[\citeproctext]{ref-omane2024vowel}
 Omane, P. O., Benders, T., \& Boll-Avetisyan, N. (2024). Vowel harmony preferences in infants growing up in multilingual ghana (africa). \emph{Developmental Psychology}, \emph{60}(8), 1372.
 
-\leavevmode\vadjust pre{\hypertarget{ref-omane2025exploring}{}}%
+\bibitem[\citeproctext]{ref-omane2025exploring}
 Omane, P. O., Benders, T., \& Boll-Avetisyan, N. (2025). Exploring the nature of multilingual input to infants in multiple caregiver families in an african city: The case of accra (ghana). \emph{Cognitive Development}, \emph{74}, 101558.
 
-\leavevmode\vadjust pre{\hypertarget{ref-Omane_Boll-Avetisyan_Benders_2025}{}}%
+\bibitem[\citeproctext]{ref-Omane_Boll-Avetisyan_Benders_2025}
 Omane, P. O., Boll-Avetisyan, N., \& Benders, T. (2025). Tongue root harmony cues for speech segmentation in multilingually raised infants learning languages with and without vowel harmony in ghana (africa). \emph{Bilingualism: Language and Cognition}, 1--11. \url{https://doi.org/10.1017/S1366728925100485}
 
-\leavevmode\vadjust pre{\hypertarget{ref-openscience2015}{}}%
+\bibitem[\citeproctext]{ref-openscience2015}
 Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. \emph{Science}, \emph{349}(6251), aac4716. \url{https://doi.org/10.1126/science.aac4716}
 
-\leavevmode\vadjust pre{\hypertarget{ref-parsons2019psychological}{}}%
+\bibitem[\citeproctext]{ref-parsons2019psychological}
 Parsons, S., Kruijt, A.-W., \& Fox, E. (2019). Psychological science needs a standard practice of reporting the reliability of cognitive-behavioral measurements. \emph{Advances in Methods and Practices in Psychological Science}, \emph{2}(4), 378--395.
 
-\leavevmode\vadjust pre{\hypertarget{ref-pegg1992}{}}%
+\bibitem[\citeproctext]{ref-pegg1992}
 Pegg, J. E., Werker, J. F., \& McLeod, P. J. (1992). Preference for infant-directed over adult-directed speech: Evidence from 7-week-old infants. \emph{Infant Behavior and Development}, \emph{15}(3), 325--345. \url{https://doi.org/10.1016/0163-6383(92)80003-D}
 
-\leavevmode\vadjust pre{\hypertarget{ref-posel2016}{}}%
+\bibitem[\citeproctext]{ref-posel2016}
 Posel, D., \& Zeller, J. (2016). Language shift or increased bilingualism in south africa: Evidence from census data. \emph{Journal of Multilingual and Multicultural Development}, \emph{37}(4), 357--370. \url{https://doi.org/10.1080/01434632.2015.1072206}
 
-\leavevmode\vadjust pre{\hypertarget{ref-pyykko2019early}{}}%
+\bibitem[\citeproctext]{ref-pyykko2019early}
 Pyykkö, J., Forssman, L., Maleta, K., Ashorn, P., Ashorn, U., \& Leppänen, J. M. (2019). Early development of visual attention in infants in rural malawi. \emph{Developmental Science}, \emph{22}(5), e12761.
 
-\leavevmode\vadjust pre{\hypertarget{ref-ramirez2014}{}}%
+\bibitem[\citeproctext]{ref-ramirez2014}
 Ramı́rez-Esparza, N., Garcı́a-Sierra, A., \& Kuhl, P. K. (2014). Look who's talking: Speech style and social context in language input to infants are linked to concurrent and future speech development. \emph{Developmental Science}, \emph{17}(6), 880--891. \url{https://doi.org/10.1111/desc.12172}
 
-\leavevmode\vadjust pre{\hypertarget{ref-revelle2017psych}{}}%
+\bibitem[\citeproctext]{ref-revelle2017psych}
 Revelle, W. R. (2017). \emph{Psych: Procedures for personality and psychological research}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-rosenhouse2004}{}}%
+\bibitem[\citeproctext]{ref-rosenhouse2004}
 Rosenhouse, J., \& Goral, M. (2004). 31 bilingualism in the middle east and north africa: A focus on the arabic-speaking world. \emph{The Handbook of Bilingualism}, 835.
 
-\leavevmode\vadjust pre{\hypertarget{ref-rowe2012longitudinal}{}}%
+\bibitem[\citeproctext]{ref-rowe2012longitudinal}
 Rowe, M. L. (2012). A longitudinal investigation of the role of quantity and quality of child-directed speech in vocabulary development. \emph{Child Development}, \emph{83}(5), 1762--1774.
 
-\leavevmode\vadjust pre{\hypertarget{ref-santesso2007frontal}{}}%
+\bibitem[\citeproctext]{ref-santesso2007frontal}
 Santesso, D. L., Schmidt, L. A., \& Trainor, L. J. (2007). Frontal brain electrical activity (EEG) and heart rate in response to affective infant-directed (ID) speech in 9-month-old infants. \emph{Brain and Cognition}, \emph{65}(1), 14--21.
 
-\leavevmode\vadjust pre{\hypertarget{ref-schneidman2012}{}}%
+\bibitem[\citeproctext]{ref-schneidman2012}
 Schneidman, L. A., \& Goldin-Meadow, S. (2012). Language input and acquisition in a mayan village: How important is directed speech? \emph{Developmental Science}, \emph{15}(5), 659--673. \url{https://doi.org/10.1111/j.1467-7687.2012.01168.x}
 
-\leavevmode\vadjust pre{\hypertarget{ref-schreiner2024limited}{}}%
+\bibitem[\citeproctext]{ref-schreiner2024limited}
 Schreiner, M. S., Zettersten, M., Bergmann, C., Frank, M. C., Fritzsche, T., Gonzalez-Gomez, N., et al.others. (2024). Limited evidence of test-retest reliability in infant-directed speech preference in a large preregistered infant experiment. \emph{Developmental Science}, \emph{27}(6), e13551.
 
-\leavevmode\vadjust pre{\hypertarget{ref-shneidman2012language}{}}%
+\bibitem[\citeproctext]{ref-shneidman2012language}
 Shneidman, L. A., \& Goldin-Meadow, S. (2012). Language input and acquisition in a mayan village: How important is directed speech? \emph{Developmental Science}, \emph{15}(5), 659--673.
 
-\leavevmode\vadjust pre{\hypertarget{ref-shneidman2013}{}}%
+\bibitem[\citeproctext]{ref-shneidman2013}
 Shneidman, L., Arroyo, M., Levine, S. C., \& Goldin-Meadow, S. (2013). What counts as effective input for word learning? \emph{Developmental Science}, \emph{16}(6), 993--1009. \url{https://doi.org/10.1111/desc.12055}
 
-\leavevmode\vadjust pre{\hypertarget{ref-singh2023diversity}{}}%
+\bibitem[\citeproctext]{ref-singh2023diversity}
 Singh, L., Cristia, A., Karasik, L. B., Rajendra, S. J., \& Oakes, L. M. (2023). Diversity and representation in infant research: Barriers and bridges toward a globalized science of infant development. \emph{Infancy}, \emph{28}(4), 708--737.
 
-\leavevmode\vadjust pre{\hypertarget{ref-singh2002}{}}%
+\bibitem[\citeproctext]{ref-singh2002}
 Singh, L., Morgan, J. L., \& Best, C. T. (2002). Infants' listening preferences: Baby talk or happy talk? \emph{Infancy}, \emph{3}(3), 365--394. \url{https://doi.org/10.1207/S15327078IN0303_5}
 
-\leavevmode\vadjust pre{\hypertarget{ref-singh2009influences}{}}%
+\bibitem[\citeproctext]{ref-singh2009influences}
 Singh, L., Nestor, S., Parikh, C., \& Yull, A. (2009). Influences of infant-directed speech on early word recognition. \emph{Infancy}, \emph{14}(6), 654--666.
 
-\leavevmode\vadjust pre{\hypertarget{ref-soderstrom2024testing}{}}%
+\bibitem[\citeproctext]{ref-soderstrom2024testing}
 Soderstrom, M., Rocha-Hidalgo, J., Muñoz, L. E., Bochynska, A., Werker, J. F., Skarabela, B., et al.others. (2024). Testing the relationship between preferences for infant-directed speech and vocabulary development: A multi-lab study. \emph{Journal of Child Language}, 1--26.
 
-\leavevmode\vadjust pre{\hypertarget{ref-thiessen2005infant}{}}%
+\bibitem[\citeproctext]{ref-thiessen2005infant}
 Thiessen, E. D., Hill, E. A., \& Saffran, J. R. (2005). Infant-directed speech facilitates word segmentation. \emph{Infancy}, \emph{7}(1), 53--71.
 
-\leavevmode\vadjust pre{\hypertarget{ref-trainor2002pitch}{}}%
+\bibitem[\citeproctext]{ref-trainor2002pitch}
 Trainor, L. J., \& Desjardins, R. N. (2002). Pitch characteristics of infant-directed speech affect infants' ability to discriminate vowels. \emph{Psychonomic Bulletin \& Review}, \emph{9}(2), 335--340.
 
-\leavevmode\vadjust pre{\hypertarget{ref-vogt2015communicative}{}}%
+\bibitem[\citeproctext]{ref-vogt2015communicative}
 Vogt, P., Mastin, J. D., \& Schots, D. M. (2015). Communicative intentions of child-directed speech in three different learning environments: Observations from the netherlands, and rural and urban mozambique. \emph{First Language}, \emph{35}(4-5), 341--358.
 
-\leavevmode\vadjust pre{\hypertarget{ref-weber2017cultural}{}}%
+\bibitem[\citeproctext]{ref-weber2017cultural}
 Weber, A., Fernald, A., \& Diop, Y. (2017). When cultural norms discourage talking to babies: Effectiveness of a parenting program in rural senegal. \emph{Child Development}, \emph{88}(5), 1513--1526.
 
-\leavevmode\vadjust pre{\hypertarget{ref-weisleder2013talking}{}}%
+\bibitem[\citeproctext]{ref-weisleder2013talking}
 Weisleder, A., \& Fernald, A. (2013). Talking to children matters: Early language experience strengthens processing and builds vocabulary. \emph{Psychological Science}, \emph{24}(11), 2143--2152.
 
-\leavevmode\vadjust pre{\hypertarget{ref-werker1989infant}{}}%
+\bibitem[\citeproctext]{ref-werker1989infant}
 Werker, J. F., \& McLeod, P. J. (1989). Infant preference for both male and female infant-directed talk: A developmental study of attentional and affective responsiveness. \emph{Canadian Journal of Psychology/Revue Canadienne de Psychologie}, \emph{43}(2), 230.
 
-\leavevmode\vadjust pre{\hypertarget{ref-werker1994cross}{}}%
+\bibitem[\citeproctext]{ref-werker1994cross}
 Werker, J. F., Pegg, J. E., \& McLeod, P. J. (1994). A cross-language investigation of infant preference for infant-directed communication. \emph{Infant Behavior and Development}, \emph{17}(3), 323--333.
 
-\leavevmode\vadjust pre{\hypertarget{ref-zettersten2024evidence}{}}%
+\bibitem[\citeproctext]{ref-zettersten2024evidence}
 Zettersten, M., Cox, C., Bergmann, C., Tsui, A. S. M., Soderstrom, M., Mayor, J., et al.others. (2024). Evidence for infant-directed speech preference is consistent across large-scale, multi-site replication and meta-analysis. \emph{Open Mind}, \emph{8}, 439--461.
 
 \end{CSLReferences}
@@ -797,12 +801,10 @@ Zettersten, M., Cox, C., Bergmann, C., Tsui, A. S. M., Soderstrom, M., Mayor, J.
 
 \newpage
 
-\hypertarget{appendix-appendix}{%
-\appendix}
+\appendix
 
 
-\hypertarget{discrepancies-between-pre-registration-and-final-analyses}{%
-\section{Discrepancies between pre-registration and final analyses}\label{discrepancies-between-pre-registration-and-final-analyses}}
+\section{Discrepancies between pre-registration and final analyses}\label{discrepancies-between-pre-registration-and-final-analyses}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -829,8 +831,7 @@ Zettersten, M., Cox, C., Bergmann, C., Tsui, A. S. M., Soderstrom, M., Mayor, J.
   \emph{Final:} We did not have MacSSS data for most participants, and information on mothers' education was incomplete. We therefore used primary caregiver education as the main SES variable and conducted a robustness check using the subset of infant whose primary caregiver's sex is female.
 \end{enumerate}
 
-\hypertarget{by-lab-meta-analysis}{%
-\section{By-lab Meta-analysis}\label{by-lab-meta-analysis}}
+\section{By-lab Meta-analysis}\label{by-lab-meta-analysis}
 
 We computed a single effect size per lab and fit an intercept-only mixed-effect meta-regression to estimate the overall IDS preference across sites. This approach provides a comparable summary of results across sites. Even with a standardized protocol, sites differ in their cultures, recruitment pools, equipment, and experimenter behavior. A random-effects meta-analysis treats those differences as legitimate heterogeneity rather than noise, yielding a conservative estimate of the cross-lab mean and its uncertainty.
 
@@ -838,7 +839,7 @@ To do so, we calculated each infant's mean IDS--ADS difference score \footnote{ 
 
 \begin{figure}
 \centering
-\includegraphics{mb1a-paper_files/figure-latex/unnamed-chunk-41-1.pdf}
+\pandocbounded{\includegraphics[keepaspectratio]{mb1a-paper_files/figure-latex/unnamed-chunk-41-1.pdf}}
 \caption{\label{fig:unnamed-chunk-41}Forest plot of lab-level standardized effect sizes (for the IDS--ADS preference. Points represent individual country estimates, with size proportional to the inverse of their sampling variance; horizontal bars show 95\% confidence intervals. The meta-analytic aggregate (top, red) is from an intercept-only random-effects model.}
 \end{figure}
 
